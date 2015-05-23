@@ -1,0 +1,11 @@
+config.php
+vendor/
+composer.phar
+cache/sessions
+cache/templates
+cache/update
+cache/pheal
+.phpintel/
+.idea/
+.settings/
+tags
