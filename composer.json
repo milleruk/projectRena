@@ -1,0 +1,27 @@
+{
+	"name": "Project Rena",
+	"descrition": "A Killboard for EVE-KILL",
+	"keywords": ["killboard","EVE-Online"],
+	"homepage": "https://eve-kill.net",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Michael Karbowiak",
+			"email": "michael@karbowiak.dk",
+			"homepage": "https://karbowiak.dk"
+		}
+	],
+	"require": {
+		"php": ">=5.5.0",
+		"monolog/monolog": "1.*",
+		"slim/slim": "2.*",
+		"slim/views": "0.*",
+		"zeuxisoo/slim-whoops": "0.2.*",
+		"twig/twig": "1.*",
+		"filp/whoops": "1.*",
+		"domnikl/statsd": "~2.0",
+		"ircmaxell/password-compat": "*",
+		"3rdpartyeve/phealng": "*",
+		"3rdpartyeve/perry": "*"
+	}
+}
