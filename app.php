@@ -25,10 +25,10 @@ else
 $app = new Slim($config["slim"]);
 
 // Session
-$session = new SessionHandler();
-session_set_save_handler($session, true);
-session_cache_limiter(false);
-session_start();
+//$session = new SessionHandler();
+//session_set_save_handler($session, true);
+//session_cache_limiter(false);
+//session_start();
 
 // Launch Whoops
 $app->add(new WhoopsMiddleware);
@@ -38,8 +38,9 @@ $app->view(new Twig());
 $app->view->parserOptions = $config["twig"];
 
 // load the additional configs
-foreach(glob(__DIR__."/config/*.php") as $configFile)
-    require_once $configFile;
+$configFiles = glob(__DIR__ . "/config/*.php");
+foreach($configFiles as $configFile)
+    require_once($configFile);
 
 // Run app
 $app->run();

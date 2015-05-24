@@ -3,11 +3,15 @@
 namespace ProjectRena\Lib;
 
 use Exception;
-use Monolog\Logger;
 use PDO;
 use ProjectRena\Lib\Cache\Cache;
+use ProjectRena\Lib\Logging;
 use ProjectRena\Model\Config;
 
+/**
+ * Class Database
+ * @package ProjectRena\Lib
+ */
 class Database
 {
     /**
@@ -22,7 +26,7 @@ class Database
      * @return PDO
      * @throws Exception
      */
-    private static function getPDO()
+    protected static function getPDO()
     {
         $dsn = "mysql:dbname=".Config::get("name", "database").";host=".Config::get("host", "database");
         try {
@@ -37,7 +41,7 @@ class Database
             );
         } catch (Exception $e) {
             $errorMessage = "Unable to connect to the database: ".$e->getMessage();
-            Logger::log("DEBUG", $errorMessage);
+            Logging::log("DEBUG", $errorMessage);
             throw new Exception($errorMessage);
         }
 
@@ -45,17 +49,13 @@ class Database
     }
 
     /**
-     * Executes an SQL query, returns the full result
-     *
-     * @static
-     * @param string $query The query to be executed.
-     * @param array $parameters (optional) A key/value array of parameters.
-     * @param int $cacheTime The time, in seconds, to cache the result of the query.    Default: 30
-     * @param bool $selectCheck selectCheck If true, does a strict check that the query is using a select.  Default: true
-     * @return array Returns the full resultset as an array.
+     * @param $query
+     * @param array $parameters
+     * @param int $cacheTime
+     * @return array|bool
      * @throws Exception
      */
-    public static function query($query, $parameters = array(), $cacheTime = 30, $selectCheck = true)
+    public static function query($query, $parameters = array(), $cacheTime = 30)
     {
         // Sanity check
         if (strpos($query, ";") !== false) {
@@ -81,7 +81,7 @@ class Database
             // Increment the queryCounter
             self::$queryCount++;
 
-            // Open the databse connection
+            // Open the database connection
             $pdo = self::getPDO();
 
             // Make sure PDO is set
@@ -186,12 +186,12 @@ class Database
      * @static
      * @param string $query The query to be executed.
      * @param array $parameters (optional) A key/value array of parameters.
-     * @param boolean $reportErrors Log the query and throw an exception if the query fails. Default: true
      * @param bool $returnID
      * @return int The number of rows affected by the sql query.
      * @throws Exception
+     * @internal param bool $reportErrors Log the query and throw an exception if the query fails. Default: true
      */
-    public static function execute($query, $parameters = array(), $reportErrors = true, $returnID = false)
+    public static function execute($query, $parameters = array(), $returnID = false)
     {
         // Init the timer
         $timer = new Timer();
@@ -214,12 +214,11 @@ class Database
         // If an error happened, rollback and return false
         if ($stmt->errorCode() != 0) {
             $pdo->rollBack();
-
             return false;
         }
 
         // Get the inserted id
-        $lastInsertID = $returnID ? $pdo->lastInsertId() : 0;
+        $returnID = $returnID ? $pdo->lastInsertId() : 0;
 
         // Commitment time
         $pdo->commit();
@@ -255,7 +254,7 @@ class Database
     private static function validateQuery($query)
     {
         if (strpos($query, ";") !== false) {
-            throw new Exception("Semicolons are not allowed in queryes. Use parameters instead.");
+            throw new Exception("Semicolons are not allowed in queries. Use parameters instead.");
         }
     }
 
@@ -296,7 +295,7 @@ class Database
             $query = str_replace($k, "'".$v."'", $query);
         }
         $uri = isset($_SERVER["REQUEST_URI"]) ? "Query page: https://$baseAddr".$_SERVER["REQUEST_URI"]."\n" : "";
-        Log::log(($duration != 0 ? number_format($duration / 1000, 3)."s " : "")." Query: \n$query;\n$uri");
+        Logging::log("INFO", ($duration != 0 ? number_format($duration / 1000, 3)."s " : "")." Query: \n$query;\n$uri");
     }
 
     /**
