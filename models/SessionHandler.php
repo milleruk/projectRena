@@ -3,73 +3,80 @@
 class SessionHandler implements SessionHandlerInterface
 {
 
-	/**
-	 * @var int stores the time the cache should live
-	 */
-	private $ttl = 7200; // 2hrs of cache
+    /**
+     * @var int stores the time the cache should live
+     */
+    private $ttl = 7200; // 2hrs of cache
 
-	/**
-	 * Opens the session
-	 *
-	 * @return boolean
-	 */
-	public function open($savePath, $sessionName)
-	{
-		return true;
-	}
+    /**
+     * Opens the session
+     *
+     * @return boolean
+     */
+    public function open($savePath, $sessionName)
+    {
+        return true;
+    }
 
-	/**
-	 * Closes the session
-	 *
-	 * @return boolean
-	 */
-	public function close()
-	{
-		return true;
-	}
+    /**
+     * Closes the session
+     *
+     * @return boolean
+     */
+    public function close()
+    {
+        return true;
+    }
 
-	/**
-	 * Reads the data in the session
-	 *
-	 * @return string
-	 */
-	public function read($id)
-	{
-		$data = Cache::get($id);
-		if(is_array($data)) // Just to make sure that we're returning a string and not an array, eventho that shouldn't technically be possible..
-			return "";
-		return Cache::get($id);
-	}
+    /**
+     * Reads the data in the session
+     *
+     * @return string
+     */
+    public function read($id)
+    {
+        $data = Cache::get($id);
+        if (is_array(
+            $data
+        )) // Just to make sure that we're returning a string and not an array, eventho that shouldn't technically be possible..
+        {
+            return "";
+        }
 
-	/**
-	 * Writes data into the session
-	 *
-	 * @return boolean
-	 */
-	public function write($id, $data)
-	{
-		Cache::set($id, $data, $this->ttl);
-		return true;
-	}
+        return Cache::get($id);
+    }
 
-	/**
-	 * Destroys the session
-	 *
-	 * @return boolean
-	 */
-	public function destroy($id)
-	{
-		Cache::delete($id);
-		return true;
-	}
+    /**
+     * Writes data into the session
+     *
+     * @return boolean
+     */
+    public function write($id, $data)
+    {
+        Cache::set($id, $data, $this->ttl);
 
-	/**
-	 * Garbage collects the sessions (The cache does that automatically tho)
-	 *
-	 * @return boolean
-	 */
-	public function gc($maxlifetime)
-	{
-		return true;
-	}
+        return true;
+    }
+
+    /**
+     * Destroys the session
+     *
+     * @return boolean
+     */
+    public function destroy($id)
+    {
+        Cache::delete($id);
+
+        return true;
+    }
+
+    /**
+     * Garbage collects the sessions (The cache does that automatically tho)
+     *
+     * @return boolean
+     */
+    public function gc($maxlifetime)
+    {
+        return true;
+    }
 }
