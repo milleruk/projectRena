@@ -5,6 +5,7 @@ cache/sessions
 cache/templates
 cache/update
 cache/pheal
+phinx.yml
 .phpintel/
 .idea/
 .settings/
