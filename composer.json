@@ -26,12 +26,12 @@
         "ircmaxell/password-compat": "~1.0",
         "3rdpartyeve/phealng": "~2.2",
         "3rdpartyeve/perry": "~1.5",
-        "codegyre/robo": "*",
-        "robmorgan/phinx": "dev-master"
+        "robmorgan/phinx": "dev-master",
+        "cilex/cilex": "1.0.*@dev"
     },
     "autoload": {
         "psr-4": {
-            "ProjectRena\\": "src/"
+            "ProjectRena\\": ["src/", "tasks/"]
         }
     }
 }

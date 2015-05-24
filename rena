@@ -1,9 +1,22 @@
 #!/usr/bin/env php
 <?php
-use ProjectRena\Lib\Cache\Cache;
+require_once(__DIR__."/vendor/autoload.php");
 
-require __DIR__.'/vendor/autoload.php';
+$app = new \Cilex\Application('projectRena');
 
-Cache::set("asdf", "asdf");
-var_dump(Cache::getClass());
-var_dump(Cache::get("asdf"));
+$tasks = scandir(__DIR__ . "/tasks/");
+foreach($tasks as $task)
+{
+    if(!preg_match("/^(.+)\\.php$/", $task, $match))
+        continue;
+
+    if(isset($match[1]))
+    {
+        $taskName = $match[1];
+        require_once(__DIR__ . "/tasks/{$taskName}.php");
+        $import = "ProjectRena\\Tasks\\" . $taskName;
+        $app->command(new $import());
+    }
+}
+
+$app->run();

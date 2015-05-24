@@ -1,6 +1,5 @@
 <?php
 // Imports
-use ProjectRena\Lib\Cache\Cache;
 use ProjectRena\Lib\SessionHandler;
 use Slim\Slim;
 use Slim\Views\Twig;

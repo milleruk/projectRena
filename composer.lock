@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "abf785afbbf95ba3469d24aea7961892",
+    "hash": "4807c917b3760bf8f4e26da1f53d124e",
     "packages": [
         {
             "name": "3rdpartyeve/perry",
@@ -96,41 +96,44 @@
             "time": "2015-05-18 19:43:03"
         },
         {
-            "name": "codegyre/robo",
-            "version": "0.5.2",
+            "name": "cilex/cilex",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Codegyre/Robo.git",
-                "reference": "a98a14a7d2284776c2038480b59edc142c80a01f"
+                "url": "https://github.com/Cilex/Cilex.git",
+                "reference": "7acd965a609a56d0345e8b6071c261fbdb926cb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codegyre/Robo/zipball/a98a14a7d2284776c2038480b59edc142c80a01f",
-                "reference": "a98a14a7d2284776c2038480b59edc142c80a01f",
+                "url": "https://api.github.com/repos/Cilex/Cilex/zipball/7acd965a609a56d0345e8b6071c261fbdb926cb5",
+                "reference": "7acd965a609a56d0345e8b6071c261fbdb926cb5",
                 "shasum": ""
             },
             "require": {
-                "henrikbjorn/lurker": "1.0.*@dev",
-                "php": ">=5.4.0",
-                "symfony/console": "~2.5",
-                "symfony/filesystem": "~2.5",
-                "symfony/finder": "~2.5",
-                "symfony/process": "~2.5"
+                "cilex/console-service-provider": "1.*",
+                "php": ">=5.3.3",
+                "pimple/pimple": "~1.0",
+                "symfony/finder": "~2.1",
+                "symfony/process": "~2.1"
             },
             "require-dev": {
-                "codeception/aspect-mock": "0.5.*",
-                "codeception/codeception": "~2.0",
-                "codeception/verify": "0.2.*",
-                "natxet/cssmin": "~3.0",
-                "patchwork/jsqueeze": "~1.0"
+                "phpunit/phpunit": "3.7.*",
+                "symfony/validator": "~2.1"
             },
-            "bin": [
-                "robo"
-            ],
+            "suggest": {
+                "monolog/monolog": ">=1.0.0",
+                "symfony/validator": ">=1.0.0",
+                "symfony/yaml": ">=1.0.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
-                "psr-4": {
-                    "Robo\\": "src"
+                "psr-0": {
+                    "Cilex": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -139,12 +142,76 @@
             ],
             "authors": [
                 {
-                    "name": "Davert",
-                    "email": "davert.php@resend.cc"
+                    "name": "Mike van Riel",
+                    "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "description": "Modern task runner",
-            "time": "2015-02-24 01:42:23"
+            "description": "The PHP micro-framework for Command line tools based on the Symfony2 Components",
+            "homepage": "http://cilex.github.com",
+            "keywords": [
+                "cli",
+                "microframework"
+            ],
+            "time": "2014-03-29 14:03:13"
+        },
+        {
+            "name": "cilex/console-service-provider",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cilex/console-service-provider.git",
+                "reference": "25ee3d1875243d38e1a3448ff94bdf944f70d24e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cilex/console-service-provider/zipball/25ee3d1875243d38e1a3448ff94bdf944f70d24e",
+                "reference": "25ee3d1875243d38e1a3448ff94bdf944f70d24e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "pimple/pimple": "1.*@dev",
+                "symfony/console": "~2.1"
+            },
+            "require-dev": {
+                "cilex/cilex": "1.*@dev",
+                "silex/silex": "1.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Cilex\\Provider\\Console": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Beau Simensen",
+                    "email": "beau@dflydev.com",
+                    "homepage": "http://beausimensen.com"
+                },
+                {
+                    "name": "Mike van Riel",
+                    "email": "mike.vanriel@naenius.com"
+                }
+            ],
+            "description": "Console Service Provider",
+            "keywords": [
+                "cilex",
+                "console",
+                "pimple",
+                "service-provider",
+                "silex"
+            ],
+            "time": "2012-12-19 10:50:58"
         },
         {
             "name": "domnikl/statsd",
@@ -366,67 +433,6 @@
             "time": "2014-08-10 23:57:01"
         },
         {
-            "name": "henrikbjorn/lurker",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/henrikbjorn/Lurker.git",
-                "reference": "a020d45b3bc37810aeafe27343c51af8a74c9419"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/henrikbjorn/Lurker/zipball/a020d45b3bc37810aeafe27343c51af8a74c9419",
-                "reference": "a020d45b3bc37810aeafe27343c51af8a74c9419",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/config": "~2.2",
-                "symfony/event-dispatcher": "~2.2"
-            },
-            "suggest": {
-                "ext-inotify": ">=0.1.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Lurker": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Henrik Bjornskov",
-                    "email": "henrik@bjrnskov.dk",
-                    "homepage": "http://henrik.bjrnskov.dk"
-                },
-                {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                },
-                {
-                    "name": "Yaroslav Kiliba",
-                    "email": "om.dattaya@gmail.com"
-                }
-            ],
-            "description": "Resource Watcher.",
-            "keywords": [
-                "filesystem",
-                "resource",
-                "watching"
-            ],
-            "time": "2013-05-24 06:47:29"
-        },
-        {
             "name": "ircmaxell/password-compat",
             "version": "v1.0.4",
             "source": {
@@ -540,6 +546,52 @@
                 "psr-3"
             ],
             "time": "2015-03-09 09:58:04"
+        },
+        {
+            "name": "pimple/pimple",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silexphp/Pimple.git",
+                "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/2019c145fe393923f3441b23f29bbdfaa5c58c4d",
+                "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Pimple": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
+            "homepage": "http://pimple.sensiolabs.org",
+            "keywords": [
+                "container",
+                "dependency injection"
+            ],
+            "time": "2013-11-22 08:30:29"
         },
         {
             "name": "psr/log",
@@ -846,65 +898,6 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "https://symfony.com",
-            "time": "2015-05-02 15:18:45"
-        },
-        {
-            "name": "symfony/event-dispatcher",
-            "version": "v2.6.7",
-            "target-dir": "Symfony/Component/EventDispatcher",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "672593bc4b0043a0acf91903bb75a1c82d8f2e02"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/672593bc4b0043a0acf91903bb75a1c82d8f2e02",
-                "reference": "672593bc4b0043a0acf91903bb75a1c82d8f2e02",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~2.0,>=2.0.5",
-                "symfony/dependency-injection": "~2.6",
-                "symfony/expression-language": "~2.6",
-                "symfony/phpunit-bridge": "~2.7",
-                "symfony/stopwatch": "~2.3"
-            },
-            "suggest": {
-                "symfony/dependency-injection": "",
-                "symfony/http-kernel": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\EventDispatcher\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
             "time": "2015-05-02 15:18:45"
         },
@@ -1220,7 +1213,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "robmorgan/phinx": 20
+        "robmorgan/phinx": 20,
+        "cilex/cilex": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
