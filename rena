@@ -18,4 +18,12 @@ foreach($tasks as $task)
     }
 }
 
+// Phinx Commands (Sadly they're not marked properly)
+$app->command(new \Phinx\Console\Command\Init());
+$app->command(new \Phinx\Console\Command\Create());
+$app->command(new \Phinx\Console\Command\Migrate());
+$app->command(new \Phinx\Console\Command\Rollback());
+$app->command(new \Phinx\Console\Command\Status());
+$app->command(new \Phinx\Console\Command\Test());
+
 $app->run();
