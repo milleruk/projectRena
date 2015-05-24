@@ -1,6 +1,9 @@
 <?php
-// Load the init system
-require_once("init.php");
+// Load the autoloader
+require_once(__DIR__ . "/vendor/autoload.php");
+
+// Require the config
+require_once("config.php");
 
 // Prepare app
 $app = new \Slim\Slim($config["slim"]);

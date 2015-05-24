@@ -24,7 +24,7 @@ class Cache
 	 * @param mixed $timeout A `strtotime()`-compatible string or a Unix timestamp.
 	 * @return boolean
 	 */
-	protected function _expireAt($key, $timeout)
+	protected function expireAt($key, $timeout)
 	{
 		$redis = self::init();
 		return $redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
@@ -54,7 +54,7 @@ class Cache
 	{
 		$redis = self::init();
 		$result = $redis->set($key, $value);
-		return $result ? $this->_expireAt($key, $timeout) : $result;
+		return $result ? self::expireAt($key, $timeout) : $result;
 	}
 
 	/**
@@ -96,7 +96,7 @@ class Cache
 	{
 		$redis = self::init();
 		if ($timeout) {
-			$this->_expireAt($key, $timeout);
+			self::expireAt($key, $timeout);
 		}
 		return $redis->incr($key, $step);
 	}
@@ -117,7 +117,7 @@ class Cache
 	{
 		$redis = self::init();
 		if ($timeout) {
-			$this->_expireAt($key, $timeout);
+			self::expireAt($key, $timeout);
 		}
 		return $redis->decr($key, $step);
 	}

@@ -23,5 +23,8 @@
 		"ircmaxell/password-compat": "*",
 		"3rdpartyeve/phealng": "*",
 		"3rdpartyeve/perry": "*"
+	},
+	"autoload": {
+		"classmap": ["controllers/", "models/"]
 	}
 }
