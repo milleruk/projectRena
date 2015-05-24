@@ -4,6 +4,10 @@ namespace ProjectRena\Model;
 
 use ProjectRena\Lib\Database;
 
+/**
+ * Class Config
+ * @package ProjectRena\Model
+ */
 class Config
 {
     /**
@@ -13,29 +17,40 @@ class Config
      * @param string $key The key that needs to be fetched data for
      * @param string $type The type, only needed for the config.php file
      *
+     * @param null $default
      * @return array
      */
-    public static function get($key, $type = null)
+    public static function get($key)
     {
-        global $config;
-
-        // Lets just be sure that the type is set to lower.. It's only needed for the config array anyway
-        $type = strtolower($type);
-        if (isset($config[$type]) && isset($config[$type][$key])) {
-            return $config[$type][$key];
-        }
-
-        // The config returned nothing, lets get it from the database.. if it exists there.. v0v..
-        return Database::queryField("SELECT value FROM config WHERE key = :key", "value", array(":key" => $key));
+        $dbResult = Database::queryField("SELECT value FROM configuration WHERE key = :key", "value", array(":key" => $key));
+        return $dbResult;
     }
 
     /**
+     * @param $key
+     * @param null $type
+     * @param null $default
+     * @return null
+     */
+    public static function getConfig($key, $type = null, $default = null)
+    {
+        global $config;
+
+        $type = strtolower($type);
+        if(isset($config[$type]) && isset($config[$type][$key]))
+            return $config[$type][$key];
+        return $default;
+    }
+    /**
      * Returns all config parameters available
+     *
+     * @static
+     * @return array all the config rows
      */
     public static function getAll()
     {
         global $config;
-        $dbConfig = Database::query("SELECT * FROM config");
+        $dbConfig = Database::query("SELECT * FROM configuration");
         $cfg = array_merge($config, $dbConfig);
 
         // Return the entire config, both from the config file and from the db
@@ -53,9 +68,6 @@ class Config
      */
     public static function set($key, $value)
     {
-        return Database::execute(
-            "INSERT INTO config (key, value) VALUES (:key, :value)",
-            array(":key" => $key, ":value" => $value)
-        );
+        return Database::execute("INSERT INTO configuration (key, value) VALUES (:key, :value)", array(":key" => $key, ":value" => $value));
     }
 }

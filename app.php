@@ -1,22 +1,28 @@
 <?php
-// Load the autoloader
+// Imports
 use ProjectRena\Lib\SessionHandler;
+use Slim\Slim;
+use Slim\Views\Twig;
+use Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware;
 
-if (file_exists(__DIR__."/vendor/autoload.php")) {
+// Error display
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Load the autoloader
+if(file_exists(__DIR__."/vendor/autoload.php"))
     require_once(__DIR__."/vendor/autoload.php");
-} else {
+else
     throw new Exception("vendor/autoload.php not found, make sure you run composer install");
-}
 
 // Require the config
-if (file_exists(__DIR__."/config.php")) {
+if(file_exists(__DIR__."/config.php"))
     require_once(__DIR__."/config.php");
-} else {
+else
     throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
-}
 
 // Prepare app
-$app = new \Slim\Slim($config["slim"]);
+$app = new Slim($config["slim"]);
 
 // Session
 $session = new SessionHandler();
@@ -25,16 +31,16 @@ session_cache_limiter(false);
 session_start();
 
 // Launch Whoops
-$app->add(new \Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware);
+$app->add(new WhoopsMiddleware);
 
 // Prepare view
-$app->view(new \Slim\Views\Twig());
+$app->view(new Twig());
 $app->view->parserOptions = $config["twig"];
 
 // load the additional configs
-foreach (glob(__DIR__."/config/*.php") as $configFile) {
-    require_once $configFile;
-}
+$configFiles = glob(__DIR__ . "/config/*.php");
+foreach($configFiles as $configFile)
+    require_once($configFile);
 
 // Run app
 $app->run();

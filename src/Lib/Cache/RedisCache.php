@@ -1,23 +1,30 @@
 <?php
 
-namespace ProjectRena\Lib;
+namespace ProjectRena\Lib\Cache;
 
 use Closure;
 use ProjectRena\Model\Config;
 use Redis;
 
-class Cache
+class RedisCache extends AbstractCache
 {
+
+    /**
+     * @var object redis object
+     */
+    private $redis;
 
     /**
      * Instantiates the `Redis` object and connects it to the configured server.
      *
-     * @return void
+     * @return Redis
      */
-    private static function init()
+    function __construct()
     {
-        $redis = new Redis();
-        $redis->pconnect(Config::get("host", "redis"), Config::get("port", "redis"));
+        if(!$this->redis)
+            $this->redis = new Redis();
+
+        $this->redis->pconnect(Config::getConfig("host", "redis", "127.0.0.1"), Config::getConfig("port", "redis", 6379));
 
         return $redis;
     }
@@ -31,9 +38,7 @@ class Cache
      */
     protected function expireAt($key, $timeout)
     {
-        $redis = self::init();
-
-        return $redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
+        return $this->redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
     }
 
     /**
@@ -44,9 +49,7 @@ class Cache
      */
     public function get($key)
     {
-        $redis = self::init();
-
-        return $redis->get($key);
+        return $this->redis->get($key);
     }
 
     /**
@@ -59,10 +62,8 @@ class Cache
      */
     public function set($key, $value, $timeout)
     {
-        $redis = self::init();
-        $result = $redis->set($key, $value);
-
-        return $result ? self::expireAt($key, $timeout) : $result;
+        $result = $this->redis->set($key, $value);
+        return $result ? $this->expireAt($key, $timeout) : $result;
     }
 
     /**
@@ -75,9 +76,7 @@ class Cache
      */
     public function replace($key, $value, $timeout)
     {
-        $redis = self::init();
-
-        return $redis->set($key, $value, $timeout);
+        return $this->redis->set($key, $value, $timeout);
     }
 
     /**
@@ -88,9 +87,7 @@ class Cache
      */
     public function delete($key)
     {
-        $redis = self::init();
-
-        return (boolean)$redis->del($key);
+        return (boolean)$this->redis->del($key);
     }
 
     /**
@@ -101,16 +98,16 @@ class Cache
      * to integers when performing an atomic increment operation.
      *
      * @param string $key Key of numeric cache item to increment
-     * @return Closure Function returning item's new value on successful increment, else `false`
+     * @param int $step
+     * @param int $timeout
+     * @return callable Function returning item's new value on successful increment, else `false`
      */
     public function increment($key, $step = 1, $timeout = 0)
     {
-        $redis = self::init();
-        if ($timeout) {
-            self::expireAt($key, $timeout);
-        }
+        if ($timeout)
+            $this->expireAt($key, $timeout);
 
-        return $redis->incr($key, $step);
+        return $this->redis->incr($key, $step);
     }
 
     /**
@@ -127,12 +124,10 @@ class Cache
      */
     public function decrement($key, $step = 1, $timeout = 0)
     {
-        $redis = self::init();
-        if ($timeout) {
-            self::expireAt($key, $timeout);
-        }
+        if ($timeout)
+            $this->expireAt($key, $timeout);
 
-        return $redis->decr($key, $step);
+        return $this->redis->decr($key, $step);
     }
 
     /**
@@ -142,7 +137,6 @@ class Cache
      */
     public function flush()
     {
-        $redis = self::init();
-        $redis->flushdb();
+        $this->redis->flushdb();
     }
 }

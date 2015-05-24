@@ -2,6 +2,10 @@
 
 namespace ProjectRena\Lib;
 
+use Domnikl\Statsd\Client;
+use Domnikl\Statsd\Connection\UdpSocket;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use ProjectRena\Model\Config;
 
 class Logging
@@ -16,17 +20,17 @@ class Logging
      */
     public static function log($logType, $logMessage)
     {
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
         $logTypeArray = array(
-            "DEBUG" => \Monolog\Logger::DEBUG,
-            "INFO" => \Monolog\Logger::INFO,
-            "WARNING" => \Monolog\Logger::WARNING,
-            "ERROR" => \Monolog\Logger::ERROR,
+            "DEBUG" => Logger::DEBUG,
+            "INFO" => Logger::INFO,
+            "WARNING" => Logger::WARNING,
+            "ERROR" => Logger::ERROR,
         );
 
-        $log = new \Monolog\Logger("projectRena");
-        $log->pushHandler(
-            new \Monolog\Handler\StreamHandler(Config::get("logFile", "Logging"), $logTypeArray[$logType])
-        );
+        $log = new Logger("projectRena");
+        $logFile = Config::getConfig("logFile", "Logging", __DIR__ . "/../../logs/app.log");
+        $log->pushHandler(new StreamHandler($logFile), $logTypeArray[$logType]);
         switch ($logType) {
             case "DEBUG":
                 $log->debug($logMessage);
@@ -67,14 +71,14 @@ class Logging
      */
     private static function std_init()
     {
-        $connection = new \Domnikl\Statsd\Connection\UdpSocket(
-            Config::get("server", "statsd"),
-            Config::get("port", "statsd")
+        $connection = new UdpSocket(
+            Config::getConfig("server", "statsd"),
+            Config::getConfig("port", "statsd")
         );
-        $statsd = new \Domnikl\Statsd\Client($connection, Config::get("namespace", "statsd"));
+        $statsd = new Client($connection, Config::getConfig("namespace", "statsd"));
 
         // Global name space
-        $statsd->setNamespace(Config::get("globalNamespace", "statsd"));
+        $statsd->setNamespace(Config::getConfig("globalNamespace", "statsd"));
 
         return $statsd;
     }
