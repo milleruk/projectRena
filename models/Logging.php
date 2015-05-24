@@ -2,18 +2,14 @@
 
 class Logging
 {
-	private static $logFile = __DIR__ . "/../logs/app.log";
 
-	// Log file location generator
-	private function __construct()
-	{
-		global $config;
-
-		if(isset($config["logger"]["logFile"]))
-			$this->logFile = $config["logger"]["logFile"];
-	}
-
-	// Monolog logger
+	/**
+	 * Logs data into the logfile
+	 *
+	 * @static
+	 * @param $logType the type of logging, debug, info, warning, error
+	 * @param $logMessage the message for the log
+	 */
 	public static function log($logType, $logMessage)
 	{
 		$logTypeArray = array(
@@ -24,7 +20,7 @@ class Logging
 		);
 
 		$log = new \Monolog\Logger("projectRena");
-		$log->pushHandler(new \Monolog\Handler\StreamHandler(self::$logFile, $logTypeArray[$logType]));
+		$log->pushHandler(new \Monolog\Handler\StreamHandler(Config::get("logFile", "Logging"), $logTypeArray[$logType]));
 		switch($logType)
 		{
 			case "DEBUG":
@@ -46,39 +42,68 @@ class Logging
 		}
 	}
 
-	// Slim Flasher
+	/**
+	 * Inserts data into the slim flasher
+	 *
+	 * @static
+	 * @param $logType the type of logging, debug, info, warning, error
+	 * @param $logMessage the message for the log
+	 */
 	public static function flasher($logType, $logMessage)
 	{
 		global $app;
 		$app->flash($logType, $logMessage);
 	}
 
-	// Statsd
+	/**
+	 * Initialises statsd
+	 *
+	 * @static
+	 */
 	private static function std_init()
 	{
-		global $config;
-		$config = $config["statsd"];
-
-		$connection = new \Domnikl\Statsd\Connection\UdpSocket($config["server"], $config["port"]);
-		$statsd = new \Domnikl\Statsd\Client($connection, $config["namespace"]);
+		$connection = new \Domnikl\Statsd\Connection\UdpSocket(Config::get("server", "statsd"), Config::get("port", "statsd"));
+		$statsd = new \Domnikl\Statsd\Client($connection, Config::get("namespace", "statsd"));
 
 		// Global name space
-		$statsd->setNamespace($config["globalNamespace"]);
+		$statsd->setNamespace(Config::get("globalNamespace", "statsd"));
 
 		return $statsd;
 	}
+
+	/**
+	 * Increments a value in statsd
+	 *
+	 * @static
+	 * @param $name the name of the key
+	 * @param $amount the amount it's incremented
+	 */
 	public static function std_increment($name, $amount = 1)
 	{
 		$statsd = self::std_init();
 		$statsd->increment($name, $amount);
 	}
 
+	/**
+	 * Creates a timing list in statsd
+	 *
+	 * @static
+	 * @param $name the name of the key
+	 * @param $time the time it took for the request/execution to finish
+	 */
 	public static function std_timing($name, $time)
 	{
 		$statsd = self::std_init();
 		$statsd->timing($name, $time);
 	}
 
+	/**
+	 * Creates a gauge in statsd
+	 *
+	 * @static
+	 * @param $name the name of the key
+	 * @param $amount the amount the gauge is increased
+	 */
 	public static function std_gauge($name, $amount)
 	{
 		$statsd = self::std_init();

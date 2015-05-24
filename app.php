@@ -8,6 +8,12 @@ require_once("init.php");
 // Prepare app
 $app = new \Slim\Slim($config["slim"]);
 
+// Session
+$session = new SessionHandler();
+session_set_save_handler($session, true);
+session_cache_limiter(false);
+session_start();
+
 // Launch Whoops
 $app->add(new \Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware);
 
