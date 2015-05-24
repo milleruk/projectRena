@@ -1,5 +1,11 @@
 <?php
 
+namespace ProjectRena\Lib;
+
+use Exception;
+use PDO;
+use ProjectRena\Model\Config;
+
 class Database
 {
     /**
@@ -210,7 +216,7 @@ class Database
         // Commitment time
         $pdo->commit();
 
-        // Timer stop
+        // ProjectRena\Lib\Timer stop
         $duration = $timer->stop();
 
         // Log the query

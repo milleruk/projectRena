@@ -1,5 +1,7 @@
 <?php
 // Load the autoloader
+use ProjectRena\Lib\SessionHandler;
+
 require_once(__DIR__."/vendor/autoload.php");
 
 // Require the config

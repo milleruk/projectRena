@@ -28,9 +28,8 @@
         "3rdpartyeve/perry": "~1.5"
     },
     "autoload": {
-        "classmap": [
-            "controllers/",
-            "models/"
-        ]
+        "psr-4": {
+            "ProjectRena\\": "src/"
+        }
     }
 }

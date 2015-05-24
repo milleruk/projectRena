@@ -1,5 +1,11 @@
 <?php
 
+namespace ProjectRena\Lib;
+
+use Closure;
+use ProjectRena\Model\Config;
+use Redis;
+
 class Cache
 {
 

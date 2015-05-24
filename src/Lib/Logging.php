@@ -1,5 +1,9 @@
 <?php
 
+namespace ProjectRena\Lib;
+
+use ProjectRena\Model\Config;
+
 class Logging
 {
 
@@ -7,8 +11,8 @@ class Logging
      * Logs data into the logfile
      *
      * @static
-     * @param $logType the type of logging, debug, info, warning, error
-     * @param $logMessage the message for the log
+     * @param string $logType the type of logging, debug, info, warning, error
+     * @param string $logMessage the message for the log
      */
     public static function log($logType, $logMessage)
     {
@@ -47,8 +51,8 @@ class Logging
      * Inserts data into the slim flasher
      *
      * @static
-     * @param $logType the type of logging, debug, info, warning, error
-     * @param $logMessage the message for the log
+     * @param string $logType the type of logging, debug, info, warning, error
+     * @param string $logMessage the message for the log
      */
     public static function flasher($logType, $logMessage)
     {
@@ -79,8 +83,8 @@ class Logging
      * Increments a value in statsd
      *
      * @static
-     * @param $name the name of the key
-     * @param $amount the amount it's incremented
+     * @param string $name the name of the key
+     * @param int $amount the amount it's incremented
      */
     public static function std_increment($name, $amount = 1)
     {
@@ -92,8 +96,8 @@ class Logging
      * Creates a timing list in statsd
      *
      * @static
-     * @param $name the name of the key
-     * @param $time the time it took for the request/execution to finish
+     * @param string $name the name of the key
+     * @param int $time the time it took for the request/execution to finish
      */
     public static function std_timing($name, $time)
     {
@@ -105,8 +109,8 @@ class Logging
      * Creates a gauge in statsd
      *
      * @static
-     * @param $name the name of the key
-     * @param $amount the amount the gauge is increased
+     * @param string $name the name of the key
+     * @param string|int $amount the amount the gauge is increased
      */
     public static function std_gauge($name, $amount)
     {

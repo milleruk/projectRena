@@ -1,6 +1,9 @@
 <?php
 
 // Main route
+use ProjectRena\Lib\Database;
+use ProjectRena\Lib\Logging;
+
 $app->get(
     "/",
     function () use ($app) {

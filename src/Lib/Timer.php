@@ -1,5 +1,7 @@
 <?php
 
+namespace ProjectRena\Lib;
+
 class Timer
 {
     /**

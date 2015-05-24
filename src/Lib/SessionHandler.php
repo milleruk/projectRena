@@ -1,5 +1,9 @@
 <?php
 
+namespace ProjectRena\Lib;
+
+use SessionHandlerInterface;
+
 class SessionHandler implements SessionHandlerInterface
 {
 

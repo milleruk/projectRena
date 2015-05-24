@@ -1,5 +1,9 @@
 <?php
 
+namespace ProjectRena\Model;
+
+use ProjectRena\Lib\Database;
+
 class Config
 {
     /**
@@ -45,7 +49,7 @@ class Config
      * @param string $key The key that needs to be fetched data for
      * @param string $value The value of the config parameter
      *
-     * @return rows changed
+     * @return int rows changed
      */
     public static function set($key, $value)
     {
