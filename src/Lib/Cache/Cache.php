@@ -1,148 +1,137 @@
 <?php
 
-namespace ProjectRena\Lib;
+namespace ProjectRena\Lib\Cache;
 
-use Closure;
 use ProjectRena\Model\Config;
-use Redis;
 
 class Cache
 {
+	/**
+	 * Constructor
+	 */
+	public function __construct()
+	{
+		trigger_error("The class 'cache' may only be invoked statically." . E_USER_ERROR);
+	}
 
-    /**
-     * Instantiates the `Redis` object and connects it to the configured server.
-     *
-     * @return void
-     */
-    private static function init()
-    {
-        $redis = new Redis();
-        $redis->pconnect(Config::get("host", "redis"), Config::get("port", "redis"));
+	/**
+	 * Initiate the cache
+	 *
+	 * @static
+	 * @return Cache
+	 */
+	protected static function init()
+	{
+		// Default cache type
+		$cacheType = Config::get("cacheType", "cache");
 
-        return $redis;
-    }
+		// All the cacheTypes available
+		$cacheTypes = array(
+			"redis" => new RedisCache(),
+			"memcached" => new MemcachedCache(),
+			"apc" => new ApcCache(),
+			"default" => new FileCache(),
+		);
 
-    /**
-     * Sets expiration time for cache key
-     *
-     * @param string $key The key to uniquely identify the cached item
-     * @param mixed $timeout A `strtotime()`-compatible string or a Unix timestamp.
-     * @return boolean
-     */
-    protected function expireAt($key, $timeout)
-    {
-        $redis = self::init();
+		return isset($cacheTypes[$cacheType]) ? $cacheTypes[$cacheType] : $cacheTypes["default"];
+	}
 
-        return $redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
-    }
+	/**
+	 * Get the type of cache used
+	 *
+	 * @return string
+	 */
+	public static function getClass()
+	{
+		return get_class(self::init());
+	}
 
-    /**
-     * Read value from the cache
-     *
-     * @param string $key The key to uniquely identify the cached item
-     * @return mixed
-     */
-    public function get($key)
-    {
-        $redis = self::init();
+	/**
+	 * Sets data to the cache
+	 *
+	 * @param $key
+	 * @param $value
+	 * @param $timeout
+	 * @return bool
+	 */
+	public static function set($key, $value, $timeout = '3600')
+	{
+		$cache = self::init();
+		return $cache->set($key, $value, $timeout);
+	}
 
-        return $redis->get($key);
-    }
+	/**
+	 * Gets data from the cache
+	 *
+	 * @param $key
+	 * @return array
+	 */
+	public static function get($key)
+	{
+		$cache = self::init();
+		return $cache->get($key);
+	}
 
-    /**
-     * Write value to the cache
-     *
-     * @param string $key The key to uniquely identify the cached item
-     * @param mixed $value The value to be cached
-     * @param null|string $timeout A strtotime() compatible cache time.
-     * @return boolean
-     */
-    public function set($key, $value, $timeout)
-    {
-        $redis = self::init();
-        $result = $redis->set($key, $value);
+	/**
+	 * Deletes data from the cache
+	 *
+	 * @param string $key
+	 * @return bool
+	 */
+	public static function delete($key)
+	{
+		$cache = self::init();
+		return $cache->delete($key);
+	}
 
-        return $result ? self::expireAt($key, $timeout) : $result;
-    }
+	/**
+	 * Replace a value, if it exists
+	 *
+	 * @param $key
+	 * @param $value
+	 * @param $timeout
+	 * @return bool
+	 */
+	public static function replace($key, $value, $timeout = '3600')
+	{
+		$cache = self::init();
+		return $cache->replace($key, $value, $timeout);
+	}
 
-    /**
-     * Override value in the cache
-     *
-     * @param string $key The key to uniquely identify the cached item
-     * @param mixed $value The value to be cached
-     * @param null|string $timeout A strtotime() compatible cache time.
-     * @return boolean
-     */
-    public function replace($key, $value, $timeout)
-    {
-        $redis = self::init();
+	/**
+	 * Increment a value
+	 *
+	 * @param $key
+	 * @param $timeout (This only works for Memcached, file cache flat out ignores it)
+	 * @return new value on success, else false
+	 */
+	public static function increment($key, $timeout = 3600)
+	{
+		$cache = self::init();
+		return $cache->increment($key, 1, $timeout);
+	}
 
-        return $redis->set($key, $value, $timeout);
-    }
+	/**
+	 * Decrement a value
+	 *
+	 * @param $key
+	 * @param $timeout (This only works for Memcached, file cache flat out ignores it)
+	 * @return new value on success, else false
+	 */
+	public static function decrement($key, $timeout = 3600)
+	{
+		$cache = self::init();
+		return $cache->decrement($key, 1, $timeout);
+	}
 
-    /**
-     * Delete value from the cache
-     *
-     * @param string $key The key to uniquely identify the cached item
-     * @return bool
-     */
-    public function delete($key)
-    {
-        $redis = self::init();
-
-        return (boolean)$redis->del($key);
-    }
-
-    /**
-     * Performs an atomic increment operation on specified numeric cache item.
-     *
-     * Note that if the value of the specified key is *not* an integer, the increment
-     * operation will have no effect whatsoever. Redis chooses to not typecast values
-     * to integers when performing an atomic increment operation.
-     *
-     * @param string $key Key of numeric cache item to increment
-     * @return Closure Function returning item's new value on successful increment, else `false`
-     */
-    public function increment($key, $step = 1, $timeout = 0)
-    {
-        $redis = self::init();
-        if ($timeout) {
-            self::expireAt($key, $timeout);
-        }
-
-        return $redis->incr($key, $step);
-    }
-
-    /**
-     * Performs an atomic decrement operation on specified numeric cache item.
-     *
-     * Note that if the value of the specified key is *not* an integer, the decrement
-     * operation will have no effect whatsoever. Redis chooses to not typecast values
-     * to integers when performing an atomic decrement operation.
-     *
-     * @param string $key Key of numeric cache item to decrement
-     * @param integer $step Offset to decrement - defaults to 1
-     * @param integer $timeout A strtotime() compatible cache time.
-     * @return Closure Function returning item's new value on successful decrement, else `false`
-     */
-    public function decrement($key, $step = 1, $timeout = 0)
-    {
-        $redis = self::init();
-        if ($timeout) {
-            self::expireAt($key, $timeout);
-        }
-
-        return $redis->decr($key, $step);
-    }
-
-    /**
-     * Clears user-space cache
-     *
-     * @return boolean|null
-     */
-    public function flush()
-    {
-        $redis = self::init();
-        $redis->flushdb();
-    }
+	/**
+	 * Flush the Cache
+	 *
+	 * @return bool
+	 */
+	public static function flush()
+	{
+		$cache = self::init();
+		return $cache->flush();
+	}
 }

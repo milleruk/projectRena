@@ -13,24 +13,32 @@ class Config
      * @param string $key The key that needs to be fetched data for
      * @param string $type The type, only needed for the config.php file
      *
+     * @param null $default
      * @return array
      */
-    public static function get($key, $type = null)
+    public static function get($key, $type = null, $default = null)
     {
         global $config;
 
         // Lets just be sure that the type is set to lower.. It's only needed for the config array anyway
         $type = strtolower($type);
-        if (isset($config[$type]) && isset($config[$type][$key])) {
+        if (isset($config[$type]) && isset($config[$type][$key]))
             return $config[$type][$key];
-        }
 
         // The config returned nothing, lets get it from the database.. if it exists there.. v0v..
-        return Database::queryField("SELECT value FROM config WHERE key = :key", "value", array(":key" => $key));
+        $dbResult = Database::queryField("SELECT value FROM config WHERE key = :key", "value", array(":key" => $key));
+
+        // If the dbResult isn't set, but default is, return default otherwise fallthrough and return the dbResult, whatever it might be..
+        if(!isset($dbResult) && isset($default))
+            return $default;
+        return $dbResult;
     }
 
     /**
      * Returns all config parameters available
+     *
+     * @static
+     * @return array all the config rows
      */
     public static function getAll()
     {

@@ -3,7 +3,9 @@
 namespace ProjectRena\Lib;
 
 use Exception;
+use Monolog\Logger;
 use PDO;
+use ProjectRena\Lib\Cache\Cache;
 use ProjectRena\Model\Config;
 
 class Database
@@ -84,7 +86,7 @@ class Database
 
             // Make sure PDO is set
             if ($pdo == null) {
-                return;
+                return null;
             }
 
             // Prepare the query
@@ -130,7 +132,9 @@ class Database
      * @param string $query The query to be executed
      * @param array $parameters (optional) A key/value array of parameters
      * @param int $cacheTime The time, in seconds, to cache the result of the query.    Default: 30
+     * @param bool $selectCheck
      * @return array Returns the first row of the result set. Returns an empty array if there are no rows.
+     * @throws Exception
      */
     public static function queryRow($query, $parameters = array(), $cacheTime = 30, $selectCheck = true)
     {
@@ -154,7 +158,9 @@ class Database
      * @param string $field The name of the field to return
      * @param array $parameters (optional) A key/value array of parameters
      * @param int $cacheTime The time, in seconds, to cache the result of the query.    Default: 30
+     * @param bool $selectCheck
      * @return mixed Returns the value of $field in the first row of the resultset. Returns null if there are no results
+     * @throws Exception
      */
     public static function queryField($query, $field, $parameters = array(), $cacheTime = 30, $selectCheck = true)
     {
@@ -181,7 +187,9 @@ class Database
      * @param string $query The query to be executed.
      * @param array $parameters (optional) A key/value array of parameters.
      * @param boolean $reportErrors Log the query and throw an exception if the query fails. Default: true
+     * @param bool $returnID
      * @return int The number of rows affected by the sql query.
+     * @throws Exception
      */
     public static function execute($query, $parameters = array(), $reportErrors = true, $returnID = false)
     {

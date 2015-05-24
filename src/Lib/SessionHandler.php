@@ -2,6 +2,7 @@
 
 namespace ProjectRena\Lib;
 
+use ProjectRena\Lib\Cache\Cache;
 use SessionHandlerInterface;
 
 class SessionHandler implements SessionHandlerInterface
@@ -15,7 +16,9 @@ class SessionHandler implements SessionHandlerInterface
     /**
      * Opens the session
      *
-     * @return boolean
+     * @param string $savePath
+     * @param string $sessionName
+     * @return bool
      */
     public function open($savePath, $sessionName)
     {
@@ -35,6 +38,7 @@ class SessionHandler implements SessionHandlerInterface
     /**
      * Reads the data in the session
      *
+     * @param string $id
      * @return string
      */
     public function read($id)
@@ -53,7 +57,9 @@ class SessionHandler implements SessionHandlerInterface
     /**
      * Writes data into the session
      *
-     * @return boolean
+     * @param string $id
+     * @param string $data
+     * @return bool
      */
     public function write($id, $data)
     {
@@ -65,7 +71,8 @@ class SessionHandler implements SessionHandlerInterface
     /**
      * Destroys the session
      *
-     * @return boolean
+     * @param int $id
+     * @return bool
      */
     public function destroy($id)
     {
@@ -77,7 +84,8 @@ class SessionHandler implements SessionHandlerInterface
     /**
      * Garbage collects the sessions (The cache does that automatically tho)
      *
-     * @return boolean
+     * @param int $maxlifetime
+     * @return bool
      */
     public function gc($maxlifetime)
     {

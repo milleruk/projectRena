@@ -2,6 +2,10 @@
 
 namespace ProjectRena\Lib;
 
+/**
+ * Class Timer
+ * @package ProjectRena\Lib
+ */
 class Timer
 {
     /**

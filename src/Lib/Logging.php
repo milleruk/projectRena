@@ -2,6 +2,10 @@
 
 namespace ProjectRena\Lib;
 
+use Domnikl\Statsd\Client;
+use Domnikl\Statsd\Connection\UdpSocket;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use ProjectRena\Model\Config;
 
 class Logging
@@ -16,16 +20,17 @@ class Logging
      */
     public static function log($logType, $logMessage)
     {
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
         $logTypeArray = array(
-            "DEBUG" => \Monolog\Logger::DEBUG,
-            "INFO" => \Monolog\Logger::INFO,
-            "WARNING" => \Monolog\Logger::WARNING,
-            "ERROR" => \Monolog\Logger::ERROR,
+            "DEBUG" => Logger::DEBUG,
+            "INFO" => Logger::INFO,
+            "WARNING" => Logger::WARNING,
+            "ERROR" => Logger::ERROR,
         );
 
-        $log = new \Monolog\Logger("projectRena");
+        $log = new Logger("projectRena");
         $log->pushHandler(
-            new \Monolog\Handler\StreamHandler(Config::get("logFile", "Logging"), $logTypeArray[$logType])
+            new StreamHandler(Config::get("logFile", "Logging"), $logTypeArray[$logType])
         );
         switch ($logType) {
             case "DEBUG":
@@ -67,11 +72,11 @@ class Logging
      */
     private static function std_init()
     {
-        $connection = new \Domnikl\Statsd\Connection\UdpSocket(
+        $connection = new UdpSocket(
             Config::get("server", "statsd"),
             Config::get("port", "statsd")
         );
-        $statsd = new \Domnikl\Statsd\Client($connection, Config::get("namespace", "statsd"));
+        $statsd = new Client($connection, Config::get("namespace", "statsd"));
 
         // Global name space
         $statsd->setNamespace(Config::get("globalNamespace", "statsd"));
