@@ -2,10 +2,18 @@
 // Load the autoloader
 use ProjectRena\Lib\SessionHandler;
 
-require_once(__DIR__."/vendor/autoload.php");
+if (file_exists(__DIR__."/vendor/autoload.php")) {
+    require_once(__DIR__."/vendor/autoload.php");
+} else {
+    throw new Exception("vendor/autoload.php not found, make sure you run composer install");
+}
 
 // Require the config
-require_once("config.php");
+if (file_exists(__DIR__."/config.php")) {
+    require_once(__DIR__."/config.php");
+} else {
+    throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
+}
 
 // Prepare app
 $app = new \Slim\Slim($config["slim"]);
@@ -23,11 +31,10 @@ $app->add(new \Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware);
 $app->view(new \Slim\Views\Twig());
 $app->view->parserOptions = $config["twig"];
 
-// Include Twig settings
-include("twig.php");
-
-// Include the routes
-include("routes.php");
+// load the additional configs
+foreach (glob(__DIR__."/config/*.php") as $configFile) {
+    require_once $configFile;
+}
 
 // Run app
 $app->run();
