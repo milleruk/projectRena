@@ -6,6 +6,8 @@ namespace ProjectRena\Tasks;
 
 use Cilex\Command\Command;
 use ProjectRena\Lib\Cache;
+use ProjectRena\Lib\Database;
+use ProjectRena\Lib\Logging;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -23,17 +25,40 @@ class CronCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $run = true;
+        $cnt = 0;
+        $cronjobs = scandir(__DIR__ . "/Cronjobs/");
         do {
-            $cronjobs = scandir(__DIR__ . "/Cronjobs/");
-            foreach ($cronjobs as $cron)
+            $cnt++;
+            if($cnt > 50)
             {
+                gc_collect_cycles();
+                $cnt = 0;
+            }
+
+            foreach ($cronjobs as $key => $cron)
+            {
+                // Unset anything that isn't .php!
                 if (!preg_match("/^(.+)\\.php$/", $cron, $match))
+                {
+                    unset($cronjobs[$key]);
                     continue;
+                }
 
                 if (isset($match[1]))
                 {
                     $name = $match[1];
                     $md5 = md5($name);
+
+                    // If the script is currently running, skip to the next script
+                    if(Cache::get($md5 . "_pid") != false)
+                    {
+                        $pid = Cache::get($md5 . "_pid");
+                        $status = pcntl_waitpid($pid, $status, WNOHANG);
+                        if($status == -1)
+                            Cache::delete($md5 . "_pid");
+                        usleep(500000);
+                        continue;
+                    }
 
                     // Get last time this cronjob ran
                     $lastRan = Cache::get($md5) > 0 ? Cache::get($md5) : 0;
@@ -49,21 +74,35 @@ class CronCommand extends Command
                     // If the current time is larger than the lastRunTime and Interval, then we run it again!
                     if($currentTime > ($lastRan + $interval))
                     {
-                        echo "Running $name ({$interval})\n";
-                        // Fire up spork and fork the process, and continue on!
-                        $manager = new \Spork\ProcessManager();
-                        $manager->fork(function($msg) {
-                            \ProjectRena\Tasks\Cronjobs\TestCronjob::execute();
-                        });
+                        $time = time();
+                        echo "Time: {$time}: Running {$name} (Interval: {$interval})\n";
+
+                        // Time to fork it all!
+                        $pid = pcntl_fork();
+                        if($pid === 0)
+                        {
+                            // Get the PID
+                            $pid = getmypid();
+                            // Tell the cache that we're running the cronjobs will automatically remove it from the cache once they're done
+                            Cache::set($md5 . "_pid", $pid);
+
+                            // Init all the stuff needed inside the Cronjob
+                            $cache = new Cache();
+                            $db = new Database();
+                            $log = new Logging();
+                            // Execute the cronjob
+                            $class->execute($pid, $md5, $cache, $db, $log);
+                            exit();
+                        }
 
                         // Tell the cache when we ran last!
                         Cache::set($md5, time());
                     }
                 }
 
-                // Sleep for a second, so we don't go nuts with CPU
+                // Sleep for 500 milliseconds, so we don't go nuts with CPU
                 usleep(500000);
             }
-        } while($run == true);
+        } while($run == true); //$run == true);
     }
 }
