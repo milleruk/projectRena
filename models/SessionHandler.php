@@ -11,7 +11,6 @@ class SessionHandler implements SessionHandlerInterface
 	/**
 	 * Opens the session
 	 *
-	 *
 	 * @return boolean
 	 */
 	public function open($savePath, $sessionName)
@@ -22,7 +21,6 @@ class SessionHandler implements SessionHandlerInterface
 	/**
 	 * Closes the session
 	 *
-	 *
 	 * @return boolean
 	 */
 	public function close()
@@ -32,7 +30,6 @@ class SessionHandler implements SessionHandlerInterface
 
 	/**
 	 * Reads the data in the session
-	 *
 	 *
 	 * @return string
 	 */
@@ -47,7 +44,6 @@ class SessionHandler implements SessionHandlerInterface
 	/**
 	 * Writes data into the session
 	 *
-	 *
 	 * @return boolean
 	 */
 	public function write($id, $data)
@@ -59,7 +55,6 @@ class SessionHandler implements SessionHandlerInterface
 	/**
 	 * Destroys the session
 	 *
-	 *
 	 * @return boolean
 	 */
 	public function destroy($id)
@@ -70,7 +65,6 @@ class SessionHandler implements SessionHandlerInterface
 
 	/**
 	 * Garbage collects the sessions (The cache does that automatically tho)
-	 *
 	 *
 	 * @return boolean
 	 */
