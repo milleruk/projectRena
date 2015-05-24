@@ -15,14 +15,11 @@ use ProjectRena\Model\Config;
 class Database
 {
     /**
-     * @var int Stores the number of Query executions and inserts
+     * @var int
      */
     protected static $queryCount = 0;
 
     /**
-     * Creates and returns a PDO object.
-     *
-     * @static
      * @return PDO
      * @throws Exception
      */
@@ -126,14 +123,11 @@ class Database
     }
 
     /**
-     * Executes an SQL query, and returns a single row
-     *
-     * @static
-     * @param string $query The query to be executed
-     * @param array $parameters (optional) A key/value array of parameters
-     * @param int $cacheTime The time, in seconds, to cache the result of the query.    Default: 30
+     * @param $query
+     * @param array $parameters
+     * @param int $cacheTime
      * @param bool $selectCheck
-     * @return array Returns the first row of the result set. Returns an empty array if there are no rows.
+     * @return array
      * @throws Exception
      */
     public static function queryRow($query, $parameters = array(), $cacheTime = 30, $selectCheck = true)
@@ -151,15 +145,12 @@ class Database
     }
 
     /**
-     * Executes an SQL query, and returns a single result
-     *
-     * @static
-     * @param string $query The query to be executed
-     * @param string $field The name of the field to return
-     * @param array $parameters (optional) A key/value array of parameters
-     * @param int $cacheTime The time, in seconds, to cache the result of the query.    Default: 30
+     * @param $query
+     * @param $field
+     * @param array $parameters
+     * @param int $cacheTime
      * @param bool $selectCheck
-     * @return mixed Returns the value of $field in the first row of the resultset. Returns null if there are no results
+     * @return null
      * @throws Exception
      */
     public static function queryField($query, $field, $parameters = array(), $cacheTime = 30, $selectCheck = true)
@@ -180,16 +171,11 @@ class Database
     }
 
     /**
-     * Executes an SQL command and returns the number of rows affected.
-     * Good for inserts, updates, deletes, etc.
-     *
-     * @static
-     * @param string $query The query to be executed.
-     * @param array $parameters (optional) A key/value array of parameters.
+     * @param $query
+     * @param array $parameters
      * @param bool $returnID
-     * @return int The number of rows affected by the sql query.
+     * @return bool|int|string
      * @throws Exception
-     * @internal param bool $reportErrors Log the query and throw an exception if the query fails. Default: true
      */
     public static function execute($query, $parameters = array(), $returnID = false)
     {
@@ -245,10 +231,7 @@ class Database
     }
 
     /**
-     * Validates a query to ensure it contains no semicolons
-     *
-     * @static
-     * @param string $query The query to be executed.
+     * @param $query
      * @throws Exception
      */
     private static function validateQuery($query)
@@ -259,10 +242,7 @@ class Database
     }
 
     /**
-     * Retrieve the number of queries executed so far.
-     *
-     * @static
-     * @return int Number of queries executed so far
+     * @return int
      */
     public static function getQueryCount()
     {
@@ -270,16 +250,9 @@ class Database
     }
 
     /**
-     * Logs a query, its parameters, and the amount of time it took to execute.
-     * The original query is modified through simple search and replace to create
-     * the query as close to the execution as PDO would have the query.    This
-     * logging function doesn't take any care to escape any parameters, so take
-     * caution if you attempt to execute any logged queries.
-     *
-     * @param string $query The query.
-     * @param array $parameters A key/value array of parameters
-     * @param int $duration The length of time it took for the query to execute.
-     * @return void
+     * @param $query
+     * @param array $parameters
+     * @param int $duration
      */
     public static function log($query, $parameters = array(), $duration = 0)
     {
@@ -299,10 +272,9 @@ class Database
     }
 
     /**
-     * @static
-     * @param string $query The query.
-     * @param array $parameters The parameters
-     * @return string The query and parameters as a hashed value.
+     * @param $query
+     * @param array $parameters
+     * @return string
      */
     public static function getKey($query, $parameters = array())
     {
