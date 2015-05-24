@@ -5,7 +5,7 @@ cache/sessions
 cache/templates
 cache/update
 cache/pheal
-logs/*
+logs/app.log
 .phpintel/
 .idea/
 .settings/

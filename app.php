@@ -1,7 +1,4 @@
 <?php
-// Start a session
-session_start();
-
 // Load the init system
 require_once("init.php");
 
