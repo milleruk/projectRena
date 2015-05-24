@@ -1,3 +1,9 @@
 #!/usr/bin/env php
 <?php
+use ProjectRena\Lib\Cache\Cache;
+
 require __DIR__.'/vendor/autoload.php';
+
+Cache::set("asdf", "asdf");
+var_dump(Cache::getClass());
+var_dump(Cache::get("asdf"));

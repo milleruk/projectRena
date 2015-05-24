@@ -1,5 +1,6 @@
 <?php
 // Imports
+use ProjectRena\Lib\Cache\Cache;
 use ProjectRena\Lib\SessionHandler;
 use Slim\Slim;
 use Slim\Views\Twig;
@@ -25,10 +26,10 @@ else
 $app = new Slim($config["slim"]);
 
 // Session
-//$session = new SessionHandler();
-//session_set_save_handler($session, true);
-//session_cache_limiter(false);
-//session_start();
+$session = new SessionHandler();
+session_set_save_handler($session, true);
+session_cache_limiter(false);
+session_start();
 
 // Launch Whoops
 $app->add(new WhoopsMiddleware);

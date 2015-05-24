@@ -29,9 +29,8 @@ class Logging
         );
 
         $log = new Logger("projectRena");
-        $log->pushHandler(
-            new StreamHandler(Config::get("logFile", "Logging"), $logTypeArray[$logType])
-        );
+        $logFile = Config::getConfig("logFile", "Logging", __DIR__ . "/../../logs/app.log");
+        $log->pushHandler(new StreamHandler($logFile), $logTypeArray[$logType]);
         switch ($logType) {
             case "DEBUG":
                 $log->debug($logMessage);
@@ -73,13 +72,13 @@ class Logging
     private static function std_init()
     {
         $connection = new UdpSocket(
-            Config::get("server", "statsd"),
-            Config::get("port", "statsd")
+            Config::getConfig("server", "statsd"),
+            Config::getConfig("port", "statsd")
         );
-        $statsd = new Client($connection, Config::get("namespace", "statsd"));
+        $statsd = new Client($connection, Config::getConfig("namespace", "statsd"));
 
         // Global name space
-        $statsd->setNamespace(Config::get("globalNamespace", "statsd"));
+        $statsd->setNamespace(Config::getConfig("globalNamespace", "statsd"));
 
         return $statsd;
     }

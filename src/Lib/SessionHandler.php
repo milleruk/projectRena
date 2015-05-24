@@ -5,30 +5,25 @@ namespace ProjectRena\Lib;
 use ProjectRena\Lib\Cache\Cache;
 use SessionHandlerInterface;
 
+/**
+ * Class SessionHandler
+ * @package ProjectRena\Lib
+ */
 class SessionHandler implements SessionHandlerInterface
 {
-
     /**
-     * @var int stores the time the cache should live
+     * @var int
      */
-    private $ttl = 7200; // 2hrs of cache
+    protected $ttl = 7200; // 2hrs of cache time
 
     /**
-     * Opens the session
-     *
-     * @param string $savePath
-     * @param string $sessionName
-     * @return bool
-     */
-    public function open($savePath, $sessionName)
-    {
-        return true;
-    }
-
-    /**
-     * Closes the session
-     *
-     * @return boolean
+     * PHP >= 5.4.0<br/>
+     * Close the session
+     * @link http://php.net/manual/en/sessionhandlerinterface.close.php
+     * @return bool <p>
+     * The return value (usually TRUE on success, FALSE on failure).
+     * Note this value is returned internally to PHP for processing.
+     * </p>
      */
     public function close()
     {
@@ -36,59 +31,93 @@ class SessionHandler implements SessionHandlerInterface
     }
 
     /**
-     * Reads the data in the session
-     *
-     * @param string $id
-     * @return string
+     * PHP >= 5.4.0<br/>
+     * Destroy a session
+     * @link http://php.net/manual/en/sessionhandlerinterface.destroy.php
+     * @param int $session_id The session ID being destroyed.
+     * @return bool <p>
+     * The return value (usually TRUE on success, FALSE on failure).
+     * Note this value is returned internally to PHP for processing.
+     * </p>
      */
-    public function read($id)
+    public function destroy($session_id)
     {
-        $data = Cache::get($id);
-        if (is_array(
-            $data
-        )) // Just to make sure that we're returning a string and not an array, eventho that shouldn't technically be possible..
-        {
-            return "";
-        }
-
-        return Cache::get($id);
+        Cache::delete($session_id);
     }
 
     /**
-     * Writes data into the session
-     *
-     * @param string $id
-     * @param string $data
-     * @return bool
-     */
-    public function write($id, $data)
-    {
-        Cache::set($id, $data, $this->ttl);
-
-        return true;
-    }
-
-    /**
-     * Destroys the session
-     *
-     * @param int $id
-     * @return bool
-     */
-    public function destroy($id)
-    {
-        Cache::delete($id);
-
-        return true;
-    }
-
-    /**
-     * Garbage collects the sessions (The cache does that automatically tho)
-     *
-     * @param int $maxlifetime
-     * @return bool
+     * PHP >= 5.4.0<br/>
+     * Cleanup old sessions
+     * @link http://php.net/manual/en/sessionhandlerinterface.gc.php
+     * @param int $maxlifetime <p>
+     * Sessions that have not updated for
+     * the last maxlifetime seconds will be removed.
+     * </p>
+     * @return bool <p>
+     * The return value (usually TRUE on success, FALSE on failure).
+     * Note this value is returned internally to PHP for processing.
+     * </p>
      */
     public function gc($maxlifetime)
     {
+        return true;
+    }
+
+    /**
+     * PHP >= 5.4.0<br/>
+     * Initialize session
+     * @link http://php.net/manual/en/sessionhandlerinterface.open.php
+     * @param string $save_path The path where to store/retrieve the session.
+     * @param string $session_id The session id.
+     * @return bool <p>
+     * The return value (usually TRUE on success, FALSE on failure).
+     * Note this value is returned internally to PHP for processing.
+     * </p>
+     */
+    public function open($save_path, $session_id)
+    {
+        return true;
+    }
+
+    /**
+     * PHP >= 5.4.0<br/>
+     * Read session data
+     * @link http://php.net/manual/en/sessionhandlerinterface.read.php
+     * @param string $session_id The session id to read data for.
+     * @return string <p>
+     * Returns an encoded string of the read data.
+     * If nothing was read, it must return an empty string.
+     * Note this value is returned internally to PHP for processing.
+     * </p>
+     */
+    public function read($session_id)
+    {
+        $data = Cache::get($session_id);
+        if(!is_array($data))
+            return $data;
+        return ""; // Return string if the above is an array..
+    }
+
+    /**
+     * PHP >= 5.4.0<br/>
+     * Write session data
+     * @link http://php.net/manual/en/sessionhandlerinterface.write.php
+     * @param string $session_id The session id.
+     * @param string $session_data <p>
+     * The encoded session data. This data is the
+     * result of the PHP internally encoding
+     * the $_SESSION superglobal to a serialized
+     * string and passing it as this parameter.
+     * Please note sessions use an alternative serialization method.
+     * </p>
+     * @return bool <p>
+     * The return value (usually TRUE on success, FALSE on failure).
+     * Note this value is returned internally to PHP for processing.
+     * </p>
+     */
+    public function write($session_id, $session_data)
+    {
+        //Cache::set($session_id, $session_data, $this->ttl);
         return true;
     }
 }

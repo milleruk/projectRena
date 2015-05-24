@@ -22,18 +22,16 @@ class Cache
 	 */
 	protected static function init()
 	{
-		// Default cache type
-		$cacheType = Config::get("cacheType", "cache");
+        if(extension_loaded("redis") && (!empty(Config::getConfig("host", "redis"))))
+            $cache = new RedisCache();
+        elseif(extension_loaded("Memcached") && (!empty(Config::getConfig("host", "memcached"))))
+            $cache = new MemcachedClass();
+        elseif(extension_loaded("apcu") || extension_loaded("apc"))
+            $cache = new ApcCache();
+        else
+            $cache = new FileCache();
 
-		// All the cacheTypes available
-		$cacheTypes = array(
-			"redis" => new RedisCache(),
-			"memcached" => new MemcachedCache(),
-			"apc" => new ApcCache(),
-			"default" => new FileCache(),
-		);
-
-		return isset($cacheTypes[$cacheType]) ? $cacheTypes[$cacheType] : $cacheTypes["default"];
+        return $cache;
 	}
 
 	/**

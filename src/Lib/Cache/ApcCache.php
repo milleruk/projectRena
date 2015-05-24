@@ -3,8 +3,6 @@
 namespace ProjectRena\Lib\Cache;
 
 
-use ProjectRena\Lib\AbstractCache;
-
 /**
  * Class ApcCache
  * @package ProjectRena\Lib\Cache

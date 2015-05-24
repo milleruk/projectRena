@@ -5,7 +5,6 @@ namespace ProjectRena\Lib;
 use Exception;
 use PDO;
 use ProjectRena\Lib\Cache\Cache;
-use ProjectRena\Lib\Logging;
 use ProjectRena\Model\Config;
 
 /**
@@ -25,14 +24,13 @@ class Database
      */
     protected static function getPDO()
     {
-        $dsn = "mysql:dbname=".Config::get("name", "database").";host=".Config::get("host", "database");
+        $dsn = "mysql:dbname=".Config::getConfig("name", "database").";host=".Config::getConfig("host", "database");
         try {
-            $pdo = new PDO(
-                $dsn, Config::get("username", "database"), Config::get("password", "database"), array(
-                    PDO::ATTR_PERSISTENT => Config::get("persistent", "database"),
-                    PDO::ATTR_EMULATE_PREPARES => Config::get("emulatePrepares", "database"),
+            $pdo = new PDO($dsn, Config::getConfig("username", "database"), Config::getConfig("password", "database"), array(
+                    PDO::ATTR_PERSISTENT => Config::getConfig("persistent", "database"),
+                    PDO::ATTR_EMULATE_PREPARES => Config::getConfig("emulatePrepares", "database"),
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => Config::get("useBufferedQuery", "database"),
+                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => Config::getConfig("useBufferedQuery", "database"),
                     PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_Zone = '+00:00'",
                 )
             );
@@ -66,9 +64,8 @@ class Database
         if ($cacheTime > 0) {
             // Try the cache system
             $result = Cache::get($key);
-            if ($result !== false) {
+            if (!empty($result))
                 return $result;
-            }
         }
 
         try {
@@ -107,9 +104,8 @@ class Database
             $duration = $timer->stop();
 
             // If cache time is above 0 seconds, lets store it in the cache.
-            if ($cacheTime > 0) {
-                Cache::set($key, $result, min(3600, $cacheTime));
-            } // Store it in the cache system
+            if ($cacheTime > 0)
+                Cache::set($key, $result, min(3600, $cacheTime)); // Store it in the cache system
 
             // Log the query
             self::log($query, $parameters, $duration);
@@ -126,14 +122,13 @@ class Database
      * @param $query
      * @param array $parameters
      * @param int $cacheTime
-     * @param bool $selectCheck
      * @return array
      * @throws Exception
      */
-    public static function queryRow($query, $parameters = array(), $cacheTime = 30, $selectCheck = true)
+    public static function queryRow($query, $parameters = array(), $cacheTime = 30)
     {
         // Get the result
-        $result = self::query($query, $parameters, $cacheTime, $selectCheck);
+        $result = self::query($query, $parameters, $cacheTime);
 
         // Figure out if it has more than one result and return it
         if (sizeof($result) >= 1) {
@@ -149,14 +144,13 @@ class Database
      * @param $field
      * @param array $parameters
      * @param int $cacheTime
-     * @param bool $selectCheck
      * @return null
      * @throws Exception
      */
-    public static function queryField($query, $field, $parameters = array(), $cacheTime = 30, $selectCheck = true)
+    public static function queryField($query, $field, $parameters = array(), $cacheTime = 30)
     {
         // Get the result
-        $result = self::query($query, $parameters, $cacheTime, $selectCheck);
+        $result = self::query($query, $parameters, $cacheTime);
 
         // Figure out if it has no results
         if (sizeof($result) == 0) {
@@ -259,11 +253,9 @@ class Database
         Logging::std_increment("website_queryCount");
 
         if ($duration < 10000)  // Don't log queries taking less than 10 seconds.
-        {
             return;
-        }
 
-        global $baseAddr;
+        $baseAddr = "";
         foreach ($parameters as $k => $v) {
             $query = str_replace($k, "'".$v."'", $query);
         }

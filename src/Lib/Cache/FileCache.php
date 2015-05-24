@@ -10,7 +10,6 @@ namespace ProjectRena\Lib\Cache;
 
 
 use Exception;
-use ProjectRena\Lib\AbstractCache;
 
 /**
  * Class FileCache

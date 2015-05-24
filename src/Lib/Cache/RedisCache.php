@@ -24,7 +24,7 @@ class RedisCache extends AbstractCache
         if(!$this->redis)
             $this->redis = new Redis();
 
-        $this->redis->pconnect(Config::get("host", "redis", "127.0.0.1"), Config::get("port", "redis", 6379));
+        $this->redis->pconnect(Config::getConfig("host", "redis", "127.0.0.1"), Config::getConfig("port", "redis", 6379));
 
         return $redis;
     }

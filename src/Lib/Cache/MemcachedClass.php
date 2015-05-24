@@ -10,7 +10,6 @@ namespace ProjectRena\Lib\Cache;
 
 
 use Memcached;
-use ProjectRena\Lib\AbstractCache;
 use ProjectRena\Model\Config;
 
 /**
@@ -29,7 +28,7 @@ class MemcachedClass extends AbstractCache {
     function __construct()
     {
         $this->mc = new Memcached("projectRena");
-        $this->mc->addServer(Config::get("host", "memcached", "127.0.0.1"), Cache::get("port", "memcached", 11211);
+        $this->mc->addServer(Config::getConfig("host", "memcached", "127.0.0.1"), Config::getConfig("port", "memcached", 11211));
     }
 
     /**
