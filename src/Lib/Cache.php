@@ -1,30 +1,21 @@
 <?php
 
-namespace ProjectRena\Lib\Cache;
+namespace ProjectRena\Lib;
 
 use Closure;
 use ProjectRena\Model\Config;
 use Redis;
 
-class RedisCache extends AbstractCache
+class Cache
 {
-
-    /**
-     * @var object redis object
-     */
-    private $redis;
-
     /**
      * Instantiates the `Redis` object and connects it to the configured server.
      *
-     * @return Redis
      */
-    function __construct()
+    protected static function init()
     {
-        if(!$this->redis)
-            $this->redis = new Redis();
-
-        $this->redis->pconnect(Config::getConfig("host", "redis", "127.0.0.1"), Config::getConfig("port", "redis", 6379));
+        $redis = new Redis();
+        $redis->pconnect(Config::getConfig("host", "redis", "127.0.0.1"), Config::getConfig("port", "redis", 6379));
 
         return $redis;
     }
@@ -36,9 +27,10 @@ class RedisCache extends AbstractCache
      * @param mixed $timeout A `strtotime()`-compatible string or a Unix timestamp.
      * @return boolean
      */
-    protected function expireAt($key, $timeout)
+    protected static function expireAt($key, $timeout)
     {
-        return $this->redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
+        $redis = self::init();
+        return $redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
     }
 
     /**
@@ -47,9 +39,10 @@ class RedisCache extends AbstractCache
      * @param string $key The key to uniquely identify the cached item
      * @return mixed
      */
-    public function get($key)
+    public static function get($key)
     {
-        return $this->redis->get($key);
+        $redis = self::init();
+        return $redis->get($key);
     }
 
     /**
@@ -60,10 +53,11 @@ class RedisCache extends AbstractCache
      * @param null|string $timeout A strtotime() compatible cache time.
      * @return boolean
      */
-    public function set($key, $value, $timeout)
+    public static function set($key, $value, $timeout)
     {
-        $result = $this->redis->set($key, $value);
-        return $result ? $this->expireAt($key, $timeout) : $result;
+        $redis = self::init();
+        $result = $redis->set($key, $value);
+        return $result ? self::expireAt($key, $timeout) : $result;
     }
 
     /**
@@ -74,9 +68,10 @@ class RedisCache extends AbstractCache
      * @param null|string $timeout A strtotime() compatible cache time.
      * @return boolean
      */
-    public function replace($key, $value, $timeout)
+    public static function replace($key, $value, $timeout)
     {
-        return $this->redis->set($key, $value, $timeout);
+        $redis = self::init();
+        return $redis->set($key, $value, $timeout);
     }
 
     /**
@@ -85,9 +80,10 @@ class RedisCache extends AbstractCache
      * @param string $key The key to uniquely identify the cached item
      * @return bool
      */
-    public function delete($key)
+    public static function delete($key)
     {
-        return (boolean)$this->redis->del($key);
+        $redis = self::init();
+        return (boolean)$redis->del($key);
     }
 
     /**
@@ -102,12 +98,13 @@ class RedisCache extends AbstractCache
      * @param int $timeout
      * @return callable Function returning item's new value on successful increment, else `false`
      */
-    public function increment($key, $step = 1, $timeout = 0)
+    public static function increment($key, $step = 1, $timeout = 0)
     {
+        $redis = self::init();
         if ($timeout)
-            $this->expireAt($key, $timeout);
+            self::expireAt($key, $timeout);
 
-        return $this->redis->incr($key, $step);
+        return $redis->incr($key, $step);
     }
 
     /**
@@ -122,12 +119,13 @@ class RedisCache extends AbstractCache
      * @param integer $timeout A strtotime() compatible cache time.
      * @return Closure Function returning item's new value on successful decrement, else `false`
      */
-    public function decrement($key, $step = 1, $timeout = 0)
+    public static function decrement($key, $step = 1, $timeout = 0)
     {
+        $redis = self::init();
         if ($timeout)
-            $this->expireAt($key, $timeout);
+            self::expireAt($key, $timeout);
 
-        return $this->redis->decr($key, $step);
+        return $redis->decr($key, $step);
     }
 
     /**
@@ -135,8 +133,9 @@ class RedisCache extends AbstractCache
      *
      * @return boolean|null
      */
-    public function flush()
+    public static function flush()
     {
-        $this->redis->flushdb();
+        $redis = self::init();
+        $redis->flushdb();
     }
 }
