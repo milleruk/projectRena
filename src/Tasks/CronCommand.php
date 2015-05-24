@@ -13,8 +13,15 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Class CronCommand
+ * @package ProjectRena\Tasks
+ */
 class CronCommand extends Command
 {
+    /**
+     *
+     */
     protected function configure()
     {
         $this
@@ -22,6 +29,10 @@ class CronCommand extends Command
             ->setDescription("Runs cronjobs");
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $run = true;
