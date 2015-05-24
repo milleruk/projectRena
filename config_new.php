@@ -8,24 +8,24 @@ $config = array();
 
 // Database
 $config["database"] = array(
-	"host" => "",
-	"username" => "",
-	"password" => "",
-	"name" => "",
-	"persistent" => true,
-	"emulatePrepares" => true,
-	"useBufferedQuery" => true
+    "host" => "",
+    "username" => "",
+    "password" => "",
+    "name" => "",
+    "persistent" => true,
+    "emulatePrepares" => true,
+    "useBufferedQuery" => true
 );
 
 // Slim
 $config["slim"] = array(
-	"templates.path" => __DIR__ . "/view/",
+    "templates.path" => __DIR__."/view/",
 );
 
 // Twig
 $config["twig"] = array(
     "charset" => "utf-8",
-    "cache" => __DIR__ . "/cache/templates/",
+    "cache" => __DIR__."/cache/templates/",
     "auto_reload" => true,
     "strict_variables" => false,
     "autoescape" => true
