@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjectRena\Tasks\CronCommand;
+namespace ProjectRena\Tasks;
 
 use Cilex\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
