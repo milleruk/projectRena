@@ -25,7 +25,9 @@
         "domnikl/statsd": "~2.0",
         "ircmaxell/password-compat": "~1.0",
         "3rdpartyeve/phealng": "~2.2",
-        "3rdpartyeve/perry": "~1.5"
+        "3rdpartyeve/perry": "~1.5",
+        "codegyre/robo": "*",
+        "robmorgan/phinx": "dev-master"
     },
     "autoload": {
         "psr-4": {
