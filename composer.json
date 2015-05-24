@@ -1,6 +1,6 @@
 {
 	"name": "Project Rena",
-	"descrition": "A Killboard for EVE-KILL",
+	"description": "A Killboard for EVE-KILL",
 	"keywords": ["killboard","EVE-Online"],
 	"homepage": "https://eve-kill.net",
 	"license": "MIT",
