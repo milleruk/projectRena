@@ -4,7 +4,6 @@ namespace ProjectRena\Lib;
 
 use Exception;
 use PDO;
-use ProjectRena\Lib\Cache\Cache;
 use ProjectRena\Model\Config;
 
 /**

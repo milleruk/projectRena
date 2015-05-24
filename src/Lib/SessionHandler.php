@@ -2,7 +2,6 @@
 
 namespace ProjectRena\Lib;
 
-use ProjectRena\Lib\Cache\Cache;
 use SessionHandlerInterface;
 
 /**

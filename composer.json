@@ -27,7 +27,9 @@
         "3rdpartyeve/phealng": "~2.2",
         "3rdpartyeve/perry": "~1.5",
         "robmorgan/phinx": "dev-master",
-        "cilex/cilex": "1.0.*@dev"
+        "cilex/cilex": "1.0.*@dev",
+        "chrisboulton/php-resque": "1.2.x",
+        "kriswallsmith/spork": "*"
     },
     "autoload": {
         "psr-4": {

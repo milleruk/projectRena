@@ -6,6 +6,10 @@ use Closure;
 use ProjectRena\Model\Config;
 use Redis;
 
+/**
+ * Class Cache
+ * @package ProjectRena\Lib
+ */
 class Cache
 {
     /**
@@ -53,11 +57,14 @@ class Cache
      * @param null|string $timeout A strtotime() compatible cache time.
      * @return boolean
      */
-    public static function set($key, $value, $timeout)
+    public static function set($key, $value, $timeout = 0)
     {
         $redis = self::init();
         $result = $redis->set($key, $value);
-        return $result ? self::expireAt($key, $timeout) : $result;
+
+        if($timeout > 0)
+            return $result ? self::expireAt($key, $timeout) : $result;
+        return $result;
     }
 
     /**
