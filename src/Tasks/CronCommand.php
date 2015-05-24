@@ -49,6 +49,7 @@ class CronCommand extends Command
                     // If the current time is larger than the lastRunTime and Interval, then we run it again!
                     if($currentTime > ($lastRan + $interval))
                     {
+                        echo "Running $name ({$interval})\n";
                         // Fire up spork and fork the process, and continue on!
                         $manager = new \Spork\ProcessManager();
                         $manager->fork(function($msg) {
@@ -61,7 +62,7 @@ class CronCommand extends Command
                 }
 
                 // Sleep for a second, so we don't go nuts with CPU
-                sleep(1);
+                usleep(500000);
             }
         } while($run == true);
     }
