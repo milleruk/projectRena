@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Configuration extends AbstractMigration
+class ConfigurationAddIndexes extends AbstractMigration
 {
     public function change()
     {
