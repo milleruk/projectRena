@@ -17,7 +17,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class CronCommand
  * @package ProjectRena\Tasks
  */
-class CronCommand extends Command
+class CronTask extends Command
 {
     /**
      *
