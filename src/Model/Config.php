@@ -10,19 +10,21 @@ use ProjectRena\Lib\Database;
  */
 class Config
 {
-    /**
-     * Gets a config key from the config file or the database
-     *
-     * @static
-     * @param string $key The key that needs to be fetched data for
-     * @param string $type The type, only needed for the config.php file
-     *
-     * @param null $default
-     * @return array
-     */
+	/**
+	 * Gets a config key from the config file or the database
+	 *
+	 * @static
+	 *
+	 * @param string $key The key that needs to be fetched data for
+	 *
+	 * @return array
+	 * @internal param string $type The type, only needed for the config.php file
+	 *
+	 * @internal param null $default
+	 */
     public static function get($key)
     {
-        $dbResult = Database::queryField("SELECT value FROM configuration WHERE key = :key", "value", array(":key" => $key));
+        $dbResult = Database::queryField("SELECT value FROM configuration WHERE `key` = :key", "value", array(":key" => $key));
         return $dbResult;
     }
 
@@ -68,6 +70,6 @@ class Config
      */
     public static function set($key, $value)
     {
-        return Database::execute("INSERT INTO configuration (key, value) VALUES (:key, :value)", array(":key" => $key, ":value" => $value));
+        return Database::execute("INSERT INTO configuration (`key`, value) VALUES (:key, :value)", array(":key" => $key, ":value" => $value));
     }
 }

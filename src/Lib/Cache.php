@@ -49,14 +49,15 @@ class Cache
         return $redis->get($key);
     }
 
-    /**
-     * Write value to the cache
-     *
-     * @param string $key The key to uniquely identify the cached item
-     * @param mixed $value The value to be cached
-     * @param null|string $timeout A strtotime() compatible cache time.
-     * @return boolean
-     */
+	/**
+	 * Write value to the cache
+	 *
+	 * @param string $key The key to uniquely identify the cached item
+	 * @param mixed $value The value to be cached
+	 * @param int|null|string $timeout A strtotime() compatible cache time.
+	 *
+	 * @return bool
+	 */
     public static function set($key, $value, $timeout = 0)
     {
         $redis = self::init();
