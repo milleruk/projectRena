@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: micha
- * Date: 25-05-2015
- * Time: 17:06
- */
-
 namespace ProjectRena\Lib;
 
 
