@@ -1,10 +1,10 @@
 <?php
-
+// Cheatsheet: https://andreiabohner.files.wordpress.com/2014/06/slim.pdf
 // Main route
-$app->get("/", function () use ($app) {
-        // Get the flash data for this endpoint, if there is any..
-        $errorMessage = $app->flashData();
+$app->get("/", function() use ($app){
+	\ProjectRena\Controller\IndexController::hello($app);
+});
 
-        // Render index view
-        $app->render('index.html');
+$app->get("/:name", function($name) use ($app){
+	\ProjectRena\Controller\IndexController::helloName($app, $name);
 });
