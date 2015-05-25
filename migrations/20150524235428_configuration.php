@@ -22,8 +22,8 @@ class Configuration extends AbstractMigration
      */
     public function up()
     {
-        $users = $this->table("configuration");
-        $users
+        $configuration = $this->table("configuration");
+        $configuration
             ->addColumn("key", "string", array("limit" => 250))
             ->addColumn("value", "string", array("limit" => 250))
             ->save();
