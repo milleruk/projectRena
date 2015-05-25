@@ -1,6 +1,13 @@
 #!/usr/bin/env php
 <?php
+// Load the autoloader
 require_once(__DIR__."/vendor/autoload.php");
+
+// Require the config
+if(file_exists(__DIR__."/config.php"))
+	require_once(__DIR__."/config.php");
+else
+	throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
 
 $app = new \Cilex\Application('projectRena');
 
