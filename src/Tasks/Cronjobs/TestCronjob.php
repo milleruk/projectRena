@@ -24,6 +24,7 @@ class TestCronjob {
      */
     public static function execute($pid, $md5, $cache, $db, $log)
     {
+        \Resque::enqueue("default", "\\ProjectRena\\Tasks\\Resque\\testResque", array("name" => "Smurf"));
         $log->log("INFO", "Hayoooo");
     }
 }
