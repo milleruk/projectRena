@@ -20,6 +20,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+
 class BorisTask extends Command {
     protected function configure()
     {
@@ -30,7 +31,9 @@ class BorisTask extends Command {
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+
         $boris = new \Boris\Boris("Rena> ");
+        $boris->setLocal(array("Database" => new Lib\Database()));
         $boris->start();
     }
 }
