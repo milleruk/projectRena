@@ -36,10 +36,12 @@ class ApiKeys {
 
 	/**
 	 * @param $apiKeyID
+	 * @param $vCode
+	 * @param $userID
 	 *
 	 * @return bool|int|string
 	 */
-	public static function updateAPIKey($apiKeyID)
+	public static function updateAPIKey($apiKeyID, $vCode, $userID)
 	{
 		return Database::execute("INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID) ON DUPLICATE UPDATE keyID = :keyID, vCode = :vCode, userID = :userID", array(":keyID" => $apiKeyID, ":vCode" => $vCode, ":userID" => $userID));
 	}
@@ -51,6 +53,6 @@ class ApiKeys {
 	 */
 	public static function deleteAPIKey($apiKeyID)
 	{
-		return Database::execute("DELETE FROM apiKeys WHERE keyID = :keyID", array(":keyID" => $apiKeyID))
+		return Database::execute("DELETE FROM apiKeys WHERE keyID = :keyID", array(":keyID" => $apiKeyID));
 	}
 }

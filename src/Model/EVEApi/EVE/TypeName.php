@@ -25,7 +25,7 @@ class TypeName {
 	{
 		$pheal = PhealLoader::loadPheal();
 		$pheal->scope = "EVE";
-		$result = $pheal->TypeName("ids" => implode(",", $typeIDs))->toArray();
+		$result = $pheal->TypeName(array("ids" => implode(",", $typeIDs)))->toArray();
 
 		return $result;
 	}
