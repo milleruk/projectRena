@@ -15,7 +15,7 @@ class Contracts {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 67108864;
+	public $accessMask = 67108864;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class Contracts {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $contractID = null)
+	public function getData($apiKey, $vCode, $characterID, $contractID = null)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

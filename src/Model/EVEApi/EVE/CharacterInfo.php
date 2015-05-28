@@ -14,7 +14,7 @@ class CharacterInfo {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = null;
+	public $accessMask = null;
 
 	/**
 	 * @param $characterID
@@ -23,7 +23,7 @@ class CharacterInfo {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($characterID, $apiKey = null, $vCode = null)
+	public function getData($characterID, $apiKey = null, $vCode = null)
 	{
 		$pheal = PhealLoader::loadPheal();
 		$pheal->scope = "EVE";

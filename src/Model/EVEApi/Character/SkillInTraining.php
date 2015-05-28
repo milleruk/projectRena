@@ -15,7 +15,7 @@ class SkillInTraining {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 131072;
+	public $accessMask = 131072;
 
 	/**
 	 * @param $apiKey
@@ -25,7 +25,7 @@ class SkillInTraining {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

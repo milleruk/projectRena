@@ -15,7 +15,7 @@ class IndustryJobs {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 128;
+	public $accessMask = 128;
 
 	/**
 	 * @param $apiKey
@@ -25,7 +25,7 @@ class IndustryJobs {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

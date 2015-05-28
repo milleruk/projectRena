@@ -15,7 +15,7 @@ class KillMails {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 256;
+	public $accessMask = 256;
 
 	/**
 	 * @param $apiKey
@@ -27,7 +27,7 @@ class KillMails {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $fromID = null, $rowCount = null)
+	public function getData($apiKey, $vCode, $characterID, $fromID = null, $rowCount = null)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

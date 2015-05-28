@@ -15,7 +15,7 @@ class MarketOrders {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 4096;
+	public $accessMask = 4096;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class MarketOrders {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $orderID = null)
+	public function getData($apiKey, $vCode, $characterID, $orderID = null)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

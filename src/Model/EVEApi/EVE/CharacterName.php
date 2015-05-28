@@ -14,14 +14,14 @@ class CharacterName {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = null;
+	public $accessMask = null;
 
 	/**
 	 * @param array $characterIDs Max 250 characterIDs
 	 *
 	 * @return mixed
 	 */
-	public static function getData($characterIDs = array())
+	public function getData($characterIDs = array())
 	{
 		$pheal = PhealLoader::loadPheal();
 		$pheal->scope = "EVE";

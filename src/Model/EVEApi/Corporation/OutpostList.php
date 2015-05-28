@@ -15,7 +15,7 @@ class OutpostList {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 16384;
+	public $accessMask = 16384;
 
 	/**
 	 * @param $apiKey
@@ -24,7 +24,7 @@ class OutpostList {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

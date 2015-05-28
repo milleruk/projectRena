@@ -15,7 +15,7 @@ class ContainerLog {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 32;
+	public $accessMask = 32;
 
 	/**
 	 * @param $apiKey
@@ -24,7 +24,7 @@ class ContainerLog {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

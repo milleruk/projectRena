@@ -15,7 +15,7 @@ class PlanetaryRoutes {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 2;
+	public $accessMask = 2;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class PlanetaryRoutes {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $planetID)
+	public function getData($apiKey, $vCode, $characterID, $planetID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

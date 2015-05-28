@@ -15,7 +15,7 @@ class NotificationTexts {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 32768;
+	public $accessMask = 32768;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class NotificationTexts {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $ids = array())
+	public function getData($apiKey, $vCode, $characterID, $ids = array())
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

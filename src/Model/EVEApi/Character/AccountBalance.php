@@ -15,7 +15,7 @@ class AccountBalance {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 1;
+	public $accessMask = 1;
 
 	/**
 	 * @param $apiKey
@@ -25,7 +25,7 @@ class AccountBalance {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

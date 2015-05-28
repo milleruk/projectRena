@@ -14,14 +14,14 @@ class TypeName {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = null;
+	public $accessMask = null;
 
 	/**
 	 * @param array $typeIDs Max 250 IDs at a time
 	 *
 	 * @return mixed
 	 */
-	public static function getData($typeIDs = array())
+	public function getData($typeIDs = array())
 	{
 		$pheal = PhealLoader::loadPheal();
 		$pheal->scope = "EVE";

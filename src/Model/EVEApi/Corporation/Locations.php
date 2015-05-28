@@ -15,7 +15,7 @@ class Locations {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 16777216;
+	public $accessMask = 16777216;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class Locations {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $ids = array())
+	public function getData($apiKey, $vCode, $characterID, $ids = array())
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

@@ -15,7 +15,7 @@ class StarbaseDetail {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 131072;
+	public $accessMask = 131072;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class StarbaseDetail {
 	 * @internal param $characterID
 	 *
 	 */
-	public static function getData($apiKey, $vCode, $itemID)
+	public function getData($apiKey, $vCode, $itemID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

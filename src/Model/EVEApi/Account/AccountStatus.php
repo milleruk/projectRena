@@ -14,7 +14,7 @@ class AccountStatus {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 33554432;
+	public $accessMask = 33554432;
 
 	/**
 	 * @param $apiKey
@@ -22,7 +22,7 @@ class AccountStatus {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode)
+	public function getData($apiKey, $vCode)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Account";

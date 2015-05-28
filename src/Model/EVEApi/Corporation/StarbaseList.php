@@ -15,7 +15,7 @@ class StarbaseList {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 524288;
+	public $accessMask = 524288;
 
 	/**
 	 * @param $apiKey
@@ -23,7 +23,7 @@ class StarbaseList {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode)
+	public function getData($apiKey, $vCode)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

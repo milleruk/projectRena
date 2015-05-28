@@ -15,7 +15,7 @@ class MailingLists {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 1024;
+	public $accessMask = 1024;
 
 	/**
 	 * @param $apiKey
@@ -25,7 +25,7 @@ class MailingLists {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

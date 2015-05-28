@@ -15,7 +15,7 @@ class UpcomingCalendarEvents {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 1048576;
+	public $accessMask = 1048576;
 
 	/**
 	 * @param $apiKey
@@ -25,7 +25,7 @@ class UpcomingCalendarEvents {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

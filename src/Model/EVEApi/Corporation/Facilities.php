@@ -14,7 +14,7 @@ class Facilities {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 128;
+	public $accessMask = 128;
 
 	/**
 	 * @param $apiKey
@@ -22,7 +22,7 @@ class Facilities {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode)
+	public function getData($apiKey, $vCode)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

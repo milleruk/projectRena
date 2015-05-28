@@ -15,7 +15,7 @@ class MemberMedals {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 4;
+	public $accessMask = 4;
 
 	/**
 	 * @param $apiKey
@@ -24,7 +24,7 @@ class MemberMedals {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

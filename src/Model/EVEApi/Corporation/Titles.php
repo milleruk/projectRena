@@ -15,7 +15,7 @@ class Titles {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 4194304;
+	public $accessMask = 4194304;
 
 	/**
 	 * @param $apiKey
@@ -24,7 +24,7 @@ class Titles {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

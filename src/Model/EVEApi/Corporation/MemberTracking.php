@@ -15,7 +15,7 @@ class MemberTracking {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 2048;
+	public $accessMask = 2048;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class MemberTracking {
 	 * @internal param $characterID
 	 *
 	 */
-	public static function getData($apiKey, $vCode, $extended = 0)
+	public function getData($apiKey, $vCode, $extended = 0)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Corp";

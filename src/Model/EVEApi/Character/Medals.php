@@ -15,7 +15,7 @@ class Medals {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 8192;
+	public $accessMask = 8192;
 
 	/**
 	 * @param $apiKey
@@ -25,7 +25,7 @@ class Medals {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

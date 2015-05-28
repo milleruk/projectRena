@@ -15,7 +15,7 @@ class WalletTransactions {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 4194304;
+	public $accessMask = 4194304;
 
 	/**
 	 * @param $apiKey
@@ -28,7 +28,7 @@ class WalletTransactions {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
+	public function getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

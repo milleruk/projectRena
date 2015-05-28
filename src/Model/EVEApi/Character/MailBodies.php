@@ -15,7 +15,7 @@ class MailBodies {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 512;
+	public $accessMask = 512;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class MailBodies {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $ids = array())
+	public function getData($apiKey, $vCode, $characterID, $ids = array())
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

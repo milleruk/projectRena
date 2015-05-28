@@ -15,7 +15,7 @@ class Research {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 65536;
+	public $accessMask = 65536;
 
 	/**
 	 * @param $apiKey
@@ -25,7 +25,7 @@ class Research {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID)
+	public function getData($apiKey, $vCode, $characterID)
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

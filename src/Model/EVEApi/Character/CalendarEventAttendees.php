@@ -15,7 +15,7 @@ class CalendarEventAttendees {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = 4;
+	public $accessMask = 4;
 
 	/**
 	 * @param $apiKey
@@ -26,7 +26,7 @@ class CalendarEventAttendees {
 	 *
 	 * @return mixed
 	 */
-	public static function getData($apiKey, $vCode, $characterID, $eventIDs = array())
+	public function getData($apiKey, $vCode, $characterID, $eventIDs = array())
 	{
 		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
 		$pheal->scope = "Char";

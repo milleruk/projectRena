@@ -14,12 +14,12 @@ class Sovereignty {
 	/**
 	 * @var int
 	 */
-	public static $accessMask = null;
+	public $accessMask = null;
 
 	/**
 	 * @return mixed
 	 */
-	public static function getData()
+	public function getData()
 	{
 		$pheal = PhealLoader::loadPheal();
 		$pheal->scope = "Map";
