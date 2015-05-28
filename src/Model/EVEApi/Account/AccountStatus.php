@@ -12,6 +12,11 @@ use ProjectRena\Lib\PhealLoader;
  */
 class AccountStatus {
 	/**
+	 * @var int
+	 */
+	public static $accessMask = 33554432;
+
+	/**
 	 * @param $apiKey
 	 * @param $vCode
 	 *
