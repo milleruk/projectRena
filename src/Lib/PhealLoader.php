@@ -8,7 +8,6 @@ use Pheal\Pheal;
 use Pheal\Cache\RedisStorage;
 use ProjectRena\Model\Config;
 use Pheal\Core\Config as PhealConfig;
-use ProjectRena\Model\EVEApi\PhealLogger;
 
 /**
  * Class PhealLoader
