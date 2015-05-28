@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ProjectRena\Model\EVEApi;
+namespace ProjectRena\Lib;
 
 
 class PhealLogger implements \Pheal\Log\CanLog {
