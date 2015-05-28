@@ -16,7 +16,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function CallList() {
+	public static function apiCallList() {
 		$return = new \ProjectRena\Model\EVEApi\API\CallList();
 		return $return->getData();
 	}
@@ -27,7 +27,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function APIKeyInfo($apiKey, $vCode) {
+	public static function accountAPIKeyInfo($apiKey, $vCode) {
 		$return = new \ProjectRena\Model\EVEApi\Account\APIKeyInfo();
 		return $return->getData($apiKey, $vCode);
 	}
@@ -38,7 +38,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function AccountStatus($apiKey, $vCode) {
+	public static function accountAccountStatus($apiKey, $vCode) {
 		$return = new \ProjectRena\Model\EVEApi\Account\AccountStatus();
 		return $return->getData($apiKey, $vCode);
 	}
@@ -49,7 +49,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function Characters($apiKey, $vCode) {
+	public static function accountCharacters($apiKey, $vCode) {
 		$return = new \ProjectRena\Model\EVEApi\Account\Characters();
 		return $return->getData($apiKey, $vCode);
 	}
@@ -853,7 +853,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function AllianceList() {
+	public static function eveAllianceList() {
 		$return = new \ProjectRena\Model\EVEApi\EVE\AllianceList();
 		return $return->getData();
 	}
@@ -863,7 +863,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function CharacterAffiliation($characterIDs = array()) {
+	public static function eveCharacterAffiliation($characterIDs = array()) {
 		$return = new \ProjectRena\Model\EVEApi\EVE\CharacterAffiliation();
 		return $return->getData($characterIDs = array());
 	}
@@ -873,7 +873,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function CharacterID($characterNames = array()) {
+	public static function eveCharacterID($characterNames = array()) {
 		$return = new \ProjectRena\Model\EVEApi\EVE\CharacterID();
 		return $return->getData($characterNames = array());
 	}
@@ -885,7 +885,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function CharacterInfo($characterID, $apiKey = null, $vCode = null) {
+	public static function eveCharacterInfo($characterID, $apiKey = null, $vCode = null) {
 		$return = new \ProjectRena\Model\EVEApi\EVE\CharacterInfo();
 		return $return->getData($characterID, $apiKey = null, $vCode = null);
 	}
@@ -895,7 +895,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function CharacterName($characterIDs = array()) {
+	public static function eveCharacterName($characterIDs = array()) {
 		$return = new \ProjectRena\Model\EVEApi\EVE\CharacterName();
 		return $return->getData($characterIDs = array());
 	}
@@ -903,7 +903,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function ConquerableStationList() {
+	public static function eveConquerableStationList() {
 		$return = new \ProjectRena\Model\EVEApi\EVE\ConquerableStationList();
 		return $return->getData();
 	}
@@ -911,7 +911,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function ErrorList() {
+	public static function eveErrorList() {
 		$return = new \ProjectRena\Model\EVEApi\EVE\ErrorList();
 		return $return->getData();
 	}
@@ -919,7 +919,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function FacWarStats() {
+	public static function eveFacWarStats() {
 		$return = new \ProjectRena\Model\EVEApi\EVE\FacWarStats();
 		return $return->getData();
 	}
@@ -927,7 +927,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function FacWarTopStats() {
+	public static function eveFacWarTopStats() {
 		$return = new \ProjectRena\Model\EVEApi\EVE\FacWarTopStats();
 		return $return->getData();
 	}
@@ -935,7 +935,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function RefTypes() {
+	public static function eveRefTypes() {
 		$return = new \ProjectRena\Model\EVEApi\EVE\RefTypes();
 		return $return->getData();
 	}
@@ -943,7 +943,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function SkillTree() {
+	public static function eveSkillTree() {
 		$return = new \ProjectRena\Model\EVEApi\EVE\SkillTree();
 		return $return->getData();
 	}
@@ -953,7 +953,7 @@ class EVEApi {
 	 *
 	 * @return mixed
 	 */
-	public static function TypeName($typeIDs = array()) {
+	public static function eveTypeName($typeIDs = array()) {
 		$return = new \ProjectRena\Model\EVEApi\EVE\TypeName();
 		return $return->getData($typeIDs = array());
 	}
@@ -961,7 +961,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function FacWarSystems() {
+	public static function mapFacWarSystems() {
 		$return = new \ProjectRena\Model\EVEApi\Map\FacWarSystems();
 		return $return->getData();
 	}
@@ -969,7 +969,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function Jumps() {
+	public static function mapJumps() {
 		$return = new \ProjectRena\Model\EVEApi\Map\Jumps();
 		return $return->getData();
 	}
@@ -977,7 +977,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function Kills() {
+	public static function mapKills() {
 		$return = new \ProjectRena\Model\EVEApi\Map\Kills();
 		return $return->getData();
 	}
@@ -985,7 +985,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function Sovereignty() {
+	public static function mapSovereignty() {
 		$return = new \ProjectRena\Model\EVEApi\Map\Sovereignty();
 		return $return->getData();
 	}
@@ -993,7 +993,7 @@ class EVEApi {
 	/**
 	 * @return mixed
 	 */
-	public static function ServerStatus() {
+	public static function serverServerStatus() {
 		$return = new \ProjectRena\Model\EVEApi\Server\ServerStatus();
 		return $return->getData();
 	}
