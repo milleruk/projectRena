@@ -1,6 +1,8 @@
 <?php
 namespace ProjectRena\Tasks\Cronjobs;
 
+use ProjectRena\Model\EVEApi\Account\AccountStatus;
+
 /**
  * Class TestCronjob
  * @package ProjectRena\Tasks\Cronjobs

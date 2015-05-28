@@ -72,13 +72,13 @@ class Logging
     private static function std_init()
     {
         $connection = new UdpSocket(
-            Config::getConfig("server", "statsd"),
-            Config::getConfig("port", "statsd")
+            Config::getConfig("server", "statsd", "127.0.0.1"),
+            Config::getConfig("port", "statsd", 8125)
         );
-        $statsd = new Client($connection, Config::getConfig("namespace", "statsd"));
+        $statsd = new Client($connection, Config::getConfig("namespace", "statsd", "rena.namespace"));
 
         // Global name space
-        $statsd->setNamespace(Config::getConfig("globalNamespace", "statsd"));
+        $statsd->setNamespace(Config::getConfig("globalNamespace", "statsd", "rena"));
 
         return $statsd;
     }
