@@ -8,3 +8,7 @@ $app->get("/", function() use ($app){
 $app->get("/:name", function($name) use ($app){
 	\ProjectRena\Controller\IndexController::helloName($app, $name);
 });
+
+$app->map("/login/eve/", function() use ($app){
+	\ProjectRena\Controller\LoginController::loginEVE($app);
+})->via("GET", "POST");

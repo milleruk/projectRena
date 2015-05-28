@@ -39,7 +39,7 @@ class Config
         global $config;
 
         $type = strtolower($type);
-        if(isset($config[$type]) && isset($config[$type][$key]))
+        if(isset($config[$type][$key]))
             return $config[$type][$key];
         return $default;
     }
