@@ -54,12 +54,32 @@ class EVEApi {
 			$className = str_replace(".php", "", $elements[10]);
 			$modelPath = "\ProjectRena\\$elements[7]\\$elements[8]\\$elements[9]\\$className";
 
-			$type = "";
-			if($elements[9] == "Character")
-				$type = "char";
-			elseif($elements[9] == "Corporation")
-				$type = "corp";
+			$type = $elements[9];
 
+			switch($type)
+			{
+				case "Account":
+					$functionType = "account";
+					break;
+				case "API":
+					$functionType = "api";
+					break;
+				case "Character":
+					$functionType = "char";
+					break;
+				case "Corporation":
+					$functionType = "corp";
+					break;
+				case "EVE":
+					$functionType = "eve";
+					break;
+				case "Map":
+					$functionType = "map";
+					break;
+				case "Server":
+					$functionType = "server";
+					break;
+			}
 			$fileData = file($file);
 
 			foreach($fileData as $key => $line)
@@ -71,9 +91,7 @@ class EVEApi {
 			$vars = str_replace("array", "array()", $vars);
 			$functionLine = str_replace("getData", $className, $functionLine);
 			$functionLine = str_replace("public ", "public static ", $functionLine);
-
-			if(!empty($type))
-				$functionLine = str_replace($className, $type . ucfirst($className), $functionLine);
+			$functionLine = str_replace($className, $functionType . ucfirst($className), $functionLine);
 
 			$model .= '	' . $functionLine . ' {
 		$return = new ' . $modelPath . '();
