@@ -1,8 +1,8 @@
 <?php
 // Imports
-use ProjectRena\Lib\SessionHandler;
 use Slim\Slim;
 use Slim\Views\Twig;
+use ProjectRena\Lib\SessionHandler;
 use Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware;
 
 // Error display
