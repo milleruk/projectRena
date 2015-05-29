@@ -30,6 +30,12 @@
         "cilex/cilex": "1.0.*@dev",
         "chrisboulton/php-resque": "1.2.x",
         "kriswallsmith/spork": "*",
+        "kriswallsmith/assetic": "1.3.*@dev",
+        "leafo/lessphp": "dev-master",
+        "leafo/scssphp": "dev-master",
+        "ptachoire/cssembed": "dev-master",
+        "leafo/scssphp-compass": "dev-master",
+        "patchwork/jsqueeze": "dev-master",
         "d11wtq/boris": "@stable",
         "and/oauth": "*"
     },
