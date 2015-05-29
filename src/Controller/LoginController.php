@@ -4,10 +4,10 @@
 namespace ProjectRena\Controller;
 
 
-use OAuth\Common\Consumer\Credentials;
-use OAuth\Common\Storage\Session;
 use OAuth\ServiceFactory;
 use ProjectRena\Model\Config;
+use OAuth\Common\Storage\Session;
+use OAuth\Common\Consumer\Credentials;
 
 class LoginController {
 	public static function loginEVE(\Slim\Slim $app)
