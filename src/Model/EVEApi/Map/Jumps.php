@@ -1,30 +1,28 @@
 <?php
 
-
 namespace ProjectRena\Model\EVEApi\Map;
 
 use ProjectRena\Lib\PhealLoader;
 
 /**
- * Class Jumps
- *
- * @package ProjectRena\Model\EVEApi\Map
+ * Class Jumps.
  */
-class Jumps {
-	/**
-	 * @var int
-	 */
-	public $accessMask = null;
+class Jumps
+{
+    /**
+     * @var int
+     */
+    public $accessMask = null;
 
-	/**
-	 * @return mixed
-	 */
-	public function getData()
-	{
-		$pheal = PhealLoader::loadPheal();
-		$pheal->scope = "Map";
-		$result = $pheal->Jumps()->toArray();
+    /**
+     * @return mixed
+     */
+    public function getData()
+    {
+        $pheal = PhealLoader::loadPheal();
+        $pheal->scope = 'Map';
+        $result = $pheal->Jumps()->toArray();
 
-		return $result;
-	}
+        return $result;
+    }
 }

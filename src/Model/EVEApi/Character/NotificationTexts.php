@@ -1,38 +1,33 @@
 <?php
 
-
 namespace ProjectRena\Model\EVEApi\Character;
-
 
 use ProjectRena\Lib\PhealLoader;
 
 /**
- * Class NotificationTexts
- *
- * @package ProjectRena\Model\EVEApi\Character
+ * Class NotificationTexts.
  */
-class NotificationTexts {
-	/**
-	 * @var int
-	 */
-	public $accessMask = 32768;
+class NotificationTexts
+{
+    /**
+     * @var int
+     */
+    public $accessMask = 32768;
 
-	/**
-	 * @param $apiKey
-	 * @param $vCode
-	 *
-	 * @param $characterID
-	 * @param array $ids
-	 *
-	 * @return mixed
-	 */
-	public function getData($apiKey, $vCode, $characterID, $ids = array())
-	{
-		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
-		$pheal->scope = "Char";
-		$result = $pheal->NotificationTexts(array("characterID" => $characterID, "IDs" => implode(",", $ids)))->toArray();
+    /**
+     * @param $apiKey
+     * @param $vCode
+     * @param $characterID
+     * @param array $ids
+     *
+     * @return mixed
+     */
+    public function getData($apiKey, $vCode, $characterID, $ids = array())
+    {
+        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal->scope = 'Char';
+        $result = $pheal->NotificationTexts(array('characterID' => $characterID, 'IDs' => implode(',', $ids)))->toArray();
 
-		return $result;
-	}
-
+        return $result;
+    }
 }

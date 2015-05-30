@@ -1,30 +1,28 @@
 <?php
 
-
 namespace ProjectRena\Model\EVEApi\Map;
 
 use ProjectRena\Lib\PhealLoader;
 
 /**
- * Class Sovereignty
- *
- * @package ProjectRena\Model\EVEApi\Map
+ * Class Sovereignty.
  */
-class Sovereignty {
-	/**
-	 * @var int
-	 */
-	public $accessMask = null;
+class Sovereignty
+{
+    /**
+     * @var int
+     */
+    public $accessMask = null;
 
-	/**
-	 * @return mixed
-	 */
-	public function getData()
-	{
-		$pheal = PhealLoader::loadPheal();
-		$pheal->scope = "Map";
-		$result = $pheal->Sovereignty()->toArray();
+    /**
+     * @return mixed
+     */
+    public function getData()
+    {
+        $pheal = PhealLoader::loadPheal();
+        $pheal->scope = 'Map';
+        $result = $pheal->Sovereignty()->toArray();
 
-		return $result;
-	}
+        return $result;
+    }
 }

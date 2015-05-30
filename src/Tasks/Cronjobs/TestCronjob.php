@@ -1,14 +1,12 @@
 <?php
+
 namespace ProjectRena\Tasks\Cronjobs;
 
-use ProjectRena\Model\EVEApi\Account\AccountStatus;
-
 /**
- * Class TestCronjob
- * @package ProjectRena\Tasks\Cronjobs
+ * Class TestCronjob.
  */
-class TestCronjob {
-
+class TestCronjob
+{
     /**
      * @return int
      */
@@ -26,7 +24,7 @@ class TestCronjob {
      */
     public static function execute($pid, $md5, $cache, $db, $log)
     {
-        \Resque::enqueue("default", "\\ProjectRena\\Tasks\\Resque\\testResque", array("name" => "Smurf"));
-        $log->log("INFO", "Hayoooo");
+        \Resque::enqueue('default', '\\ProjectRena\\Tasks\\Resque\\testResque', array('name' => 'Smurf'));
+        $log->log('INFO', 'Hayoooo');
     }
 }

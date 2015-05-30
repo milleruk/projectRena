@@ -1,12 +1,12 @@
 <?php
+
 namespace ProjectRena\Tasks\Cronjobs;
 
 /**
- * Class TestTwoCronjob
- * @package ProjectRena\Tasks\Cronjobs
+ * Class TestTwoCronjob.
  */
-class TestTwoCronjob {
-
+class TestTwoCronjob
+{
     /**
      * @return int
      */
@@ -25,6 +25,6 @@ class TestTwoCronjob {
     public static function execute($pid, $md5, $cache, $db, $log)
     {
         sleep(10);
-        $log->log("INFO", "I've just slept for ten seconds, durr");
+        $log->log('INFO', "I've just slept for ten seconds, durr");
     }
 }

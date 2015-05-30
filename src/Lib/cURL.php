@@ -1,17 +1,18 @@
 <?php
-namespace ProjectRena\Lib;
 
+namespace ProjectRena\Lib;
 
 use ProjectRena\Model\Config;
 
 /**
- * Class cURL
- * @package ProjectRena\Lib
+ * Class cURL.
  */
-class cURL {
+class cURL
+{
     /**
      * @param $url
      * @param int $cacheTime
+     *
      * @return mixed|null
      */
     public static function getData($url, $cacheTime = 3600)
@@ -23,22 +24,26 @@ class cURL {
         $result = $cacheTime > 0 ? Cache::get($md5) : null;
 
         // If there was no result, get the data
-        if(!$result)
-        {
+        if (!$result) {
             // Init curl
             $curl = curl_init();
             // Setup curl
-            curl_setopt_array($curl,
+            curl_setopt_array(
+                $curl,
                 array(
-                    CURLOPT_USERAGENT       => Config::getConfig("userAgent", "site", "DataGetter from projectRena (karbowiak@gmail.com)"),
-                    CURLOPT_TIMEOUT         => 30,
-                    CURLOPT_POST            => false,
-                    CURLOPT_FORBID_REUSE    => false,
-                    CURLOPT_ENCODING        => "",
-                    CURLOPT_URL             => $url,
-                    CURLOPT_HTTPHEADER      => array("Connection: keep-alive", "Keep-Alive: timeout=10, max=1000"),
-                    CURLOPT_RETURNTRANSFER  => true,
-                    CURLOPT_FAILONERROR     => true
+                    CURLOPT_USERAGENT => Config::getConfig(
+                        'userAgent',
+                        'site',
+                        'DataGetter from projectRena (karbowiak@gmail.com)'
+                    ),
+                    CURLOPT_TIMEOUT => 30,
+                    CURLOPT_POST => false,
+                    CURLOPT_FORBID_REUSE => false,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_URL => $url,
+                    CURLOPT_HTTPHEADER => array('Connection: keep-alive', 'Keep-Alive: timeout=10, max=1000'),
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
                 )
             );
 
@@ -46,8 +51,9 @@ class cURL {
             $result = curl_exec($curl);
 
             // Cache the data
-            if($cacheTime > 0)
+            if ($cacheTime > 0) {
                 Cache::set($md5, $result, $cacheTime);
+            }
         }
 
         // Return the data
@@ -58,33 +64,40 @@ class cURL {
      * @param $url
      * @param array $postData
      * @param array $headers
+     *
      * @return mixed
      */
     public static function sendData($url, $postData = array(), $headers = array())
     {
         // Define default headers
-        if(empty($headers))
-            $headers = array("Connection: keep-alive", "Keep-Alive: timeout=10, max=1000");
+        if (empty($headers)) {
+            $headers = array('Connection: keep-alive', 'Keep-Alive: timeout=10, max=1000');
+        }
 
         // Init curl
         $curl = curl_init();
 
         // Init postLine
-        $postLine = "";
+        $postLine = '';
 
         // Populate the $postData
-        if(!empty($postData))
-            foreach($postData as $key => $value)
-                $postLine .= $key . "=" . $value . "&";
+        if (!empty($postData)) {
+            foreach ($postData as $key => $value) {
+                $postLine .= $key.'='.$value.'&';
+            }
+        }
 
         // Trim the last &
-        rtrim($postLine, "&");
+        rtrim($postLine, '&');
 
         curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_USERAGENT, Config::getConfig("userAgent", "site", "DataGetter from projectRena (karbowiak@gmail.com)"));
+        curl_setopt(
+            $curl,
+            CURLOPT_USERAGENT,
+            Config::getConfig('userAgent', 'site', 'DataGetter from projectRena (karbowiak@gmail.com)')
+        );
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-        if(!empty($postData))
-        {
+        if (!empty($postData)) {
             curl_setopt($curl, CURLOPT_POST, count($postData));
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postLine);
         }
@@ -96,6 +109,7 @@ class cURL {
         $result = curl_exec($curl);
 
         curl_close($curl);
+
         return $result;
     }
 }

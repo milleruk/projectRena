@@ -1,30 +1,28 @@
 <?php
 
-
 namespace ProjectRena\Model\EVEApi\EVE;
 
 use ProjectRena\Lib\PhealLoader;
 
 /**
- * Class ConquerableStationList
- *
- * @package ProjectRena\Model\EVEApi\EVE
+ * Class ConquerableStationList.
  */
-class ConquerableStationList {
-	/**
-	 * @var int
-	 */
-	public $accessMask = null;
+class ConquerableStationList
+{
+    /**
+     * @var int
+     */
+    public $accessMask = null;
 
-	/**
-	 * @return mixed
-	 */
-	public function getData()
-	{
-		$pheal = PhealLoader::loadPheal();
-		$pheal->scope = "EVE";
-		$result = $pheal->ConquerableStationList()->toArray();
+    /**
+     * @return mixed
+     */
+    public function getData()
+    {
+        $pheal = PhealLoader::loadPheal();
+        $pheal->scope = 'EVE';
+        $result = $pheal->ConquerableStationList()->toArray();
 
-		return $result;
-	}
+        return $result;
+    }
 }

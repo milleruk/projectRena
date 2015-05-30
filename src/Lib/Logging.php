@@ -10,41 +10,41 @@ use ProjectRena\Model\Config;
 
 class Logging
 {
-
     /**
-     * Logs data into the logfile
+     * Logs data into the logfile.
      *
      * @static
-     * @param string $logType the type of logging, debug, info, warning, error
+     *
+     * @param string $logType    the type of logging, debug, info, warning, error
      * @param string $logMessage the message for the log
      */
     public static function log($logType, $logMessage)
     {
-        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        /* @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
         $logTypeArray = array(
-            "DEBUG" => Logger::DEBUG,
-            "INFO" => Logger::INFO,
-            "WARNING" => Logger::WARNING,
-            "ERROR" => Logger::ERROR,
+            'DEBUG' => Logger::DEBUG,
+            'INFO' => Logger::INFO,
+            'WARNING' => Logger::WARNING,
+            'ERROR' => Logger::ERROR,
         );
 
-        $log = new Logger("projectRena");
-        $logFile = Config::getConfig("logFile", "Logging", __DIR__ . "/../../logs/app.log");
+        $log = new Logger('projectRena');
+        $logFile = Config::getConfig('logFile', 'Logging', __DIR__.'/../../logs/app.log');
         $log->pushHandler(new StreamHandler($logFile), $logTypeArray[$logType]);
         switch ($logType) {
-            case "DEBUG":
+            case 'DEBUG':
                 $log->debug($logMessage);
                 break;
 
-            case "INFO":
+            case 'INFO':
                 $log->info($logMessage);
                 break;
 
-            case "WARNING":
+            case 'WARNING':
                 $log->warning($logMessage);
                 break;
 
-            case "ERROR":
+            case 'ERROR':
                 $log->error($logMessage);
                 break;
 
@@ -52,10 +52,11 @@ class Logging
     }
 
     /**
-     * Inserts data into the slim flasher
+     * Inserts data into the slim flasher.
      *
      * @static
-     * @param string $logType the type of logging, debug, info, warning, error
+     *
+     * @param string $logType    the type of logging, debug, info, warning, error
      * @param string $logMessage the message for the log
      */
     public static function flasher($logType, $logMessage)
@@ -65,30 +66,31 @@ class Logging
     }
 
     /**
-     * Initialises statsd
+     * Initialises statsd.
      *
      * @static
      */
     private static function std_init()
     {
         $connection = new UdpSocket(
-            Config::getConfig("server", "statsd", "127.0.0.1"),
-            Config::getConfig("port", "statsd", 8125)
+            Config::getConfig('server', 'statsd', '127.0.0.1'),
+            Config::getConfig('port', 'statsd', 8125)
         );
-        $statsd = new Client($connection, Config::getConfig("namespace", "statsd", "rena.namespace"));
+        $statsd = new Client($connection, Config::getConfig('namespace', 'statsd', 'rena.namespace'));
 
         // Global name space
-        $statsd->setNamespace(Config::getConfig("globalNamespace", "statsd", "rena"));
+        $statsd->setNamespace(Config::getConfig('globalNamespace', 'statsd', 'rena'));
 
         return $statsd;
     }
 
     /**
-     * Increments a value in statsd
+     * Increments a value in statsd.
      *
      * @static
-     * @param string $name the name of the key
-     * @param int $amount the amount it's incremented
+     *
+     * @param string $name   the name of the key
+     * @param int    $amount the amount it's incremented
      */
     public static function std_increment($name, $amount = 1)
     {
@@ -97,11 +99,12 @@ class Logging
     }
 
     /**
-     * Creates a timing list in statsd
+     * Creates a timing list in statsd.
      *
      * @static
+     *
      * @param string $name the name of the key
-     * @param int $time the time it took for the request/execution to finish
+     * @param int    $time the time it took for the request/execution to finish
      */
     public static function std_timing($name, $time)
     {
@@ -110,10 +113,11 @@ class Logging
     }
 
     /**
-     * Creates a gauge in statsd
+     * Creates a gauge in statsd.
      *
      * @static
-     * @param string $name the name of the key
+     *
+     * @param string     $name   the name of the key
      * @param string|int $amount the amount the gauge is increased
      */
     public static function std_gauge($name, $amount)

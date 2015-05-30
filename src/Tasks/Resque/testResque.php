@@ -2,18 +2,16 @@
 
 namespace ProjectRena\Tasks\Resque;
 
-
 /**
- * Class testResque
- * @package ProjectRena\Tasks\Resque
+ * Class testResque.
  */
-class testResque {
+class testResque
+{
     /**
      *
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -21,7 +19,7 @@ class testResque {
      */
     public function perform()
     {
-        echo $this->args["name"];
+        echo $this->args['name'];
     }
 
     /**
@@ -29,6 +27,5 @@ class testResque {
      */
     public function tearDown()
     {
-
     }
 }

@@ -7,8 +7,7 @@ use PDO;
 use ProjectRena\Model\Config;
 
 /**
- * Class Database
- * @package ProjectRena\Lib
+ * Class Database.
  */
 class Database
 {
@@ -19,23 +18,25 @@ class Database
 
     /**
      * @return PDO
+     *
      * @throws Exception
      */
     protected static function getPDO()
     {
-        $dsn = "mysql:dbname=".Config::getConfig("name", "database").";host=".Config::getConfig("host", "database");
+        $dsn = 'mysql:dbname='.Config::getConfig('name', 'database').';host='.Config::getConfig('host', 'database');
         try {
-            $pdo = new PDO($dsn, Config::getConfig("username", "database"), Config::getConfig("password", "database"), array(
-                    PDO::ATTR_PERSISTENT => Config::getConfig("persistent", "database"),
-                    PDO::ATTR_EMULATE_PREPARES => Config::getConfig("emulatePrepares", "database"),
+            $pdo = new PDO(
+                $dsn, Config::getConfig('username', 'database'), Config::getConfig('password', 'database'), array(
+                    PDO::ATTR_PERSISTENT => Config::getConfig('persistent', 'database'),
+                    PDO::ATTR_EMULATE_PREPARES => Config::getConfig('emulatePrepares', 'database'),
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => Config::getConfig("useBufferedQuery", "database"),
+                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => Config::getConfig('useBufferedQuery', 'database'),
                     PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_Zone = '+00:00'",
                 )
             );
         } catch (Exception $e) {
-            $errorMessage = "Unable to connect to the database: ".$e->getMessage();
-            Logging::log("DEBUG", $errorMessage);
+            $errorMessage = 'Unable to connect to the database: '.$e->getMessage();
+            Logging::log('DEBUG', $errorMessage);
             throw new Exception($errorMessage);
         }
 
@@ -45,15 +46,17 @@ class Database
     /**
      * @param $query
      * @param array $parameters
-     * @param int $cacheTime
+     * @param int   $cacheTime
+     *
      * @return array|bool
+     *
      * @throws Exception
      */
     public static function query($query, $parameters = array(), $cacheTime = 30)
     {
         // Sanity check
-        if (strpos($query, ";") !== false) {
-            throw new Exception("Semicolons are not allowed in queries. Use parameters instead.");
+        if (strpos($query, ';') !== false) {
+            throw new Exception('Semicolons are not allowed in queries. Use parameters instead.');
         }
 
         // Cache time of 0 seconds means skip all caches. and just do the query
@@ -63,8 +66,9 @@ class Database
         if ($cacheTime > 0) {
             // Try the cache system
             $result = Cache::get($key);
-            if (!empty($result))
+            if (!empty($result)) {
                 return $result;
+            }
         }
 
         try {
@@ -79,7 +83,7 @@ class Database
 
             // Make sure PDO is set
             if ($pdo == null) {
-                return null;
+                return;
             }
 
             // Prepare the query
@@ -103,8 +107,9 @@ class Database
             $duration = $timer->stop();
 
             // If cache time is above 0 seconds, lets store it in the cache.
-            if ($cacheTime > 0)
-                Cache::set($key, $result, min(3600, $cacheTime)); // Store it in the cache system
+            if ($cacheTime > 0) {
+                Cache::set($key, $result, min(3600, $cacheTime));
+            } // Store it in the cache system
 
             // Log the query
             self::log($query, $parameters, $duration);
@@ -120,8 +125,10 @@ class Database
     /**
      * @param $query
      * @param array $parameters
-     * @param int $cacheTime
+     * @param int   $cacheTime
+     *
      * @return array
+     *
      * @throws Exception
      */
     public static function queryRow($query, $parameters = array(), $cacheTime = 30)
@@ -142,8 +149,8 @@ class Database
      * @param $query
      * @param $field
      * @param array $parameters
-     * @param int $cacheTime
-     * @return null
+     * @param int   $cacheTime
+     *
      * @throws Exception
      */
     public static function queryField($query, $field, $parameters = array(), $cacheTime = 30)
@@ -153,7 +160,7 @@ class Database
 
         // Figure out if it has no results
         if (sizeof($result) == 0) {
-            return null;
+            return;
         }
 
         // Bind the first result to $resultRow
@@ -166,8 +173,10 @@ class Database
     /**
      * @param $query
      * @param array $parameters
-     * @param bool $returnID
+     * @param bool  $returnID
+     *
      * @return bool|int|string
+     *
      * @throws Exception
      */
     public static function execute($query, $parameters = array(), $returnID = false)
@@ -193,6 +202,7 @@ class Database
         // If an error happened, rollback and return false
         if ($stmt->errorCode() != 0) {
             $pdo->rollBack();
+
             return false;
         }
 
@@ -225,12 +235,13 @@ class Database
 
     /**
      * @param $query
+     *
      * @throws Exception
      */
     private static function validateQuery($query)
     {
-        if (strpos($query, ";") !== false) {
-            throw new Exception("Semicolons are not allowed in queries. Use parameters instead.");
+        if (strpos($query, ';') !== false) {
+            throw new Exception('Semicolons are not allowed in queries. Use parameters instead.');
         }
     }
 
@@ -245,26 +256,30 @@ class Database
     /**
      * @param $query
      * @param array $parameters
-     * @param int $duration
+     * @param int   $duration
      */
     public static function log($query, $parameters = array(), $duration = 0)
     {
-        Logging::std_increment("website_queryCount");
+        Logging::std_increment('website_queryCount');
 
-        if ($duration < 10000)  // Don't log queries taking less than 10 seconds.
+        if ($duration < 10000) {
+            // Don't log queries taking less than 10 seconds.
+
             return;
+        }
 
-        $baseAddr = "";
+        $baseAddr = '';
         foreach ($parameters as $k => $v) {
             $query = str_replace($k, "'".$v."'", $query);
         }
-        $uri = isset($_SERVER["REQUEST_URI"]) ? "Query page: https://$baseAddr".$_SERVER["REQUEST_URI"]."\n" : "";
-        Logging::log("INFO", ($duration != 0 ? number_format($duration / 1000, 3)."s " : "")." Query: \n$query;\n$uri");
+        $uri = isset($_SERVER['REQUEST_URI']) ? "Query page: https://$baseAddr".$_SERVER['REQUEST_URI']."\n" : '';
+        Logging::log('INFO', ($duration != 0 ? number_format($duration / 1000, 3).'s ' : '')." Query: \n$query;\n$uri");
     }
 
     /**
      * @param $query
      * @param array $parameters
+     *
      * @return string
      */
     public static function getKey($query, $parameters = array())
@@ -273,6 +288,6 @@ class Database
             $query .= "|$key|$value";
         }
 
-        return "Db:".sha1($query);
+        return 'Db:'.sha1($query);
     }
 }
