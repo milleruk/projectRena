@@ -2,11 +2,8 @@
 
 namespace ProjectRena\Lib\Service;
 
-use Domnikl\Statsd\Client;
-use Domnikl\Statsd\Connection\UdpSocket;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-use ProjectRena\Model\Config;
 use ProjectRena\RenaApp;
 
 /**
