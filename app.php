@@ -26,24 +26,8 @@ if (file_exists(__DIR__.'/config.php')) {
 // Prepare app
 $app = new \ProjectRena\RenaApp($config['slim']);
 
-// Session
-$session = new SessionHandler();
-session_set_save_handler($session, true);
-session_cache_limiter(false);
-session_start();
-
-// Launch Whoops
-$app->add(new WhoopsMiddleware());
-
-// Prepare view
-$app->view(new Twig());
-$app->view->parserOptions = $config['twig'];
-
 // load the additional configs
 $configFiles = glob(__DIR__.'/config/*.php');
 foreach ($configFiles as $configFile) {
     require_once $configFile;
 }
-
-// Run app
-$app->run();
