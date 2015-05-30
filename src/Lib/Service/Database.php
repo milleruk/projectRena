@@ -41,6 +41,10 @@ class Database
     private $timer;
 
     /**
+     * @var StatsD
+     */
+    private $statsd;
+    /**
      * @param RenaApp $app
      *
      * @throws Exception
@@ -52,6 +56,7 @@ class Database
         $this->cache = $app->cache;
         $this->logger = $app->logger;
         $this->timer = $app->timer;
+        $this->statsd = $app->statsd;
 
         $dsn = 'mysql:dbname='.$this->config->getConfig('name', 'database').';host='.$this->config->getConfig('host', 'database');
         try {
@@ -266,7 +271,7 @@ class Database
      */
     public function logQuery($query, $parameters = array(), $duration = 0)
     {
-        $this->logger->stdIncrement('website_queryCount');
+        $this->statsd->increment('website_queryCount');
 
         if ($duration < 10000) {
             // Don't log queries taking less than 10 seconds.
