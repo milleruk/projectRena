@@ -1,40 +1,40 @@
 <?php
 
-
 namespace ProjectRena\Model\EVEApi\EVE;
 
 use ProjectRena\Lib\PhealLoader;
 
 /**
- * Class CharacterInfo
- *
- * @package ProjectRena\Model\EVEApi\EVE
+ * Class CharacterInfo.
  */
-class CharacterInfo {
-	/**
-	 * @var int
-	 */
-	public $accessMask = null;
+class CharacterInfo
+{
+    /**
+     * @var int
+     */
+    public $accessMask = null;
 
-	/**
-	 * @param $characterID
-	 * @param null $apiKey
-	 * @param null $vCode
-	 *
-	 * @return mixed
-	 */
-	public function getData($characterID, $apiKey = null, $vCode = null)
-	{
-		$pheal = PhealLoader::loadPheal();
-		$pheal->scope = "EVE";
-		$requestArray = array("characterID" => $characterID);
+    /**
+     * @param $characterID
+     * @param null $apiKey
+     * @param null $vCode
+     *
+     * @return mixed
+     */
+    public function getData($characterID, $apiKey = null, $vCode = null)
+    {
+        $pheal = PhealLoader::loadPheal();
+        $pheal->scope = 'EVE';
+        $requestArray = array('characterID' => $characterID);
 
-		if(isset($apiKey))
-			$requestArray["apiKey"] = $apiKey;
-		if(isset($vCode))
-			$requestArray["vCode"] = $vCode;
-		$result = $pheal->CharacterInfo($requestArray)->toArray();
+        if (isset($apiKey)) {
+            $requestArray['apiKey'] = $apiKey;
+        }
+        if (isset($vCode)) {
+            $requestArray['vCode'] = $vCode;
+        }
+        $result = $pheal->CharacterInfo($requestArray)->toArray();
 
-		return $result;
-	}
+        return $result;
+    }
 }

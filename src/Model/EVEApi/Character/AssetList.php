@@ -1,37 +1,32 @@
 <?php
 
-
 namespace ProjectRena\Model\EVEApi\Character;
-
 
 use ProjectRena\Lib\PhealLoader;
 
 /**
- * Class AssetList
- *
- * @package ProjectRena\Model\EVEApi\Character
+ * Class AssetList.
  */
-class AssetList {
-	/**
-	 * @var int
-	 */
-	public $accessMask = 2;
+class AssetList
+{
+    /**
+     * @var int
+     */
+    public $accessMask = 2;
 
-	/**
-	 * @param $apiKey
-	 * @param $vCode
-	 *
-	 * @param $characterID
-	 *
-	 * @return mixed
-	 */
-	public function getData($apiKey, $vCode, $characterID)
-	{
-		$pheal = PhealLoader::loadPheal($apiKey, $vCode);
-		$pheal->scope = "Char";
-		$result = $pheal->AssetList(array("characterID" => $characterID))->toArray();
+    /**
+     * @param $apiKey
+     * @param $vCode
+     * @param $characterID
+     *
+     * @return mixed
+     */
+    public function getData($apiKey, $vCode, $characterID)
+    {
+        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal->scope = 'Char';
+        $result = $pheal->AssetList(array('characterID' => $characterID))->toArray();
 
-		return $result;
-	}
-
+        return $result;
+    }
 }

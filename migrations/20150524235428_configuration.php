@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Configuration extends AbstractMigration
+class configuration extends AbstractMigration
 {
     /**
      * Change Method.
@@ -11,21 +11,17 @@ class Configuration extends AbstractMigration
      * http://docs.phinx.org/en/latest/migrations.html#the-change-method
      *
      * Uncomment this method if you would like to use it.
-     *
-    public function change()
-    {
-    }
-    */
-    
+     */
+
     /**
      * Migrate Up.
      */
     public function up()
     {
-        $configuration = $this->table("configuration");
+        $configuration = $this->table('configuration');
         $configuration
-            ->addColumn("key", "string", array("limit" => 250))
-            ->addColumn("value", "string", array("limit" => 250))
+            ->addColumn('key', 'string', array('limit' => 250))
+            ->addColumn('value', 'string', array('limit' => 250))
             ->save();
     }
 
@@ -34,6 +30,5 @@ class Configuration extends AbstractMigration
      */
     public function down()
     {
-
     }
 }

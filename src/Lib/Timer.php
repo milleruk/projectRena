@@ -3,8 +3,7 @@
 namespace ProjectRena\Lib;
 
 /**
- * Class Timer
- * @package ProjectRena\Lib
+ * Class Timer.
  */
 class Timer
 {
@@ -14,7 +13,7 @@ class Timer
     protected $startTime;
 
     /**
-     * Starts the timer class
+     * Starts the timer class.
      */
     public function __construct()
     {
@@ -22,7 +21,7 @@ class Timer
     }
 
     /**
-     * Starts the timer
+     * Starts the timer.
      */
     public function start()
     {
@@ -30,7 +29,7 @@ class Timer
     }
 
     /**
-     * Stops the timer
+     * Stops the timer.
      *
      * @return int
      */

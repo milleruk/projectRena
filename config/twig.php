@@ -7,4 +7,4 @@ $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 $twig = $app->view()->getEnvironment();
 
 // Twig globals
-$twig->addGlobal("test", "test");
+$twig->addGlobal('test', 'test');
