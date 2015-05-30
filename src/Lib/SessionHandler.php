@@ -3,6 +3,7 @@
 namespace ProjectRena\Lib;
 
 use ProjectRena\Lib\Service\Cache;
+use ProjectRena\RenaApp;
 use SessionHandlerInterface;
 
 /**
@@ -14,6 +15,14 @@ class SessionHandler implements SessionHandlerInterface
      * @var int
      */
     protected $ttl = 7200; // 2hrs of cache time
+    private $app;
+    private $cache;
+
+    function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+        $this->cache = $app->cache;
+    }
 
     /**
      * PHP >= 5.4.0<br/>
@@ -46,8 +55,7 @@ class SessionHandler implements SessionHandlerInterface
      */
     public function destroy($session_id)
     {
-        $cache = new Cache();
-        $cache->delete($session_id);
+        $this->cache->delete($session_id);
     }
 
     /**
@@ -106,8 +114,7 @@ class SessionHandler implements SessionHandlerInterface
      */
     public function read($session_id)
     {
-        $cache = new Cache();
-        $data = $cache->get($session_id);
+        $data = $this->cache->get($session_id);
         if (!is_array($data)) {
             return $data;
         }
@@ -137,8 +144,7 @@ class SessionHandler implements SessionHandlerInterface
      */
     public function write($session_id, $session_data)
     {
-        $cache = new Cache();
-        $cache->set($session_id, $session_data, $this->ttl);
+        $this->cache->set($session_id, $session_data, $this->ttl);
         return true;
     }
 }
