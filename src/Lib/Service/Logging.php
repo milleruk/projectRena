@@ -9,7 +9,6 @@ use ProjectRena\RenaApp;
 /**
  * Class Logging
  *
- * @todo find better naming for std* methods, as std is a common abbreviation for standard
  * @package ProjectRena\Lib\Service
  */
 class Logging

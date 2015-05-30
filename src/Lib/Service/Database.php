@@ -273,11 +273,9 @@ class Database
     {
         $this->statsd->increment('website_queryCount');
 
-        if ($duration < 10000) {
-            // Don't log queries taking less than 10 seconds.
-
+        // Don't log queries taking less than 10 seconds.
+        if ($duration < 10000)
             return;
-        }
 
         $baseAddr = '';
         foreach ($parameters as $k => $v) {

@@ -20,13 +20,12 @@ class users extends AbstractMigration
     {
         $users = $this->table('users');
         $users
-            ->addColumn('username', 'string', array('limit' => 128))
-            ->addColumn('password', 'string', array('limit' => 64))
-            ->addColumn('email', 'string', array('limit' => 100))
+            ->addColumn('characterName', 'string', array('limit' => 128))
             ->addColumn('characterID', 'integer', array('limit' => 11))
+            ->addColumn('characterOwnerHash', 'string', array('limit' => 64))
             ->addColumn('created', 'datetime')
             ->addColumn('updated', 'datetime', array('null' => true))
-            ->addIndex(array('username', 'email'), array('unique' => true))
+            ->addIndex(array('characterName', 'characterOwnerHash'), array('unique' => true))
             ->save();
     }
 

@@ -10,16 +10,17 @@ use ProjectRena\RenaApp;
 
 /**
  * Class LoginController
- * @todo get the instance of this horrible oauth implementation through DI
  * @package ProjectRena\Controller
  */
 class LoginController
 {
     protected $app;
+    private $config;
 
     public function __construct(RenaApp $app)
     {
         $this->app = $app;
+        $this->config = $app->renaConfig;
     }
 
     public function loginEVE()
@@ -32,22 +33,26 @@ class LoginController
 
         // Setup the credentials
         $credentials = new Credentials(
-            Config::getConfig('clientID', 'crestSSO'),
-            Config::getConfig('secretKey', 'crestSSO'),
+            $this->config->getConfig('clientID', 'crestSSO'),
+            $this->config->getConfig('secretKey', 'crestSSO'),
             $currentUri
         );
 
         // Instantiate the Eve Online service using the credentials, http client, storage mechanism for the token and profile scope
-        // @todo get rid of the error supression
-        $eveService = $serviceFactory->createService('EveOnline', $credentials, @$storage, array());
+        $eveService = $serviceFactory->createService('EveOnline', $credentials, $storage, array());
 
-        if ($eveService->isGlobalRequestArgumentsPassed()) {
+        if ($eveService->isGlobalRequestArgumentsPassed())
+        {
             $result = $eveService->retrieveAccessTokenByGlobReqArgs()->requestJSON('/oauth/verify');
             // Do stuff with the data here, and log the user in...
             var_dump($result);
-        } elseif (!empty($this->app->request->get('go')) && $this->app->request->get('go') == 'go') {
+        }
+        elseif(!empty($this->app->request->get('go')) && $this->app->request->get('go') == 'go')
+        {
             $eveService->redirectToAuthorizationUri();
-        } else {
+        }
+        else
+        {
             // @todo use templates!
             echo "<a href='$currentUri?go=go'>Login with Eve Online!</a>";
         }

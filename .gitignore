@@ -9,3 +9,5 @@ phinx.yml
 .phpintel/
 .idea/
 .settings/
+.floo
+.flooignore
