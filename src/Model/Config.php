@@ -32,6 +32,8 @@ class Config
      * @param $key
      * @param null $type
      * @param null $default
+     *
+     * @return null
      */
     public static function getConfig($key, $type = null, $default = null)
     {

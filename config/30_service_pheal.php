@@ -36,6 +36,6 @@ use ProjectRena\Lib\Service\PhealLogger;
 // now that we have setup the config, we also declare our service for the DI:
 // we use set, as we might want the ability to get multiple instances of pheal
 $app->container->set('pheal', function($container) use($app) {
-    $app->logger->stdIncrement('ccp_api');
+    $app->statsd->increment('ccp_api');
     return new Pheal\Pheal();
 });
