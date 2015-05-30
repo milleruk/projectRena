@@ -9,21 +9,23 @@ use ProjectRena\Lib\Database;
  */
 class Config
 {
-    /**
-     * Gets a config key from the config file or the database.
-     *
-     * @static
-     *
-     * @param string $key The key that needs to be fetched data for
-     *
-     * @return array
-     *
-     * @internal param string $type The type, only needed for the config.php file
-     * @internal param null $default
-     */
-    public static function get($key)
+    private $app;
+    private $db;
+
+    function __construct($app)
     {
-        $dbResult = Database::queryField('SELECT value FROM configuration WHERE `key` = :key', 'value', array(':key' => $key));
+        $this->app = $app;
+        $this->db = $this->app->db;
+    }
+
+    /**
+     * @param $key
+     *
+     * @return mixed
+     */
+    public function get($key)
+    {
+        $dbResult = $this->db->queryField('SELECT value FROM configuration WHERE `key` = :key', 'value', array(':key' => $key));
 
         return $dbResult;
     }
@@ -35,8 +37,9 @@ class Config
      *
      * @return null
      */
-    public static function getConfig($key, $type = null, $default = null)
+    public function getConfig($key, $type = null, $default = null)
     {
+        //todo fix this global...
         global $config;
 
         $type = strtolower($type);
@@ -46,17 +49,14 @@ class Config
 
         return $default;
     }
+
     /**
-     * Returns all config parameters available.
-     *
-     * @static
-     *
-     * @return array all the config rows
+     * @return array
      */
-    public static function getAll()
+    public function getAll()
     {
         global $config;
-        $dbConfig = Database::query('SELECT * FROM configuration');
+        $dbConfig = $this->db->query('SELECT * FROM configuration');
         $cfg = array_merge($config, $dbConfig);
 
         // Return the entire config, both from the config file and from the db
@@ -64,17 +64,13 @@ class Config
     }
 
     /**
-     * Sets a config key in the database (Not the config.php file, since it's supposed to be static).
+     * @param $key
+     * @param $value
      *
-     * @static
-     *
-     * @param string $key   The key that needs to be fetched data for
-     * @param string $value The value of the config parameter
-     *
-     * @return int rows changed
+     * @return mixed
      */
-    public static function set($key, $value)
+    public function set($key, $value)
     {
-        return Database::execute('INSERT INTO configuration (`key`, value) VALUES (:key, :value)', array(':key' => $key, ':value' => $value));
+        return $this->db->execute('INSERT INTO configuration (`key`, value) VALUES (:key, :value)', array(':key' => $key, ':value' => $value));
     }
 }
