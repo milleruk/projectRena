@@ -27,10 +27,10 @@ if (file_exists(__DIR__.'/config.php')) {
 $app = new \ProjectRena\RenaApp($config['slim']);
 
 // Session
-$session = new SessionHandler();
-session_set_save_handler($session, true);
-session_cache_limiter(false);
-session_start();
+//$session = new SessionHandler();
+//session_set_save_handler($session, true);
+//session_cache_limiter(false);
+//session_start();
 
 // Launch Whoops
 $app->add(new WhoopsMiddleware());

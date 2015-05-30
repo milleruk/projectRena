@@ -1,6 +1,7 @@
 <?php
 namespace ProjectRena;
 
+use ProjectRena\Lib\Service\baseConfig;
 use ProjectRena\Lib\Service\Logging;
 use ProjectRena\Lib\Service\Cache;
 use ProjectRena\Lib\Service\cURL;
@@ -14,7 +15,8 @@ use Slim\Slim;
 
 /**
  * @property Logging logger
- * @property Config renaConfig
+ * @property Config userConfig
+ * @property baseConfig baseConfig
  * @property Cache cache
  * @property cURL curl
  * @property Database db

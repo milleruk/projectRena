@@ -52,7 +52,7 @@ class Database
     function __construct(RenaApp $app)
     {
         $this->app = $app;
-        $this->config = $app->renaConfig;
+        $this->config = $app->baseConfig;
         $this->cache = $app->cache;
         $this->logger = $app->logger;
         $this->timer = $app->timer;

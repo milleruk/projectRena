@@ -26,7 +26,7 @@ class StatsD
      */
     function __construct(RenaApp $app)
     {
-        $this->config = $app->renaConfig;
+        $this->config = $app->baseConfig;
 
         $connection = new UdpSocket(
             $this->config->getConfig('server', 'statsd', '127.0.0.1'),

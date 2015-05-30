@@ -15,7 +15,7 @@ class Config
     function __construct($app)
     {
         $this->app = $app;
-        $this->db = $this->app->db;
+        $this->db = $app->db;
     }
 
     /**
@@ -28,26 +28,6 @@ class Config
         $dbResult = $this->db->queryField('SELECT value FROM configuration WHERE `key` = :key', 'value', array(':key' => $key));
 
         return $dbResult;
-    }
-
-    /**
-     * @param $key
-     * @param null $type
-     * @param null $default
-     *
-     * @return null
-     */
-    public function getConfig($key, $type = null, $default = null)
-    {
-        //todo fix this global...
-        global $config;
-
-        $type = strtolower($type);
-        if (isset($config[$type][$key])) {
-            return $config[$type][$key];
-        }
-
-        return $default;
     }
 
     /**

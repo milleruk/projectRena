@@ -20,7 +20,7 @@ class LoginController
     public function __construct(RenaApp $app)
     {
         $this->app = $app;
-        $this->config = $app->renaConfig;
+        $this->config = $app->baseConfig;
     }
 
     public function loginEVE()

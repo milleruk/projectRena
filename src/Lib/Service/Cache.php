@@ -4,6 +4,7 @@ namespace ProjectRena\Lib\Service;
 
 use Closure;
 use ProjectRena\Model\Config;
+use ProjectRena\RenaApp;
 use Redis;
 
 /**
@@ -11,15 +12,22 @@ use Redis;
  */
 class Cache
 {
+    /**
+     * @var Redis
+     */
     private $redis;
+    /**
+     * @var Config
+     */
     private $config;
 
+
     /**
-     * Instantiates the `Redis` object and connects it to the configured server.
+     * @param RenaApp $app
      */
-    function __construct()
+    function __construct(RenaApp $app)
     {
-        $this->config = new Config();
+        $this->config = $app->baseConfig;
         $this->redis = new Redis();
         $this->redis->pconnect($this->config->getConfig('host', 'redis', '127.0.0.1'), $this->config->getConfig('port', 'redis', 6379));
     }
