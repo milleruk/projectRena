@@ -12,6 +12,7 @@ use ProjectRena\Lib\Timer;
 use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
 use ProjectRena\Model\EVEApi;
+use ProjectRena\Model\OAuth\EVE;
 use Slim\Slim;
 
 /**
@@ -26,6 +27,7 @@ use Slim\Slim;
  * @property ApiKeys apikeys;
  * @property StatsD statsd;
  * @property SessionHandler sessionHandler;
+ * @property EVE eveoauth
  */
 class RenaApp extends Slim
 {

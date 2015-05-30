@@ -40,10 +40,10 @@ foreach ($configFiles as $configFile) {
 }
 
 // Session
-$session = new SessionHandler($app);
-session_set_save_handler($session, true);
-session_cache_limiter(false);
-session_start();
+//$session = new SessionHandler($app);
+//session_set_save_handler($session, true);
+//session_cache_limiter(false);
+//session_start();
 
 // Run app
 $app->run();
