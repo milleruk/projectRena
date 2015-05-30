@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class WalletTransactions.
@@ -13,6 +13,19 @@ class WalletTransactions
      * @var int
      */
     public $accessMask = 2097152;
+
+    /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
 
     /**
      * @param $apiKey
@@ -26,7 +39,7 @@ class WalletTransactions
      */
     public function getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $requestArray = array('characterID' => $characterID, 'accountKey' => $accountKey);
         if (isset($fromID)) {

@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class ContractBids.
@@ -15,6 +15,19 @@ class ContractBids
     public $accessMask = 8388608;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $characterID
@@ -23,7 +36,7 @@ class ContractBids
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->ContractBids(array('characterID' => $characterID))->toArray();
 

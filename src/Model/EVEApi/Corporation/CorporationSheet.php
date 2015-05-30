@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class CorporationSheet.
@@ -15,6 +15,19 @@ class CorporationSheet
     public $accessMask = 8;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param null $corporationID
@@ -23,7 +36,7 @@ class CorporationSheet
      */
     public function getData($apiKey, $vCode, $corporationID = null)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $requestArray = array();
         if (isset($corporationID)) {

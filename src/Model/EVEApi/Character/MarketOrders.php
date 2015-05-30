@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class MarketOrders.
@@ -15,6 +15,19 @@ class MarketOrders
     public $accessMask = 4096;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $characterID
@@ -24,7 +37,7 @@ class MarketOrders
      */
     public function getData($apiKey, $vCode, $characterID, $orderID = null)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $requestArray = array('characterID' => $characterID);
         if (isset($orderID)) {

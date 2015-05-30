@@ -21,6 +21,8 @@ class IndexController
 
     public function hello()
     {
+        var_dump($this->app->eveapi->apiCallList());
+        var_dump($this->app->db->query("SELECT 1"));
         $this->app->render('index.html');
     }
 

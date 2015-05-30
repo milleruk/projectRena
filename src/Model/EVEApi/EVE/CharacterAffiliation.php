@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\EVE;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class CharacterAffiliation.
@@ -15,11 +15,24 @@ class CharacterAffiliation
     public $accessMask = null;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @return mixed
      */
     public function getData($characterIDs = array())
     {
-        $pheal = PhealLoader::loadPheal();
+        $pheal = $this->app->pheal;
         $pheal->scope = 'EVE';
         $result = $pheal->CharacterAffiliation(array('ids' => implode(',', $characterIDs)))->toArray();
 

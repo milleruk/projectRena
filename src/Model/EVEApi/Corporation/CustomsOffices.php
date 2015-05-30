@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class CustomsOffices.
@@ -15,6 +15,19 @@ class CustomsOffices
     public $accessMask = 2;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $characterID
@@ -23,7 +36,7 @@ class CustomsOffices
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->CustomsOffices(array('characterID' => $characterID))->toArray();
 

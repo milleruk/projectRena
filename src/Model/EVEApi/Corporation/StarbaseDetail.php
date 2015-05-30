@@ -2,10 +2,15 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class StarbaseDetail.
+ */
+/**
+ * Class StarbaseDetail
+ *
+ * @package ProjectRena\Model\EVEApi\Corporation
  */
 class StarbaseDetail
 {
@@ -15,17 +20,28 @@ class StarbaseDetail
     public $accessMask = 131072;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $itemID
      *
      * @return mixed
-     *
-     * @internal param $characterID
      */
     public function getData($apiKey, $vCode, $itemID)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->StarbaseDetail(array('itemID' => $itemID))->toArray();
 

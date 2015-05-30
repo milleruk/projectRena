@@ -2,10 +2,12 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
- * Class MemberTracking.
+ * Class MemberTracking
+ *
+ * @package ProjectRena\Model\EVEApi\Corporation
  */
 class MemberTracking
 {
@@ -15,17 +17,29 @@ class MemberTracking
     public $accessMask = 2048;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+
+    /**
      * @param $apiKey
      * @param $vCode
-     * @param int $extended 1 For extended details, 0 for non extended details
+     * @param int $extended
      *
      * @return mixed
-     *
-     * @internal param $characterID
      */
     public function getData($apiKey, $vCode, $extended = 0)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->MemberTracking(array('extended' => $extended))->toArray();
 

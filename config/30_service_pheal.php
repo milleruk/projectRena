@@ -2,6 +2,7 @@
 
 // we only need to run the configuration for pheal once, as this is shared through
 // all instances:
+use ProjectRena\Lib\Service\PhealLogger;
 
 \Pheal\Core\Config::getInstance()->http_method = 'curl';
 
@@ -23,7 +24,7 @@
         'prefix' => 'Pheal',
     )
 );
-\Pheal\Core\Config::getInstance()->log = new ProjectRena\Lib\PhealLogger(); // Use the Rena Pheal Logger
+\Pheal\Core\Config::getInstance()->log = new PhealLogger(); // Use the Rena Pheal Logger
 \Pheal\Core\Config::getInstance()->api_customkeys = true;
 \Pheal\Core\Config::getInstance()->api_base = $app->renaConfig->getConfig(
     'apiServer',

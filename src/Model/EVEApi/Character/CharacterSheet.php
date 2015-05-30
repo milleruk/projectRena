@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class CharacterSheet.
@@ -15,6 +15,19 @@ class CharacterSheet
     public $accessMask = 8;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $characterID
@@ -23,7 +36,7 @@ class CharacterSheet
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->CharacterSheet(array('characterID' => $characterID))->toArray();
 

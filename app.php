@@ -1,7 +1,6 @@
 <?php
 
 // Imports
-use Slim\Slim;
 use Slim\Views\Twig;
 use ProjectRena\Lib\SessionHandler;
 use Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware;

@@ -1,8 +1,9 @@
 <?php
 
-namespace ProjectRena\Lib;
+namespace ProjectRena\Lib\Service;
 
 use ProjectRena\Model\Config;
+use ProjectRena\RenaApp;
 
 /**
  * Class cURL.
@@ -10,18 +11,28 @@ use ProjectRena\Model\Config;
 class cURL
 {
     /**
+     * @var Cache
+     */
+    private $cache;
+
+    function __construct($app)
+    {
+        $this->cache = $app->renaCache;
+    }
+
+    /**
      * @param $url
      * @param int $cacheTime
      *
      * @return mixed|null
      */
-    public static function getData($url, $cacheTime = 3600)
+    public function getData($url, $cacheTime = 3600)
     {
         // Md5 the url
         $md5 = md5($url);
 
         // Get results if they are available in the cache already
-        $result = $cacheTime > 0 ? Cache::get($md5) : null;
+        $result = $cacheTime > 0 ? $this->cache->get($md5) : null;
 
         // If there was no result, get the data
         if (!$result) {
@@ -52,7 +63,7 @@ class cURL
 
             // Cache the data
             if ($cacheTime > 0) {
-                Cache::set($md5, $result, $cacheTime);
+                $this->cache->set($md5, $result, $cacheTime);
             }
         }
 
@@ -67,7 +78,7 @@ class cURL
      *
      * @return mixed
      */
-    public static function sendData($url, $postData = array(), $headers = array())
+    public function sendData($url, $postData = array(), $headers = array())
     {
         // Define default headers
         if (empty($headers)) {

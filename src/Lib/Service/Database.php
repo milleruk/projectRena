@@ -1,10 +1,10 @@
 <?php
 
-namespace ProjectRena\Lib;
+namespace ProjectRena\Lib\Service;
 
 use Exception;
 use PDO;
-use ProjectRena\Model\Config;
+use ProjectRena\RenaApp;
 
 /**
  * Class Database.
@@ -14,33 +14,61 @@ class Database
     /**
      * @var int
      */
-    protected static $queryCount = 0;
+    protected $queryCount = 0;
+    /**
+     * @var RenaApp
+     */
+    private $app;
+    /**
+     * @var PDO
+     */
+    private $pdo;
+    /**
+     * @var \ProjectRena\Model\Config
+     */
+    private $config;
+    /**
+     * @var \ProjectRena\Lib\Service\Cache
+     */
+    private $cache;
+    /**
+     * @var Logging
+     */
+    private $logger;
+    /**
+     * @var \ProjectRena\Lib\Timer
+     */
+    private $timer;
 
     /**
-     * @return PDO
+     * @param RenaApp $app
      *
      * @throws Exception
      */
-    protected static function getPDO()
+    function __construct(RenaApp $app)
     {
-        $dsn = 'mysql:dbname='.Config::getConfig('name', 'database').';host='.Config::getConfig('host', 'database');
+        $this->app = $app;
+        $this->config = $app->renaConfig;
+        $this->cache = $app->cache;
+        $this->logger = $app->logger;
+        $this->timer = $app->timer;
+
+        $dsn = 'mysql:dbname='.$this->config->getConfig('name', 'database').';host='.$this->config->getConfig('host', 'database');
         try {
-            $pdo = new PDO(
-                $dsn, Config::getConfig('username', 'database'), Config::getConfig('password', 'database'), array(
-                    PDO::ATTR_PERSISTENT => Config::getConfig('persistent', 'database'),
-                    PDO::ATTR_EMULATE_PREPARES => Config::getConfig('emulatePrepares', 'database'),
+            $this->pdo = new PDO(
+                $dsn, $this->config->getConfig('username', 'database'), $this->config->getConfig('password', 'database'), array(
+                    PDO::ATTR_PERSISTENT => $this->config->getConfig('persistent', 'database'),
+                    PDO::ATTR_EMULATE_PREPARES => $this->config->getConfig('emulatePrepares', 'database'),
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => Config::getConfig('useBufferedQuery', 'database'),
+                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => $this->config->getConfig('useBufferedQuery', 'database'),
                     PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_Zone = '+00:00'",
                 )
             );
         } catch (Exception $e) {
-            $errorMessage = 'Unable to connect to the database: '.$e->getMessage();
-            Logging::log('DEBUG', $errorMessage);
-            throw new Exception($errorMessage);
+            $logMessage = 'Unable to connect to the database: '.$e->getMessage();
+            $this->logger->log("DEBUG", $logMessage);
+            throw new Exception($logMessage);
         }
-
-        return $pdo;
     }
 
     /**
@@ -52,7 +80,7 @@ class Database
      *
      * @throws Exception
      */
-    public static function query($query, $parameters = array(), $cacheTime = 30)
+    public function query($query, $parameters = array(), $cacheTime = 30)
     {
         // Sanity check
         if (strpos($query, ';') !== false) {
@@ -60,12 +88,12 @@ class Database
         }
 
         // Cache time of 0 seconds means skip all caches. and just do the query
-        $key = self::getKey($query, $parameters);
+        $key = $this->getKey($query, $parameters);
 
         // If cache time is above 0 seconds, lets try and get it from that.
         if ($cacheTime > 0) {
             // Try the cache system
-            $result = Cache::get($key);
+            $result = $this->cache->get($key);
             if (!empty($result)) {
                 return $result;
             }
@@ -73,21 +101,13 @@ class Database
 
         try {
             // Start the timer
-            $timer = new Timer();
+            $timer = $this->timer;
 
             // Increment the queryCounter
-            self::$queryCount++;
-
-            // Open the database connection
-            $pdo = self::getPDO();
-
-            // Make sure PDO is set
-            if ($pdo == null) {
-                return;
-            }
+            $this->queryCount++;
 
             // Prepare the query
-            $stmt = $pdo->prepare($query);
+            $stmt = $this->pdo->prepare($query);
 
             // Execute the query, with the parameters
             $stmt->execute($parameters);
@@ -108,11 +128,11 @@ class Database
 
             // If cache time is above 0 seconds, lets store it in the cache.
             if ($cacheTime > 0) {
-                Cache::set($key, $result, min(3600, $cacheTime));
+                $this->cache->set($key, $result, min(3600, $cacheTime));
             } // Store it in the cache system
 
             // Log the query
-            self::log($query, $parameters, $duration);
+            $this->logQuery($query, $parameters, $duration);
 
             // now to return the result
             return $result;
@@ -131,10 +151,10 @@ class Database
      *
      * @throws Exception
      */
-    public static function queryRow($query, $parameters = array(), $cacheTime = 30)
+    public function queryRow($query, $parameters = array(), $cacheTime = 30)
     {
         // Get the result
-        $result = self::query($query, $parameters, $cacheTime);
+        $result = $this->query($query, $parameters, $cacheTime);
 
         // Figure out if it has more than one result and return it
         if (sizeof($result) >= 1) {
@@ -149,18 +169,19 @@ class Database
      * @param $query
      * @param $field
      * @param array $parameters
-     * @param int   $cacheTime
+     * @param int $cacheTime
      *
+     * @return null
      * @throws Exception
      */
-    public static function queryField($query, $field, $parameters = array(), $cacheTime = 30)
+    public function queryField($query, $field, $parameters = array(), $cacheTime = 30)
     {
         // Get the result
-        $result = self::query($query, $parameters, $cacheTime);
+        $result = $this->query($query, $parameters, $cacheTime);
 
         // Figure out if it has no results
         if (sizeof($result) == 0) {
-            return;
+            return null;
         }
 
         // Bind the first result to $resultRow
@@ -179,44 +200,41 @@ class Database
      *
      * @throws Exception
      */
-    public static function execute($query, $parameters = array(), $returnID = false)
+    public function execute($query, $parameters = array(), $returnID = false)
     {
         // Init the timer
-        $timer = new Timer();
+        $timer = $this->timer;
 
         // Increment the amount of queries done
-        self::$queryCount++;
-
-        // Open the database connection
-        $pdo = self::getPDO();
+        $this->queryCount++;
 
         // Transaction start
-        $pdo->beginTransaction();
+        $this->pdo->beginTransaction();
 
         // Prepare the query
-        $stmt = $pdo->prepare($query);
+        $stmt = $this->pdo->prepare($query);
 
         // Execute the query
         $stmt->execute($parameters);
 
         // If an error happened, rollback and return false
         if ($stmt->errorCode() != 0) {
-            $pdo->rollBack();
+            $this->pdo->rollBack();
 
             return false;
         }
 
         // Get the inserted id
-        $returnID = $returnID ? $pdo->lastInsertId() : 0;
+        $returnID = $returnID ? $this->pdo->lastInsertId() : 0;
 
         // Commitment time
-        $pdo->commit();
+        $this->pdo->commit();
 
         // ProjectRena\Lib\Timer stop
         $duration = $timer->stop();
 
         // Log the query
-        self::log($query, $parameters, $duration);
+        $this->logQuery($query, $parameters, $duration);
 
         // Get the amount of rows that was affected
         $rowCount = $stmt->rowCount();
@@ -234,23 +252,11 @@ class Database
     }
 
     /**
-     * @param $query
-     *
-     * @throws Exception
-     */
-    private static function validateQuery($query)
-    {
-        if (strpos($query, ';') !== false) {
-            throw new Exception('Semicolons are not allowed in queries. Use parameters instead.');
-        }
-    }
-
-    /**
      * @return int
      */
-    public static function getQueryCount()
+    public function getQueryCount()
     {
-        return self::$queryCount;
+        return $this->queryCount;
     }
 
     /**
@@ -258,9 +264,9 @@ class Database
      * @param array $parameters
      * @param int   $duration
      */
-    public static function log($query, $parameters = array(), $duration = 0)
+    public function logQuery($query, $parameters = array(), $duration = 0)
     {
-        Logging::std_increment('website_queryCount');
+        $this->logger->stdIncrement('website_queryCount');
 
         if ($duration < 10000) {
             // Don't log queries taking less than 10 seconds.
@@ -273,7 +279,7 @@ class Database
             $query = str_replace($k, "'".$v."'", $query);
         }
         $uri = isset($_SERVER['REQUEST_URI']) ? "Query page: https://$baseAddr".$_SERVER['REQUEST_URI']."\n" : '';
-        Logging::log('INFO', ($duration != 0 ? number_format($duration / 1000, 3).'s ' : '')." Query: \n$query;\n$uri");
+        $this->logger->log('INFO', ($duration != 0 ? number_format($duration / 1000, 3).'s ' : '')." Query: \n$query;\n$uri");
     }
 
     /**
@@ -282,7 +288,7 @@ class Database
      *
      * @return string
      */
-    public static function getKey($query, $parameters = array())
+    public function getKey($query, $parameters = array())
     {
         foreach ($parameters as $key => $value) {
             $query .= "|$key|$value";

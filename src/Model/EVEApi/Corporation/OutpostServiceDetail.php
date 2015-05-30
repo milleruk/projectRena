@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class OutpostServiceDetail.
@@ -15,6 +15,19 @@ class OutpostServiceDetail
     public $accessMask = 32768;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $characterID
@@ -24,7 +37,7 @@ class OutpostServiceDetail
      */
     public function getData($apiKey, $vCode, $characterID, $itemID)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->OutpostServiceDetail(array('characterID' => $characterID, 'itemID' => $itemID))->toArray();
 

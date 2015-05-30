@@ -2,10 +2,15 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class KillMails.
+ */
+/**
+ * Class KillMails
+ *
+ * @package ProjectRena\Model\EVEApi\Corporation
  */
 class KillMails
 {
@@ -15,18 +20,29 @@ class KillMails
     public $accessMask = 256;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param null $fromID
      * @param null $rowCount
      *
      * @return mixed
-     *
-     * @internal param $characterID
      */
     public function getData($apiKey, $vCode, $fromID = null, $rowCount = null)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
 
         $requestArray = array();

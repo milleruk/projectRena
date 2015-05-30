@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\EVE;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class CharacterID.
@@ -15,13 +15,26 @@ class CharacterID
     public $accessMask = null;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param array $characterNames
      *
      * @return mixed
      */
     public function getData($characterNames = array())
     {
-        $pheal = PhealLoader::loadPheal();
+        $pheal = $this->app->pheal;
         $pheal->scope = 'EVE';
         $result = $pheal->CharacterID(array('names' => implode(',', $characterNames)))->toArray();
 

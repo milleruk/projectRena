@@ -2,6 +2,7 @@
 
 namespace ProjectRena\Lib;
 
+use ProjectRena\Lib\Service\Cache;
 use SessionHandlerInterface;
 
 /**
@@ -45,7 +46,8 @@ class SessionHandler implements SessionHandlerInterface
      */
     public function destroy($session_id)
     {
-        Cache::delete($session_id);
+        $cache = new Cache();
+        $cache->delete($session_id);
     }
 
     /**
@@ -104,7 +106,8 @@ class SessionHandler implements SessionHandlerInterface
      */
     public function read($session_id)
     {
-        $data = Cache::get($session_id);
+        $cache = new Cache();
+        $data = $cache->get($session_id);
         if (!is_array($data)) {
             return $data;
         }
@@ -134,7 +137,8 @@ class SessionHandler implements SessionHandlerInterface
      */
     public function write($session_id, $session_data)
     {
-        //Cache::set($session_id, $session_data, $this->ttl);
+        $cache = new Cache();
+        $cache->set($session_id, $session_data, $this->ttl);
         return true;
     }
 }

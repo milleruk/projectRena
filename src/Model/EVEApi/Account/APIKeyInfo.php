@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Account;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class APIKeyInfo.
@@ -15,6 +15,19 @@ class APIKeyInfo
     public $accessMask = null;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      *
@@ -22,7 +35,7 @@ class APIKeyInfo
      */
     public function getData($apiKey, $vCode)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Account';
         $result = $pheal->APIKeyInfo()->toArray();
 

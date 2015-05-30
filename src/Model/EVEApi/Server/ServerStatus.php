@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Server;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class ServerStatus.
@@ -15,11 +15,24 @@ class ServerStatus
     public $accessMask = null;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @return mixed
      */
     public function getData()
     {
-        $pheal = PhealLoader::loadPheal();
+        $pheal = $this->app->pheal;
         $pheal->scope = 'Server';
         $result = $pheal->ServerStatus()->toArray();
 

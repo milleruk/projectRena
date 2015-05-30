@@ -1,25 +1,39 @@
 <?php
 
-namespace ProjectRena\Model\EVEApi;
+namespace ProjectRena\Model;
 
-/**
- * Class EVEApi.
- * @todo find out if you really need an abstraction layer that virtually doesn't add anything in functionality
- * @todo if you want to continue on this way, make sure you turn this into service avilable through the DI
- * @todo static to methods, add app instance to this, and instanciate this
- */
+use ProjectRena\RenaApp;
+
 /**
  * Class EVEApi.
  */
 class EVEApi
 {
     /**
+     * @var
+     */
+    public $app;
+
+    /**
+     * @var
+     */
+    public $pheal;
+
+    /**
+     * @param $app
+     */
+    function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @return mixed
      */
-    public static function apiCallList()
+    public function apiCallList()
     {
-        $return = new \ProjectRena\Model\EVEApi\API\CallList();
-
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\API\CallList($this->app);
         return $return->getData();
     }
 
@@ -29,9 +43,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function accountAPIKeyInfo($apiKey, $vCode)
+    public function accountAPIKeyInfo($apiKey, $vCode)
     {
-        $return = new \ProjectRena\Model\EVEApi\Account\APIKeyInfo();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Account\APIKeyInfo($this->app);
 
         return $return->getData($apiKey, $vCode);
     }
@@ -42,9 +57,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function accountAccountStatus($apiKey, $vCode)
+    public function accountAccountStatus($apiKey, $vCode)
     {
-        $return = new \ProjectRena\Model\EVEApi\Account\AccountStatus();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Account\AccountStatus($this->app);
 
         return $return->getData($apiKey, $vCode);
     }
@@ -55,9 +71,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function accountCharacters($apiKey, $vCode)
+    public function accountCharacters($apiKey, $vCode)
     {
-        $return = new \ProjectRena\Model\EVEApi\Account\Characters();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Account\Characters($this->app);
 
         return $return->getData($apiKey, $vCode);
     }
@@ -69,9 +86,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charAccountBalance($apiKey, $vCode, $characterID)
+    public function charAccountBalance($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\AccountBalance();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\AccountBalance($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -83,9 +101,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charAssetList($apiKey, $vCode, $characterID)
+    public function charAssetList($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\AssetList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\AssetList($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -97,9 +116,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charBlueprints($apiKey, $vCode, $characterID)
+    public function charBlueprints($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\Blueprints();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\Blueprints($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -112,9 +132,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charCalendarEventAttendees($apiKey, $vCode, $characterID, $eventIDs = array())
+    public function charCalendarEventAttendees($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $eventIDs = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\CalendarEventAttendees();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\CalendarEventAttendees($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $eventIDs = array());
     }
@@ -126,9 +149,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charCharacterSheet($apiKey, $vCode, $characterID)
+    public function charCharacterSheet($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\CharacterSheet();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\CharacterSheet($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -140,9 +164,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charContactList($apiKey, $vCode, $characterID)
+    public function charContactList($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\ContactList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\ContactList($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -154,9 +179,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charContactNotifications($apiKey, $vCode, $characterID)
+    public function charContactNotifications($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\ContactNotifications();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\ContactNotifications($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -168,9 +194,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charContractBids($apiKey, $vCode, $characterID)
+    public function charContractBids($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\ContractBids();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\ContractBids($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -183,9 +210,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charContractItems($apiKey, $vCode, $characterID, $contractID)
+    public function charContractItems($apiKey, $vCode, $characterID, $contractID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\ContractItems();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\ContractItems($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $contractID);
     }
@@ -198,9 +226,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charContracts($apiKey, $vCode, $characterID, $contractID = null)
+    public function charContracts($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $contractID = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\Contracts();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\Contracts($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $contractID = null);
     }
@@ -212,9 +243,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charFacWarStats($apiKey, $vCode, $characterID)
+    public function charFacWarStats($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\FacWarStats();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\FacWarStats($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -226,9 +258,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charIndustryJobs($apiKey, $vCode, $characterID)
+    public function charIndustryJobs($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\IndustryJobs();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\IndustryJobs($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -240,9 +273,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charIndustryJobsHistory($apiKey, $vCode, $characterID)
+    public function charIndustryJobsHistory($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\IndustryJobsHistory();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\IndustryJobsHistory($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -256,9 +290,14 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charKillMails($apiKey, $vCode, $characterID, $fromID = null, $rowCount = null)
+    public function charKillMails($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $fromID = null,
+        /** @noinspection PhpUnusedParameterInspection */
+        $rowCount = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\KillMails();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\KillMails($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $fromID = null, $rowCount = null);
     }
@@ -271,9 +310,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charLocations($apiKey, $vCode, $characterID, $ids = array())
+    public function charLocations($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $ids = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\Locations();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\Locations($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $ids = array());
     }
@@ -286,9 +328,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charMailBodies($apiKey, $vCode, $characterID, $ids = array())
+    public function charMailBodies($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $ids = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\MailBodies();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\MailBodies($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $ids = array());
     }
@@ -300,9 +345,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charMailMessages($apiKey, $vCode, $characterID)
+    public function charMailMessages($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\MailMessages();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\MailMessages($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -314,9 +360,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charMailingLists($apiKey, $vCode, $characterID)
+    public function charMailingLists($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\MailingLists();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\MailingLists($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -329,9 +376,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charMarketOrders($apiKey, $vCode, $characterID, $orderID = null)
+    public function charMarketOrders($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $orderID = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\MarketOrders();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\MarketOrders($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $orderID = null);
     }
@@ -343,9 +393,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charMedals($apiKey, $vCode, $characterID)
+    public function charMedals($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\Medals();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\Medals($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -358,9 +409,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charNotificationTexts($apiKey, $vCode, $characterID, $ids = array())
+    public function charNotificationTexts($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $ids = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\NotificationTexts();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\NotificationTexts($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $ids = array());
     }
@@ -372,9 +426,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charNotifications($apiKey, $vCode, $characterID)
+    public function charNotifications($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\Notifications();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\Notifications($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -386,9 +441,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charPlanetaryColonies($apiKey, $vCode, $characterID)
+    public function charPlanetaryColonies($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryColonies();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryColonies($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -401,9 +457,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charPlanetaryLinks($apiKey, $vCode, $characterID, $planetID)
+    public function charPlanetaryLinks($apiKey, $vCode, $characterID, $planetID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryLinks();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryLinks($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $planetID);
     }
@@ -416,9 +473,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charPlanetaryPins($apiKey, $vCode, $characterID, $planetID)
+    public function charPlanetaryPins($apiKey, $vCode, $characterID, $planetID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryPins();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryPins($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $planetID);
     }
@@ -431,9 +489,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charPlanetaryRoutes($apiKey, $vCode, $characterID, $planetID)
+    public function charPlanetaryRoutes($apiKey, $vCode, $characterID, $planetID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryRoutes();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\PlanetaryRoutes($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $planetID);
     }
@@ -445,9 +504,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charResearch($apiKey, $vCode, $characterID)
+    public function charResearch($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\Research();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\Research($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -459,9 +519,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charSkillInTraining($apiKey, $vCode, $characterID)
+    public function charSkillInTraining($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\SkillInTraining();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\SkillInTraining($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -473,9 +534,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charSkillQueue($apiKey, $vCode, $characterID)
+    public function charSkillQueue($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\SkillQueue();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\SkillQueue($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -487,9 +549,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charStandings($apiKey, $vCode, $characterID)
+    public function charStandings($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\Standings();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\Standings($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -501,9 +564,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charUpcomingCalendarEvents($apiKey, $vCode, $characterID)
+    public function charUpcomingCalendarEvents($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\UpcomingCalendarEvents();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\UpcomingCalendarEvents($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -518,9 +582,16 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charWalletJournal($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
+    public function charWalletJournal($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $accountKey = 1000,
+        /** @noinspection PhpUnusedParameterInspection */
+        $fromID = null,
+        /** @noinspection PhpUnusedParameterInspection */
+        $rowCount = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\WalletJournal();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\WalletJournal($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null);
     }
@@ -535,9 +606,16 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function charWalletTransactions($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
+    public function charWalletTransactions($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $accountKey = 1000,
+        /** @noinspection PhpUnusedParameterInspection */
+        $fromID = null,
+        /** @noinspection PhpUnusedParameterInspection */
+        $rowCount = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Character\WalletTransactions();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Character\WalletTransactions($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null);
     }
@@ -549,9 +627,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpAccountBalance($apiKey, $vCode, $characterID)
+    public function corpAccountBalance($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\AccountBalance();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\AccountBalance($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -563,9 +642,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpAssetList($apiKey, $vCode, $characterID)
+    public function corpAssetList($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\AssetList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\AssetList($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -577,9 +657,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpBlueprints($apiKey, $vCode, $characterID)
+    public function corpBlueprints($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Blueprints();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Blueprints($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -591,9 +672,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpContactList($apiKey, $vCode, $characterID)
+    public function corpContactList($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\ContactList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\ContactList($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -605,9 +687,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpContainerLog($apiKey, $vCode, $characterID)
+    public function corpContainerLog($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\ContainerLog();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\ContainerLog($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -619,9 +702,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpContractBids($apiKey, $vCode, $characterID)
+    public function corpContractBids($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\ContractBids();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\ContractBids($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -634,9 +718,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpContractItems($apiKey, $vCode, $characterID, $contractID)
+    public function corpContractItems($apiKey, $vCode, $characterID, $contractID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\ContractItems();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\ContractItems($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $contractID);
     }
@@ -649,9 +734,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpContracts($apiKey, $vCode, $characterID, $contractID = null)
+    public function corpContracts($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $contractID = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Contracts();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Contracts($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $contractID = null);
     }
@@ -663,9 +751,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpCorporationSheet($apiKey, $vCode, $corporationID = null)
+    public function corpCorporationSheet($apiKey, $vCode,
+        /** @noinspection PhpUnusedParameterInspection */
+        $corporationID = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\CorporationSheet();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\CorporationSheet($this->app);
 
         return $return->getData($apiKey, $vCode, $corporationID = null);
     }
@@ -677,9 +768,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpCustomsOffices($apiKey, $vCode, $characterID)
+    public function corpCustomsOffices($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\CustomsOffices();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\CustomsOffices($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -691,9 +783,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpFacWarStats($apiKey, $vCode, $characterID)
+    public function corpFacWarStats($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\FacWarStats();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\FacWarStats($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -704,9 +797,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpFacilities($apiKey, $vCode)
+    public function corpFacilities($apiKey, $vCode)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Facilities();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Facilities($this->app);
 
         return $return->getData($apiKey, $vCode);
     }
@@ -718,9 +812,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpIndustryJobs($apiKey, $vCode, $characterID)
+    public function corpIndustryJobs($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\IndustryJobs();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\IndustryJobs($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -732,9 +827,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpIndustryJobsHistory($apiKey, $vCode, $characterID)
+    public function corpIndustryJobsHistory($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\IndustryJobsHistory();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\IndustryJobsHistory($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -747,9 +843,14 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpKillMails($apiKey, $vCode, $fromID = null, $rowCount = null)
+    public function corpKillMails($apiKey, $vCode,
+        /** @noinspection PhpUnusedParameterInspection */
+        $fromID = null,
+        /** @noinspection PhpUnusedParameterInspection */
+        $rowCount = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\KillMails();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\KillMails($this->app);
 
         return $return->getData($apiKey, $vCode, $fromID = null, $rowCount = null);
     }
@@ -762,9 +863,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpLocations($apiKey, $vCode, $characterID, $ids = array())
+    public function corpLocations($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $ids = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Locations();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Locations($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $ids = array());
     }
@@ -777,9 +881,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpMarketOrders($apiKey, $vCode, $characterID, $orderID = null)
+    public function corpMarketOrders($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $orderID = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\MarketOrders();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\MarketOrders($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $orderID = null);
     }
@@ -791,9 +898,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpMedals($apiKey, $vCode, $characterID)
+    public function corpMedals($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Medals();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Medals($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -805,9 +913,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpMemberMedals($apiKey, $vCode, $characterID)
+    public function corpMemberMedals($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberMedals();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberMedals($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -819,9 +928,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpMemberSecurity($apiKey, $vCode, $characterID)
+    public function corpMemberSecurity($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberSecurity();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberSecurity($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -833,9 +943,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpMemberSecurityLog($apiKey, $vCode, $characterID)
+    public function corpMemberSecurityLog($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberSecurityLog();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberSecurityLog($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -847,9 +958,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpMemberTracking($apiKey, $vCode, $extended = 0)
+    public function corpMemberTracking($apiKey, $vCode,
+        /** @noinspection PhpUnusedParameterInspection */
+        $extended = 0)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberTracking();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\MemberTracking($this->app);
 
         return $return->getData($apiKey, $vCode, $extended = 0);
     }
@@ -861,9 +975,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpOutpostList($apiKey, $vCode, $characterID)
+    public function corpOutpostList($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\OutpostList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\OutpostList($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -876,9 +991,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpOutpostServiceDetail($apiKey, $vCode, $characterID, $itemID)
+    public function corpOutpostServiceDetail($apiKey, $vCode, $characterID, $itemID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\OutpostServiceDetail();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\OutpostServiceDetail($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $itemID);
     }
@@ -890,9 +1006,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpShareholders($apiKey, $vCode, $characterID)
+    public function corpShareholders($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Shareholders();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Shareholders($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -904,9 +1021,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpStandings($apiKey, $vCode, $characterID)
+    public function corpStandings($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Standings();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Standings($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -918,9 +1036,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpStarbaseDetail($apiKey, $vCode, $itemID)
+    public function corpStarbaseDetail($apiKey, $vCode, $itemID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\StarbaseDetail();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\StarbaseDetail($this->app);
 
         return $return->getData($apiKey, $vCode, $itemID);
     }
@@ -931,9 +1050,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpStarbaseList($apiKey, $vCode)
+    public function corpStarbaseList($apiKey, $vCode)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\StarbaseList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\StarbaseList($this->app);
 
         return $return->getData($apiKey, $vCode);
     }
@@ -945,9 +1065,10 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpTitles($apiKey, $vCode, $characterID)
+    public function corpTitles($apiKey, $vCode, $characterID)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\Titles();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\Titles($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID);
     }
@@ -962,9 +1083,16 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpWalletJournal($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
+    public function corpWalletJournal($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $accountKey = 1000,
+        /** @noinspection PhpUnusedParameterInspection */
+        $fromID = null,
+        /** @noinspection PhpUnusedParameterInspection */
+        $rowCount = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\WalletJournal();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\WalletJournal($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null);
     }
@@ -979,9 +1107,16 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function corpWalletTransactions($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
+    public function corpWalletTransactions($apiKey, $vCode, $characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $accountKey = 1000,
+        /** @noinspection PhpUnusedParameterInspection */
+        $fromID = null,
+        /** @noinspection PhpUnusedParameterInspection */
+        $rowCount = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\Corporation\WalletTransactions();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Corporation\WalletTransactions($this->app);
 
         return $return->getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null);
     }
@@ -989,9 +1124,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function eveAllianceList()
+    public function eveAllianceList()
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\AllianceList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\AllianceList($this->app);
 
         return $return->getData();
     }
@@ -1001,9 +1137,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function eveCharacterAffiliation($characterIDs = array())
+    public function eveCharacterAffiliation(
+        /** @noinspection PhpUnusedParameterInspection */
+        $characterIDs = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterAffiliation();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterAffiliation($this->app);
 
         return $return->getData($characterIDs = array());
     }
@@ -1013,9 +1152,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function eveCharacterID($characterNames = array())
+    public function eveCharacterID(
+        /** @noinspection PhpUnusedParameterInspection */
+        $characterNames = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterID();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterID($this->app);
 
         return $return->getData($characterNames = array());
     }
@@ -1027,9 +1169,14 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function eveCharacterInfo($characterID, $apiKey = null, $vCode = null)
+    public function eveCharacterInfo($characterID,
+        /** @noinspection PhpUnusedParameterInspection */
+        $apiKey = null,
+        /** @noinspection PhpUnusedParameterInspection */
+        $vCode = null)
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterInfo();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterInfo($this->app);
 
         return $return->getData($characterID, $apiKey = null, $vCode = null);
     }
@@ -1039,9 +1186,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function eveCharacterName($characterIDs = array())
+    public function eveCharacterName(
+        /** @noinspection PhpUnusedParameterInspection */
+        $characterIDs = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterName();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\CharacterName($this->app);
 
         return $return->getData($characterIDs = array());
     }
@@ -1049,9 +1199,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function eveConquerableStationList()
+    public function eveConquerableStationList()
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\ConquerableStationList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\ConquerableStationList($this->app);
 
         return $return->getData();
     }
@@ -1059,9 +1210,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function eveErrorList()
+    public function eveErrorList()
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\ErrorList();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\ErrorList($this->app);
 
         return $return->getData();
     }
@@ -1069,9 +1221,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function eveFacWarStats()
+    public function eveFacWarStats()
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\FacWarStats();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\FacWarStats($this->app);
 
         return $return->getData();
     }
@@ -1079,9 +1232,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function eveFacWarTopStats()
+    public function eveFacWarTopStats()
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\FacWarTopStats();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\FacWarTopStats($this->app);
 
         return $return->getData();
     }
@@ -1089,9 +1243,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function eveRefTypes()
+    public function eveRefTypes()
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\RefTypes();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\RefTypes($this->app);
 
         return $return->getData();
     }
@@ -1099,9 +1254,11 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function eveSkillTree()
+    public function eveSkillTree()
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\SkillTree();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\SkillTree($this->app);
 
         return $return->getData();
     }
@@ -1111,9 +1268,12 @@ class EVEApi
      *
      * @return mixed
      */
-    public static function eveTypeName($typeIDs = array())
+    public function eveTypeName(
+        /** @noinspection PhpUnusedParameterInspection */
+        $typeIDs = array())
     {
-        $return = new \ProjectRena\Model\EVEApi\EVE\TypeName();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\EVE\TypeName($this->app);
 
         return $return->getData($typeIDs = array());
     }
@@ -1121,9 +1281,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function mapFacWarSystems()
+    public function mapFacWarSystems()
     {
-        $return = new \ProjectRena\Model\EVEApi\Map\FacWarSystems();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Map\FacWarSystems($this->app);
 
         return $return->getData();
     }
@@ -1131,9 +1292,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function mapJumps()
+    public function mapJumps()
     {
-        $return = new \ProjectRena\Model\EVEApi\Map\Jumps();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Map\Jumps($this->app);
 
         return $return->getData();
     }
@@ -1141,9 +1303,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function mapKills()
+    public function mapKills()
     {
-        $return = new \ProjectRena\Model\EVEApi\Map\Kills();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Map\Kills($this->app);
 
         return $return->getData();
     }
@@ -1151,9 +1314,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function mapSovereignty()
+    public function mapSovereignty()
     {
-        $return = new \ProjectRena\Model\EVEApi\Map\Sovereignty();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Map\Sovereignty($this->app);
 
         return $return->getData();
     }
@@ -1161,9 +1325,10 @@ class EVEApi
     /**
      * @return mixed
      */
-    public static function serverServerStatus()
+    public function serverServerStatus()
     {
-        $return = new \ProjectRena\Model\EVEApi\Server\ServerStatus();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $return = new \ProjectRena\Model\EVEApi\Server\ServerStatus($this->app);
 
         return $return->getData();
     }

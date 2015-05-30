@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\EVE;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class AllianceList.
@@ -15,11 +15,24 @@ class AllianceList
     public $accessMask = null;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @return mixed
      */
     public function getData()
     {
-        $pheal = PhealLoader::loadPheal();
+        $pheal = $this->app->pheal;
         $pheal->scope = 'EVE';
         $result = $pheal->AllianceList()->toArray();
 

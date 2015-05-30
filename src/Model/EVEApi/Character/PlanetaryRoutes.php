@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class PlanetaryRoutes.
@@ -15,6 +15,19 @@ class PlanetaryRoutes
     public $accessMask = 2;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $characterID
@@ -24,7 +37,7 @@ class PlanetaryRoutes
      */
     public function getData($apiKey, $vCode, $characterID, $planetID)
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->PlanetaryRoutes(array('characterID' => $characterID, 'planetID' => $planetID))->toArray();
 

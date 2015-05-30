@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\API;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class CallList.
@@ -15,11 +15,24 @@ class CallList
     public $accessMask = null;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @return mixed
      */
     public function getData()
     {
-        $pheal = PhealLoader::loadPheal();
+        $pheal = $this->app->pheal;
         $pheal->scope = 'API';
         $result = $pheal->CallList()->toArray();
 

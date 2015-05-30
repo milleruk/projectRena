@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-use ProjectRena\Lib\PhealLoader;
+
 
 /**
  * Class CalendarEventAttendees.
@@ -15,6 +15,19 @@ class CalendarEventAttendees
     public $accessMask = 4;
 
     /**
+     * @var
+     */
+    private $app;
+
+    /**
+     * @param $app
+     */
+    function __construct($app)
+    {
+        $this->app = $app;
+    }
+
+    /**
      * @param $apiKey
      * @param $vCode
      * @param $characterID
@@ -24,7 +37,7 @@ class CalendarEventAttendees
      */
     public function getData($apiKey, $vCode, $characterID, $eventIDs = array())
     {
-        $pheal = PhealLoader::loadPheal($apiKey, $vCode);
+        $pheal = $this->app->pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->CalendarEventAttendees(
             array('characterID' => $characterID, 'eventIDs' => implode(',', $eventIDs))
