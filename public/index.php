@@ -1,6 +1,7 @@
 <?php
+// Shit here is whining about stuff not being loaded, but it is under app.php.. ignore it..
 
-require_once '../app.php';
+include '../app.php';
 
 // Session
 $session = new SessionHandler();
@@ -9,9 +10,12 @@ session_cache_limiter(false);
 session_start();
 
 // Launch Whoops
+/** @noinspection PhpParamsInspection */
+/** @noinspection PhpUndefinedClassInspection */
 $app->add(new WhoopsMiddleware());
 
 // Prepare view
+/** @noinspection PhpUndefinedClassInspection */
 $app->view(new Twig());
 $app->view->parserOptions = $config['twig'];
 
