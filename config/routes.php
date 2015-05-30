@@ -5,20 +5,20 @@
 $app->get(
     '/',
     function () use ($app) {
-        \ProjectRena\Controller\IndexController::hello($app);
+        (new \ProjectRena\Controller\IndexController($app))->hello();
     }
 );
 
 $app->get(
     '/:name',
     function ($name) use ($app) {
-        \ProjectRena\Controller\IndexController::helloName($app, $name);
+        (new \ProjectRena\Controller\IndexController($app))->helloName($name);
     }
 );
 
 $app->map(
     '/login/eve/',
     function () use ($app) {
-        \ProjectRena\Controller\LoginController::loginEVE($app);
+        (new \ProjectRena\Controller\LoginController($app))->loginEVE();
     }
 )->via('GET', 'POST');

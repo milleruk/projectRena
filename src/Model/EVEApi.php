@@ -4,6 +4,9 @@ namespace ProjectRena\Model\EVEApi;
 
 /**
  * Class EVEApi.
+ * @todo find out if you really need an abstraction layer that virtually doesn't add anything in functionality
+ * @todo if you want to continue on this way, make sure you turn this into service avilable through the DI
+ * @todo static to methods, add app instance to this, and instanciate this
  */
 /**
  * Class EVEApi.

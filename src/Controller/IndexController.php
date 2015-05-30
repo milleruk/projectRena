@@ -2,15 +2,30 @@
 
 namespace ProjectRena\Controller;
 
+use ProjectRena\RenaApp;
+
 class IndexController
 {
-    public static function hello(\Slim\Slim $app)
+    /**
+     * @var RenaApp
+     */
+    protected $app;
+
+    /**
+     * @param RenaApp $app
+     */
+    public function __construct(RenaApp $app)
     {
-        $app->render('index.html');
+        $this->app = $app;
     }
 
-    public static function helloName(\Slim\Slim $app, $name)
+    public function hello()
     {
-        $app->render('index.html', array('name' => $name));
+        $this->app->render('index.html');
+    }
+
+    public function helloName($name)
+    {
+        $this->app->render('index.html', array('name' => $name));
     }
 }

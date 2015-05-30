@@ -8,8 +8,9 @@
  */
 namespace ProjectRena\Tasks;
 
+use Cilex\Command\Command;
 use ProjectRena;
-use ProjectRena\Model; use Cilex\Command\Command;
+use ProjectRena\Model;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -87,9 +88,9 @@ class EVEApi {
             $functionLine = str_replace($className, $functionType.ucfirst($className), $functionLine);
 
             $model .= '	'.$functionLine.' {
-		$return = new '.$modelPath.'();
-		return $return->getData('.$vars.');
-	}
+        $return = new '.$modelPath.'();
+        return $return->getData('.$vars.');
+    }
 ';
         }
 

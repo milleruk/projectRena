@@ -25,7 +25,7 @@ if (file_exists(__DIR__.'/config.php')) {
 }
 
 // Prepare app
-$app = new Slim($config['slim']);
+$app = new \ProjectRena\RenaApp($config['slim']);
 
 // Session
 $session = new SessionHandler();
