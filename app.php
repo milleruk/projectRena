@@ -45,5 +45,8 @@ foreach ($configFiles as $configFile) {
 //session_cache_limiter(false);
 //session_start();
 
+// Try and auto login the person
+$app->users->tryAutologin();
+
 // Run app
 $app->run();

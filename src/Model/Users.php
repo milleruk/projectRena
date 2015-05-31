@@ -19,6 +19,9 @@ class Users
      */
     private $db;
 
+    /**
+     * @var \ProjectRena\Lib\Service\baseConfig
+     */
     private $config;
 
     /**
@@ -92,11 +95,14 @@ class Users
         return $this->db->execute("UPDATE users SET loginHash = :hash WHERE id = :userID", array(":hash" => $hash, ":userID" => $userID));
     }
 
+    /**
+     * Tries to autologin the person
+     */
     public function tryAutologin()
     {
         $cookieName = $this->config->getConfig("name", "cookies");
         $cookieData = $this->app->getEncryptedCookie($cookieName, false);
-        if(!empty($cookieData))
+        if(!empty($cookieData) && !$_SESSION["loggedin"])
         {
             $userData = $this->getUserDataByLoginHash($cookieData);
             if($userData)
@@ -104,6 +110,7 @@ class Users
                 $_SESSION["characterName"] = $userData["characterName"];
                 $_SESSION["characterID"] = $userData["characterID"];
                 $_SESSION["loggedin"] = true;
+                header("Location:" . $this->app->request->getPath());
             }
         }
     }
