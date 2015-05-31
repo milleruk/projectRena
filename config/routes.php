@@ -14,7 +14,7 @@ $app->post("/paste/", function() use ($app){
     (new \ProjectRena\Controller\PasteController($app))->postPaste();
 });
 $app->get("/paste/:hash/", function($hash) use ($app){
-    (new \ProjectRena\Controller\PasteController($app))->showPaste();
+    (new \ProjectRena\Controller\PasteController($app))->showPaste($hash);
 });
 
 // Login
@@ -24,6 +24,9 @@ $app->map('/login/eve/', function() use ($app){
 
 // Logout
 $app->get('/logout/', function() use ($app){
+    $sessionData = $_SESSION;
+    foreach($sessionData as $key => $val)
+        unset($_SESSION[$key])
     unset($_SESSION["loggedin"]);
     $cookieName = $app->baseConfig->getConfig("name", "cookies");
     $cookieSSL = $app->baseConfig->getConfig("ssl", "cookies");
