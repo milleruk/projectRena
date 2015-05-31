@@ -48,25 +48,33 @@ class Users
         return $this->db->queryRow("SELECT * FROM users WHERE characterName = :characterName", array(":characterName" => $characterName));
     }
 
+
     /**
      * @param $characterName
      * @param $characterID
      * @param $characterOwnerHash
      *
-     * @return bool|int|string returns ID of inserted character
+     * @return int
      */
     public function createUserWithCrest($characterName, $characterID, $characterOwnerHash)
     {
-        if (!$this->db->queryField("SELECT id FROM users WHERE characterName = :characterName", "id", array(":characterName" => $characterName))) {
+        $id = $this->db->queryField("SELECT id FROM users WHERE characterName = :characterName", "id", array(":characterName" => $characterName));
+        if (!$id) {
             return $this->db->execute("INSERT INTO users (characterName, characterID, characterOwnerHash) VALUE (:characterName, :characterID, :characterOwnerHash)",
                 array(":characterName"      => $characterName,
                       ":characterID"        => $characterID,
                       ":characterOwnerHash" => $characterOwnerHash
                 ), true);
         }
-        return false;
+        return $id;
     }
 
+    /**
+     * @param $userID
+     * @param $hash
+     *
+     * @return bool|int|string
+     */
     public function setUserAutoLoginHash($userID, $hash)
     {
         return $this->db->execute("UPDATE users SET loginHash = :hash WHERE id = :userID", array(":hash" => $hash, ":userID" => $userID));
