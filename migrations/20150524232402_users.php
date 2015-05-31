@@ -24,7 +24,7 @@ class users extends AbstractMigration
             ->addColumn('characterID', 'integer', array('limit' => 11))
             ->addColumn('characterOwnerHash', 'string', array('limit' => 64))
             ->addColumn('loginHash', 'string', array('limit' => 64))
-            ->addColumn('created', 'datetime')
+            ->addColumn('created', 'datetime', array("default" => 'CURRENT_TIMESTAMP'))
             ->addColumn('updated', 'datetime', array('null' => true))
             ->addIndex(array('characterName', 'characterOwnerHash'), array('unique' => true))
             ->save();
