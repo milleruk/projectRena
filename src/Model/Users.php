@@ -19,6 +19,8 @@ class Users
      */
     private $db;
 
+    private $config;
+
     /**
      * @param RenaApp $app
      */
@@ -26,6 +28,7 @@ class Users
     {
         $this->app = $app;
         $this->db = $this->app->db;
+        $this->config = $this->app->baseConfig;
     }
 
     /**
@@ -48,6 +51,15 @@ class Users
         return $this->db->queryRow("SELECT * FROM users WHERE characterName = :characterName", array(":characterName" => $characterName));
     }
 
+    /**
+     * @param $hash
+     *
+     * @return array
+     */
+    public function getUserDataByLoginHash($hash)
+    {
+        return $this->db->queryRow("SELECT * FROM users WHERE loginHash = :hash", array(":hash" => $hash));
+    }
 
     /**
      * @param $characterName
@@ -78,5 +90,21 @@ class Users
     public function setUserAutoLoginHash($userID, $hash)
     {
         return $this->db->execute("UPDATE users SET loginHash = :hash WHERE id = :userID", array(":hash" => $hash, ":userID" => $userID));
+    }
+
+    public function tryAutologin()
+    {
+        $cookieName = $this->config->getConfig("name", "cookies");
+        $cookieData = $this->app->getEncryptedCookie($cookieName, false);
+        if(!empty($cookieData))
+        {
+            $userData = $this->getUserDataByLoginHash($cookieData);
+            if($userData)
+            {
+                $_SESSION["characterName"] = $userData["characterName"];
+                $_SESSION["characterID"] = $userData["characterID"];
+                $_SESSION["loggedin"] = true;
+            }
+        }
     }
 }

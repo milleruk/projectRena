@@ -27,20 +27,33 @@ class LoginController
         $eveService = $SSOInit->init();
         if ($eveService->isGlobalRequestArgumentsPassed()) {
             $result = $eveService->retrieveAccessTokenByGlobReqArgs()->requestJSON('/oauth/verify');
-            if ($result) {
+            if ($result)
+            {
                 $characterID = $result["CharacterID"];
                 $characterName = $result["CharacterName"];
                 $characterOwnerHash = $result["CharacterOwnerHash"];
+
                 // Insert the user to the table
                 $userID = $this->app->users->createUserWithCrest($characterName, $characterID, $characterOwnerHash);
+
+                // Set an auto login cookie
+                $cookieName = $this->config->getConfig("name", "cookies");
+                $cookieSSL = $this->config->getConfig("ssl", "cookies");
+                $cookieTime = $this->config->getConfig("time", "cookies");
+                $cookieSecret = $this->config->getConfig("secret", "cookies");
+                $hash = md5($characterName . $cookieSecret);
+                $expires = time() + $cookieTime;
+                $this->app->setEncryptedCookie($cookieName, $hash, $expires, "/", $this->app->request->getHost(), $cookieSSL, true);
+
+                // Update the auto login for the user with the hash that was created
+                $this->app->users->setUserAutoLoginHash($userID, $hash);
+
                 // Set the session
-                //$cookieName = $this->config->getConfig("name", "cookies");
-                //$cookieSSL = $this->config->getConfig("ssl", "cookies");
-                //$cookieTime = $this->config->getConfig("time", "cookies");
-                //$cookieSecret = $this->config->getConfig("secret", "cookies");
-                //$hash =
-                //$this->app->setEncryptedCookie($cookieName, )
+                $_SESSION["characterName"] = $characterName;
+                $_SESSION["characterID"] = $characterID;
                 $_SESSION["loggedin"] = true;
+
+                // Redirect to the frontpage
                 $this->app->redirect("/");
             }
         } else {

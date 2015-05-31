@@ -9,3 +9,10 @@ $twig = $app->view()->getEnvironment();
 // Twig globals
 $twig->addGlobal('EVESSOURL', $app->eveoauth->returnAuthURI());
 $twig->addGlobal('LoggedIN', isset($_SESSION["loggedin"]) ? true : false);
+
+// CCP Image server
+$twig->addGlobal('imageServer', $app->baseConfig->getConfig("imageServer", "ccp"));
+
+// Set the name and characterID
+$twig->addGlobal('characterName', isset($_SESSION["characterName"]) ? $_SESSION["characterName"] : null);
+$twig->addGlobal('characterID', isset($_SESSION["characterID"]) ? $_SESSION["characterID"] : null);
