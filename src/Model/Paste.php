@@ -47,7 +47,7 @@ class Paste
      */
     public function getPasteData($hash)
     {
-        return $this->db->queryField("SELECT data FROM paste WHERE hash = :hash", "data", array(":hash" => $hash));
+        return $this->db->queryRow("SELECT * FROM paste WHERE hash = :hash", array(":hash" => $hash));
     }
 
     /**

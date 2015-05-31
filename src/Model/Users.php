@@ -102,7 +102,7 @@ class Users
     {
         $cookieName = $this->config->getConfig("name", "cookies");
         $cookieData = $this->app->getEncryptedCookie($cookieName, false);
-        if(!empty($cookieData) && !$_SESSION["loggedin"])
+        if(!empty($cookieData) && !isset($_SESSION["loggedin"]))
         {
             $userData = $this->getUserDataByLoginHash($cookieData);
             if($userData)
@@ -112,7 +112,7 @@ class Users
                 $_SESSION["loggedin"] = true;
 
                 // Using $app to redirect causes a weird bug in slim, so use a header Location: instead
-                header("Location: " . $this->app->request->getPath());
+                //header("Location: " . $this->app->request->getPath());
             }
         }
     }
