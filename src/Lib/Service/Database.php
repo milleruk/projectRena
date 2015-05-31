@@ -148,7 +148,7 @@ class Database
     }
 
     /**
-     * @param $query
+     * @param string $query
      * @param array $parameters
      * @param int   $cacheTime
      *
@@ -171,8 +171,8 @@ class Database
     }
 
     /**
-     * @param $query
-     * @param $field
+     * @param string $query
+     * @param string $field
      * @param array $parameters
      * @param int $cacheTime
      *
@@ -197,7 +197,7 @@ class Database
     }
 
     /**
-     * @param $query
+     * @param string $query
      * @param array $parameters
      * @param bool  $returnID
      *
@@ -274,8 +274,9 @@ class Database
         $this->statsd->increment('website_queryCount');
 
         // Don't log queries taking less than 10 seconds.
-        if ($duration < 10000)
-            return;
+        if ($duration < 10000) {
+                    return;
+        }
 
         $baseAddr = '';
         foreach ($parameters as $k => $v) {

@@ -2,7 +2,6 @@
 
 namespace ProjectRena\Lib;
 
-use ProjectRena\Lib\Service\Cache;
 use ProjectRena\RenaApp;
 use SessionHandlerInterface;
 
@@ -48,7 +47,7 @@ class SessionHandler implements SessionHandlerInterface
      *
      * @param int $session_id The session ID being destroyed.
      *
-     * @return bool <p>
+     * @return boolean|null <p>
      *              The return value (usually TRUE on success, FALSE on failure).
      *              Note this value is returned internally to PHP for processing.
      *              </p>

@@ -2,8 +2,6 @@
 
 namespace ProjectRena\Model;
 
-use ProjectRena\Lib\Database;
-
 /**
  * Class Config.
  */

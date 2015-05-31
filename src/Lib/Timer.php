@@ -31,7 +31,7 @@ class Timer
     /**
      * Stops the timer.
      *
-     * @return int
+     * @return double
      */
     public function stop()
     {
