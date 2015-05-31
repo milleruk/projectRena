@@ -21,11 +21,11 @@ class IndexController
 
     public function hello()
     {
-        $this->app->render('index.html');
+        $this->app->render('index.twig');
     }
 
     public function helloName($name)
     {
-        $this->app->render('index.html', array('name' => $name));
+        $this->app->render('index.twig', array('name' => $name));
     }
 }
