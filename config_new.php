@@ -34,6 +34,7 @@ $config['database'] = array(
 $config['crestsso'] = array(
     'clientID' => '',
     'secretKey' => '',
+    'callBack' => '/login/eve/'
 );
 
 // Cache
