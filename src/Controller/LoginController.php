@@ -41,7 +41,7 @@ class LoginController
                 $cookieSSL = $this->config->getConfig("ssl", "cookies");
                 $cookieTime = $this->config->getConfig("time", "cookies");
                 $cookieSecret = $this->config->getConfig("secret", "cookies");
-                $hash = md5($characterName . $cookieSecret);
+                $hash = md5($characterName.$cookieSecret);
                 $expires = time() + $cookieTime;
                 $this->app->setEncryptedCookie($cookieName, $hash, $expires, "/", $this->app->request->getHost(), $cookieSSL, true);
 
