@@ -20,7 +20,7 @@ class EVE
         $this->config = $app->baseConfig;
 
         // Define the current url
-        $this->currentURI = $app->request->getUrl().$this->config->getConfig("callBack", "crestsso");
+        $this->currentURI = $app->request->getUrl() . $this->config->getConfig("callBack", "crestsso");
 
         $serviceFactory = new ServiceFactory();
 

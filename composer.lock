@@ -558,17 +558,17 @@
         },
         {
             "name": "gregwar/image",
-            "version": "v2.0.19",
+            "version": "v2.0.20",
             "target-dir": "Gregwar/Image",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/Image.git",
-                "reference": "8faeedfc211162bef5cddc93bea58700c32e06f6"
+                "reference": "2c6bf2fb3b0eb844f0568d6ee55eeb86fc799414"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/Image/zipball/8faeedfc211162bef5cddc93bea58700c32e06f6",
-                "reference": "8faeedfc211162bef5cddc93bea58700c32e06f6",
+                "url": "https://api.github.com/repos/Gregwar/Image/zipball/2c6bf2fb3b0eb844f0568d6ee55eeb86fc799414",
+                "reference": "2c6bf2fb3b0eb844f0568d6ee55eeb86fc799414",
                 "shasum": ""
             },
             "require": {
@@ -602,7 +602,7 @@
                 "gd",
                 "image"
             ],
-            "time": "2015-02-03 16:44:33"
+            "time": "2015-05-30 19:24:37"
         },
         {
             "name": "guzzlehttp/guzzle",
