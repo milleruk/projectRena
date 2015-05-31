@@ -13,6 +13,7 @@ use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
 use ProjectRena\Model\EVEApi;
 use ProjectRena\Model\OAuth\EVE;
+use ProjectRena\Model\Paste;
 use ProjectRena\Model\Users;
 use Slim\Slim;
 
@@ -30,6 +31,7 @@ use Slim\Slim;
  * @property SessionHandler sessionHandler;
  * @property EVE eveoauth
  * @property Users users
+ * @property Paste paste
  */
 class RenaApp extends Slim
 {
