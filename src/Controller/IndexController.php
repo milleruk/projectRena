@@ -19,13 +19,8 @@ class IndexController
         $this->app = $app;
     }
 
-    public function hello()
+    public function index()
     {
         $this->app->render('index.twig');
-    }
-
-    public function helloName($name)
-    {
-        $this->app->render('index.twig', array('name' => $name));
     }
 }
