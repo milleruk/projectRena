@@ -34,7 +34,7 @@ class Logging
         $this->logger = new Logger('projectRena');
         $this->logger->pushHandler(
             new StreamHandler(
-                $app->renaConfig->getConfig('logFile', 'Logging', __DIR__.'/../../logs/app.log'),
+                $this->app->baseConfig->getConfig('logFile', 'Logging', __DIR__.'/../../logs/app.log'),
                 $logLevel
             )
         );

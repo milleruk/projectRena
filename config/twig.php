@@ -8,3 +8,4 @@ $twig = $app->view()->getEnvironment();
 
 // Twig globals
 $twig->addGlobal('EVESSOURL', $app->eveoauth->returnAuthURI());
+$twig->addGlobal('LoggedIN', isset($_SESSION["loggedub"]) ? true : false);

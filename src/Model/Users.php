@@ -66,4 +66,9 @@ class Users
         }
         return false;
     }
+
+    public function setUserAutoLoginHash($userID, $hash)
+    {
+        return $this->db->execute("UPDATE users SET loginHash = :hash WHERE id = :userID", array(":hash" => $hash, ":userID" => $userID));
+    }
 }
