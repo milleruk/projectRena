@@ -57,7 +57,7 @@ class Users
      */
     public function createUserWithCrest($characterName, $characterID, $characterOwnerHash)
     {
-        if(!$this->db->queryField("SELECT id FROM users WHERE characterName = :characterName", "id", array(":characterName" => $characterName))) {
+        if (!$this->db->queryField("SELECT id FROM users WHERE characterName = :characterName", "id", array(":characterName" => $characterName))) {
             return $this->db->execute("INSERT INTO users (characterName, characterID, characterOwnerHash) VALUE (:characterName, :characterID, :characterOwnerHash)",
                 array(":characterName"      => $characterName,
                       ":characterID"        => $characterID,

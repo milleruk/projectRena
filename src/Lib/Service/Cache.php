@@ -36,7 +36,7 @@ class Cache
      * Sets expiration time for cache key.
      *
      * @param string $key     The key to uniquely identify the cached item
-     * @param mixed  $timeout A `strtotime()`-compatible string or a Unix timestamp.
+     * @param integer  $timeout A `strtotime()`-compatible string or a Unix timestamp.
      *
      * @return bool
      */
@@ -62,7 +62,7 @@ class Cache
      *
      * @param string          $key     The key to uniquely identify the cached item
      * @param mixed           $value   The value to be cached
-     * @param int|null|string $timeout A strtotime() compatible cache time.
+     * @param integer $timeout A strtotime() compatible cache time.
      *
      * @return bool
      */

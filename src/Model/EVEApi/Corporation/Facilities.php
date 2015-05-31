@@ -20,7 +20,7 @@ class Facilities
     private $app;
 
     /**
-     * @param $app
+     * @param \ProjectRena\RenaApp $app
      */
     function __construct($app)
     {
