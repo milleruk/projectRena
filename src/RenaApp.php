@@ -7,7 +7,6 @@ use ProjectRena\Lib\Service\Cache;
 use ProjectRena\Lib\Service\cURL;
 use ProjectRena\Lib\Service\Database;
 use ProjectRena\Lib\Service\StatsD;
-use ProjectRena\Lib\SessionHandler;
 use ProjectRena\Lib\Timer;
 use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
@@ -28,7 +27,6 @@ use Slim\Slim;
  * @property EVEApi eveapi;
  * @property ApiKeys apikeys;
  * @property StatsD statsd;
- * @property SessionHandler sessionHandler;
  * @property EVE eveoauth
  * @property Users users
  * @property Paste paste

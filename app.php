@@ -39,12 +39,6 @@ foreach ($configFiles as $configFile) {
     require_once $configFile;
 }
 
-// Session
-//$session = new SessionHandler($app);
-//session_set_save_handler($session, true);
-//session_cache_limiter(false);
-//session_start();
-
 // Try and auto login the person
 $app->users->tryAutologin();
 
