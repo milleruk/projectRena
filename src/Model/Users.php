@@ -110,7 +110,9 @@ class Users
                 $_SESSION["characterName"] = $userData["characterName"];
                 $_SESSION["characterID"] = $userData["characterID"];
                 $_SESSION["loggedin"] = true;
-                header("Location:" . $this->app->request->getPath());
+
+                // Using $app to redirect causes a weird bug in slim, so use a header Location: instead
+                header("Location: " . $this->app->request->getPath());
             }
         }
     }

@@ -19,6 +19,5 @@ $app->get('/logout/', function() use ($app){
     $cookieName = $app->baseConfig->getConfig("name", "cookies");
     $cookieSSL = $app->baseConfig->getConfig("ssl", "cookies");
     $app->deleteCookie($cookieName, "/", $app->request->getHost(), $cookieSSL, true);
-    unset($_COOKIE[$app->baseConfig->getConfig("name", "cookies")]);
     $app->redirect("/");
 });
