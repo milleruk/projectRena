@@ -5,12 +5,21 @@ use ProjectRena\RenaApp;
 
 class PasteController
 {
-    public static function pastePage()
+    protected $app;
+    private $config;
+
+    public function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+        $this->config = $app->baseConfig;
+    }
+
+    public function pastePage()
     {
         $this->app->render('/paste/paste.twig');
     }
 
-    public static function postPaste()
+    public function postPaste()
     {
         $postData = $this->app->request->post("paste");
         $timeout = $this->app->request->post("timeout");
@@ -28,7 +37,7 @@ class PasteController
         }
     }
 
-    public static function showPaste($hash)
+    public function showPaste($hash)
     {
         $data = $this->app->paste->getPasteData($hash);
         $pasteData = $data["data"];

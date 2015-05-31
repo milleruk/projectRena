@@ -11,7 +11,16 @@ use ProjectRena\RenaApp;
  */
 class LoginController
 {
-    public static function loginEVE()
+    protected $app;
+    private $config;
+
+    public function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+        $this->config = $app->baseConfig;
+    }
+
+    public function loginEVE()
     {
         // Instantiate the Eve Online service using the credentials, http client, storage mechanism for the token and profile scope
         $SSOInit = new EVE($this->app);
