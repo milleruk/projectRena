@@ -2,20 +2,13 @@
 
 namespace ProjectRena\Model;
 
+use ProjectRena\Lib\Service\Database;
+
 /**
  * Class Config.
  */
 class Config
 {
-    private $app;
-    private $db;
-
-    function __construct($app)
-    {
-        $this->app = $app;
-        $this->db = $app->db;
-    }
-
     /**
      * @param $key
      *
@@ -23,8 +16,7 @@ class Config
      */
     public function get($key)
     {
-        $dbResult = $this->db->queryField('SELECT value FROM configuration WHERE `key` = :key', 'value', array(':key' => $key));
-
+        $dbResult = Database::queryField('SELECT value FROM configuration WHERE `key` = :key', 'value', array(':key' => $key));
         return $dbResult;
     }
 
@@ -34,7 +26,7 @@ class Config
     public function getAll()
     {
         global $config;
-        $dbConfig = $this->db->query('SELECT * FROM configuration');
+        $dbConfig = Database::query('SELECT * FROM configuration');
         $cfg = array_merge($config, $dbConfig);
 
         // Return the entire config, both from the config file and from the db
@@ -49,6 +41,6 @@ class Config
      */
     public function set($key, $value)
     {
-        return $this->db->execute('INSERT INTO configuration (`key`, value) VALUES (:key, :value)', array(':key' => $key, ':value' => $value));
+        return Database::execute('INSERT INTO configuration (`key`, value) VALUES (:key, :value)', array(':key' => $key, ':value' => $value));
     }
 }

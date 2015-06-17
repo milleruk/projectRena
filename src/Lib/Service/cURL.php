@@ -10,16 +10,6 @@ use ProjectRena\Model\Config;
 class cURL
 {
     /**
-     * @var Cache
-     */
-    private $cache;
-
-    function __construct($app)
-    {
-        $this->cache = $app->renaCache;
-    }
-
-    /**
      * @param $url
      * @param int $cacheTime
      *
@@ -31,7 +21,7 @@ class cURL
         $md5 = md5($url);
 
         // Get results if they are available in the cache already
-        $result = $cacheTime > 0 ? $this->cache->get($md5) : null;
+        $result = $cacheTime > 0 ? Cache::get($md5) : null;
 
         // If there was no result, get the data
         if (!$result) {
@@ -62,7 +52,7 @@ class cURL
 
             // Cache the data
             if ($cacheTime > 0) {
-                $this->cache->set($md5, $result, $cacheTime);
+                Cache::set($md5, $result, $cacheTime);
             }
         }
 

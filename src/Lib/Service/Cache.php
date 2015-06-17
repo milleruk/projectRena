@@ -3,8 +3,6 @@
 namespace ProjectRena\Lib\Service;
 
 use Closure;
-use ProjectRena\Model\Config;
-use ProjectRena\RenaApp;
 use Redis;
 
 /**
@@ -12,24 +10,11 @@ use Redis;
  */
 class Cache
 {
-    /**
-     * @var Redis
-     */
-    private $redis;
-    /**
-     * @var Config
-     */
-    private $config;
-
-
-    /**
-     * @param RenaApp $app
-     */
-    function __construct(RenaApp $app)
+    private static function init()
     {
-        $this->config = $app->baseConfig;
-        $this->redis = new Redis();
-        $this->redis->pconnect($this->config->getConfig('host', 'redis', '127.0.0.1'), $this->config->getConfig('port', 'redis', 6379));
+        $redis = new Redis();
+        $redis->pconnect(baseConfig::getConfig('host', 'redis', '127.0.0.1'), baseConfig::getConfig('port', 'redis', 6379));
+        return $redis;
     }
 
     /**
@@ -40,9 +25,10 @@ class Cache
      *
      * @return bool
      */
-    protected function expireAt($key, $timeout)
+    protected static function expireAt($key, $timeout)
     {
-        return $this->redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
+        $redis = self::init();
+        return $redis->expireAt($key, is_int($timeout) ? $timeout : strtotime($timeout));
     }
 
     /**
@@ -52,9 +38,10 @@ class Cache
      *
      * @return mixed
      */
-    public function get($key)
+    public static function get($key)
     {
-        return $this->redis->get($key);
+        $redis = self::init();
+        return $redis->get($key);
     }
 
     /**
@@ -66,12 +53,13 @@ class Cache
      *
      * @return bool
      */
-    public function set($key, $value, $timeout = 0)
+    public static function set($key, $value, $timeout = 0)
     {
-        $result = $this->redis->set($key, $value);
+        $redis = self::init();
+        $result = $redis->set($key, $value);
 
         if ($timeout > 0) {
-            return $result ? $this->expireAt($key, $timeout) : $result;
+            return $result ? self::expireAt($key, $timeout) : $result;
         }
 
         return $result;
@@ -86,9 +74,10 @@ class Cache
      *
      * @return bool
      */
-    public function replace($key, $value, $timeout)
+    public static function replace($key, $value, $timeout)
     {
-        return $this->redis->set($key, $value, $timeout);
+        $redis = self::init();
+        return $redis->set($key, $value, $timeout);
     }
 
     /**
@@ -98,9 +87,10 @@ class Cache
      *
      * @return bool
      */
-    public function delete($key)
+    public static function delete($key)
     {
-        return (boolean) $this->redis->del($key);
+        $redis = self::init();
+        return (boolean) $redis->del($key);
     }
 
     /**
@@ -116,13 +106,14 @@ class Cache
      *
      * @return callable Function returning item's new value on successful increment, else `false`
      */
-    public function increment($key, $step = 1, $timeout = 0)
+    public static function increment($key, $step = 1, $timeout = 0)
     {
+        $redis = self::init();
         if ($timeout) {
             self::expireAt($key, $timeout);
         }
 
-        return $this->redis->incr($key, $step);
+        return $redis->incr($key, $step);
     }
 
     /**
@@ -138,13 +129,14 @@ class Cache
      *
      * @return Closure Function returning item's new value on successful decrement, else `false`
      */
-    public function decrement($key, $step = 1, $timeout = 0)
+    public static function decrement($key, $step = 1, $timeout = 0)
     {
+        $redis = self::init();
         if ($timeout) {
             self::expireAt($key, $timeout);
         }
 
-        return $this->redis->decr($key, $step);
+        return $redis->decr($key, $step);
     }
 
     /**
@@ -152,8 +144,9 @@ class Cache
      *
      * @return bool|null
      */
-    public function flush()
+    public static function flush()
     {
-        $this->redis->flushdb();
+        $redis = self::init();
+        $redis->flushdb();
     }
 }

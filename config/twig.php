@@ -1,17 +1,19 @@
 <?php
 
 // Load twig
+use ProjectRena\Model\OAuth\EVE;
+
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
 // Get $twig
 $twig = $app->view()->getEnvironment();
 
 // Twig globals
-$twig->addGlobal('EVESSOURL', $app->eveoauth->returnAuthURI());
+$twig->addGlobal('EVESSOURL', EVE::returnAuthURI($app));
 $twig->addGlobal('LoggedIN', isset($_SESSION["loggedin"]) ? true : false);
 
 // CCP Image server
-$twig->addGlobal('imageServer', $app->baseConfig->getConfig("imageServer", "ccp"));
+$twig->addGlobal('imageServer', \ProjectRena\Lib\Service\baseConfig::getConfig("imageServer", "ccp"));
 
 // Set the name and characterID
 $twig->addGlobal('characterName', isset($_SESSION["characterName"]) ? $_SESSION["characterName"] : null);

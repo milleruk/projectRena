@@ -2,7 +2,9 @@
 
 namespace ProjectRena\Controller;
 
+use ProjectRena\Lib\Service\baseConfig;
 use ProjectRena\Model\OAuth\EVE;
+use ProjectRena\Model\Users;
 use ProjectRena\RenaApp;
 
 /**
@@ -11,20 +13,11 @@ use ProjectRena\RenaApp;
  */
 class LoginController
 {
-    protected $app;
-    private $config;
-
-    public function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-        $this->config = $app->baseConfig;
-    }
-
-    public function loginEVE()
+    public function loginEVE($app)
     {
         // Instantiate the Eve Online service using the credentials, http client, storage mechanism for the token and profile scope
-        $SSOInit = new EVE($this->app);
-        $eveService = $SSOInit->init();
+        $SSOInit = new EVE();
+        $eveService = $SSOInit->init($app);
         if ($eveService->isGlobalRequestArgumentsPassed()) {
             $result = $eveService->retrieveAccessTokenByGlobReqArgs()->requestJSON('/oauth/verify');
             if ($result)
@@ -34,19 +27,19 @@ class LoginController
                 $characterOwnerHash = $result["CharacterOwnerHash"];
 
                 // Insert the user to the table
-                $userID = $this->app->users->createUserWithCrest($characterName, $characterID, $characterOwnerHash);
+                $userID = Users::createUserWithCrest($characterName, $characterID, $characterOwnerHash);
 
                 // Set an auto login cookie
-                $cookieName = $this->config->getConfig("name", "cookies");
-                $cookieSSL = $this->config->getConfig("ssl", "cookies");
-                $cookieTime = $this->config->getConfig("time", "cookies");
-                $cookieSecret = $this->config->getConfig("secret", "cookies");
+                $cookieName = baseConfig::getConfig("name", "cookies");
+                $cookieSSL = baseConfig::getConfig("ssl", "cookies");
+                $cookieTime = baseConfig::getConfig("time", "cookies");
+                $cookieSecret = baseConfig::getConfig("secret", "cookies");
                 $hash = md5($characterName.$cookieSecret);
                 $expires = time() + $cookieTime;
-                $this->app->setEncryptedCookie($cookieName, $hash, $expires, "/", $this->app->request->getHost(), $cookieSSL, true);
+                $app->setEncryptedCookie($cookieName, $hash, $expires, "/", $app->request->getHost(), $cookieSSL, true);
 
                 // Update the auto login for the user with the hash that was created
-                $this->app->users->setUserAutoLoginHash($userID, $hash);
+                Users::setUserAutoLoginHash($userID, $hash);
 
                 // Set the session
                 $_SESSION["characterName"] = $characterName;
@@ -54,7 +47,7 @@ class LoginController
                 $_SESSION["loggedin"] = true;
 
                 // Redirect to the frontpage
-                $this->app->redirect("/");
+                $app->redirect("/");
             }
         } else {
             $eveService->redirectToAuthorizationUri();

@@ -2,31 +2,11 @@
 
 namespace ProjectRena\Model;
 
-use ProjectRena\RenaApp;
-
 /**
  * Class EVEApi.
  */
 class EVEApi
 {
-    /**
-     * @var
-     */
-    public $app;
-
-    /**
-     * @var
-     */
-    public $pheal;
-
-    /**
-     * @param $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-    }
-
     /**
      * @return mixed
      */

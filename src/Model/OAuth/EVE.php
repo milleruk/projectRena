@@ -4,49 +4,39 @@ namespace ProjectRena\Model\OAuth;
 use OAuth\Common\Consumer\Credentials;
 use OAuth\Common\Storage\Session;
 use OAuth\ServiceFactory;
-use ProjectRena\RenaApp;
+use ProjectRena\Lib\Service\baseConfig;
 
 class EVE
 {
-    private $app;
-    private $config;
-    private $credentials;
-    private $currentURI;
-    private $eveServiceFactory;
+    private static $currentURI;
 
-    function __construct(RenaApp $app)
+    public static function init($app)
     {
-        $this->app = $app;
-        $this->config = $app->baseConfig;
-
         // Define the current url
-        $this->currentURI = $app->request->getUrl() . $this->config->getConfig("callBack", "crestsso");
+        self::$currentURI = $app->request->getUrl() . baseConfig::getConfig("callBack", "crestsso");
 
         $serviceFactory = new ServiceFactory();
 
         $storage = new Session();
 
-        $this->credentials = new Credentials(
-            $this->config->getConfig('clientID', 'crestSSO'),
-            $this->config->getConfig('secretKey', 'crestSSO'),
-            $this->currentURI
+        $credentials = new Credentials(
+            baseConfig::getConfig('clientID', 'crestSSO'),
+            baseConfig::getConfig('secretKey', 'crestSSO'),
+            self::$currentURI
         );
 
-        $this->eveServiceFactory = $serviceFactory->createService('EveOnline', $this->credentials, $storage, array());
+        return $eveServiceFactory = $serviceFactory->createService('EveOnline', $credentials, $storage, array());
     }
 
-    public function init()
+    public static function returnAuthURI($app)
     {
-        return $this->eveServiceFactory;
+        $esf = self::init($app);
+        return $esf->getAuthorizationUri();
     }
 
-    public function returnAuthURI()
+    public static function returnCurrentURI($app)
     {
-        return $this->eveServiceFactory->getAuthorizationUri();
-    }
-
-    public function returnCurrentURI()
-    {
-        return $this->currentURI;
+        self::init($app);
+        return self::$currentURI;
     }
 }

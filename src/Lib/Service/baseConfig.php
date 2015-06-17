@@ -10,7 +10,7 @@ class baseConfig
      *
      * @return null
      */
-    public function getConfig($key, $type = null, $default = null)
+    public static function getConfig($key, $type = null, $default = null)
     {
         //todo fix this global...
         global $config;

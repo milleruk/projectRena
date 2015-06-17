@@ -40,7 +40,7 @@ foreach ($configFiles as $configFile) {
 }
 
 // Try and auto login the person
-$app->users->tryAutologin();
+\ProjectRena\Model\Users::tryAutologin($app);
 
 // Run app
 $app->run();
