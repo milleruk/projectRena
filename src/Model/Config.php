@@ -13,7 +13,7 @@ class Config
     function __construct($app)
     {
         $this->app = $app;
-        $this->db = $app->db;
+        $this->db = $app->Db;
     }
 
     /**

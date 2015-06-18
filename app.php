@@ -38,6 +38,13 @@ $app->add(new WhoopsMiddleware());
 $app->view(new Twig());
 $app->view->parserOptions = $config['twig'];
 
+// Load the lib/Model loader
+if(file_exists(__DIR__ . "/src/Loader.php")) {
+    require_once __DIR__ . "/src/Loader.php";
+} else {
+    throw new Exception("Loader.php could not be found");
+}
+
 // load the additional configs
 $configFiles = glob(__DIR__."/config/*.php");
 foreach ($configFiles as $configFile) {

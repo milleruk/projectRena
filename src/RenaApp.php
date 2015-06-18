@@ -19,7 +19,7 @@ use Slim\Slim;
 
 /**
  * @property Logging Logging
- * @property Config userConfig
+ * @property Config Config
  * @property baseConfig baseConfig
  * @property Cache Cache
  * @property cURL cURL
