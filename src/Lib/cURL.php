@@ -2,8 +2,6 @@
 
 namespace ProjectRena\Lib;
 
-use ProjectRena\Model\Config;
-
 /**
  * Class cURL.
  */
