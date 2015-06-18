@@ -14,7 +14,6 @@ use ProjectRena\Model\Config;
 use ProjectRena\Model\EVEApi;
 use ProjectRena\Model\Paste;
 use ProjectRena\Model\Users;
-use ProjectRena\Model\OAuth\EVEOauth;
 use Slim\Slim;
 
 /**
@@ -27,10 +26,9 @@ use Slim\Slim;
  * @property Timer Timer;
  * @property EVEApi EVEApi;
  * @property ApiKeys ApiKeys;
- * @property StatsD statsd;
- * @property Users users
- * @property Paste paste
- * @property EVEOauth EVEOauth
+ * @property StatsD StatsD;
+ * @property Users Users
+ * @property Paste Paste
  */
 class RenaApp extends Slim
 {

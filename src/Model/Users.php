@@ -30,7 +30,7 @@ class Users
     function __construct(RenaApp $app)
     {
         $this->app = $app;
-        $this->db = $this->app->db;
+        $this->db = $this->app->Db;
         $this->config = $this->app->baseConfig;
     }
 

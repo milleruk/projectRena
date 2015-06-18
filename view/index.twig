@@ -1,0 +1,10 @@
+{% set pageTitle = "Home" %}
+{% extends 'base.twig' %}
+
+
+{% block content %}
+<div class="container">
+    Hello {% if name %}{{ name|capitalize }}{% endif %}
+</div>
+{% endblock %}
+

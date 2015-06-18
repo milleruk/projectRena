@@ -25,7 +25,7 @@ class Paste
     function __construct(RenaApp $app)
     {
         $this->app = $app;
-        $this->db = $app->db;
+        $this->db = $app->Db;
     }
 
     /**
