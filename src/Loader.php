@@ -27,7 +27,6 @@ foreach($load as $path)
 
         if(method_exists(new $namespace($app), "RunAsNew"))
         {
-            echo "Calling $callName as new";
             $app->container->set($callName, function($container) use ($app, $namespace) {
                 return new $namespace($app);
             });

@@ -30,8 +30,7 @@
     "cilex/cilex": "~1.1.0",
     "chrisboulton/php-resque": "~1.2.0",
     "kriswallsmith/spork": "~0.3.0",
-    "d11wtq/boris": "~1.0.10",
-    "and/oauth": "~0.6.0"
+    "d11wtq/boris": "~1.0.10"
   },
   "autoload": {
     "psr-4": {
