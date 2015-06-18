@@ -2,7 +2,6 @@
 
 namespace ProjectRena\Model;
 
-use ProjectRena\Lib\Database;
 use ProjectRena\RenaApp;
 
 /**

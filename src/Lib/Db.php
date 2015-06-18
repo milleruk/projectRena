@@ -265,7 +265,7 @@ class Db
     }
 
     /**
-     * @param $query
+     * @param string $query
      * @param array $parameters
      * @param int   $duration
      */
@@ -287,7 +287,7 @@ class Db
     }
 
     /**
-     * @param $query
+     * @param string $query
      * @param array $parameters
      *
      * @return string
