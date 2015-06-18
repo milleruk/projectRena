@@ -32,7 +32,7 @@ class CharacterAffiliation
      */
     public function getData($characterIDs = array())
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'EVE';
         $result = $pheal->CharacterAffiliation(array('ids' => implode(',', $characterIDs)))->toArray();
 

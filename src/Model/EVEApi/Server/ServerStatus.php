@@ -32,7 +32,7 @@ class ServerStatus
      */
     public function getData()
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'Server';
         $result = $pheal->ServerStatus()->toArray();
 

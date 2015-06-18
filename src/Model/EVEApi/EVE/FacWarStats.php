@@ -32,7 +32,7 @@ class FacWarStats
      */
     public function getData()
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'EVE';
         $result = $pheal->FacWarStats()->toArray();
 

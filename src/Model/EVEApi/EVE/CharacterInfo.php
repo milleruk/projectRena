@@ -36,7 +36,7 @@ class CharacterInfo
      */
     public function getData($characterID, $apiKey = null, $vCode = null)
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'EVE';
         $requestArray = array('characterID' => $characterID);
 

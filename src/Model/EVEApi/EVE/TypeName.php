@@ -34,7 +34,7 @@ class TypeName
      */
     public function getData($typeIDs = array())
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'EVE';
         $result = $pheal->TypeName(array('ids' => implode(',', $typeIDs)))->toArray();
 

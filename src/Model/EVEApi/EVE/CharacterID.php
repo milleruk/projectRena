@@ -34,7 +34,7 @@ class CharacterID
      */
     public function getData($characterNames = array())
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'EVE';
         $result = $pheal->CharacterID(array('names' => implode(',', $characterNames)))->toArray();
 

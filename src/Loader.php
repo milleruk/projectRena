@@ -21,9 +21,16 @@ foreach ($load as $path)
     foreach ($files as $file)
     {
         $exp = explode("/../src/", $file);
-        $namespace = "ProjectRena\\".str_replace(".php", "", str_replace("/", "\\", $exp[1]));
         $basename = basename($file);
         $callName = str_replace(".php", "", $basename);
+        $namespace = "ProjectRena\\".str_replace(".php", "", str_replace("/", "\\", $exp[1]));
+
+        if(stristr($file, "EVEApi"))
+        {
+            $ep = explode("/EVEApi/", $file);
+            $ep = explode("/", $ep[1]);
+            $callName = "EVE" . $ep[0] . $callName;
+        }
 
         if (method_exists(new $namespace($app), "RunAsNew"))
         {

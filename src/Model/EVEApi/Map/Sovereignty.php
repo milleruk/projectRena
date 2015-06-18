@@ -32,7 +32,7 @@ class Sovereignty
      */
     public function getData()
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'Map';
         $result = $pheal->Sovereignty()->toArray();
 

@@ -32,7 +32,7 @@ class CallList
      */
     public function getData()
     {
-        $pheal = $this->app->Pheal;
+        $pheal = $this->app->Pheal->Pheal();
         $pheal->scope = 'API';
         $result = $pheal->CallList()->toArray();
 
