@@ -15,7 +15,6 @@ class IndexController
 
     public function index()
     {
-        var_dump($this->app->EVEEVEAllianceList->getData());
         $this->app->render('index.twig');
     }
 }
