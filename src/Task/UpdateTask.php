@@ -23,16 +23,16 @@ class UpdateTask extends Command
  {
   $app = RenaApp::getInstance();
 
-  if(!$input->getOption("composer"))
+  if (!$input->getOption("composer"))
   {
    // Check if composer is in the dir
-   if(!file_exists(__DIR__ . "/../../composer.phar"))
+   if (!file_exists(__DIR__."/../../composer.phar"))
    {
     $output->writeln("Composer doesn't exist, downloading it");
     $composer = $app->cURL->getData("https://getcomposer.org/composer.phar", 0);
-    file_put_contents(__DIR__ . "/../../composer.phar", $composer);
+    file_put_contents(__DIR__."/../../composer.phar", $composer);
    }
-   exec("php " . __DIR__ . "/../../composer.phar update -o");
+   exec("php ".__DIR__."/../../composer.phar update -o");
    $output->writeln("Updating composer");
   }
 
@@ -64,7 +64,7 @@ class UpdateTask extends Command
   $php .= "}";
 
   $output->writeln("Generating RenaApp");
-  file_put_contents(__DIR__ . "/../RenaApp.php", $php);
+  file_put_contents(__DIR__."/../RenaApp.php", $php);
 
   // Do more stuff (Clear cache?)
  }
@@ -73,12 +73,12 @@ class UpdateTask extends Command
  {
   $internal = "use Slim\\Slim;\n";
   $load = array(
-   __DIR__ . "/../Lib/*.php",
-   __DIR__ . "/../Lib/*/*.php",
-   __DIR__ . "/../Lib/*/*/*.php",
-   __DIR__ . "/../Model/*.php",
-   __DIR__ . "/../Model/*/*.php",
-   __DIR__ . "/../Model/*/*/*.php",
+   __DIR__."/../Lib/*.php",
+   __DIR__."/../Lib/*/*.php",
+   __DIR__."/../Lib/*/*/*.php",
+   __DIR__."/../Model/*.php",
+   __DIR__."/../Model/*/*.php",
+   __DIR__."/../Model/*/*/*.php",
   );
   foreach ($load as $path) {
    $files = glob($path);
@@ -89,11 +89,11 @@ class UpdateTask extends Command
     if (stristr($file, "EVEApi")) {
      $ep = explode("/EVEApi/", $file);
      $ep = explode("/", $ep[1]);
-     $namespace = "use ProjectRena\\" . str_replace(".php", "", str_replace("/", "\\", $exp[1])) . " as EVE" . $ep[0] . $callName . ";";
+     $namespace = "use ProjectRena\\".str_replace(".php", "", str_replace("/", "\\", $exp[1]))." as EVE".$ep[0].$callName.";";
     }
     else
-     $namespace = "use ProjectRena\\" . str_replace(".php", "", str_replace("/", "\\", $exp[1])) . ";";
-    $internal .= $namespace . "\n";
+     $namespace = "use ProjectRena\\".str_replace(".php", "", str_replace("/", "\\", $exp[1])).";";
+    $internal .= $namespace."\n";
    }
   }
 
@@ -105,12 +105,12 @@ class UpdateTask extends Command
  {
   $internal = "";
   $load = array(
-   __DIR__ . "/../Lib/*.php",
-   __DIR__ . "/../Lib/*/*.php",
-   __DIR__ . "/../Lib/*/*/*.php",
-   __DIR__ . "/../Model/*.php",
-   __DIR__ . "/../Model/*/*.php",
-   __DIR__ . "/../Model/*/*/*.php",
+   __DIR__."/../Lib/*.php",
+   __DIR__."/../Lib/*/*.php",
+   __DIR__."/../Lib/*/*/*.php",
+   __DIR__."/../Model/*.php",
+   __DIR__."/../Model/*/*.php",
+   __DIR__."/../Model/*/*/*.php",
   );
   foreach ($load as $path) {
    $files = glob($path);
@@ -120,9 +120,9 @@ class UpdateTask extends Command
     if (stristr($file, "EVEApi")) {
      $ep = explode("/EVEApi/", $file);
      $ep = explode("/", $ep[1]);
-     $callName = "EVE" . $ep[0] . $callName;
+     $callName = "EVE".$ep[0].$callName;
     }
-    $internal .= " * @property " . $callName ." ". $callName . "\n";
+    $internal .= " * @property ".$callName." ".$callName."\n";
    }
   }
 
