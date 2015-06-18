@@ -2,13 +2,22 @@
 
 namespace ProjectRena\Model;
 
-use ProjectRena\Lib\Service\Database;
+use ProjectRena\Lib\Database;
+use ProjectRena\RenaApp;
 
 /**
  * Class ApiKeys.
  */
 class ApiKeys
 {
+    protected $app;
+    protected $db;
+
+    function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+        $this->db = $app->Db;
+    }
     /**
      * @param $apiKeyID
      * @param $vCode
@@ -16,9 +25,9 @@ class ApiKeys
      *
      * @return bool|int|string
      */
-    public static function addAPIKey($apiKey, $vCode, $userID = null)
+    public function addAPIKey($apiKey, $vCode, $userID = null)
     {
-        return Database::execute('INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID)', array(':keyID' => $apiKey, ':vCode' => $vCode, ':userID' => $userID));
+        return $this->db->execute('INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID)', array(':keyID' => $apiKey, ':vCode' => $vCode, ':userID' => $userID));
     }
 
     /**
@@ -26,9 +35,9 @@ class ApiKeys
      *
      * @return array
      */
-    public static function getAPIKey($apiKey)
+    public function getAPIKey($apiKey)
     {
-        return Database::queryRow('SELECT * FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
+        return $this->db->queryRow('SELECT * FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
     }
 
     /**
@@ -38,9 +47,9 @@ class ApiKeys
      *
      * @return bool|int|string
      */
-    public static function updateAPIKey($apiKey, $vCode, $userID)
+    public function updateAPIKey($apiKey, $vCode, $userID)
     {
-        return Database::execute('INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID) ON DUPLICATE UPDATE keyID = :keyID, vCode = :vCode, userID = :userID', array(':keyID' => $apiKey, ':vCode' => $vCode, ':userID' => $userID));
+        return $this->db->execute('INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID) ON DUPLICATE UPDATE keyID = :keyID, vCode = :vCode, userID = :userID', array(':keyID' => $apiKey, ':vCode' => $vCode, ':userID' => $userID));
     }
 
     /**
@@ -48,8 +57,8 @@ class ApiKeys
      *
      * @return bool|int|string
      */
-    public static function deleteAPIKey($apiKey)
+    public function deleteAPIKey($apiKey)
     {
-        return Database::execute('DELETE FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
+        return $this->db->execute('DELETE FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace ProjectRena\Lib\Service;
+namespace ProjectRena\Lib;
 
 class PhealLogger implements \Pheal\Log\CanLog
 {

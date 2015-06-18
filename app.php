@@ -1,30 +1,35 @@
 <?php
-
-// Imports
+// Include bootstrap
 use Slim\Views\Twig;
-use ProjectRena\Lib\SessionHandler;
 use Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware;
 
 // Error display
-ini_set('display_errors', 1);
+
+ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
 // Load the autoloader
-if (file_exists(__DIR__.'/vendor/autoload.php')) {
-    require_once __DIR__.'/vendor/autoload.php';
+if (file_exists(__DIR__. "/vendor/autoload.php")) {
+    require_once __DIR__. "/vendor/autoload.php";
 } else {
-    throw new Exception('vendor/autoload.php not found, make sure you run composer install');
+    throw new Exception("vendor/autoload.php not found, make sure you run composer install");
 }
 
 // Require the config
-if (file_exists(__DIR__.'/config.php')) {
-    require_once __DIR__.'/config.php';
+if (file_exists(__DIR__ . "/config/config.php")) {
+    require_once __DIR__ . "/config/config.php";
 } else {
-    throw new Exception('config.php not found (you might wanna start by copying config_new.php)');
+    throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
 }
 
-// Prepare app
-$app = new \ProjectRena\RenaApp($config['slim']);
+// Init Slim
+$app = new \ProjectRena\RenaApp($config["slim"]);
+
+// Session
+//$session = new SessionHandler($app);
+//session_set_save_handler($session, true);
+//session_cache_limiter(false);
+//session_start();
 
 // Launch Whoops
 $app->add(new WhoopsMiddleware());
@@ -34,13 +39,13 @@ $app->view(new Twig());
 $app->view->parserOptions = $config['twig'];
 
 // load the additional configs
-$configFiles = glob(__DIR__.'/config/*.php');
+$configFiles = glob(__DIR__."/config/*.php");
 foreach ($configFiles as $configFile) {
     require_once $configFile;
 }
 
 // Try and auto login the person
-\ProjectRena\Model\Users::tryAutologin($app);
+//\ProjectRena\Model\Users::tryAutologin($app);
 
 // Run app
 $app->run();

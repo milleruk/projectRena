@@ -1,37 +1,37 @@
 <?php
+
 namespace ProjectRena;
 
-use ProjectRena\Lib\Service\baseConfig;
-use ProjectRena\Lib\Service\Logging;
-use ProjectRena\Lib\Service\Cache;
-use ProjectRena\Lib\Service\cURL;
-use ProjectRena\Lib\Service\Database;
-use ProjectRena\Lib\Service\StatsD;
+use ProjectRena\Lib\baseConfig;
+use ProjectRena\Lib\Logging;
+use ProjectRena\Lib\Cache;
+use ProjectRena\Lib\cURL;
+use ProjectRena\Lib\Db;
+use ProjectRena\Lib\StatsD;
 use ProjectRena\Lib\Timer;
 use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
 use ProjectRena\Model\EVEApi;
-use ProjectRena\Model\OAuth\EVE;
 use ProjectRena\Model\Paste;
 use ProjectRena\Model\Users;
+use ProjectRena\Model\OAuth\EVEOauth;
 use Slim\Slim;
 
 /**
- * @property Logging logger
+ * @property Logging Logging
  * @property Config userConfig
  * @property baseConfig baseConfig
- * @property Cache cache
- * @property cURL curl
- * @property Database db
- * @property Timer timer;
- * @property EVEApi eveapi;
- * @property ApiKeys apikeys;
+ * @property Cache Cache
+ * @property cURL cURL
+ * @property Db Db
+ * @property Timer Timer;
+ * @property EVEApi EVEApi;
+ * @property ApiKeys ApiKeys;
  * @property StatsD statsd;
- * @property EVE eveoauth
  * @property Users users
  * @property Paste paste
+ * @property EVEOauth EVEOauth
  */
 class RenaApp extends Slim
 {
-
 }

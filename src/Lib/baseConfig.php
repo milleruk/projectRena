@@ -1,5 +1,5 @@
 <?php
-namespace ProjectRena\Lib\Service;
+namespace ProjectRena\Lib;
 
 class baseConfig
 {
@@ -10,10 +10,9 @@ class baseConfig
      *
      * @return null
      */
-    public static function getConfig($key, $type = null, $default = null)
+    public function getConfig($key, $type = null, $default = null)
     {
-        //todo fix this global...
-        global $config;
+        include(__DIR__ . "/../../config/config.php");
 
         $type = strtolower($type);
         if (isset($config[$type][$key])) {

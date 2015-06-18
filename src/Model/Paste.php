@@ -1,7 +1,7 @@
 <?php
 namespace ProjectRena\Model;
 
-use ProjectRena\Lib\Service\Database;
+use ProjectRena\RenaApp;
 
 /**
  * Class Paste
@@ -11,6 +11,24 @@ use ProjectRena\Lib\Service\Database;
 class Paste
 {
     /**
+     * @var RenaApp
+     */
+    private $app;
+    /**
+     * @var \ProjectRena\Lib\Service\Database
+     */
+    private $db;
+
+    /**
+     * @param RenaApp $app
+     */
+    function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+        $this->db = $app->db;
+    }
+
+    /**
      * @param $hash
      * @param $userID
      * @param $data
@@ -19,7 +37,7 @@ class Paste
     public function createPaste($hash, $userID, $data, $timeout = 0)
     {
         $timeoutDate = date("Y-m-d H:i:s", strtotime(time() + $timeout));
-        Database::execute("INSERT INTO paste (hash, userID, data, timeout) VALUES (:hash, :userID, :data, :timeout)", array(":hash" => $hash, ":userID" => $userID, ":data" => $data, ":timeout" => $timeoutDate));
+        $this->db->execute("INSERT INTO paste (hash, userID, data, timeout) VALUES (:hash, :userID, :data, :timeout)", array(":hash" => $hash, ":userID" => $userID, ":data" => $data, ":timeout" => $timeoutDate));
     }
 
     /**
@@ -29,7 +47,7 @@ class Paste
      */
     public function getPasteData($hash)
     {
-        return Database::queryRow("SELECT * FROM paste WHERE hash = :hash", array(":hash" => $hash));
+        return $this->db->queryRow("SELECT * FROM paste WHERE hash = :hash", array(":hash" => $hash));
     }
 
     /**
@@ -39,6 +57,6 @@ class Paste
      */
     public function deletePaste($hash)
     {
-        return Database::execute("DELETE FROM paste WHERE hash = :hash", array(":hash" => $hash));
+        return $this->db->execute("DELETE FROM paste WHERE hash = :hash", array(":hash" => $hash));
     }
 }

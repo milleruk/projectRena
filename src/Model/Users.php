@@ -1,8 +1,6 @@
 <?php
 namespace ProjectRena\Model;
 
-use ProjectRena\Lib\Service\baseConfig;
-use ProjectRena\Lib\Service\Database;
 use ProjectRena\RenaApp;
 
 /**
@@ -13,13 +11,37 @@ use ProjectRena\RenaApp;
 class Users
 {
     /**
+     * @var RenaApp
+     */
+    private $app;
+    /**
+     * @var \ProjectRena\Lib\Service\Database
+     */
+    private $db;
+
+    /**
+     * @var \ProjectRena\Lib\Service\baseConfig
+     */
+    private $config;
+
+    /**
+     * @param RenaApp $app
+     */
+    function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+        $this->db = $this->app->db;
+        $this->config = $this->app->baseConfig;
+    }
+
+    /**
      * @param $userID
      *
      * @return array
      */
-    public static function getUserByID($userID)
+    public function getUserByID($userID)
     {
-        return Database::queryRow("SELECT * FROM users WHERE id = :userID", array(":userID" => $userID));
+        return $this->db->queryRow("SELECT * FROM users WHERE id = :userID", array(":userID" => $userID));
     }
 
     /**
@@ -27,9 +49,9 @@ class Users
      *
      * @return array
      */
-    public static function getUserByName($characterName)
+    public function getUserByName($characterName)
     {
-        return Database::queryRow("SELECT * FROM users WHERE characterName = :characterName", array(":characterName" => $characterName));
+        return $this->db->queryRow("SELECT * FROM users WHERE characterName = :characterName", array(":characterName" => $characterName));
     }
 
     /**
@@ -37,9 +59,9 @@ class Users
      *
      * @return array
      */
-    public static function getUserDataByLoginHash($hash)
+    public function getUserDataByLoginHash($hash)
     {
-        return Database::queryRow("SELECT * FROM users WHERE loginHash = :hash", array(":hash" => $hash));
+        return $this->db->queryRow("SELECT * FROM users WHERE loginHash = :hash", array(":hash" => $hash));
     }
 
     /**
@@ -49,11 +71,11 @@ class Users
      *
      * @return int
      */
-    public static function createUserWithCrest($characterName, $characterID, $characterOwnerHash)
+    public function createUserWithCrest($characterName, $characterID, $characterOwnerHash)
     {
-        $id = Database::queryField("SELECT id FROM users WHERE characterName = :characterName", "id", array(":characterName" => $characterName));
+        $id = $this->db->queryField("SELECT id FROM users WHERE characterName = :characterName", "id", array(":characterName" => $characterName));
         if (!$id) {
-            return Database::execute("INSERT INTO users (characterName, characterID, characterOwnerHash) VALUE (:characterName, :characterID, :characterOwnerHash)",
+            return $this->db->execute("INSERT INTO users (characterName, characterID, characterOwnerHash) VALUE (:characterName, :characterID, :characterOwnerHash)",
                 array(":characterName"      => $characterName,
                       ":characterID"        => $characterID,
                       ":characterOwnerHash" => $characterOwnerHash
@@ -68,21 +90,21 @@ class Users
      *
      * @return bool|int|string
      */
-    public static function setUserAutoLoginHash($userID, $hash)
+    public function setUserAutoLoginHash($userID, $hash)
     {
-        return Database::execute("UPDATE users SET loginHash = :hash WHERE id = :userID", array(":hash" => $hash, ":userID" => $userID));
+        return $this->db->execute("UPDATE users SET loginHash = :hash WHERE id = :userID", array(":hash" => $hash, ":userID" => $userID));
     }
 
     /**
      * Tries to autologin the person
      */
-    public static function tryAutologin($app)
+    public function tryAutologin()
     {
-        $cookieName = baseConfig::getConfig("name", "cookies");
-        $cookieData = $app->getEncryptedCookie($cookieName, false);
+        $cookieName = $this->config->getConfig("name", "cookies");
+        $cookieData = $this->app->getEncryptedCookie($cookieName, false);
         if(!empty($cookieData) && !isset($_SESSION["loggedin"]))
         {
-            $userData = self::getUserDataByLoginHash($cookieData);
+            $userData = $this->getUserDataByLoginHash($cookieData);
             if($userData)
             {
                 $_SESSION["characterName"] = $userData["characterName"];

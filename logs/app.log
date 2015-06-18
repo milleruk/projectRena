@@ -1,0 +1,1 @@
+[2015-06-17 23:53:32] projectRena.DEBUG: Unable to connect to the database: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) [] []
