@@ -2,6 +2,8 @@
 
 namespace ProjectRena\Lib;
 
+use ProjectRena\RenaApp;
+
 /**
  * Class cURL.
  */
@@ -12,7 +14,7 @@ class cURL
      */
     private $cache;
     private $app;
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
         $this->cache = $app->renaCache;

@@ -2,6 +2,8 @@
 
 namespace ProjectRena\Controller;
 
+use ProjectRena\RenaApp;
+
 /**
  * Class LoginController
  * @package ProjectRena\Controller
@@ -9,7 +11,7 @@ namespace ProjectRena\Controller;
 class LoginController
 {
     protected $app;
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }

@@ -2,6 +2,8 @@
 
 namespace ProjectRena\Model;
 
+use ProjectRena\RenaApp;
+
 /**
  * Class Config.
  */
@@ -10,7 +12,7 @@ class Config
     private $app;
     private $db;
 
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
         $this->db = $app->Db;

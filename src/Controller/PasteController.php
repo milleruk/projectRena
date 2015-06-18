@@ -1,10 +1,12 @@
 <?php
 namespace ProjectRena\Controller;
 
+use ProjectRena\RenaApp;
+
 class PasteController
 {
     protected $app;
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
