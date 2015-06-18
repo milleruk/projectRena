@@ -15,7 +15,7 @@ class Paste extends AbstractMigration
     public function change()
     {
     }
-    */
+     */
     
     /**
      * Migrate Up.

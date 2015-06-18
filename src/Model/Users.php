@@ -102,10 +102,10 @@ class Users
     {
         $cookieName = $this->config->getConfig("name", "cookies");
         $cookieData = $this->app->getEncryptedCookie($cookieName, false);
-        if(!empty($cookieData) && !isset($_SESSION["loggedin"]))
+        if (!empty($cookieData) && !isset($_SESSION["loggedin"]))
         {
             $userData = $this->getUserDataByLoginHash($cookieData);
-            if($userData)
+            if ($userData)
             {
                 $_SESSION["characterName"] = $userData["characterName"];
                 $_SESSION["characterID"] = $userData["characterID"];

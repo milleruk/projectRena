@@ -1,8 +1,6 @@
 <?php
 namespace ProjectRena\Controller;
 
-use ProjectRena\RenaApp;
-
 class PasteController
 {
     protected $app;
@@ -24,11 +22,10 @@ class PasteController
         {
             $user = $this->app->users->getUserByName($_SESSION["characterName"]);
             $userID = $user["id"];
-            $hash = md5(time() . $_SESSION["characterName"] . $_SESSION["characterID"]);
+            $hash = md5(time().$_SESSION["characterName"].$_SESSION["characterID"]);
             $this->app->paste->createPaste($hash, $userID, $postData, $timeout);
             $this->app->redirect("/paste/{$hash}/");
-        }
-        else
+        } else
         {
             $this->app->render("/paste/paste.twig", array("error" => "Error, you need to be logged in to post data"));
         }
