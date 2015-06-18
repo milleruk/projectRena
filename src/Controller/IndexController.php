@@ -2,11 +2,13 @@
 
 namespace ProjectRena\Controller;
 
+use ProjectRena\RenaApp;
+
 class IndexController
 {
 
     protected $app;
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }

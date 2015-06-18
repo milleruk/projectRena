@@ -13,9 +13,10 @@ class cURL
      * @var Cache
      */
     private $cache;
-
+    private $app;
     function __construct($app)
     {
+        $this->app = $app;
         $this->cache = $app->renaCache;
     }
 
@@ -41,7 +42,7 @@ class cURL
             curl_setopt_array(
                 $curl,
                 array(
-                    CURLOPT_USERAGENT => Config::getConfig(
+                    CURLOPT_USERAGENT => $this->app->baseConfig->getConfig(
                         'userAgent',
                         'site',
                         'DataGetter from projectRena (karbowiak@gmail.com)'
@@ -104,7 +105,7 @@ class cURL
         curl_setopt(
             $curl,
             CURLOPT_USERAGENT,
-            Config::getConfig('userAgent', 'site', 'DataGetter from projectRena (karbowiak@gmail.com)')
+            $this->app->baseConfig->getConfig('userAgent', 'site', 'DataGetter from projectRena (karbowiak@gmail.com)')
         );
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         if (!empty($postData)) {
