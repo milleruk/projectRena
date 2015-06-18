@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class CorporationSheet.
@@ -22,7 +22,7 @@ class CorporationSheet
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -36,7 +36,7 @@ class CorporationSheet
      */
     public function getData($apiKey, $vCode, $corporationID = null)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $requestArray = array();
         if (isset($corporationID)) {

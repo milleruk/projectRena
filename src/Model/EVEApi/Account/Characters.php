@@ -2,10 +2,15 @@
 
 namespace ProjectRena\Model\EVEApi\Account;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class Characters.
+ */
+/**
+ * Class Characters
+ *
+ * @package ProjectRena\Model\EVEApi\Account
  */
 class Characters
 {
@@ -19,10 +24,11 @@ class Characters
      */
     private $app;
 
-    /**
-     * @param \ProjectRena\RenaApp $app
+
+	/**
+     * @param RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -35,7 +41,7 @@ class Characters
      */
     public function getData($apiKey, $vCode)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Account';
         $result = $pheal->Characters()->toArray();
 

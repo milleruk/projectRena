@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class MailBodies.
@@ -22,7 +22,7 @@ class MailBodies
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -37,7 +37,7 @@ class MailBodies
      */
     public function getData($apiKey, $vCode, $characterID, $ids = array())
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->MailBodies(array('characterID' => $characterID, 'ids' => implode(',', $ids)))->toArray();
 

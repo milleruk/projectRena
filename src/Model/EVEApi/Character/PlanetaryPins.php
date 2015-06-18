@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class PlanetaryPins.
@@ -22,7 +22,7 @@ class PlanetaryPins
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -37,7 +37,7 @@ class PlanetaryPins
      */
     public function getData($apiKey, $vCode, $characterID, $planetID)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->PlanetaryPins(array('characterID' => $characterID, 'planetID' => $planetID))->toArray();
 

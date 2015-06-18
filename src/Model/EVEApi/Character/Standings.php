@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class Standings.
@@ -22,7 +22,7 @@ class Standings
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -36,7 +36,7 @@ class Standings
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->Standings(array('characterID' => $characterID))->toArray();
 

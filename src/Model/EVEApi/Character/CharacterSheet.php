@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class CharacterSheet.
@@ -22,7 +22,7 @@ class CharacterSheet
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -36,7 +36,7 @@ class CharacterSheet
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->CharacterSheet(array('characterID' => $characterID))->toArray();
 

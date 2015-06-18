@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Account;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class AccountStatus.
@@ -22,7 +22,7 @@ class AccountStatus
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -35,7 +35,7 @@ class AccountStatus
      */
     public function getData($apiKey, $vCode)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Account';
         $result = $pheal->accountStatus()->toArray();
 

@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\EVE;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class TypeName.
@@ -22,7 +22,7 @@ class TypeName
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -34,7 +34,7 @@ class TypeName
      */
     public function getData($typeIDs = array())
     {
-        $pheal = $this->app->pheal;
+        $pheal = $this->app->Pheal;
         $pheal->scope = 'EVE';
         $result = $pheal->TypeName(array('ids' => implode(',', $typeIDs)))->toArray();
 

@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Server;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class ServerStatus.
@@ -22,7 +22,7 @@ class ServerStatus
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -32,7 +32,7 @@ class ServerStatus
      */
     public function getData()
     {
-        $pheal = $this->app->pheal;
+        $pheal = $this->app->Pheal;
         $pheal->scope = 'Server';
         $result = $pheal->ServerStatus()->toArray();
 

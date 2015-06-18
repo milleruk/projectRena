@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class KillMails.
@@ -22,7 +22,7 @@ class KillMails
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -38,7 +38,7 @@ class KillMails
      */
     public function getData($apiKey, $vCode, $characterID, $fromID = null, $rowCount = null)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
 
         $requestArray = array('characterID' => $characterID);

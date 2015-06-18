@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class MarketOrders.
@@ -22,7 +22,7 @@ class MarketOrders
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -37,7 +37,7 @@ class MarketOrders
      */
     public function getData($apiKey, $vCode, $characterID, $orderID = null)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $requestArray = array('characterID' => $characterID);
         if (isset($orderID)) {

@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class ContainerLog.
@@ -22,7 +22,7 @@ class ContainerLog
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -36,7 +36,7 @@ class ContainerLog
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->ContainerLog(array('characterID' => $characterID))->toArray();
 

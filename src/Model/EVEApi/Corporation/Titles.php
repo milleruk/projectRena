@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class Titles.
@@ -22,7 +22,7 @@ class Titles
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -36,7 +36,7 @@ class Titles
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->Titles(array('characterID' => $characterID))->toArray();
 

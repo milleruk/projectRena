@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Character;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class CalendarEventAttendees.
@@ -22,7 +22,7 @@ class CalendarEventAttendees
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -37,7 +37,7 @@ class CalendarEventAttendees
      */
     public function getData($apiKey, $vCode, $characterID, $eventIDs = array())
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Char';
         $result = $pheal->CalendarEventAttendees(
             array('characterID' => $characterID, 'eventIDs' => implode(',', $eventIDs))

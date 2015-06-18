@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\EVE;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class CharacterInfo.
@@ -22,7 +22,7 @@ class CharacterInfo
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -36,7 +36,7 @@ class CharacterInfo
      */
     public function getData($characterID, $apiKey = null, $vCode = null)
     {
-        $pheal = $this->app->pheal;
+        $pheal = $this->app->Pheal;
         $pheal->scope = 'EVE';
         $requestArray = array('characterID' => $characterID);
 

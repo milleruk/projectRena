@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Map;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class FacWarSystems.
@@ -22,7 +22,7 @@ class FacWarSystems
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -32,7 +32,7 @@ class FacWarSystems
      */
     public function getData()
     {
-        $pheal = $this->app->pheal;
+        $pheal = $this->app->Pheal;
         $pheal->scope = 'Map';
         $result = $pheal->FacWarSystems()->toArray();
 

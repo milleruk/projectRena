@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\EVE;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class SkillTree.
@@ -22,7 +22,7 @@ class SkillTree
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -32,7 +32,7 @@ class SkillTree
      */
     public function getData()
     {
-        $pheal = $this->app->pheal;
+        $pheal = $this->app->Pheal;
         $pheal->scope = 'EVE';
         $result = $pheal->SkillTree()->toArray();
 

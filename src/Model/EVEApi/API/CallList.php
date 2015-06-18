@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\API;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class CallList.
@@ -22,7 +22,7 @@ class CallList
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -32,7 +32,7 @@ class CallList
      */
     public function getData()
     {
-        $pheal = $this->app->pheal;
+        $pheal = $this->app->Pheal;
         $pheal->scope = 'API';
         $result = $pheal->CallList()->toArray();
 

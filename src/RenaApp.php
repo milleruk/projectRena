@@ -6,6 +6,7 @@ use Slim\Slim;
 use ProjectRena\Lib\Cache;
 use ProjectRena\Lib\Db;
 use ProjectRena\Lib\Logging;
+use ProjectRena\Lib\Pheal;
 use ProjectRena\Lib\PhealLogger;
 use ProjectRena\Lib\SessionHandler;
 use ProjectRena\Lib\StatsD;
@@ -106,6 +107,7 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property Cache Cache
  * @property Db Db
  * @property Logging Logging
+ * @property Pheal Pheal
  * @property PhealLogger PhealLogger
  * @property SessionHandler SessionHandler
  * @property StatsD StatsD

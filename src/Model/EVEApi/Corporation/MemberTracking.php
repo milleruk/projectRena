@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class MemberTracking
@@ -24,7 +24,7 @@ class MemberTracking
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -39,7 +39,7 @@ class MemberTracking
      */
     public function getData($apiKey, $vCode, $extended = 0)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->MemberTracking(array('extended' => $extended))->toArray();
 

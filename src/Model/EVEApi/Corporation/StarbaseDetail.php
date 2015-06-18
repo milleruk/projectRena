@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\Corporation;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class StarbaseDetail.
@@ -27,7 +27,7 @@ class StarbaseDetail
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -41,7 +41,7 @@ class StarbaseDetail
      */
     public function getData($apiKey, $vCode, $itemID)
     {
-        $pheal = $this->app->pheal($apiKey, $vCode);
+        $pheal = $this->app->Pheal($apiKey, $vCode);
         $pheal->scope = 'Corp';
         $result = $pheal->StarbaseDetail(array('itemID' => $itemID))->toArray();
 

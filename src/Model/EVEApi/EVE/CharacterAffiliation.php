@@ -2,7 +2,7 @@
 
 namespace ProjectRena\Model\EVEApi\EVE;
 
-
+use ProjectRena\RenaApp;
 
 /**
  * Class CharacterAffiliation.
@@ -22,7 +22,7 @@ class CharacterAffiliation
     /**
      * @param \ProjectRena\RenaApp $app
      */
-    function __construct($app)
+    function __construct(RenaApp $app)
     {
         $this->app = $app;
     }
@@ -32,7 +32,7 @@ class CharacterAffiliation
      */
     public function getData($characterIDs = array())
     {
-        $pheal = $this->app->pheal;
+        $pheal = $this->app->Pheal;
         $pheal->scope = 'EVE';
         $result = $pheal->CharacterAffiliation(array('ids' => implode(',', $characterIDs)))->toArray();
 
