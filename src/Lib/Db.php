@@ -24,10 +24,6 @@ class Db
      */
     private $pdo;
     /**
-     * @var \ProjectRena\Model\Config
-     */
-    private $config;
-    /**
      * @var \ProjectRena\Lib\Cache
      */
     private $cache;
@@ -52,20 +48,19 @@ class Db
     function __construct(RenaApp $app)
     {
         $this->app = $app;
-        $this->config = $app->baseConfig;
         $this->cache = $app->Cache;
         $this->logger = $app->Logging;
         $this->timer = $app->Timer;
         $this->statsd = $app->StatsD;
 
-        $dsn = 'mysql:dbname='.$this->config->getConfig('name', 'database').';host='.$this->config->getConfig('host', 'database');
+        $dsn = 'mysql:dbname='.$app->baseConfig->getConfig('name', 'database').';host='.$app->baseConfig->getConfig('host', 'database');
         try {
             $this->pdo = new PDO(
-                $dsn, $this->config->getConfig('username', 'database'), $this->config->getConfig('password', 'database'), array(
-                    PDO::ATTR_PERSISTENT => $this->config->getConfig('persistent', 'database'),
-                    PDO::ATTR_EMULATE_PREPARES => $this->config->getConfig('emulatePrepares', 'database'),
+                $dsn, $app->baseConfig->getConfig('username', 'database'), $app->baseConfig->getConfig('password', 'database'), array(
+                    PDO::ATTR_PERSISTENT => $app->baseConfig->getConfig('persistent', 'database'),
+                    PDO::ATTR_EMULATE_PREPARES => $app->baseConfig->getConfig('emulatePrepares', 'database'),
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => $this->config->getConfig('useBufferedQuery', 'database'),
+                    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => $app->baseConfig->getConfig('useBufferedQuery', 'database'),
                     PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_Zone = '+00:00'",
                 )
             );
