@@ -7,8 +7,16 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Class GeneratorTask
+ *
+ * @package ProjectRena\Task
+ */
 class GeneratorTask extends Command
 {
+	/**
+	 *
+	 */
 	protected function configure()
 	{
 		$this
@@ -23,6 +31,12 @@ class GeneratorTask extends Command
 			->addOption("resque", "r", InputOption::VALUE_NONE, "Create Resque Queue");
 	}
 
+	/**
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 *
+	 * @return int|null|void
+	 */
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$name = $input->getArgument("name");
@@ -54,6 +68,12 @@ class GeneratorTask extends Command
 		$output->writeln("Please run update to update RenaApp and Composer");
 	}
 
+	/**
+	 * @param $name
+	 * @param $output
+	 *
+	 * @return mixed
+	 */
 	private function controller($name, $output)
 	{
 		$path = __DIR__ . "/../Controller/{$name}Controller.php";
@@ -100,6 +120,12 @@ EOF;
 		$output->writeln("Controller and twig file created: {$path}");
 	}
 
+	/**
+	 * @param $name
+	 * @param $output
+	 *
+	 * @return mixed
+	 */
 	private function model($name, $output)
 	{
 		$path = __DIR__ . "/../Model/{$name}.php";
@@ -132,6 +158,12 @@ EOF;
 		$output->writeln("Model created: {$path}");
 	}
 
+	/**
+	 * @param $name
+	 * @param $output
+	 *
+	 * @return mixed
+	 */
 	private function libs($name, $output)
 	{
 		$path = __DIR__ . "/../Lib/{$name}.php";
@@ -154,6 +186,12 @@ EOF;
 		$output->writeln("Lib created: {$path}");
 	}
 
+	/**
+	 * @param $name
+	 * @param $output
+	 *
+	 * @return mixed
+	 */
 	private function task($name, $output)
 	{
 		$path = __DIR__ . "/../Task/{$name}Task.php";
@@ -188,6 +226,12 @@ EOF;
 		$output->writeln("Task created: {$path}");
 	}
 
+	/**
+	 * @param $name
+	 * @param $output
+	 *
+	 * @return mixed
+	 */
 	private function cronjob($name, $output)
 	{
 		$path = __DIR__ . "/../Task/Cronjobs/{$name}Cronjob.php";
@@ -218,6 +262,12 @@ EOF;
 		$output->writeln("Cronjob created: {$path}");
 	}
 
+	/**
+	 * @param $name
+	 * @param $output
+	 *
+	 * @return mixed
+	 */
 	private function resque($name, $output)
 	{
 		$path = __DIR__ . "/../Task/Resque/{$name}Resque.php";

@@ -8,8 +8,16 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Class UpdateTask
+ *
+ * @package ProjectRena\Task
+ */
 class UpdateTask extends Command
 {
+	/**
+	 *
+	 */
 	protected function configure()
 	{
 		$this
@@ -18,6 +26,12 @@ class UpdateTask extends Command
 			->addOption("composer", "o", InputOption::VALUE_NONE, "Skip updating composer");
 	}
 
+	/**
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 *
+	 * @return int|null|void
+	 */
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$app = RenaApp::getInstance();
@@ -62,6 +76,9 @@ class UpdateTask extends Command
 		// Do more stuff (Clear cache?)
 	}
 
+	/**
+	 * @return string
+	 */
 	private function generateNamespace()
 	{
 		$internal = "use Slim\\Slim;\n";
@@ -93,6 +110,9 @@ class UpdateTask extends Command
 	}
 
 
+	/**
+	 * @return string
+	 */
 	private function generateProperty()
 	{
 		$internal = "";
