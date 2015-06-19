@@ -18,6 +18,7 @@ use ProjectRena\Model\Config;
 use ProjectRena\Model\Paste;
 use ProjectRena\Model\Storage;
 use ProjectRena\Model\Users;
+use ProjectRena\Model\EVE\invTypes;
 use ProjectRena\Model\OAuth\EVEOAuth;
 use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
 use ProjectRena\Model\EVEApi\Account\APIKeyInfo as EVEAccountAPIKeyInfo;
@@ -121,6 +122,7 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property Paste Paste
  * @property Storage Storage
  * @property Users Users
+ * @property invTypes invTypes
  * @property EVEOAuth EVEOAuth
  * @property EVEAPICallList EVEAPICallList
  * @property EVEAccountAPIKeyInfo EVEAccountAPIKeyInfo

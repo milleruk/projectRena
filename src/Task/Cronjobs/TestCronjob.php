@@ -26,7 +26,6 @@ class TestCronjob
   */
     public static function execute($pid, $md5, $db, RenaApp $app)
     {
-        var_dump($db->query("SELECT 1"));
         $app->Logging->log('INFO', 'Hayoooo');
     }
 }
