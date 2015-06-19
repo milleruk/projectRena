@@ -45,7 +45,7 @@ $config['redis'] = array(
 
 // Logging
 $config['logging'] = array(
-    'logFile' => __DIR__.'/logs/app.log',
+    'logFile' => __DIR__.'/../logs/app.log',
 );
 
 // Cookies
@@ -61,14 +61,14 @@ $config['slim'] = array(
     'mode' => $config['site']['debug'] ? 'development' : 'production',
     'debug' => $config['site']['debug'],
     'cookies.secret_key' => $config['cookies']['secret'],
-    'templates.path' => __DIR__.'/view/',
+    'templates.path' => __DIR__.'/../view/',
 );
 
 // Twig
 $config['twig'] = array(
     'charset' => 'utf-8',
     'debug' => $config['site']['debug'],
-    'cache' => __DIR__.'/cache/templates/',
+    'cache' => __DIR__.'/../cache/templates/',
     'auto_reload' => true,
     'strict_variables' => false,
     'autoescape' => true,
