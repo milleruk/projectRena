@@ -18,9 +18,9 @@ $app->get("/paste/:hash/", function($hash) use ($app){
 });
 
 // Login
-$app->map('/login/eve/', function() use ($app){
+$app->get('/login/eve/', function() use ($app){
     (new \ProjectRena\Controller\LoginController($app))->loginEVE();
-})->via('GET', 'POST');
+});
 
 // Logout
 $app->get('/logout/', function() use ($app){

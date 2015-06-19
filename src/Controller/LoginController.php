@@ -18,6 +18,9 @@ class LoginController
 
     public function loginEVE()
     {
-        echo "NOPE, REWRITE BRUH";
+        $code = $this->app->request->get("code");
+        $state = $this->app->request->get("state");
+
+        $this->app->EVEOAuth->SSOLogin($code, $state);
     }
 }

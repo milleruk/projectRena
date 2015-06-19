@@ -17,6 +17,7 @@ use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
 use ProjectRena\Model\Paste;
 use ProjectRena\Model\Users;
+use ProjectRena\Model\OAuth\EVEOAuth;
 use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
 use ProjectRena\Model\EVEApi\Account\APIKeyInfo as EVEAccountAPIKeyInfo;
 use ProjectRena\Model\EVEApi\Account\AccountStatus as EVEAccountAccountStatus;
@@ -118,6 +119,7 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property Config Config
  * @property Paste Paste
  * @property Users Users
+ * @property EVEOAuth EVEOAuth
  * @property EVEAPICallList EVEAPICallList
  * @property EVEAccountAPIKeyInfo EVEAccountAPIKeyInfo
  * @property EVEAccountAccountStatus EVEAccountAccountStatus
