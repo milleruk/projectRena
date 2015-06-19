@@ -1,6 +1,6 @@
-[!Scrutinizer Quality Score](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
-[!Scrutinizer Coverage](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
-[!Scrutinizer Build](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/build.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
+[![Scrutinizer Coverage](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
+[![Scrutinizer Build](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/build.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
 
 # Project Rena
 ProjectRena is a complete from the ground up rewrite of the backend for EVSCO/EVE-KILL
