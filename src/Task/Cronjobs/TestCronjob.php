@@ -9,23 +9,23 @@ use ProjectRena\RenaApp;
  */
 class TestCronjob
 {
-    /**
-     * @return int
-     */
-    public static function getRunTimes()
-    {
-        return 1; // Runs every five seconds
-    }
+				/**
+				 * @return int
+				 */
+				public static function getRunTimes()
+				{
+								return 1; // Runs every five seconds
+				}
 
-    /**
-     * @param $pid
-     * @param $md5
-     * @param RenaApp $app
-     *
-     * @throws \Exception
-     */
-    public static function execute($pid, $md5, $db, RenaApp $app)
-    {
-        $app->Logging->log('INFO', 'Hayoooo');
-    }
+				/**
+				 * @param $pid
+				 * @param $md5
+				 * @param RenaApp $app
+				 *
+				 * @throws \Exception
+				 */
+				public static function execute($pid, $md5, $db, RenaApp $app)
+				{
+								$app->Logging->log('INFO', 'Hayoooo');
+				}
 }

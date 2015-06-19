@@ -9,37 +9,37 @@ use ProjectRena\RenaApp;
  */
 class Titles
 {
-    /**
-     * @var int
-     */
-    public $accessMask = 4194304;
+				/**
+				 * @var int
+				 */
+				public $accessMask = 4194304;
 
-    /**
-     * @var
-     */
-    private $app;
+				/**
+				 * @var
+				 */
+				private $app;
 
-    /**
-     * @param \ProjectRena\RenaApp $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-    }
+				/**
+				 * @param \ProjectRena\RenaApp $app
+				 */
+				function __construct(RenaApp $app)
+				{
+								$this->app = $app;
+				}
 
-    /**
-     * @param $apiKey
-     * @param $vCode
-     * @param $characterID
-     *
-     * @return mixed
-     */
-    public function getData($apiKey, $vCode, $characterID)
-    {
-        $pheal = $this->app->Pheal($apiKey, $vCode);
-        $pheal->scope = 'Corp';
-        $result = $pheal->Titles(array('characterID' => $characterID))->toArray();
+				/**
+				 * @param $apiKey
+				 * @param $vCode
+				 * @param $characterID
+				 *
+				 * @return mixed
+				 */
+				public function getData($apiKey, $vCode, $characterID)
+				{
+								$pheal = $this->app->Pheal($apiKey, $vCode);
+								$pheal->scope = 'Corp';
+								$result = $pheal->Titles(array('characterID' => $characterID))->toArray();
 
-        return $result;
-    }
+								return $result;
+				}
 }

@@ -9,33 +9,33 @@ use ProjectRena\RenaApp;
  */
 class CharacterAffiliation
 {
-    /**
-     * @var int
-     */
-    public $accessMask = null;
+				/**
+				 * @var int
+				 */
+				public $accessMask = null;
 
-    /**
-     * @var
-     */
-    private $app;
+				/**
+				 * @var
+				 */
+				private $app;
 
-    /**
-     * @param \ProjectRena\RenaApp $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-    }
+				/**
+				 * @param \ProjectRena\RenaApp $app
+				 */
+				function __construct(RenaApp $app)
+				{
+								$this->app = $app;
+				}
 
-    /**
-     * @return mixed
-     */
-    public function getData($characterIDs = array())
-    {
-        $pheal = $this->app->Pheal->Pheal();
-        $pheal->scope = 'EVE';
-        $result = $pheal->CharacterAffiliation(array('ids' => implode(',', $characterIDs)))->toArray();
+				/**
+				 * @return mixed
+				 */
+				public function getData($characterIDs = array())
+				{
+								$pheal = $this->app->Pheal->Pheal();
+								$pheal->scope = 'EVE';
+								$result = $pheal->CharacterAffiliation(array('ids' => implode(',', $characterIDs)))->toArray();
 
-        return $result;
-    }
+								return $result;
+				}
 }

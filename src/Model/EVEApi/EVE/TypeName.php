@@ -9,35 +9,35 @@ use ProjectRena\RenaApp;
  */
 class TypeName
 {
-    /**
-     * @var int
-     */
-    public $accessMask = null;
+				/**
+				 * @var int
+				 */
+				public $accessMask = null;
 
-    /**
-     * @var
-     */
-    private $app;
+				/**
+				 * @var
+				 */
+				private $app;
 
-    /**
-     * @param \ProjectRena\RenaApp $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-    }
+				/**
+				 * @param \ProjectRena\RenaApp $app
+				 */
+				function __construct(RenaApp $app)
+				{
+								$this->app = $app;
+				}
 
-    /**
-     * @param array $typeIDs Max 250 IDs at a time
-     *
-     * @return mixed
-     */
-    public function getData($typeIDs = array())
-    {
-        $pheal = $this->app->Pheal->Pheal();
-        $pheal->scope = 'EVE';
-        $result = $pheal->TypeName(array('ids' => implode(',', $typeIDs)))->toArray();
+				/**
+				 * @param array $typeIDs Max 250 IDs at a time
+				 *
+				 * @return mixed
+				 */
+				public function getData($typeIDs = array())
+				{
+								$pheal = $this->app->Pheal->Pheal();
+								$pheal->scope = 'EVE';
+								$result = $pheal->TypeName(array('ids' => implode(',', $typeIDs)))->toArray();
 
-        return $result;
-    }
+								return $result;
+				}
 }

@@ -9,33 +9,33 @@ use ProjectRena\RenaApp;
  */
 class ServerStatus
 {
-    /**
-     * @var int
-     */
-    public $accessMask = null;
+				/**
+				 * @var int
+				 */
+				public $accessMask = null;
 
-    /**
-     * @var
-     */
-    private $app;
+				/**
+				 * @var
+				 */
+				private $app;
 
-    /**
-     * @param \ProjectRena\RenaApp $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-    }
+				/**
+				 * @param \ProjectRena\RenaApp $app
+				 */
+				function __construct(RenaApp $app)
+				{
+								$this->app = $app;
+				}
 
-    /**
-     * @return mixed
-     */
-    public function getData()
-    {
-        $pheal = $this->app->Pheal->Pheal();
-        $pheal->scope = 'Server';
-        $result = $pheal->ServerStatus()->toArray();
+				/**
+				 * @return mixed
+				 */
+				public function getData()
+				{
+								$pheal = $this->app->Pheal->Pheal();
+								$pheal->scope = 'Server';
+								$result = $pheal->ServerStatus()->toArray();
 
-        return $result;
-    }
+								return $result;
+				}
 }

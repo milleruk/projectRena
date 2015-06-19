@@ -9,48 +9,50 @@ use ProjectRena\RenaApp;
  */
 class Config
 {
-    private $app;
-    private $db;
+				private $app;
+				private $db;
 
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-        $this->db = $app->Db;
-    }
+				function __construct(RenaApp $app)
+				{
+								$this->app = $app;
+								$this->db = $app->Db;
+				}
 
-    /**
-     * @param $key
-     *
-     * @return mixed
-     */
-    public function get($key)
-    {
-        $dbResult = $this->db->queryField('SELECT value FROM configuration WHERE `key` = :key', 'value', array(':key' => $key));
+				/**
+				 * @param $key
+				 *
+				 * @return mixed
+				 */
+				public function get($key)
+				{
+								$dbResult = $this->db->queryField('SELECT value FROM configuration WHERE `key` = :key', 'value', array(':key' => $key));
 
-        return $dbResult;
-    }
+								return $dbResult;
+				}
 
-    /**
-     * @return array
-     */
-    public function getAll()
-    {
-        global $config;
-        $dbConfig = $this->db->query('SELECT * FROM configuration');
-        $cfg = array_merge($config, $dbConfig);
+				/**
+				 * @return array
+				 */
+				public function getAll()
+				{
+								global $config;
+								$dbConfig = $this->db->query('SELECT * FROM configuration');
+								$cfg = array_merge($config, $dbConfig);
 
-        // Return the entire config, both from the config file and from the db
-        return $cfg;
-    }
+								// Return the entire config, both from the config file and from the db
+								return $cfg;
+				}
 
-    /**
-     * @param $key
-     * @param $value
-     *
-     * @return mixed
-     */
-    public function set($key, $value)
-    {
-        return $this->db->execute('INSERT INTO configuration (`key`, value) VALUES (:key, :value)', array(':key' => $key, ':value' => $value));
-    }
+				/**
+				 * @param $key
+				 * @param $value
+				 *
+				 * @return mixed
+				 */
+				public function set($key, $value)
+				{
+								return $this->db->execute('INSERT INTO configuration (`key`, value) VALUES (:key, :value)', array(':key'   => $key,
+								                                                                                                  ':value' => $value,
+									));
+				}
 }

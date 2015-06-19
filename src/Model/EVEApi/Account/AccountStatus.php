@@ -9,36 +9,36 @@ use ProjectRena\RenaApp;
  */
 class AccountStatus
 {
-    /**
-     * @var int
-     */
-    public $accessMask = 33554432;
+				/**
+				 * @var int
+				 */
+				public $accessMask = 33554432;
 
-    /**
-     * @var
-     */
-    private $app;
+				/**
+				 * @var
+				 */
+				private $app;
 
-    /**
-     * @param \ProjectRena\RenaApp $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-    }
+				/**
+				 * @param \ProjectRena\RenaApp $app
+				 */
+				function __construct(RenaApp $app)
+				{
+								$this->app = $app;
+				}
 
-    /**
-     * @param $apiKey
-     * @param $vCode
-     *
-     * @return mixed
-     */
-    public function getData($apiKey, $vCode)
-    {
-        $pheal = $this->app->Pheal($apiKey, $vCode);
-        $pheal->scope = 'Account';
-        $result = $pheal->accountStatus()->toArray();
+				/**
+				 * @param $apiKey
+				 * @param $vCode
+				 *
+				 * @return mixed
+				 */
+				public function getData($apiKey, $vCode)
+				{
+								$pheal = $this->app->Pheal($apiKey, $vCode);
+								$pheal->scope = 'Account';
+								$result = $pheal->accountStatus()->toArray();
 
-        return $result;
-    }
+								return $result;
+				}
 }

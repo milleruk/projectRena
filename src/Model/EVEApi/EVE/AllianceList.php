@@ -9,34 +9,34 @@ use ProjectRena\RenaApp;
  */
 class AllianceList
 {
-    /**
-     * @var int
-     */
-    public $accessMask = null;
+				/**
+				 * @var int
+				 */
+				public $accessMask = null;
 
-    /**
-     * @var
-     */
-    private $app;
+				/**
+				 * @var
+				 */
+				private $app;
 
-    /**
-     * @param \ProjectRena\RenaApp $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-    }
+				/**
+				 * @param \ProjectRena\RenaApp $app
+				 */
+				function __construct(RenaApp $app)
+				{
+								$this->app = $app;
+				}
 
-    /**
-     * @return mixed
-     */
-    public function getData()
-    {
-        $pheal = $this->app->Pheal->Pheal();
-        $pheal->scope = 'EVE';
+				/**
+				 * @return mixed
+				 */
+				public function getData()
+				{
+								$pheal = $this->app->Pheal->Pheal();
+								$pheal->scope = 'EVE';
 
-        $result = $pheal->AllianceList()->toArray();
+								$result = $pheal->AllianceList()->toArray();
 
-        return $result;
-    }
+								return $result;
+				}
 }

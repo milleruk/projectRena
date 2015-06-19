@@ -2,8 +2,9 @@
 
 namespace ProjectRena;
 
-use Slim\Slim;
+use ProjectRena\Lib\baseConfig;
 use ProjectRena\Lib\Cache;
+use ProjectRena\Lib\cURL;
 use ProjectRena\Lib\Db;
 use ProjectRena\Lib\Logging;
 use ProjectRena\Lib\Pheal;
@@ -11,19 +12,13 @@ use ProjectRena\Lib\PhealLogger;
 use ProjectRena\Lib\SessionHandler;
 use ProjectRena\Lib\StatsD;
 use ProjectRena\Lib\Timer;
-use ProjectRena\Lib\baseConfig;
-use ProjectRena\Lib\cURL;
 use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
-use ProjectRena\Model\Paste;
-use ProjectRena\Model\Storage;
-use ProjectRena\Model\Users;
 use ProjectRena\Model\EVE\invTypes;
-use ProjectRena\Model\OAuth\EVEOAuth;
-use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
-use ProjectRena\Model\EVEApi\Account\APIKeyInfo as EVEAccountAPIKeyInfo;
 use ProjectRena\Model\EVEApi\Account\AccountStatus as EVEAccountAccountStatus;
+use ProjectRena\Model\EVEApi\Account\APIKeyInfo as EVEAccountAPIKeyInfo;
 use ProjectRena\Model\EVEApi\Account\Characters as EVEAccountCharacters;
+use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
 use ProjectRena\Model\EVEApi\Character\AccountBalance as EVECharacterAccountBalance;
 use ProjectRena\Model\EVEApi\Character\AssetList as EVECharacterAssetList;
 use ProjectRena\Model\EVEApi\Character\Blueprints as EVECharacterBlueprints;
@@ -40,12 +35,12 @@ use ProjectRena\Model\EVEApi\Character\IndustryJobsHistory as EVECharacterIndust
 use ProjectRena\Model\EVEApi\Character\KillMails as EVECharacterKillMails;
 use ProjectRena\Model\EVEApi\Character\Locations as EVECharacterLocations;
 use ProjectRena\Model\EVEApi\Character\MailBodies as EVECharacterMailBodies;
-use ProjectRena\Model\EVEApi\Character\MailMessages as EVECharacterMailMessages;
 use ProjectRena\Model\EVEApi\Character\MailingLists as EVECharacterMailingLists;
+use ProjectRena\Model\EVEApi\Character\MailMessages as EVECharacterMailMessages;
 use ProjectRena\Model\EVEApi\Character\MarketOrders as EVECharacterMarketOrders;
 use ProjectRena\Model\EVEApi\Character\Medals as EVECharacterMedals;
-use ProjectRena\Model\EVEApi\Character\NotificationTexts as EVECharacterNotificationTexts;
 use ProjectRena\Model\EVEApi\Character\Notifications as EVECharacterNotifications;
+use ProjectRena\Model\EVEApi\Character\NotificationTexts as EVECharacterNotificationTexts;
 use ProjectRena\Model\EVEApi\Character\PlanetaryColonies as EVECharacterPlanetaryColonies;
 use ProjectRena\Model\EVEApi\Character\PlanetaryLinks as EVECharacterPlanetaryLinks;
 use ProjectRena\Model\EVEApi\Character\PlanetaryPins as EVECharacterPlanetaryPins;
@@ -67,8 +62,8 @@ use ProjectRena\Model\EVEApi\Corporation\ContractItems as EVECorporationContract
 use ProjectRena\Model\EVEApi\Corporation\Contracts as EVECorporationContracts;
 use ProjectRena\Model\EVEApi\Corporation\CorporationSheet as EVECorporationCorporationSheet;
 use ProjectRena\Model\EVEApi\Corporation\CustomsOffices as EVECorporationCustomsOffices;
-use ProjectRena\Model\EVEApi\Corporation\FacWarStats as EVECorporationFacWarStats;
 use ProjectRena\Model\EVEApi\Corporation\Facilities as EVECorporationFacilities;
+use ProjectRena\Model\EVEApi\Corporation\FacWarStats as EVECorporationFacWarStats;
 use ProjectRena\Model\EVEApi\Corporation\IndustryJobs as EVECorporationIndustryJobs;
 use ProjectRena\Model\EVEApi\Corporation\IndustryJobsHistory as EVECorporationIndustryJobsHistory;
 use ProjectRena\Model\EVEApi\Corporation\KillMails as EVECorporationKillMails;
@@ -105,6 +100,11 @@ use ProjectRena\Model\EVEApi\Map\Jumps as EVEMapJumps;
 use ProjectRena\Model\EVEApi\Map\Kills as EVEMapKills;
 use ProjectRena\Model\EVEApi\Map\Sovereignty as EVEMapSovereignty;
 use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
+use ProjectRena\Model\OAuth\EVEOAuth;
+use ProjectRena\Model\Paste;
+use ProjectRena\Model\Storage;
+use ProjectRena\Model\Users;
+use Slim\Slim;
 
 /**
  * @property Cache Cache
@@ -210,7 +210,6 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property EVEMapSovereignty EVEMapSovereignty
  * @property EVEServerServerStatus EVEServerServerStatus
  */
-
 class RenaApp extends Slim
 {
 }

@@ -33,7 +33,9 @@
   },
   "autoload": {
     "psr-4": {
-      "ProjectRena\\": ["src/"]
+      "ProjectRena\\": [
+        "src/"
+      ]
     }
   }
 }

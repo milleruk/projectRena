@@ -29,7 +29,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <strong>{{ characterName }}</strong>
-                            <img src="{{ imageServer }}/Character/{{ characterID }}_32.jpg" class="img-circle" width="18px">
+                            <img src="{{ imageServer }}/Character/{{ characterID }}_32.jpg" class="img-circle"
+                                 width="18px">
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -38,12 +39,15 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <p class="text-center">
-                                                <img src="{{ imageServer }}/Character/{{ characterID }}_128.jpg" class="img-circle" width="100px">
+                                                <img src="{{ imageServer }}/Character/{{ characterID }}_128.jpg"
+                                                     class="img-circle" width="100px">
                                             </p>
                                         </div>
                                         <div class="col-lg-8">
                                             <p class="text-left"><strong>{{ characterName }}</strong></p>
+
                                             <p class="text-left small">Some Corp | Triumvirate.</p>
+
                                             <p class="text-left">
                                                 <a href="#" class="btn btn-primary btn-block btn-sm">Settings</a>
                                                 <a href="#" class="btn btn-primary btn-block btn-sm">API Settings</a>
@@ -67,7 +71,9 @@
                         </ul>
                     </li>
                 {% else %}
-                    <li><a href="{{ EVESSOURL }}"><img src="https://images.contentful.com/idjq7aai9ylm/18BxKSXCymyqY4QKo8KwKe/c2bdded6118472dd587c8107f24104d7/EVE_SSO_Login_Buttons_Small_White.png?w=195&h=18"></a></li>
+                    <li><a href="{{ EVESSOURL }}"><img
+                                    src="https://images.contentful.com/idjq7aai9ylm/18BxKSXCymyqY4QKo8KwKe/c2bdded6118472dd587c8107f24104d7/EVE_SSO_Login_Buttons_Small_White.png?w=195&h=18"></a>
+                    </li>
                 {% endif %}
             </ul>
         </div>
