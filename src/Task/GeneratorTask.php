@@ -2,7 +2,8 @@
 
 namespace ProjectRena\Task;
 
-use ProjectRena\Lib; use Cilex\Command\Command;
+use ProjectRena\Lib;
+use Cilex\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -47,38 +48,45 @@ class GeneratorTask extends Command
 			exit();
 		}
 
-		if($input->getOption("controller"))
-			$this->controller($name, $output);
+		if($input->getOption("controller")) {
+					$this->controller($name, $output);
+		}
 
-		if($input->getOption("model"))
-			$this->model($name, $output);
+		if($input->getOption("model")) {
+					$this->model($name, $output);
+		}
 
-		if($input->getOption("libs"))
-			$this->libs($name, $output);
+		if($input->getOption("libs")) {
+					$this->libs($name, $output);
+		}
 
-		if($input->getOption("task"))
-			$this->task($name, $output);
+		if($input->getOption("task")) {
+					$this->task($name, $output);
+		}
 
-		if($input->getOption("cronjob"))
-			$this->cronjob($name, $output);
+		if($input->getOption("cronjob")) {
+					$this->cronjob($name, $output);
+		}
 
-		if($input->getOption("resque"))
-			$this->resque($name, $output);
+		if($input->getOption("resque")) {
+					$this->resque($name, $output);
+		}
 
 		$output->writeln("Please run update to update RenaApp and Composer");
 	}
 
 	/**
 	 * @param $name
-	 * @param $output
+	 * @param OutputInterface $output
 	 *
 	 * @return mixed
 	 */
 	private function controller($name, $output)
 	{
 		$path = __DIR__ . "/../Controller/{$name}Controller.php";
-		if(file_exists($path))
-			return $output->writeln("Error, file already exists");
+		if(file_exists($path)) {
+					return $output->writeln("Error, file already exists");
+		}
 
 		// Create controller
 		$controllerFile = <<<EOF
@@ -122,15 +130,16 @@ EOF;
 
 	/**
 	 * @param $name
-	 * @param $output
+	 * @param OutputInterface $output
 	 *
 	 * @return mixed
 	 */
 	private function model($name, $output)
 	{
 		$path = __DIR__ . "/../Model/{$name}.php";
-		if(file_exists($path))
-			return $output->writeln("Error, file already exists");
+		if(file_exists($path)) {
+					return $output->writeln("Error, file already exists");
+		}
 
 		// Create model
 		$modelFile = <<<EOF
@@ -160,15 +169,16 @@ EOF;
 
 	/**
 	 * @param $name
-	 * @param $output
+	 * @param OutputInterface $output
 	 *
 	 * @return mixed
 	 */
 	private function libs($name, $output)
 	{
 		$path = __DIR__ . "/../Lib/{$name}.php";
-		if(file_exists($path))
-			return $output->writeln("Error, file already exists");
+		if(file_exists($path)) {
+					return $output->writeln("Error, file already exists");
+		}
 
 		// Create lib
 		$libFile = <<<EOF
@@ -188,15 +198,16 @@ EOF;
 
 	/**
 	 * @param $name
-	 * @param $output
+	 * @param OutputInterface $output
 	 *
 	 * @return mixed
 	 */
 	private function task($name, $output)
 	{
 		$path = __DIR__ . "/../Task/{$name}Task.php";
-		if(file_exists($path))
-			return $output->writeln("Error, file already exists");
+		if(file_exists($path)) {
+					return $output->writeln("Error, file already exists");
+		}
 
 		$taskFile = <<<EOF
 <?php
@@ -228,15 +239,16 @@ EOF;
 
 	/**
 	 * @param $name
-	 * @param $output
+	 * @param OutputInterface $output
 	 *
 	 * @return mixed
 	 */
 	private function cronjob($name, $output)
 	{
 		$path = __DIR__ . "/../Task/Cronjobs/{$name}Cronjob.php";
-		if(file_exists($path))
-			return $output->writeln("Error, file already exists");
+		if(file_exists($path)) {
+					return $output->writeln("Error, file already exists");
+		}
 
 		$cronFile = <<<EOF
 <?php
@@ -264,15 +276,16 @@ EOF;
 
 	/**
 	 * @param $name
-	 * @param $output
+	 * @param OutputInterface $output
 	 *
 	 * @return mixed
 	 */
 	private function resque($name, $output)
 	{
 		$path = __DIR__ . "/../Task/Resque/{$name}Resque.php";
-		if(file_exists($path))
-			return $output->writeln("Error, file already exists");
+		if(file_exists($path)) {
+					return $output->writeln("Error, file already exists");
+		}
 
 		$resqueFile = <<<EOF
 <?php
