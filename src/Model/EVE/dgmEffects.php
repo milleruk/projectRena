@@ -28,13 +28,23 @@ class dgmEffects
 		$this->db = $this->app->Db;
 	}
 
+	/**
+	 * @param $effectID
+	 *
+	 * @return array
+	 */
 	public function getAllByID($effectID)
 	{
-		return $this->db->queryRow("SELECT * FROM dgmEffects WHERE effectID = :id", array(":id" => $effectID));
+		return $this->db->queryRow("SELECT * FROM dgmEffects WHERE effectID = :id", array(":id" => $effectID), 3600);
 	}
 
+	/**
+	 * @param $effectName
+	 *
+	 * @return array
+	 */
 	public function getAllByName($effectName)
 	{
-		return $this->db->queryRow("SELECT * FROM dgmEffects WHERE effectName = :name", array(":name" => $effectName));
+		return $this->db->queryRow("SELECT * FROM dgmEffects WHERE effectName = :name", array(":name" => $effectName), 3600);
 	}
 }

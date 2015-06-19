@@ -35,7 +35,7 @@ class invTypes
 	 */
 	public function getNameByID($typeID)
 	{
-		return $this->db->queryField("SELECT typeName FROM invTypes WHERE typeID = :id", "typeName", array(":id" => $typeID));
+		return $this->db->queryField("SELECT typeName FROM invTypes WHERE typeID = :id", "typeName", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -45,7 +45,7 @@ class invTypes
 	 */
 	public function getIDByName($typeName)
 	{
-		return $this->db->queryField("SELECT typeID FROM invTypes WHERE typeName = :name", "typeID", array(":name" => $typeName));
+		return $this->db->queryField("SELECT typeID FROM invTypes WHERE typeName = :name", "typeID", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -55,7 +55,7 @@ class invTypes
 	 */
 	public function getAllByID($typeID)
 	{
-		return $this->db->queryRow("SELECT * FROM invTypes WHERE typeID = :id", array(":id" => $typeID));
+		return $this->db->queryRow("SELECT * FROM invTypes WHERE typeID = :id", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -65,7 +65,7 @@ class invTypes
 	 */
 	public function getAllByName($typeName)
 	{
-		return $this->db->queryRow("SELECT * FROM invTypes WHERE typeName = :name", array(":name" => $typeName));
+		return $this->db->queryRow("SELECT * FROM invTypes WHERE typeName = :name", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -75,7 +75,7 @@ class invTypes
 	 */
 	public function getTypeIDByID($typeID)
 	{
-		return $this->db->queryField("SELECT typeID FROM invTypes WHERE typeID = :id", "typeID", array(":id" => $typeID));
+		return $this->db->queryField("SELECT typeID FROM invTypes WHERE typeID = :id", "typeID", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -85,7 +85,7 @@ class invTypes
 	 */
 	public function getTypeIDByName($typeName)
 	{
-		return $this->db->queryField("SELECT typeID FROM invTypes WHERE typeName = :name", "typeID", array(":name" => $typeName));
+		return $this->db->queryField("SELECT typeID FROM invTypes WHERE typeName = :name", "typeID", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -95,7 +95,7 @@ class invTypes
 	 */
 	public function getGroupIDByID($typeID)
 	{
-		return $this->db->queryField("SELECT groupID FROM invTypes WHERE typeID = :id", "groupID", array(":id" => $typeID));
+		return $this->db->queryField("SELECT groupID FROM invTypes WHERE typeID = :id", "groupID", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -105,7 +105,7 @@ class invTypes
 	 */
 	public function getGroupIDByName($typeName)
 	{
-		return $this->db->queryField("SELECT groupID FROM invTypes WHERE typeName = :name", "groupID", array(":name" => $typeName));
+		return $this->db->queryField("SELECT groupID FROM invTypes WHERE typeName = :name", "groupID", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -115,7 +115,7 @@ class invTypes
 	 */
 	public function getTypeNameByID($typeID)
 	{
-		return $this->db->queryField("SELECT typeName FROM invTypes WHERE typeID = :id", "typeName", array(":id" => $typeID));
+		return $this->db->queryField("SELECT typeName FROM invTypes WHERE typeID = :id", "typeName", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -125,7 +125,7 @@ class invTypes
 	 */
 	public function getTypeNameByName($typeName)
 	{
-		return $this->db->queryField("SELECT typeName FROM invTypes WHERE typeName = :name", "typeName", array(":name" => $typeName));
+		return $this->db->queryField("SELECT typeName FROM invTypes WHERE typeName = :name", "typeName", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -135,7 +135,7 @@ class invTypes
 	 */
 	public function getDescriptionByID($typeID)
 	{
-		return $this->db->queryField("SELECT description FROM invTypes WHERE typeID = :id", "description", array(":id" => $typeID));
+		return $this->db->queryField("SELECT description FROM invTypes WHERE typeID = :id", "description", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -145,7 +145,7 @@ class invTypes
 	 */
 	public function getDescriptionByName($typeName)
 	{
-		return $this->db->queryField("SELECT description FROM invTypes WHERE typeName = :name", "description", array(":name" => $typeName));
+		return $this->db->queryField("SELECT description FROM invTypes WHERE typeName = :name", "description", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -155,7 +155,7 @@ class invTypes
 	 */
 	public function getMassByID($typeID)
 	{
-		return $this->db->queryField("SELECT mass FROM invTypes WHERE typeID = :id", "mass", array(":id" => $typeID));
+		return $this->db->queryField("SELECT mass FROM invTypes WHERE typeID = :id", "mass", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -165,7 +165,7 @@ class invTypes
 	 */
 	public function getMassByName($typeName)
 	{
-		return $this->db->queryField("SELECT mass FROM invTypes WHERE typeName = :name", "mass", array(":name" => $typeName));
+		return $this->db->queryField("SELECT mass FROM invTypes WHERE typeName = :name", "mass", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -175,7 +175,7 @@ class invTypes
 	 */
 	public function getVolumeByID($typeID)
 	{
-		return $this->db->queryField("SELECT volume FROM invTypes WHERE typeID = :id", "volume", array(":id" => $typeID));
+		return $this->db->queryField("SELECT volume FROM invTypes WHERE typeID = :id", "volume", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -185,7 +185,7 @@ class invTypes
 	 */
 	public function getVolumeByName($typeName)
 	{
-		return $this->db->queryField("SELECT volume FROM invTypes WHERE typeName = :name", "volume", array(":name" => $typeName));
+		return $this->db->queryField("SELECT volume FROM invTypes WHERE typeName = :name", "volume", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -195,7 +195,7 @@ class invTypes
 	 */
 	public function getCapacityByID($typeID)
 	{
-		return $this->db->queryField("SELECT capacity FROM invTypes WHERE typeID = :id", "capacity", array(":id" => $typeID));
+		return $this->db->queryField("SELECT capacity FROM invTypes WHERE typeID = :id", "capacity", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -205,7 +205,7 @@ class invTypes
 	 */
 	public function getCapacityByName($typeName)
 	{
-		return $this->db->queryField("SELECT capacity FROM invTypes WHERE typeName = :name", "capacity", array(":name" => $typeName));
+		return $this->db->queryField("SELECT capacity FROM invTypes WHERE typeName = :name", "capacity", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -215,7 +215,7 @@ class invTypes
 	 */
 	public function getPortionSizeByID($typeID)
 	{
-		return $this->db->queryField("SELECT portionSize FROM invTypes WHERE typeID = :id", "portionSize", array(":id" => $typeID));
+		return $this->db->queryField("SELECT portionSize FROM invTypes WHERE typeID = :id", "portionSize", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -225,7 +225,7 @@ class invTypes
 	 */
 	public function getPortionSizeByName($typeName)
 	{
-		return $this->db->queryField("SELECT portionSize FROM invTypes WHERE typeName = :name", "portionSize", array(":name" => $typeName));
+		return $this->db->queryField("SELECT portionSize FROM invTypes WHERE typeName = :name", "portionSize", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -235,7 +235,7 @@ class invTypes
 	 */
 	public function getRaceIDByID($typeID)
 	{
-		return $this->db->queryField("SELECT raceID FROM invTypes WHERE typeID = :id", "raceID", array(":id" => $typeID));
+		return $this->db->queryField("SELECT raceID FROM invTypes WHERE typeID = :id", "raceID", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -245,7 +245,7 @@ class invTypes
 	 */
 	public function getRaceIDByName($typeName)
 	{
-		return $this->db->queryField("SELECT raceID FROM invTypes WHERE typeName = :name", "raceID", array(":name" => $typeName));
+		return $this->db->queryField("SELECT raceID FROM invTypes WHERE typeName = :name", "raceID", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -255,7 +255,7 @@ class invTypes
 	 */
 	public function getBasePriceByID($typeID)
 	{
-		return $this->db->queryField("SELECT basePrice FROM invTypes WHERE typeID = :id", "basePrice", array(":id" => $typeID));
+		return $this->db->queryField("SELECT basePrice FROM invTypes WHERE typeID = :id", "basePrice", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -265,7 +265,7 @@ class invTypes
 	 */
 	public function getBasePriceByName($typeName)
 	{
-		return $this->db->queryField("SELECT basePrice FROM invTypes WHERE typeName = :name", "basePrice", array(":name" => $typeName));
+		return $this->db->queryField("SELECT basePrice FROM invTypes WHERE typeName = :name", "basePrice", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -275,7 +275,7 @@ class invTypes
 	 */
 	public function getPublishedByID($typeID)
 	{
-		return $this->db->queryField("SELECT published FROM invTypes WHERE typeID = :id", "published", array(":id" => $typeID));
+		return $this->db->queryField("SELECT published FROM invTypes WHERE typeID = :id", "published", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -285,7 +285,7 @@ class invTypes
 	 */
 	public function getPublishedByName($typeName)
 	{
-		return $this->db->queryField("SELECT published FROM invTypes WHERE typeName = :name", "published", array(":name" => $typeName));
+		return $this->db->queryField("SELECT published FROM invTypes WHERE typeName = :name", "published", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -295,7 +295,7 @@ class invTypes
 	 */
 	public function getMarketGroupIDByID($typeID)
 	{
-		return $this->db->queryField("SELECT marketGroupID FROM invTypes WHERE typeID = :id", "marketGroupID", array(":id" => $typeID));
+		return $this->db->queryField("SELECT marketGroupID FROM invTypes WHERE typeID = :id", "marketGroupID", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -305,7 +305,7 @@ class invTypes
 	 */
 	public function getMarketGroupIDByName($typeName)
 	{
-		return $this->db->queryField("SELECT marketGroupID FROM invTypes WHERE typeName = :name", "marketGroupID", array(":name" => $typeName));
+		return $this->db->queryField("SELECT marketGroupID FROM invTypes WHERE typeName = :name", "marketGroupID", array(":name" => $typeName), 3600);
 	}
 
 	/**
@@ -315,7 +315,7 @@ class invTypes
 	 */
 	public function getChanceOfDuplicatingByID($typeID)
 	{
-		return $this->db->queryField("SELECT chanceOfDuplicating FROM invTypes WHERE typeID = :id", "chanceOfDuplicating", array(":id" => $typeID));
+		return $this->db->queryField("SELECT chanceOfDuplicating FROM invTypes WHERE typeID = :id", "chanceOfDuplicating", array(":id" => $typeID), 3600);
 	}
 
 	/**
@@ -325,6 +325,6 @@ class invTypes
 	 */
 	public function getChanceOfDuplicatingByName($typeName)
 	{
-		return $this->db->queryField("SELECT chanceOfDuplicating FROM invTypes WHERE typeName = :name", "chanceOfDuplicating", array(":name" => $typeName));
+		return $this->db->queryField("SELECT chanceOfDuplicating FROM invTypes WHERE typeName = :name", "chanceOfDuplicating", array(":name" => $typeName), 3600);
 	}
 }

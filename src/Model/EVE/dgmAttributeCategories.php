@@ -35,7 +35,7 @@ class dgmAttributeCategories
 	 */
 	public function getAllByID($categoryID)
 	{
-		return $this->db->queryRow("SELECT * FROM dgmAttributeCategories WHERE categoryID = :id", array(":id" => $categoryID));
+		return $this->db->queryRow("SELECT * FROM dgmAttributeCategories WHERE categoryID = :id", array(":id" => $categoryID), 3600);
 	}
 
 	/**
@@ -45,7 +45,7 @@ class dgmAttributeCategories
 	 */
 	public function getAllByName($categoryName)
 	{
-		return $this->db->queryRow("SELECT * FROM dgmAttributeCategories WHERE categoryName = :name", array(":name" => $categoryName));
+		return $this->db->queryRow("SELECT * FROM dgmAttributeCategories WHERE categoryName = :name", array(":name" => $categoryName), 3600);
 	}
 
 	/**
@@ -55,7 +55,7 @@ class dgmAttributeCategories
 	 */
 	public function getCategoryDescriptionByID($categoryID)
 	{
-		return $this->db->queryField("SELECT categoryDescription FROM dgmAttributeCategories WHERE categoryID = :id", "categoryDescription", arraY(":id" => $categoryID));
+		return $this->db->queryField("SELECT categoryDescription FROM dgmAttributeCategories WHERE categoryID = :id", "categoryDescription", arraY(":id" => $categoryID), 3600);
 	}
 
 	/**
@@ -65,7 +65,7 @@ class dgmAttributeCategories
 	 */
 	public function getCategoryDescriptionByName($categoryName)
 	{
-		return $this->db->queryField("SELECT categoryDescription FROM dgmAttributeCategories WHERE categoryName = :name", "categoryDescription", arraY(":name" => $categoryName));
+		return $this->db->queryField("SELECT categoryDescription FROM dgmAttributeCategories WHERE categoryName = :name", "categoryDescription", arraY(":name" => $categoryName), 3600);
 	}
 
 }
