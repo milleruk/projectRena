@@ -11,22 +11,22 @@ use ProjectRena\RenaApp;
 class invTypes
 {
 	/**
-     * @var RenaApp
-     */
-    private $app;
+	 * @var RenaApp
+	 */
+	private $app;
 	/**
-     * @var \ProjectRena\Lib\Db
-     */
-    private $db;
+	 * @var \ProjectRena\Lib\Db
+	 */
+	private $db;
 
 	/**
-     * @param RenaApp $app
-     */
-    function __construct(RenaApp $app)
-    {
-        $this->app = $app;
-        $this->db = $this->app->Db;
-    }
+	 * @param RenaApp $app
+	 */
+	function __construct(RenaApp $app)
+	{
+		$this->app = $app;
+		$this->db = $this->app->Db;
+	}
 
 	/**
 	 * @param $id
@@ -34,9 +34,9 @@ class invTypes
 	 * @return null
 	 */
 	public function getNameByID($id)
-    {
+	{
 		return $this->db->queryField("SELECT typeName FROM invTypes WHERE typeID = :id", "typeName", array(":id" => $id));
-    }
+	}
 
 	/**
 	 * @param $name
@@ -44,9 +44,9 @@ class invTypes
 	 * @return null
 	 */
 	public function getIDByName($name)
-    {
+	{
 		return $this->db->queryField("SELECT typeID FROM invTypes WHERE typeName = :name", "typeID", array(":name" => $name));
-    }
+	}
 
 	/**
 	 * @param $id
