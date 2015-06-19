@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e767d941fcc5b76b8797bd547c7c2f32",
+    "hash": "4a75af73b8329e9b5f6480d697875eba",
     "packages": [
         {
             "name": "3rdpartyeve/perry",
