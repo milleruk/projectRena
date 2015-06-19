@@ -25,9 +25,11 @@ class CCPDataTask extends Command
             ->setDescription('Updates the CCP database tables');
     }
 
-	/**
+    /**
      * @param InputInterface $input
      * @param OutputInterface $output
+     *
+     * @return int|null|void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -58,7 +60,7 @@ class CCPDataTask extends Command
                 try {
                     exec("wget -q {$dataURL} -O $cache/$file$type");
                     exec("bzip2 -q -d $cache/$file$type");
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     echo "Error";
                 }
 
