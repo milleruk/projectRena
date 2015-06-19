@@ -100,8 +100,9 @@ class UpdateTask extends Command
 					$ep = explode("/EVEApi/", $file);
 					$ep = explode("/", $ep[1]);
 					$namespace = "use ProjectRena\\" . str_replace(".php", "", str_replace("/", "\\", $exp[1])) . " as EVE" . $ep[0] . $callName . ";";
-				} else
-					$namespace = "use ProjectRena\\" . str_replace(".php", "", str_replace("/", "\\", $exp[1])) . ";";
+				} else {
+									$namespace = "use ProjectRena\\" . str_replace(".php", "", str_replace("/", "\\", $exp[1])) . ";";
+				}
 				$internal .= $namespace . "\n";
 			}
 		}
