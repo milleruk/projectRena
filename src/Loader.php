@@ -1,6 +1,11 @@
 <?php
 // Load baseConfig first..
-$app->container->singleton("baseConfig", function($container) use ($app) {
+$app->container->singleton(/**
+ * @param $container
+ *
+ * @return \ProjectRena\Lib\baseConfig
+ */
+	"baseConfig", function($container) use ($app) {
     return new \ProjectRena\Lib\baseConfig();
 });
 
@@ -34,12 +39,22 @@ foreach ($load as $path)
 
         if (method_exists(new $namespace($app), "RunAsNew"))
         {
-            $app->container->set($callName, function($container) use ($app, $namespace) {
+            $app->container->set(/**
+             * @param $container
+             *
+             * @return mixed
+             */
+                $callName, function($container) use ($app, $namespace) {
                 return new $namespace($app);
             });
         } else {
             // Load all the models and Libraries as singletons in Slim..
-            $app->container->singleton($callName, function($container) use ($app, $namespace) {
+            $app->container->singleton(/**
+             * @param $container
+             *
+             * @return mixed
+             */
+                $callName, function($container) use ($app, $namespace) {
                 return new $namespace($app);
             });
         }
