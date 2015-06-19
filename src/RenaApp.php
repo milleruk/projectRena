@@ -15,6 +15,7 @@ use ProjectRena\Lib\baseConfig;
 use ProjectRena\Lib\cURL;
 use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
+use ProjectRena\Model\Halp;
 use ProjectRena\Model\Paste;
 use ProjectRena\Model\Users;
 use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
@@ -116,6 +117,7 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property cURL cURL
  * @property ApiKeys ApiKeys
  * @property Config Config
+ * @property Halp Halp
  * @property Paste Paste
  * @property Users Users
  * @property EVEAPICallList EVEAPICallList

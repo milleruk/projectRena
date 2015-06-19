@@ -15,12 +15,12 @@ class Users
      */
     private $app;
     /**
-     * @var \ProjectRena\Lib\Service\Database
+     * @var \ProjectRena\Lib\Db
      */
     private $db;
 
     /**
-     * @var \ProjectRena\Lib\Service\baseConfig
+     * @var \ProjectRena\Lib\Db
      */
     private $config;
 

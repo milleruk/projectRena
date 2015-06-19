@@ -31,6 +31,7 @@ class UpdateTask extends Command
 			exec("php " . __DIR__ . "/../../composer.phar update -o");
 			$output->writeln("Updating composer");
 		}
+
 		// Update RenaApp
 		// Load everything else
 		// Paths to load files in

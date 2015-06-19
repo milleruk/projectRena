@@ -15,7 +15,7 @@ class Paste
      */
     private $app;
     /**
-     * @var \ProjectRena\Lib\Service\Database
+     * @var \ProjectRena\Lib\Database
      */
     private $db;
 
