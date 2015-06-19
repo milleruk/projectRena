@@ -18,14 +18,14 @@ class EVEOAuth
 
     public function LoginURL()
     {
-        $requesturi = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : $this->app->request->getPath();
+        $requestURI = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : $this->app->request->getPath();
 
         return "https://login.eveonline.com/oauth/authorize?response_type=code&redirect_uri=" .
         $this->app->request->getUrl() .
         $this->config->getConfig("callBack", "crestsso", "/login/eve/") .
         "&client_id=" . $this->config->getConfig("clientID", "crestsso") .
         "&scope=publicData" .
-        "&state=" . $requesturi;
+        "&state=" . $requestURI;
     }
 
     public function SSOLogin($code, $state)
