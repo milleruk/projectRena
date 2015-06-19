@@ -23,7 +23,7 @@ class EVEOAuth
         $this->config->getConfig("callBack", "crestsso", "/login/eve/") .
         "&client_id=" . $this->config->getConfig("clientID", "crestsso") .
         "&scope=publicData" .
-        "&state=" . $this->app->request->getPath();
+        "&state=" . $_SERVER["REQUEST_URI"];
     }
 
     public function SSOLogin($code, $state)
