@@ -61,7 +61,7 @@ class EVEOAuth
 
         $accessToken = $data->access_token;
         $refreshToken = $data->refresh_token;
-        $expiresIn = $data->expires_in;
+        //$expiresIn = $data->expires_in;
 
         // Verify token
         $verifyURL = "https://login.eveonline.com/oauth/verify";
@@ -70,7 +70,7 @@ class EVEOAuth
         $characterID = $data->CharacterID;
         $characterName = $data->CharacterName;
         $characterOwnerHash = $data->CharacterOwnerHash;
-        $expiresOn = $data->ExpiresOn;
+        //$expiresOn = $data->ExpiresOn;
         $scopes = $data->Scopes;
         $tokenType = $data->TokenType;
 
