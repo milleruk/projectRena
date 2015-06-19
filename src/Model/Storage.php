@@ -18,7 +18,7 @@ class Storage
 
     function get($key, $default = null)
     {
-        $value = Db::queryField("SELECT value FROM storage WHERE key = :key", "value", array(":key" => $key), 0);
+        $value = $this->db->queryField("SELECT value FROM storage WHERE `key` = :key", "value", array(":key" => $key), 0);
 
         if(!$value)
             return $default;
@@ -27,6 +27,6 @@ class Storage
 
     function set($key, $value)
     {
-        return Db::execute("REPLACE INTO storage (key, value) VALUES (:key, :value)", array(":key" => $key, ":value" => $value));
+        return $this->db->execute("REPLACE INTO storage (`key`, value) VALUES (:key, :value)", array(":key" => $key, ":value" => $value));
     }
 }

@@ -214,7 +214,9 @@ EOF;
 
 namespace ProjectRena\Task;
 
-use ProjectRena\Lib; use Cilex\Command\Command;
+use ProjectRena\Lib;
+use ProjectRena\RenaApp;
+use Cilex\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -229,6 +231,7 @@ class {$name}Task extends Command
 
     protected function execute(InputInterface \$input, OutputInterface \$output)
     {
+    	\$app = RenaApp::getInstance();
     }
 }
 EOF;
@@ -292,18 +295,23 @@ EOF;
 
 namespace ProjectRena\Task\Resque;
 
+use ProjectRena\RenaApp;
+
 class {$name}Resque
 {
     public function setUp()
     {
+    	\$app = RenaApp::getInstance();
     }
 
     public function perform()
     {
+    	\$app = RenaApp::getInstance();
     }
 
     public function tearDown()
     {
+    	\$app = RenaApp::getInstance();
     }
 }
 
