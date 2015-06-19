@@ -3,12 +3,29 @@ namespace ProjectRena\Model\OAuth;
 
 use ProjectRena\RenaApp;
 
+/**
+ * Class EVEOAuth
+ *
+ * @package ProjectRena\Model\OAuth
+ */
 class EVEOAuth
 {
+	/**
+     * @var RenaApp
+     */
     private $app;
+	/**
+     * @var \ProjectRena\Lib\Db
+     */
     private $db;
+	/**
+     * @var \ProjectRena\Lib\baseConfig
+     */
     private $config;
 
+	/**
+     * @param RenaApp $app
+     */
     function __construct(RenaApp $app)
     {
         $this->app = $app;
@@ -16,6 +33,9 @@ class EVEOAuth
         $this->config = $this->app->baseConfig;
     }
 
+	/**
+     * @return string
+     */
     public function LoginURL()
     {
         $requestURI = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : $this->app->request->getPath();
@@ -28,6 +48,10 @@ class EVEOAuth
         "&state=" . $requestURI;
     }
 
+	/**
+     * @param $code
+     * @param $state
+     */
     public function SSOLogin($code, $state)
     {
         // Get the login token

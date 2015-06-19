@@ -8,8 +8,16 @@ use Cilex\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Class CCPDataTask
+ *
+ * @package ProjectRena\Task
+ */
 class CCPDataTask extends Command
 {
+	/**
+     *
+     */
     protected function configure()
     {
         $this
@@ -17,6 +25,10 @@ class CCPDataTask extends Command
             ->setDescription('Updates the CCP database tables');
     }
 
+	/**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $app = RenaApp::getInstance();
