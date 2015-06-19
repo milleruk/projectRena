@@ -12,10 +12,11 @@ class baseConfig
      */
     public function getConfig($key, $type = null, $default = null)
     {
+        $config = array();
         include(__DIR__."/../../config/config.php");
 
         $type = strtolower($type);
-        if (isset($config[$type][$key])) {
+        if (!empty($config[$type][$key])) {
             return $config[$type][$key];
         }
 
