@@ -1,5 +1,4 @@
 <?php
-
 // Cheatsheet: https://andreiabohner.files.wordpress.com/2014/06/slim.pdf
 // Main route
 $app->get('/', function() use ($app){
