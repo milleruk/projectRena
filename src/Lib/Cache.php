@@ -3,7 +3,6 @@
 namespace ProjectRena\Lib;
 
 use Closure;
-use ProjectRena\Model\Config;
 use ProjectRena\RenaApp;
 use Redis;
 

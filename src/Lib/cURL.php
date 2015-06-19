@@ -72,11 +72,11 @@ class cURL
     }
 
     /**
-     * @param $url
+     * @param string $url
      * @param array $postData
      * @param array $headers
      *
-     * @return mixed
+     * @return string
      */
     public function sendData($url, $postData = array(), $headers = array())
     {
