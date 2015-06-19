@@ -267,7 +267,7 @@ class {$name}Cronjob
         return 1; // Runs every five seconds
     }
 
-    public static function execute($pid, $md5, $db, RenaApp $app)
+    public static function execute(\$pid, \$md5, \$db, RenaApp \$app)
     {
     }
 }
