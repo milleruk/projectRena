@@ -29,7 +29,6 @@
     "robmorgan/phinx": "~0.4.3",
     "cilex/cilex": "~1.1.0",
     "chrisboulton/php-resque": "~1.2.0",
-    "kriswallsmith/spork": "~0.3.0",
     "d11wtq/boris": "~1.0.10"
   },
   "autoload": {
