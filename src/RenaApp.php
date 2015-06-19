@@ -26,6 +26,8 @@ use ProjectRena\Model\EVE\dgmTypeEffects;
 use ProjectRena\Model\EVE\invFlags;
 use ProjectRena\Model\EVE\invGroups;
 use ProjectRena\Model\EVE\invTypes;
+use ProjectRena\Model\EVE\mapDenormalize;
+use ProjectRena\Model\EVE\mapRegions;
 use ProjectRena\Model\EVE\mapSolarSystems;
 use ProjectRena\Model\OAuth\EVEOAuth;
 use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
@@ -138,6 +140,8 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property invFlags invFlags
  * @property invGroups invGroups
  * @property invTypes invTypes
+ * @property mapDenormalize mapDenormalize
+ * @property mapRegions mapRegions
  * @property mapSolarSystems mapSolarSystems
  * @property EVEOAuth EVEOAuth
  * @property EVEAPICallList EVEAPICallList
