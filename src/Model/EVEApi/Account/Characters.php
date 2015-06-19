@@ -25,9 +25,9 @@ class Characters
     private $app;
 
 
- /**
-  * @param RenaApp $app
-  */
+    /**
+     * @param RenaApp $app
+     */
     function __construct(RenaApp $app)
     {
         $this->app = $app;

@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BorisTask extends Command
 {
-	/**
+    /**
      *
      */
     protected function configure()

@@ -10,20 +10,20 @@ use ProjectRena\RenaApp;
  */
 class EVEOAuth
 {
-	/**
+    /**
      * @var RenaApp
      */
     private $app;
-	/**
+    /**
      * @var \ProjectRena\Lib\Db
      */
     private $db;
-	/**
+    /**
      * @var \ProjectRena\Lib\baseConfig
      */
     private $config;
 
-	/**
+    /**
      * @param RenaApp $app
      */
     function __construct(RenaApp $app)
@@ -33,7 +33,7 @@ class EVEOAuth
         $this->config = $this->app->baseConfig;
     }
 
-	/**
+    /**
      * @return string
      */
     public function LoginURL()
@@ -48,7 +48,7 @@ class EVEOAuth
         "&state=" . $requestURI;
     }
 
-	/**
+    /**
      * @param $code
      * @param $state
      */

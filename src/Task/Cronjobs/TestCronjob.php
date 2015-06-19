@@ -17,13 +17,13 @@ class TestCronjob
         return 1; // Runs every five seconds
     }
 
- /**
-  * @param $pid
-  * @param $md5
-  * @param RenaApp $app
-  *
-  * @throws \Exception
-  */
+    /**
+     * @param $pid
+     * @param $md5
+     * @param RenaApp $app
+     *
+     * @throws \Exception
+     */
     public static function execute($pid, $md5, $db, RenaApp $app)
     {
         $app->Logging->log('INFO', 'Hayoooo');

@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class CCPDataTask extends Command
 {
-	/**
+    /**
      *
      */
     protected function configure()
