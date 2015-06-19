@@ -10,20 +10,20 @@ use ProjectRena\RenaApp;
  */
 class Storage
 {
-	/**
+    /**
      * @var RenaApp
      */
     private $app;
-	/**
+    /**
      * @var \ProjectRena\Lib\Db
      */
     private $db;
-	/**
+    /**
      * @var \ProjectRena\Lib\baseConfig
      */
     private $config;
 
-	/**
+    /**
      * @param RenaApp $app
      */
     function __construct(RenaApp $app)
@@ -33,7 +33,7 @@ class Storage
         $this->config = $this->app->baseConfig;
     }
 
-	/**
+    /**
      * @param $key
      * @param null $default
      *
@@ -48,7 +48,7 @@ class Storage
         return $value;
     }
 
-	/**
+    /**
      * @param $key
      * @param $value
      *

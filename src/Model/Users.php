@@ -77,8 +77,8 @@ class Users
         if (!$id) {
             return $this->db->execute("INSERT INTO users (characterName, characterID, characterOwnerHash) VALUE (:characterName, :characterID, :characterOwnerHash)",
                 array(":characterName"      => $characterName,
-                      ":characterID"        => $characterID,
-                      ":characterOwnerHash" => $characterOwnerHash
+                        ":characterID"        => $characterID,
+                        ":characterOwnerHash" => $characterOwnerHash
                 ), true);
         }
         return $id;

@@ -1,11 +1,11 @@
 <?php
 // Load baseConfig first..
 $app->container->singleton(/**
- * @param $container
- *
- * @return \ProjectRena\Lib\baseConfig
- */
-	"baseConfig", function($container) use ($app) {
+     * @param $container
+     *
+     * @return \ProjectRena\Lib\baseConfig
+     */
+    "baseConfig", function($container) use ($app) {
     return new \ProjectRena\Lib\baseConfig();
 });
 
