@@ -2,6 +2,9 @@
 <?php
 use Slim\Views\Twig;
 
+// change to the dir Rena is in
+chdir(__DIR__);
+
 // Error display
 ini_set("display_errors", 0);
 //error_reporting(E_ALL);
