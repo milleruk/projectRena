@@ -44,7 +44,7 @@ class Db
 				/**
 				 * @var bool
 				 */
-				private $persistence = true;
+				public $persistence = true;
 
 				/**
 				 * @param RenaApp $app
