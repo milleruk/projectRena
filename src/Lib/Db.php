@@ -59,6 +59,10 @@ class Db
 								$this->timer = $app->Timer;
 								$this->statsd = $app->StatsD;
 
+								// Turn of persistence in the cache if the db isn't persistent
+								if(!$this->persistence)
+												$this->cache->persistent = false;
+
 								$dsn = 'mysql:dbname=' . $app->baseConfig->getConfig('name', 'database') . ';host=' . $app->baseConfig->getConfig('host', 'database');
 								try
 								{
