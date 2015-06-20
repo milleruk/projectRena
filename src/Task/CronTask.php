@@ -31,6 +31,10 @@ class CronTask extends Command
 				 */
 				protected function execute(InputInterface $input, OutputInterface $output)
 				{
+								// Enable the garbage collector since this is a long running process
+								gc_enable();
+
+								// Get the slim instance
 								$app = RenaApp::getInstance();
 
 								$run = true;
