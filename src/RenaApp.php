@@ -18,6 +18,7 @@ use ProjectRena\Model\Config;
 use ProjectRena\Model\Paste;
 use ProjectRena\Model\Storage;
 use ProjectRena\Model\Users;
+use ProjectRena\Model\EVE\characters;
 use ProjectRena\Model\EVE\dgmAttributeCategories;
 use ProjectRena\Model\EVE\dgmAttributeTypes;
 use ProjectRena\Model\EVE\dgmEffects;
@@ -132,6 +133,7 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property Paste Paste
  * @property Storage Storage
  * @property Users Users
+ * @property characters characters
  * @property dgmAttributeCategories dgmAttributeCategories
  * @property dgmAttributeTypes dgmAttributeTypes
  * @property dgmEffects dgmEffects
