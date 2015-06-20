@@ -15,6 +15,10 @@ class Storage extends AbstractMigration
 				public function change()
 				{
 								$users = $this->table('storage');
-								$users->addColumn('key', 'string', array('limit' => 255))->addColumn('value', 'string', array('limit' => 255))->addIndex(array('key'), array('unique' => true))->save();
+								$users
+									->addColumn('key', 'string', array('limit' => 255))
+									->addColumn('value', 'string', array('limit' => 255))
+									->addIndex(array('key'), array('unique' => true))
+									->save();
 				}
 }

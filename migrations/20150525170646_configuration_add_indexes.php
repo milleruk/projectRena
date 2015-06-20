@@ -7,7 +7,10 @@ class ConfigurationAddIndexes extends AbstractMigration
 				public function change()
 				{
 								$configuration = $this->table('configuration');
-								$configuration->addIndex('key')->addIndex('value')->update();
+								$configuration
+									->addIndex('key')
+									->addIndex('value')
+									->update();
 				}
 
 				/**
