@@ -19,7 +19,7 @@ class Cache
 				/**
 				 * @var bool
 				 */
-				public $persistent = true;
+				public $persistence = true;
 
 				/**
 				 * @param RenaApp $app
@@ -28,7 +28,7 @@ class Cache
 				{
 								$this->redis = new Redis();
 
-								if(!$this->persistent)
+								if(!$this->persistence)
 												$this->redis->connect($app->baseConfig->getConfig('host', 'redis', '127.0.0.1'), $app->baseConfig->getConfig('port', 'redis', 6379));
 								else
 												$this->redis->pconnect($app->baseConfig->getConfig('host', 'redis', '127.0.0.1'), $app->baseConfig->getConfig('port', 'redis', 6379));

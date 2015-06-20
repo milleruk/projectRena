@@ -27,5 +27,6 @@ class TestCronjob
 				public static function execute($pid, $md5, $db, RenaApp $app)
 				{
 								$app->Logging->log('INFO', 'Hayoooo');
+								exit();
 				}
 }
