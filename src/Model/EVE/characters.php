@@ -137,4 +137,10 @@ class characters
             }
         }
     }
+
+    public function setLastUpdated($characterID, $lastUpdated)
+    {
+        if($lastUpdated)
+            $this->db->execute("UPDATE characters SET lastUpdated = :lastUpdated WHERE characterID = :characterID", array(":lastUpdated" => $lastUpdated, ":characterID" => $characterID));
+    }
 }
