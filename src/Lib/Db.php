@@ -42,6 +42,11 @@ class Db
 				private $statsd;
 
 				/**
+				 * @var bool
+				 */
+				private $persistence = true;
+
+				/**
 				 * @param RenaApp $app
 				 *
 				 * @throws Exception
@@ -58,7 +63,7 @@ class Db
 								try
 								{
 												$this->pdo = new PDO($dsn, $app->baseConfig->getConfig('username', 'database'), $app->baseConfig->getConfig('password', 'database'), array(
-													PDO::ATTR_PERSISTENT               => $app->baseConfig->getConfig('persistent', 'database'),
+													PDO::ATTR_PERSISTENT               => $this->persistence,
 													PDO::ATTR_EMULATE_PREPARES         => $app->baseConfig->getConfig('emulatePrepares', 'database'),
 													PDO::ATTR_ERRMODE                  => PDO::ERRMODE_EXCEPTION,
 													PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => $app->baseConfig->getConfig('useBufferedQuery', 'database'),
