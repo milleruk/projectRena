@@ -8,7 +8,7 @@ class updateCharactersCronjob
 {
     public static function getRunTimes()
     {
-        return 10; // Runs every 60 seconds
+        return 60; // Runs every 60 seconds
     }
 
     public static function execute($pid, $md5, $db, RenaApp $app)
@@ -18,6 +18,7 @@ class updateCharactersCronjob
 
         if($characters)
         {
+            $cnt = 0;
             foreach($characters as $character)
             {
                 $characterID = $character["characterID"];
@@ -38,7 +39,11 @@ class updateCharactersCronjob
 
                 // Update the last updated
                 $app->characters->setLastUpdated($characterID, date("Y-m-d H:i:s"));
+
+                // Increment $cnt
+                $cnt++;
             }
+            echo "Processed {$cnt} characters";
         }
         exit();
     }

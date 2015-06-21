@@ -118,6 +118,7 @@ class CronTask extends Command
                             $output->writeln("ERROR!! (pid: " . getmypid() . ") " . $e->getMessage());
                             $run = false;
                             posix_kill(getmygid(), 9);
+                            exit();
                         }
                     }
                 }
