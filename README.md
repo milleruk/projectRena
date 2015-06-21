@@ -20,8 +20,7 @@ MIT, check LICENSE for more information
 - PHP 5.6 / HHVM 3.*
 - NGINX
 - Linux
-- MariaDB 10+
-- TokuDB
+- MariaDB 10+ with TokuDB and Handlersocket
 - Composer
 - cURL and PHP5-cURL
 - Redis and PHP5-Redis
