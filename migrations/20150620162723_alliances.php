@@ -26,6 +26,7 @@ class Alliances extends AbstractMigration
          ->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
          ->addColumn('lastUpdated', 'datetime', array('default' => '0000-00-00 00:00:00'))
          ->addIndex(array("allianceID", "allianceName"), array("unique" => true))
+         ->addIndex(array("allianceName"))
          ->save();
     }
 }

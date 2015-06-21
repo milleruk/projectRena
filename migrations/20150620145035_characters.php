@@ -27,6 +27,7 @@ class Characters extends AbstractMigration
          ->addIndex(array("characterID", "characterName"), array("unique" => true))
          ->addIndex(array("corporationID"))
          ->addIndex(array("allianceID"))
+         ->addIndex(array("characterName"))
          ->save();
     }
 }
