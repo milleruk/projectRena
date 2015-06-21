@@ -30,7 +30,10 @@ use ProjectRena\Model\CCP\invTypes;
 use ProjectRena\Model\CCP\mapDenormalize;
 use ProjectRena\Model\CCP\mapRegions;
 use ProjectRena\Model\CCP\mapSolarSystems;
+use ProjectRena\Model\EVE\alliances;
 use ProjectRena\Model\EVE\characters;
+use ProjectRena\Model\EVE\corporations;
+use ProjectRena\Model\EVE\killmails;
 use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
 use ProjectRena\Model\EVEApi\Account\APIKeyInfo as EVEAccountAPIKeyInfo;
 use ProjectRena\Model\EVEApi\Account\AccountStatus as EVEAccountAccountStatus;
@@ -145,7 +148,10 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property mapDenormalize mapDenormalize
  * @property mapRegions mapRegions
  * @property mapSolarSystems mapSolarSystems
+ * @property alliances alliances
  * @property characters characters
+ * @property corporations corporations
+ * @property killmails killmails
  * @property EVEAPICallList EVEAPICallList
  * @property EVEAccountAPIKeyInfo EVEAccountAPIKeyInfo
  * @property EVEAccountAccountStatus EVEAccountAccountStatus
