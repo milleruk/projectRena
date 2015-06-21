@@ -13,24 +13,24 @@ use ProjectRena\Lib\StatsD;
 use ProjectRena\Lib\Timer;
 use ProjectRena\Lib\baseConfig;
 use ProjectRena\Lib\cURL;
+use ProjectRena\Lib\OAuth\EVEOAuth;
 use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
 use ProjectRena\Model\Paste;
 use ProjectRena\Model\Storage;
 use ProjectRena\Model\Users;
+use ProjectRena\Model\CCP\dgmAttributeCategories;
+use ProjectRena\Model\CCP\dgmAttributeTypes;
+use ProjectRena\Model\CCP\dgmEffects;
+use ProjectRena\Model\CCP\dgmTypeAttributes;
+use ProjectRena\Model\CCP\dgmTypeEffects;
+use ProjectRena\Model\CCP\invFlags;
+use ProjectRena\Model\CCP\invGroups;
+use ProjectRena\Model\CCP\invTypes;
+use ProjectRena\Model\CCP\mapDenormalize;
+use ProjectRena\Model\CCP\mapRegions;
+use ProjectRena\Model\CCP\mapSolarSystems;
 use ProjectRena\Model\EVE\characters;
-use ProjectRena\Model\EVE\dgmAttributeCategories;
-use ProjectRena\Model\EVE\dgmAttributeTypes;
-use ProjectRena\Model\EVE\dgmEffects;
-use ProjectRena\Model\EVE\dgmTypeAttributes;
-use ProjectRena\Model\EVE\dgmTypeEffects;
-use ProjectRena\Model\EVE\invFlags;
-use ProjectRena\Model\EVE\invGroups;
-use ProjectRena\Model\EVE\invTypes;
-use ProjectRena\Model\EVE\mapDenormalize;
-use ProjectRena\Model\EVE\mapRegions;
-use ProjectRena\Model\EVE\mapSolarSystems;
-use ProjectRena\Model\OAuth\EVEOAuth;
 use ProjectRena\Model\EVEApi\API\CallList as EVEAPICallList;
 use ProjectRena\Model\EVEApi\Account\APIKeyInfo as EVEAccountAPIKeyInfo;
 use ProjectRena\Model\EVEApi\Account\AccountStatus as EVEAccountAccountStatus;
@@ -128,12 +128,12 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property Timer Timer
  * @property baseConfig baseConfig
  * @property cURL cURL
+ * @property EVEOAuth EVEOAuth
  * @property ApiKeys ApiKeys
  * @property Config Config
  * @property Paste Paste
  * @property Storage Storage
  * @property Users Users
- * @property characters characters
  * @property dgmAttributeCategories dgmAttributeCategories
  * @property dgmAttributeTypes dgmAttributeTypes
  * @property dgmEffects dgmEffects
@@ -145,7 +145,7 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property mapDenormalize mapDenormalize
  * @property mapRegions mapRegions
  * @property mapSolarSystems mapSolarSystems
- * @property EVEOAuth EVEOAuth
+ * @property characters characters
  * @property EVEAPICallList EVEAPICallList
  * @property EVEAccountAPIKeyInfo EVEAccountAPIKeyInfo
  * @property EVEAccountAccountStatus EVEAccountAccountStatus
