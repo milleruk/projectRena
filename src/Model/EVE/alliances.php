@@ -148,7 +148,7 @@ class alliances
      *
      * @internal param null $ceoID
      */
-    public function updateCorporationDetails(
+    public function updateAllianceDetails(
      $allianceID,
      $allianceName = null,
      $allianceTicker = null,
