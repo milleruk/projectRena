@@ -1,5 +1,5 @@
 <?php
-namespace ProjectRena\Model\OAuth;
+namespace ProjectRena\Lib\OAuth;
 
 use ProjectRena\RenaApp;
 
