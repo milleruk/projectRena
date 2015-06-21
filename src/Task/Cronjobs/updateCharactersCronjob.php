@@ -8,7 +8,7 @@ class updateCharactersCronjob
 {
     public static function getRunTimes()
     {
-        return 60; // Runs every 60 seconds
+        return 1; // Runs every 60 seconds
     }
 
     public static function execute($pid, $md5, $db, RenaApp $app)

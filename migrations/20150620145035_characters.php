@@ -25,7 +25,6 @@ class Characters extends AbstractMigration
          ->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
          ->addColumn('lastUpdated', 'datetime', array('default' => '0000-00-00 00:00:00'))
          ->addIndex(array("characterID", "characterName"), array("unique" => true))
-         ->addIndex(array("characterID"))
          ->addIndex(array("corporationID"))
          ->addIndex(array("allianceID"))
          ->save();

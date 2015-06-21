@@ -104,7 +104,7 @@ class CronTask extends Command
 
                                 // Init all the stuff needed inside the Cronjob
                                 $db = new \ProjectRena\Lib\Db($app);
-                                $db->persistence = false; // Turn persistent connections off
+                                $db->persistence = true; // Turn persistent connections off
 
                                 // Execute the cronjob
                                 $class->execute($pid, $md5, $db, $app);
