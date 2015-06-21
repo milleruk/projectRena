@@ -63,7 +63,7 @@ class corporations
      *
      * @return null
      */
-    public function getHistoryByID($corporationID)
+    public function getInformationByID($corporationID)
     {
         return $this->db->queryField("SELECT history FROM corporations WHERE corporationID = :id", "history", array(":id" => $corporationID), 3600);
     }
@@ -73,7 +73,7 @@ class corporations
      *
      * @return null
      */
-    public function getHistoryByName($corporationName)
+    public function getInformationByName($corporationName)
     {
         return $this->db->queryField("SELECT history FROM corporations WHERE corporationName = :name", "history", array(":name" => $corporationName), 3600);
     }
@@ -187,9 +187,9 @@ class corporations
                  ":corporationID" => $corporationID,
                 ));
 
-            } elseif(!empty($corporationID) && !empty($corporationID) && !empty($allianceID) && !empty($corporationName) && !empty($ceoID) && !empty($corpTicker) && !empty($memberCount) && !empty($information))
+            } elseif(!empty($corporationID) && !empty($allianceID) && !empty($corporationName) && !empty($ceoID) && !empty($corpTicker) && !empty($memberCount) && !empty($information))
             {
-                $this->db->execute("INSERT INTO corporations (corporationID, allianceID, corporationName, ceoID, corpTicker, memberCount, information) VALUES (:corporationID, :corporationID, :allianceID, :corporationName, :ceoID, :corpTicker, :memberCount, :information)", array(
+                $this->db->execute("INSERT INTO corporations (corporationID, allianceID, corporationName, ceoID, corpTicker, memberCount, information) VALUES (:corporationID, :allianceID, :corporationName, :ceoID, :corpTicker, :memberCount, :information)", array(
                  ":corporationID" => $corporationID,
                  ":allianceID"    => $allianceID,
                  ":corporationName" => $corporationName,
