@@ -1,6 +1,8 @@
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
 [![Scrutinizer Coverage](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
 [![Scrutinizer Build](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/build.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
+[![Code Climate](https://codeclimate.com/github/EVE-KILL/projectRena/badges/gpa.svg)](https://codeclimate.com/github/EVE-KILL/projectRena)
+[![Test Coverage](https://codeclimate.com/github/EVE-KILL/projectRena/badges/coverage.svg)](https://codeclimate.com/github/EVE-KILL/projectRena/coverage)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/75374b67-bb51-4b3f-b00a-b14ea811058f/big.png)](https://insight.sensiolabs.com/projects/75374b67-bb51-4b3f-b00a-b14ea811058f)
 
 # Project Rena
