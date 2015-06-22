@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Task",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/BorisTask.php",
-    "hash": "46213e89d5a0808c83344f3be5c43bb18dadc5e5",
+    "hash": "d20675ae4b7dd8a653b12d8378c2252d4899743a",
     "parent": "Cilex\\Command\\Command",
     "modifiers": "Stmt_Class",
     "is_trait": false,

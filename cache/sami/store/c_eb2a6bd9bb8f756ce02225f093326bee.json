@@ -1,6 +1,6 @@
 {
     "name": "ProjectRena\\RenaApp",
-    "line": 242,
+    "line": 244,
     "short_desc": "",
     "long_desc": "",
     "hint": null,
@@ -129,6 +129,10 @@
             [
                 "killmails",
                 "killmails"
+            ],
+            [
+                "participants",
+                "participants"
             ],
             [
                 "EVEAPICallList",
@@ -474,7 +478,7 @@
     },
     "namespace": "ProjectRena",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/RenaApp.php",
-    "hash": "b7081b62de5ad51843a85150e7c55e17f0e94fd0",
+    "hash": "bd625aba67aa16ef75b18d9b45d42392c62d2377",
     "parent": "Slim\\Slim",
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -512,6 +516,7 @@
         "characters": "ProjectRena\\Model\\EVE\\characters",
         "corporations": "ProjectRena\\Model\\EVE\\corporations",
         "killmails": "ProjectRena\\Model\\EVE\\killmails",
+        "participants": "ProjectRena\\Model\\EVE\\participants",
         "EVEAPICallList": "ProjectRena\\Model\\EVEApi\\API\\CallList",
         "EVEAccountAPIKeyInfo": "ProjectRena\\Model\\EVEApi\\Account\\APIKeyInfo",
         "EVEAccountAccountStatus": "ProjectRena\\Model\\EVEApi\\Account\\AccountStatus",
@@ -604,7 +609,7 @@
     "properties": {
         "ache": {
             "name": "ache",
-            "line": 242,
+            "line": 244,
             "short_desc": "CacheCache",
             "long_desc": null,
             "hint": [
@@ -621,7 +626,7 @@
         },
         "b": {
             "name": "b",
-            "line": 242,
+            "line": 244,
             "short_desc": "DbDb",
             "long_desc": null,
             "hint": [
@@ -638,7 +643,7 @@
         },
         "ogging": {
             "name": "ogging",
-            "line": 242,
+            "line": 244,
             "short_desc": "LoggingLogging",
             "long_desc": null,
             "hint": [
@@ -655,7 +660,7 @@
         },
         "heal": {
             "name": "heal",
-            "line": 242,
+            "line": 244,
             "short_desc": "PhealPheal",
             "long_desc": null,
             "hint": [
@@ -672,7 +677,7 @@
         },
         "healLogger": {
             "name": "healLogger",
-            "line": 242,
+            "line": 244,
             "short_desc": "PhealLoggerPhealLogger",
             "long_desc": null,
             "hint": [
@@ -689,7 +694,7 @@
         },
         "essionHandler": {
             "name": "essionHandler",
-            "line": 242,
+            "line": 244,
             "short_desc": "SessionHandlerSessionHandler",
             "long_desc": null,
             "hint": [
@@ -706,7 +711,7 @@
         },
         "tatsD": {
             "name": "tatsD",
-            "line": 242,
+            "line": 244,
             "short_desc": "StatsDStatsD",
             "long_desc": null,
             "hint": [
@@ -723,7 +728,7 @@
         },
         "imer": {
             "name": "imer",
-            "line": 242,
+            "line": 244,
             "short_desc": "TimerTimer",
             "long_desc": null,
             "hint": [
@@ -740,7 +745,7 @@
         },
         "aseConfig": {
             "name": "aseConfig",
-            "line": 242,
+            "line": 244,
             "short_desc": "baseConfigbaseConfig",
             "long_desc": null,
             "hint": [
@@ -757,7 +762,7 @@
         },
         "URL": {
             "name": "URL",
-            "line": 242,
+            "line": 244,
             "short_desc": "cURLcURL",
             "long_desc": null,
             "hint": [
@@ -774,7 +779,7 @@
         },
         "VEOAuth": {
             "name": "VEOAuth",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEOAuthEVEOAuth",
             "long_desc": null,
             "hint": [
@@ -791,7 +796,7 @@
         },
         "piKeys": {
             "name": "piKeys",
-            "line": 242,
+            "line": 244,
             "short_desc": "ApiKeysApiKeys",
             "long_desc": null,
             "hint": [
@@ -808,7 +813,7 @@
         },
         "onfig": {
             "name": "onfig",
-            "line": 242,
+            "line": 244,
             "short_desc": "ConfigConfig",
             "long_desc": null,
             "hint": [
@@ -825,7 +830,7 @@
         },
         "aste": {
             "name": "aste",
-            "line": 242,
+            "line": 244,
             "short_desc": "PastePaste",
             "long_desc": null,
             "hint": [
@@ -842,7 +847,7 @@
         },
         "torage": {
             "name": "torage",
-            "line": 242,
+            "line": 244,
             "short_desc": "StorageStorage",
             "long_desc": null,
             "hint": [
@@ -859,7 +864,7 @@
         },
         "sers": {
             "name": "sers",
-            "line": 242,
+            "line": 244,
             "short_desc": "UsersUsers",
             "long_desc": null,
             "hint": [
@@ -876,7 +881,7 @@
         },
         "gmAttributeCategories": {
             "name": "gmAttributeCategories",
-            "line": 242,
+            "line": 244,
             "short_desc": "dgmAttributeCategoriesdgmAttributeCategories",
             "long_desc": null,
             "hint": [
@@ -893,7 +898,7 @@
         },
         "gmAttributeTypes": {
             "name": "gmAttributeTypes",
-            "line": 242,
+            "line": 244,
             "short_desc": "dgmAttributeTypesdgmAttributeTypes",
             "long_desc": null,
             "hint": [
@@ -910,7 +915,7 @@
         },
         "gmEffects": {
             "name": "gmEffects",
-            "line": 242,
+            "line": 244,
             "short_desc": "dgmEffectsdgmEffects",
             "long_desc": null,
             "hint": [
@@ -927,7 +932,7 @@
         },
         "gmTypeAttributes": {
             "name": "gmTypeAttributes",
-            "line": 242,
+            "line": 244,
             "short_desc": "dgmTypeAttributesdgmTypeAttributes",
             "long_desc": null,
             "hint": [
@@ -944,7 +949,7 @@
         },
         "gmTypeEffects": {
             "name": "gmTypeEffects",
-            "line": 242,
+            "line": 244,
             "short_desc": "dgmTypeEffectsdgmTypeEffects",
             "long_desc": null,
             "hint": [
@@ -961,7 +966,7 @@
         },
         "nvFlags": {
             "name": "nvFlags",
-            "line": 242,
+            "line": 244,
             "short_desc": "invFlagsinvFlags",
             "long_desc": null,
             "hint": [
@@ -978,7 +983,7 @@
         },
         "nvGroups": {
             "name": "nvGroups",
-            "line": 242,
+            "line": 244,
             "short_desc": "invGroupsinvGroups",
             "long_desc": null,
             "hint": [
@@ -995,7 +1000,7 @@
         },
         "nvTypes": {
             "name": "nvTypes",
-            "line": 242,
+            "line": 244,
             "short_desc": "invTypesinvTypes",
             "long_desc": null,
             "hint": [
@@ -1012,7 +1017,7 @@
         },
         "apDenormalize": {
             "name": "apDenormalize",
-            "line": 242,
+            "line": 244,
             "short_desc": "mapDenormalizemapDenormalize",
             "long_desc": null,
             "hint": [
@@ -1029,7 +1034,7 @@
         },
         "apRegions": {
             "name": "apRegions",
-            "line": 242,
+            "line": 244,
             "short_desc": "mapRegionsmapRegions",
             "long_desc": null,
             "hint": [
@@ -1046,7 +1051,7 @@
         },
         "apSolarSystems": {
             "name": "apSolarSystems",
-            "line": 242,
+            "line": 244,
             "short_desc": "mapSolarSystemsmapSolarSystems",
             "long_desc": null,
             "hint": [
@@ -1063,7 +1068,7 @@
         },
         "lliances": {
             "name": "lliances",
-            "line": 242,
+            "line": 244,
             "short_desc": "alliancesalliances",
             "long_desc": null,
             "hint": [
@@ -1080,7 +1085,7 @@
         },
         "haracters": {
             "name": "haracters",
-            "line": 242,
+            "line": 244,
             "short_desc": "characterscharacters",
             "long_desc": null,
             "hint": [
@@ -1097,7 +1102,7 @@
         },
         "orporations": {
             "name": "orporations",
-            "line": 242,
+            "line": 244,
             "short_desc": "corporationscorporations",
             "long_desc": null,
             "hint": [
@@ -1114,7 +1119,7 @@
         },
         "illmails": {
             "name": "illmails",
-            "line": 242,
+            "line": 244,
             "short_desc": "killmailskillmails",
             "long_desc": null,
             "hint": [
@@ -1129,9 +1134,26 @@
             "default": null,
             "errors": []
         },
+        "articipants": {
+            "name": "articipants",
+            "line": 244,
+            "short_desc": "participantsparticipants",
+            "long_desc": null,
+            "hint": [
+                [
+                    "participants",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
         "VEAPICallList": {
             "name": "VEAPICallList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEAPICallListEVEAPICallList",
             "long_desc": null,
             "hint": [
@@ -1148,7 +1170,7 @@
         },
         "VEAccountAPIKeyInfo": {
             "name": "VEAccountAPIKeyInfo",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEAccountAPIKeyInfoEVEAccountAPIKeyInfo",
             "long_desc": null,
             "hint": [
@@ -1165,7 +1187,7 @@
         },
         "VEAccountAccountStatus": {
             "name": "VEAccountAccountStatus",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEAccountAccountStatusEVEAccountAccountStatus",
             "long_desc": null,
             "hint": [
@@ -1182,7 +1204,7 @@
         },
         "VEAccountCharacters": {
             "name": "VEAccountCharacters",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEAccountCharactersEVEAccountCharacters",
             "long_desc": null,
             "hint": [
@@ -1199,7 +1221,7 @@
         },
         "VECharacterAccountBalance": {
             "name": "VECharacterAccountBalance",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterAccountBalanceEVECharacterAccountBalance",
             "long_desc": null,
             "hint": [
@@ -1216,7 +1238,7 @@
         },
         "VECharacterAssetList": {
             "name": "VECharacterAssetList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterAssetListEVECharacterAssetList",
             "long_desc": null,
             "hint": [
@@ -1233,7 +1255,7 @@
         },
         "VECharacterBlueprints": {
             "name": "VECharacterBlueprints",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterBlueprintsEVECharacterBlueprints",
             "long_desc": null,
             "hint": [
@@ -1250,7 +1272,7 @@
         },
         "VECharacterCalendarEventAttendees": {
             "name": "VECharacterCalendarEventAttendees",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterCalendarEventAttendeesEVECharacterCalendarEventAttendees",
             "long_desc": null,
             "hint": [
@@ -1267,7 +1289,7 @@
         },
         "VECharacterCharacterSheet": {
             "name": "VECharacterCharacterSheet",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterCharacterSheetEVECharacterCharacterSheet",
             "long_desc": null,
             "hint": [
@@ -1284,7 +1306,7 @@
         },
         "VECharacterContactList": {
             "name": "VECharacterContactList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterContactListEVECharacterContactList",
             "long_desc": null,
             "hint": [
@@ -1301,7 +1323,7 @@
         },
         "VECharacterContactNotifications": {
             "name": "VECharacterContactNotifications",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterContactNotificationsEVECharacterContactNotifications",
             "long_desc": null,
             "hint": [
@@ -1318,7 +1340,7 @@
         },
         "VECharacterContractBids": {
             "name": "VECharacterContractBids",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterContractBidsEVECharacterContractBids",
             "long_desc": null,
             "hint": [
@@ -1335,7 +1357,7 @@
         },
         "VECharacterContractItems": {
             "name": "VECharacterContractItems",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterContractItemsEVECharacterContractItems",
             "long_desc": null,
             "hint": [
@@ -1352,7 +1374,7 @@
         },
         "VECharacterContracts": {
             "name": "VECharacterContracts",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterContractsEVECharacterContracts",
             "long_desc": null,
             "hint": [
@@ -1369,7 +1391,7 @@
         },
         "VECharacterFacWarStats": {
             "name": "VECharacterFacWarStats",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterFacWarStatsEVECharacterFacWarStats",
             "long_desc": null,
             "hint": [
@@ -1386,7 +1408,7 @@
         },
         "VECharacterIndustryJobs": {
             "name": "VECharacterIndustryJobs",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterIndustryJobsEVECharacterIndustryJobs",
             "long_desc": null,
             "hint": [
@@ -1403,7 +1425,7 @@
         },
         "VECharacterIndustryJobsHistory": {
             "name": "VECharacterIndustryJobsHistory",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterIndustryJobsHistoryEVECharacterIndustryJobsHistory",
             "long_desc": null,
             "hint": [
@@ -1420,7 +1442,7 @@
         },
         "VECharacterKillMails": {
             "name": "VECharacterKillMails",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterKillMailsEVECharacterKillMails",
             "long_desc": null,
             "hint": [
@@ -1437,7 +1459,7 @@
         },
         "VECharacterLocations": {
             "name": "VECharacterLocations",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterLocationsEVECharacterLocations",
             "long_desc": null,
             "hint": [
@@ -1454,7 +1476,7 @@
         },
         "VECharacterMailBodies": {
             "name": "VECharacterMailBodies",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterMailBodiesEVECharacterMailBodies",
             "long_desc": null,
             "hint": [
@@ -1471,7 +1493,7 @@
         },
         "VECharacterMailMessages": {
             "name": "VECharacterMailMessages",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterMailMessagesEVECharacterMailMessages",
             "long_desc": null,
             "hint": [
@@ -1488,7 +1510,7 @@
         },
         "VECharacterMailingLists": {
             "name": "VECharacterMailingLists",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterMailingListsEVECharacterMailingLists",
             "long_desc": null,
             "hint": [
@@ -1505,7 +1527,7 @@
         },
         "VECharacterMarketOrders": {
             "name": "VECharacterMarketOrders",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterMarketOrdersEVECharacterMarketOrders",
             "long_desc": null,
             "hint": [
@@ -1522,7 +1544,7 @@
         },
         "VECharacterMedals": {
             "name": "VECharacterMedals",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterMedalsEVECharacterMedals",
             "long_desc": null,
             "hint": [
@@ -1539,7 +1561,7 @@
         },
         "VECharacterNotificationTexts": {
             "name": "VECharacterNotificationTexts",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterNotificationTextsEVECharacterNotificationTexts",
             "long_desc": null,
             "hint": [
@@ -1556,7 +1578,7 @@
         },
         "VECharacterNotifications": {
             "name": "VECharacterNotifications",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterNotificationsEVECharacterNotifications",
             "long_desc": null,
             "hint": [
@@ -1573,7 +1595,7 @@
         },
         "VECharacterPlanetaryColonies": {
             "name": "VECharacterPlanetaryColonies",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterPlanetaryColoniesEVECharacterPlanetaryColonies",
             "long_desc": null,
             "hint": [
@@ -1590,7 +1612,7 @@
         },
         "VECharacterPlanetaryLinks": {
             "name": "VECharacterPlanetaryLinks",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterPlanetaryLinksEVECharacterPlanetaryLinks",
             "long_desc": null,
             "hint": [
@@ -1607,7 +1629,7 @@
         },
         "VECharacterPlanetaryPins": {
             "name": "VECharacterPlanetaryPins",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterPlanetaryPinsEVECharacterPlanetaryPins",
             "long_desc": null,
             "hint": [
@@ -1624,7 +1646,7 @@
         },
         "VECharacterPlanetaryRoutes": {
             "name": "VECharacterPlanetaryRoutes",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterPlanetaryRoutesEVECharacterPlanetaryRoutes",
             "long_desc": null,
             "hint": [
@@ -1641,7 +1663,7 @@
         },
         "VECharacterResearch": {
             "name": "VECharacterResearch",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterResearchEVECharacterResearch",
             "long_desc": null,
             "hint": [
@@ -1658,7 +1680,7 @@
         },
         "VECharacterSkillInTraining": {
             "name": "VECharacterSkillInTraining",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterSkillInTrainingEVECharacterSkillInTraining",
             "long_desc": null,
             "hint": [
@@ -1675,7 +1697,7 @@
         },
         "VECharacterSkillQueue": {
             "name": "VECharacterSkillQueue",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterSkillQueueEVECharacterSkillQueue",
             "long_desc": null,
             "hint": [
@@ -1692,7 +1714,7 @@
         },
         "VECharacterStandings": {
             "name": "VECharacterStandings",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterStandingsEVECharacterStandings",
             "long_desc": null,
             "hint": [
@@ -1709,7 +1731,7 @@
         },
         "VECharacterUpcomingCalendarEvents": {
             "name": "VECharacterUpcomingCalendarEvents",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterUpcomingCalendarEventsEVECharacterUpcomingCalendarEvents",
             "long_desc": null,
             "hint": [
@@ -1726,7 +1748,7 @@
         },
         "VECharacterWalletJournal": {
             "name": "VECharacterWalletJournal",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterWalletJournalEVECharacterWalletJournal",
             "long_desc": null,
             "hint": [
@@ -1743,7 +1765,7 @@
         },
         "VECharacterWalletTransactions": {
             "name": "VECharacterWalletTransactions",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECharacterWalletTransactionsEVECharacterWalletTransactions",
             "long_desc": null,
             "hint": [
@@ -1760,7 +1782,7 @@
         },
         "VECorporationAccountBalance": {
             "name": "VECorporationAccountBalance",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationAccountBalanceEVECorporationAccountBalance",
             "long_desc": null,
             "hint": [
@@ -1777,7 +1799,7 @@
         },
         "VECorporationAssetList": {
             "name": "VECorporationAssetList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationAssetListEVECorporationAssetList",
             "long_desc": null,
             "hint": [
@@ -1794,7 +1816,7 @@
         },
         "VECorporationBlueprints": {
             "name": "VECorporationBlueprints",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationBlueprintsEVECorporationBlueprints",
             "long_desc": null,
             "hint": [
@@ -1811,7 +1833,7 @@
         },
         "VECorporationContactList": {
             "name": "VECorporationContactList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationContactListEVECorporationContactList",
             "long_desc": null,
             "hint": [
@@ -1828,7 +1850,7 @@
         },
         "VECorporationContainerLog": {
             "name": "VECorporationContainerLog",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationContainerLogEVECorporationContainerLog",
             "long_desc": null,
             "hint": [
@@ -1845,7 +1867,7 @@
         },
         "VECorporationContractBids": {
             "name": "VECorporationContractBids",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationContractBidsEVECorporationContractBids",
             "long_desc": null,
             "hint": [
@@ -1862,7 +1884,7 @@
         },
         "VECorporationContractItems": {
             "name": "VECorporationContractItems",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationContractItemsEVECorporationContractItems",
             "long_desc": null,
             "hint": [
@@ -1879,7 +1901,7 @@
         },
         "VECorporationContracts": {
             "name": "VECorporationContracts",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationContractsEVECorporationContracts",
             "long_desc": null,
             "hint": [
@@ -1896,7 +1918,7 @@
         },
         "VECorporationCorporationSheet": {
             "name": "VECorporationCorporationSheet",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationCorporationSheetEVECorporationCorporationSheet",
             "long_desc": null,
             "hint": [
@@ -1913,7 +1935,7 @@
         },
         "VECorporationCustomsOffices": {
             "name": "VECorporationCustomsOffices",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationCustomsOfficesEVECorporationCustomsOffices",
             "long_desc": null,
             "hint": [
@@ -1930,7 +1952,7 @@
         },
         "VECorporationFacWarStats": {
             "name": "VECorporationFacWarStats",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationFacWarStatsEVECorporationFacWarStats",
             "long_desc": null,
             "hint": [
@@ -1947,7 +1969,7 @@
         },
         "VECorporationFacilities": {
             "name": "VECorporationFacilities",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationFacilitiesEVECorporationFacilities",
             "long_desc": null,
             "hint": [
@@ -1964,7 +1986,7 @@
         },
         "VECorporationIndustryJobs": {
             "name": "VECorporationIndustryJobs",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationIndustryJobsEVECorporationIndustryJobs",
             "long_desc": null,
             "hint": [
@@ -1981,7 +2003,7 @@
         },
         "VECorporationIndustryJobsHistory": {
             "name": "VECorporationIndustryJobsHistory",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationIndustryJobsHistoryEVECorporationIndustryJobsHistory",
             "long_desc": null,
             "hint": [
@@ -1998,7 +2020,7 @@
         },
         "VECorporationKillMails": {
             "name": "VECorporationKillMails",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationKillMailsEVECorporationKillMails",
             "long_desc": null,
             "hint": [
@@ -2015,7 +2037,7 @@
         },
         "VECorporationLocations": {
             "name": "VECorporationLocations",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationLocationsEVECorporationLocations",
             "long_desc": null,
             "hint": [
@@ -2032,7 +2054,7 @@
         },
         "VECorporationMarketOrders": {
             "name": "VECorporationMarketOrders",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationMarketOrdersEVECorporationMarketOrders",
             "long_desc": null,
             "hint": [
@@ -2049,7 +2071,7 @@
         },
         "VECorporationMedals": {
             "name": "VECorporationMedals",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationMedalsEVECorporationMedals",
             "long_desc": null,
             "hint": [
@@ -2066,7 +2088,7 @@
         },
         "VECorporationMemberMedals": {
             "name": "VECorporationMemberMedals",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationMemberMedalsEVECorporationMemberMedals",
             "long_desc": null,
             "hint": [
@@ -2083,7 +2105,7 @@
         },
         "VECorporationMemberSecurity": {
             "name": "VECorporationMemberSecurity",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationMemberSecurityEVECorporationMemberSecurity",
             "long_desc": null,
             "hint": [
@@ -2100,7 +2122,7 @@
         },
         "VECorporationMemberSecurityLog": {
             "name": "VECorporationMemberSecurityLog",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationMemberSecurityLogEVECorporationMemberSecurityLog",
             "long_desc": null,
             "hint": [
@@ -2117,7 +2139,7 @@
         },
         "VECorporationMemberTracking": {
             "name": "VECorporationMemberTracking",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationMemberTrackingEVECorporationMemberTracking",
             "long_desc": null,
             "hint": [
@@ -2134,7 +2156,7 @@
         },
         "VECorporationOutpostList": {
             "name": "VECorporationOutpostList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationOutpostListEVECorporationOutpostList",
             "long_desc": null,
             "hint": [
@@ -2151,7 +2173,7 @@
         },
         "VECorporationOutpostServiceDetail": {
             "name": "VECorporationOutpostServiceDetail",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationOutpostServiceDetailEVECorporationOutpostServiceDetail",
             "long_desc": null,
             "hint": [
@@ -2168,7 +2190,7 @@
         },
         "VECorporationShareholders": {
             "name": "VECorporationShareholders",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationShareholdersEVECorporationShareholders",
             "long_desc": null,
             "hint": [
@@ -2185,7 +2207,7 @@
         },
         "VECorporationStandings": {
             "name": "VECorporationStandings",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationStandingsEVECorporationStandings",
             "long_desc": null,
             "hint": [
@@ -2202,7 +2224,7 @@
         },
         "VECorporationStarbaseDetail": {
             "name": "VECorporationStarbaseDetail",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationStarbaseDetailEVECorporationStarbaseDetail",
             "long_desc": null,
             "hint": [
@@ -2219,7 +2241,7 @@
         },
         "VECorporationStarbaseList": {
             "name": "VECorporationStarbaseList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationStarbaseListEVECorporationStarbaseList",
             "long_desc": null,
             "hint": [
@@ -2236,7 +2258,7 @@
         },
         "VECorporationTitles": {
             "name": "VECorporationTitles",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationTitlesEVECorporationTitles",
             "long_desc": null,
             "hint": [
@@ -2253,7 +2275,7 @@
         },
         "VECorporationWalletJournal": {
             "name": "VECorporationWalletJournal",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationWalletJournalEVECorporationWalletJournal",
             "long_desc": null,
             "hint": [
@@ -2270,7 +2292,7 @@
         },
         "VECorporationWalletTransactions": {
             "name": "VECorporationWalletTransactions",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVECorporationWalletTransactionsEVECorporationWalletTransactions",
             "long_desc": null,
             "hint": [
@@ -2287,7 +2309,7 @@
         },
         "VEEVEAllianceList": {
             "name": "VEEVEAllianceList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVEAllianceListEVEEVEAllianceList",
             "long_desc": null,
             "hint": [
@@ -2304,7 +2326,7 @@
         },
         "VEEVECharacterAffiliation": {
             "name": "VEEVECharacterAffiliation",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVECharacterAffiliationEVEEVECharacterAffiliation",
             "long_desc": null,
             "hint": [
@@ -2321,7 +2343,7 @@
         },
         "VEEVECharacterID": {
             "name": "VEEVECharacterID",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVECharacterIDEVEEVECharacterID",
             "long_desc": null,
             "hint": [
@@ -2338,7 +2360,7 @@
         },
         "VEEVECharacterInfo": {
             "name": "VEEVECharacterInfo",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVECharacterInfoEVEEVECharacterInfo",
             "long_desc": null,
             "hint": [
@@ -2355,7 +2377,7 @@
         },
         "VEEVECharacterName": {
             "name": "VEEVECharacterName",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVECharacterNameEVEEVECharacterName",
             "long_desc": null,
             "hint": [
@@ -2372,7 +2394,7 @@
         },
         "VEEVEConquerableStationList": {
             "name": "VEEVEConquerableStationList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVEConquerableStationListEVEEVEConquerableStationList",
             "long_desc": null,
             "hint": [
@@ -2389,7 +2411,7 @@
         },
         "VEEVEErrorList": {
             "name": "VEEVEErrorList",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVEErrorListEVEEVEErrorList",
             "long_desc": null,
             "hint": [
@@ -2406,7 +2428,7 @@
         },
         "VEEVEFacWarStats": {
             "name": "VEEVEFacWarStats",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVEFacWarStatsEVEEVEFacWarStats",
             "long_desc": null,
             "hint": [
@@ -2423,7 +2445,7 @@
         },
         "VEEVEFacWarTopStats": {
             "name": "VEEVEFacWarTopStats",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVEFacWarTopStatsEVEEVEFacWarTopStats",
             "long_desc": null,
             "hint": [
@@ -2440,7 +2462,7 @@
         },
         "VEEVERefTypes": {
             "name": "VEEVERefTypes",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVERefTypesEVEEVERefTypes",
             "long_desc": null,
             "hint": [
@@ -2457,7 +2479,7 @@
         },
         "VEEVESkillTree": {
             "name": "VEEVESkillTree",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVESkillTreeEVEEVESkillTree",
             "long_desc": null,
             "hint": [
@@ -2474,7 +2496,7 @@
         },
         "VEEVETypeName": {
             "name": "VEEVETypeName",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEEVETypeNameEVEEVETypeName",
             "long_desc": null,
             "hint": [
@@ -2491,7 +2513,7 @@
         },
         "VEMapFacWarSystems": {
             "name": "VEMapFacWarSystems",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEMapFacWarSystemsEVEMapFacWarSystems",
             "long_desc": null,
             "hint": [
@@ -2508,7 +2530,7 @@
         },
         "VEMapJumps": {
             "name": "VEMapJumps",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEMapJumpsEVEMapJumps",
             "long_desc": null,
             "hint": [
@@ -2525,7 +2547,7 @@
         },
         "VEMapKills": {
             "name": "VEMapKills",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEMapKillsEVEMapKills",
             "long_desc": null,
             "hint": [
@@ -2542,7 +2564,7 @@
         },
         "VEMapSovereignty": {
             "name": "VEMapSovereignty",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEMapSovereigntyEVEMapSovereignty",
             "long_desc": null,
             "hint": [
@@ -2559,7 +2581,7 @@
         },
         "VEServerServerStatus": {
             "name": "VEServerServerStatus",
-            "line": 242,
+            "line": 244,
             "short_desc": "EVEServerServerStatusEVEServerServerStatus",
             "long_desc": null,
             "hint": [
