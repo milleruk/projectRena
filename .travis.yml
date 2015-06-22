@@ -3,10 +3,17 @@ language: php
 php:
   - 5.6
 
+services:
+  - redis-server
+
 before_script:
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev --no-interaction -o
   - ls -alh
+  - cp tests/config.php config/config.php
+  - cp tests/phinx.yml .
+  - php Rena migrate
+  - php Rena status
 
 script:
   - phpunit --coverage-clover=coverage.clover --bootstrap tests/init.php tests/*
