@@ -80,6 +80,14 @@ $cli->command(new \Phinx\Console\Command\Test());
 
 $cli->run();
 
+/**
+	* CLI Prompter that gets an input and returns it
+	*
+	* @param $prompt
+	* @param string $default
+	*
+	* @return bool|string
+	*/
 function prompt($prompt, $default = "")
 {
 				echo "$prompt [$default] ";
@@ -87,4 +95,14 @@ function prompt($prompt, $default = "")
 				if(strlen($answer) == 0)
 								return $default == "yes" ? true : $default;
 				return $answer;
+}
+
+/**
+	* Var_dumps and dies, quicker than var_dump($input); die();
+	*
+	* @param $input
+	*/
+function dd($input)
+{
+				var_dump($input); die();
 }

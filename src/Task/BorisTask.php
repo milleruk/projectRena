@@ -33,6 +33,9 @@ class BorisTask extends Command
 				{
 								$boris = new \Boris\Boris('Rena> ');
 								$boris->onStart('$app = \ProjectRena\RenaApp::getInstance();');
+								$boris->onStart('$db = $app->Db;');
+								$boris->onStart('$cache = $app->Cache;');
+								$boris->
 								$boris->start();
 				}
 }
