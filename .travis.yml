@@ -9,11 +9,12 @@ services:
 
 before_script:
   - sudo service mysql stop
+  - export DEBIAN_FRONTEND=noninteractive
   - sudo apt-get install python-software-properties
   - sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
   - sudo add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/10.0/ubuntu precise main'
   - sudo apt-get update -y
-  - sudo apt-get install mariadb-server -y
+  - sudo apt-get -q -y install mariadb-server
   - mysql -uroot -e 'INSTALL SONAME "ha_tokudb"';
   - mysql -uroot -e 'create database rena;'
   - wget http://getcomposer.org/composer.phar
