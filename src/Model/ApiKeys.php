@@ -33,7 +33,7 @@ class ApiKeys
 				 * @param $vCode
 				 * @param null $userID
 				 *
-				 * @return bool|int|string
+				 * @return boolean
 				 */
     public function updateAPIKey($apiKey, $vCode, $userID = null)
 				{
@@ -57,7 +57,7 @@ class ApiKeys
 				/**
 				 * @param $apiKey
 				 *
-				 * @return bool|int|string
+				 * @return boolean
 				 */
 				public function deleteAPIKey($apiKey)
 				{
