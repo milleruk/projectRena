@@ -478,7 +478,7 @@
     },
     "namespace": "ProjectRena",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/RenaApp.php",
-    "hash": "bd625aba67aa16ef75b18d9b45d42392c62d2377",
+    "hash": "67a1bf95eb79532d9b3de77e7f595a4b5410306e",
     "parent": "Slim\\Slim",
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -2597,6 +2597,33 @@
             "errors": []
         }
     },
-    "methods": [],
+    "methods": {
+        "dd": {
+            "name": "dd",
+            "line": 251,
+            "short_desc": "Var_dumps and dies, quicker than var_dump($input); die();",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "input": {
+                    "name": "input",
+                    "line": 251,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
     "constants": []
 }

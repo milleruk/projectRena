@@ -562,7 +562,8 @@
                     {"type": "Method", "fromName": "ProjectRena\\Model\\Users", "fromLink": "ProjectRena/Model/Users.html", "link": "ProjectRena/Model/Users.html#method_getUserDataByLoginHash", "name": "ProjectRena\\Model\\Users::getUserDataByLoginHash", "doc": "&quot;\n&quot;"},
             
             {"type": "Class", "fromName": "ProjectRena", "fromLink": "ProjectRena.html", "link": "ProjectRena/RenaApp.html", "name": "ProjectRena\\RenaApp", "doc": "&quot;\n&quot;"},
-                    
+                                                        {"type": "Method", "fromName": "ProjectRena\\RenaApp", "fromLink": "ProjectRena/RenaApp.html", "link": "ProjectRena/RenaApp.html#method_dd", "name": "ProjectRena\\RenaApp::dd", "doc": "&quot;Var&lt;em&gt;dumps and dies, quicker than var&lt;\/em&gt;dump($input); die();&quot;"},
+            
             {"type": "Class", "fromName": "ProjectRena\\Task", "fromLink": "ProjectRena/Task.html", "link": "ProjectRena/Task/BorisTask.html", "name": "ProjectRena\\Task\\BorisTask", "doc": "&quot;Class BorisTask&quot;"},
                     
             {"type": "Class", "fromName": "ProjectRena\\Task", "fromLink": "ProjectRena/Task.html", "link": "ProjectRena/Task/CCPDataTask.html", "name": "ProjectRena\\Task\\CCPDataTask", "doc": "&quot;Class CCPDataTask&quot;"},
