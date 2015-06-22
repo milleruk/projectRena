@@ -11,10 +11,12 @@ before_script:
   - php composer.phar install --dev --no-interaction -o
   - ls -alh
   - cp tests/config.php config/config.php
+  - cat config/config.php
   - cp tests/phinx.yml .
+  - cat phinx.yml
   - phpenv config-add tests/phpsettings.ini
-  - php Rena migrate
-  - php Rena status
+  - php vendor/bin/phinx migrate
+  - php vendor/bin/phinx status
 
 script:
   - phpunit --coverage-clover=coverage.clover --bootstrap tests/init.php tests/*
