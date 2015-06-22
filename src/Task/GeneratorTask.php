@@ -348,7 +348,7 @@ EOF;
 								$code = $generator->generate($class);
 								file_put_contents($path, $code);
 
-								$output->writeln("Cronjob created: {$path}");
+        $output->writeln("Cronjob created: {$path}");
 				}
 
 				/**
