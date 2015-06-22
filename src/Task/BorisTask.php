@@ -32,6 +32,7 @@ class BorisTask extends Command
 				protected function execute(InputInterface $input, OutputInterface $output)
 				{
 								$boris = new \Boris\Boris('Rena> ');
+								$boris->onStart('$app = \ProjectRena\RenaApp::getInstance();');
 								$boris->start();
 				}
 }
