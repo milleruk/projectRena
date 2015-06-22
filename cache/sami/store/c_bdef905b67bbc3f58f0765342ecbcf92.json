@@ -1,0 +1,170 @@
+{
+    "name": "ProjectRena\\Lib\\Logging",
+    "line": 14,
+    "short_desc": "Class Logging",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Lib\\Service"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Lib",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/Logging.php",
+    "hash": "33bea828e873008b3ccf5b1ecfe29c79b6b83c2b",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "StreamHandler": "Monolog\\Handler\\StreamHandler",
+        "Logger": "Monolog\\Logger",
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "app": {
+                    "name": "app",
+                    "line": 34,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "ProjectRena\\Lib\\ProjectRena\\RenaApp",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "ProjectRena\\RenaApp",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "log": {
+            "name": "log",
+            "line": 52,
+            "short_desc": "Logs data into the logfile.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "static": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "logType": {
+                    "name": "logType",
+                    "line": 52,
+                    "short_desc": "the type of logging, debug, info, warning, error",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "logMessage": {
+                    "name": "logMessage",
+                    "line": 52,
+                    "short_desc": "the message for the log",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "flasher": {
+            "name": "flasher",
+            "line": 65,
+            "short_desc": "Inserts data into the slim flasher.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "static": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "logType": {
+                    "name": "logType",
+                    "line": 65,
+                    "short_desc": "the type of logging, debug, info, warning, error",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "logMessage": {
+                    "name": "logMessage",
+                    "line": 65,
+                    "short_desc": "the message for the log",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

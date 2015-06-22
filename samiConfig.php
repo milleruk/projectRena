@@ -14,7 +14,7 @@ $iterator = Finder::create()
     ->exclude('cache')
     ->exclude('composer.phar')
 
-    ->in($dir = __DIR__ . "/");
+    ->in($dir = __DIR__ . "/../projectRena/");
 
 $versions = GitVersionCollection::create($dir)
 	->add("master", "master branch");
@@ -23,7 +23,7 @@ return new Sami($iterator, array(
 	"theme" => "default",
 	"title" => "projectRena",
 	"versions" => $versions,
-	"build_dir" => __DIR__ . "/docs/",
+	"build_dir" => __DIR__ . "/api/",
 	"cache_dir" => __DIR__ . "/cache/sami/",
 	"default_opened_level" => 2,
 ));

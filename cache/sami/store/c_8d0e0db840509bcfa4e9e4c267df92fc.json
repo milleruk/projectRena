@@ -1,0 +1,37 @@
+{
+    "name": "ProjectRena\\Task\\UpdateTask",
+    "line": 18,
+    "short_desc": "Class UpdateTask",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Task"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/UpdateTask.php",
+    "hash": "1ae9d428706147a7e575f040dcee134573094604",
+    "parent": "Cilex\\Command\\Command",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Command": "Cilex\\Command\\Command",
+        "Lib": "ProjectRena\\Lib",
+        "RenaApp": "ProjectRena\\RenaApp",
+        "Sami": "Sami\\Sami",
+        "Finder": "Symfony\\Component\\Finder\\Finder",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "InputOption": "Symfony\\Component\\Console\\Input\\InputOption",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

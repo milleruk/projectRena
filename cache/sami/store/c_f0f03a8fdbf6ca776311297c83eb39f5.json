@@ -1,0 +1,42 @@
+{
+    "name": "ProjectRena\\Task\\GeneratorTask",
+    "line": 24,
+    "short_desc": "Class GeneratorTask",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Task"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/GeneratorTask.php",
+    "hash": "e55c86c49e8d393bcb4605af02473a537b23e740",
+    "parent": "Cilex\\Command\\Command",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "CodeFileGeneratorConfig": "gossi\\codegen\\config\\CodeFileGeneratorConfig",
+        "CodeFileGenerator": "gossi\\codegen\\generator\\CodeFileGenerator",
+        "PhpProperty": "gossi\\codegen\\model\\PhpProperty",
+        "Lib": "ProjectRena\\Lib",
+        "Command": "Cilex\\Command\\Command",
+        "InputArgument": "Symfony\\Component\\Console\\Input\\InputArgument",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "InputOption": "Symfony\\Component\\Console\\Input\\InputOption",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface",
+        "CodeGenerator": "gossi\\codegen\\generator\\CodeGenerator",
+        "PhpClass": "gossi\\codegen\\model\\PhpClass",
+        "PhpMethod": "gossi\\codegen\\model\\PhpMethod",
+        "PhpParameter": "gossi\\codegen\\model\\PhpParameter"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

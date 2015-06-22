@@ -1,0 +1,196 @@
+{
+    "name": "ProjectRena\\Lib\\StatsD",
+    "line": 13,
+    "short_desc": "Class StatsD",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Lib\\Service"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Lib",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/StatsD.php",
+    "hash": "32b5c37b38a85166c4584daaa52ef11e375d8f08",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Client": "Domnikl\\Statsd\\Client",
+        "UdpSocket": "Domnikl\\Statsd\\Connection\\UdpSocket",
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "increment": {
+            "name": "increment",
+            "line": 46,
+            "short_desc": "Increments a value in statsd.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "static": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 46,
+                    "short_desc": "the name of the key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "amount": {
+                    "name": "amount",
+                    "line": 46,
+                    "short_desc": "the amount it's incremented",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "1",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "timing": {
+            "name": "timing",
+            "line": 59,
+            "short_desc": "Creates a timing list in statsd.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "static": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 59,
+                    "short_desc": "the name of the key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "time": {
+                    "name": "time",
+                    "line": 59,
+                    "short_desc": "the time it took for the request\/execution to finish",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "gauge": {
+            "name": "gauge",
+            "line": 72,
+            "short_desc": "Creates a gauge in statsd.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "static": [
+                    [
+                        ""
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 72,
+                    "short_desc": "the name of the key",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "amount": {
+                    "name": "amount",
+                    "line": 72,
+                    "short_desc": "the amount the gauge is increased",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

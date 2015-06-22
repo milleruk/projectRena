@@ -1,0 +1,90 @@
+{
+    "name": "ProjectRena\\Lib\\Timer",
+    "line": 13,
+    "short_desc": "Class Timer",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Lib"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Lib",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/Timer.php",
+    "hash": "cc68afe2ad9d17a3870ca13b35cdb8b5e801c64b",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 23,
+            "short_desc": "Starts the timer class.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "start": {
+            "name": "start",
+            "line": 31,
+            "short_desc": "Starts the timer.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "stop": {
+            "name": "stop",
+            "line": 41,
+            "short_desc": "Stops the timer.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "double",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "RunAsNew": {
+            "name": "RunAsNew",
+            "line": 49,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

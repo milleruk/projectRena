@@ -1,0 +1,85 @@
+{
+    "name": "ProjectRena\\Model\\EVEApi\\EVE\\CharacterAffiliation",
+    "line": 10,
+    "short_desc": "Class CharacterAffiliation.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Model\\EVEApi\\EVE",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVEApi\/EVE\/CharacterAffiliation.php",
+    "hash": "4d2e340baa8e8a7fc7dc4bf7fec703f9d0468a96",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "accessMask": {
+            "name": "accessMask",
+            "line": 15,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": {
+                "name": {
+                    "parts": [
+                        "null"
+                    ]
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "getData": {
+            "name": "getData",
+            "line": 35,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "characterIDs": {
+                    "name": "characterIDs",
+                    "line": 35,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "array()",
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

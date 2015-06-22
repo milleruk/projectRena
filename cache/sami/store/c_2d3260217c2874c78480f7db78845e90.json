@@ -1,0 +1,68 @@
+{
+    "name": "ProjectRena\\Model\\EVEApi\\EVE\\ConquerableStationList",
+    "line": 10,
+    "short_desc": "Class ConquerableStationList.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Model\\EVEApi\\EVE",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVEApi\/EVE\/ConquerableStationList.php",
+    "hash": "3ec70d9d999d0c42a06145bab8f115d157f2bc50",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "accessMask": {
+            "name": "accessMask",
+            "line": 15,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": {
+                "name": {
+                    "parts": [
+                        "null"
+                    ]
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "getData": {
+            "name": "getData",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

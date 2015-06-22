@@ -1,0 +1,299 @@
+{
+    "name": "ProjectRena\\Lib\\SessionHandler",
+    "line": 10,
+    "short_desc": "Class SessionHandler.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Lib",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/SessionHandler.php",
+    "hash": "a8d3d2275f606e91a615aade967741b93bbed7c4",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp",
+        "SessionHandlerInterface": "SessionHandlerInterface"
+    },
+    "errors": [],
+    "interfaces": {
+        "SessionHandlerInterface": "SessionHandlerInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "close": {
+            "name": "close",
+            "line": 36,
+            "short_desc": "PHP >= 5.4.0<br\/>\nClose the session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "<p>\n             The return value (usually TRUE on success, FALSE on failure).\n             Note this value is returned internally to PHP for processing.\n             <\/p>",
+            "tags": {
+                "link": [
+                    [
+                        "http:\/\/php.net\/manual\/en\/sessionhandlerinterface.close.php"
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "destroy": {
+            "name": "destroy",
+            "line": 54,
+            "short_desc": "PHP >= 5.4.0<br\/>\nDestroy a session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "boolean",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "<p>\n             The return value (usually TRUE on success, FALSE on failure).\n             Note this value is returned internally to PHP for processing.\n             <\/p>",
+            "tags": {
+                "link": [
+                    [
+                        "http:\/\/php.net\/manual\/en\/sessionhandlerinterface.destroy.php"
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "session_id": {
+                    "name": "session_id",
+                    "line": 54,
+                    "short_desc": "The session ID being destroyed.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "gc": {
+            "name": "gc",
+            "line": 75,
+            "short_desc": "PHP >= 5.4.0<br\/>\nCleanup old sessions.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "<p>\n             The return value (usually TRUE on success, FALSE on failure).\n             Note this value is returned internally to PHP for processing.\n             <\/p>",
+            "tags": {
+                "link": [
+                    [
+                        "http:\/\/php.net\/manual\/en\/sessionhandlerinterface.gc.php"
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "maxlifetime": {
+                    "name": "maxlifetime",
+                    "line": 75,
+                    "short_desc": "<p>\n                        Sessions that have not updated for\n                        the last maxlifetime seconds will be removed.\n                        <\/p>",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "open": {
+            "name": "open",
+            "line": 94,
+            "short_desc": "PHP >= 5.4.0<br\/>\nInitialize session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "<p>\n             The return value (usually TRUE on success, FALSE on failure).\n             Note this value is returned internally to PHP for processing.\n             <\/p>",
+            "tags": {
+                "link": [
+                    [
+                        "http:\/\/php.net\/manual\/en\/sessionhandlerinterface.open.php"
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "save_path": {
+                    "name": "save_path",
+                    "line": 94,
+                    "short_desc": "The path where to store\/retrieve the session.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "session_id": {
+                    "name": "session_id",
+                    "line": 94,
+                    "short_desc": "The session id.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "read": {
+            "name": "read",
+            "line": 113,
+            "short_desc": "PHP >= 5.4.0<br\/>\nRead session data.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "<p>\n               Returns an encoded string of the read data.\n               If nothing was read, it must return an empty string.\n               Note this value is returned internally to PHP for processing.\n               <\/p>",
+            "tags": {
+                "link": [
+                    [
+                        "http:\/\/php.net\/manual\/en\/sessionhandlerinterface.read.php"
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "session_id": {
+                    "name": "session_id",
+                    "line": 113,
+                    "short_desc": "The session id to read data for.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "write": {
+            "name": "write",
+            "line": 144,
+            "short_desc": "PHP >= 5.4.0<br\/>\nWrite session data.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "<p>\n             The return value (usually TRUE on success, FALSE on failure).\n             Note this value is returned internally to PHP for processing.\n             <\/p>",
+            "tags": {
+                "link": [
+                    [
+                        "http:\/\/php.net\/manual\/en\/sessionhandlerinterface.write.php"
+                    ]
+                ]
+            },
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "session_id": {
+                    "name": "session_id",
+                    "line": 144,
+                    "short_desc": "The session id.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "session_data": {
+                    "name": "session_data",
+                    "line": 144,
+                    "short_desc": "<p>\n                            The encoded session data. This data is the\n                            result of the PHP internally encoding\n                            the $_SESSION superglobal to a serialized\n                            string and passing it as this parameter.\n                            Please note sessions use an alternative serialization method.\n                            <\/p>",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,30 @@
+{
+    "name": "ProjectRena\\Model\\Storage",
+    "line": 11,
+    "short_desc": "Class Storage",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Model"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Model",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/Storage.php",
+    "hash": "02a6fa056201abee1ebc0ab246e71e671b039de4",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

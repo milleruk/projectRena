@@ -1,0 +1,45 @@
+{
+    "name": "ProjectRena\\Controller\\IndexController",
+    "line": 12,
+    "short_desc": "Class IndexController",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Controller"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Controller",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Controller\/IndexController.php",
+    "hash": "c9d445bb2cb831204e697975d0da9b797a42e141",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "index": {
+            "name": "index",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

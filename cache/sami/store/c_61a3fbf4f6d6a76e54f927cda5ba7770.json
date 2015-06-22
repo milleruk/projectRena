@@ -1,0 +1,27 @@
+{
+    "name": "ProjectRena\\Task\\CronTask",
+    "line": 16,
+    "short_desc": "Class CronCommand.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/CronTask.php",
+    "hash": "a05ad109c6ef77d9a6544b07c1f21d84894c0ac4",
+    "parent": "Cilex\\Command\\Command",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Command": "Cilex\\Command\\Command",
+        "RenaApp": "ProjectRena\\RenaApp",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

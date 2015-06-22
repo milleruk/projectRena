@@ -1,0 +1,51 @@
+{
+    "name": "ProjectRena\\Lib\\Pheal",
+    "line": 12,
+    "short_desc": "Class Pheal",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Lib"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Lib",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/Pheal.php",
+    "hash": "1b2f50673f768ab3854c65c1a38f1830cb3a5275",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Config": "Pheal\\Core\\Config",
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "Pheal": {
+            "name": "Pheal",
+            "line": 53,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Pheal\\Pheal",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

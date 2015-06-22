@@ -1,0 +1,45 @@
+{
+    "name": "ProjectRena\\Controller\\LoginController",
+    "line": 12,
+    "short_desc": "Class LoginController",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Controller"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Controller",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Controller\/LoginController.php",
+    "hash": "389359a3728263204e0de5ab74e26be32cacf560",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "loginEVE": {
+            "name": "loginEVE",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

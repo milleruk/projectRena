@@ -1,0 +1,2580 @@
+{
+    "name": "ProjectRena\\RenaApp",
+    "line": 242,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "property": [
+            [
+                "Cache",
+                "Cache"
+            ],
+            [
+                "Db",
+                "Db"
+            ],
+            [
+                "Logging",
+                "Logging"
+            ],
+            [
+                "Pheal",
+                "Pheal"
+            ],
+            [
+                "PhealLogger",
+                "PhealLogger"
+            ],
+            [
+                "SessionHandler",
+                "SessionHandler"
+            ],
+            [
+                "StatsD",
+                "StatsD"
+            ],
+            [
+                "Timer",
+                "Timer"
+            ],
+            [
+                "baseConfig",
+                "baseConfig"
+            ],
+            [
+                "cURL",
+                "cURL"
+            ],
+            [
+                "EVEOAuth",
+                "EVEOAuth"
+            ],
+            [
+                "ApiKeys",
+                "ApiKeys"
+            ],
+            [
+                "Config",
+                "Config"
+            ],
+            [
+                "Paste",
+                "Paste"
+            ],
+            [
+                "Storage",
+                "Storage"
+            ],
+            [
+                "Users",
+                "Users"
+            ],
+            [
+                "dgmAttributeCategories",
+                "dgmAttributeCategories"
+            ],
+            [
+                "dgmAttributeTypes",
+                "dgmAttributeTypes"
+            ],
+            [
+                "dgmEffects",
+                "dgmEffects"
+            ],
+            [
+                "dgmTypeAttributes",
+                "dgmTypeAttributes"
+            ],
+            [
+                "dgmTypeEffects",
+                "dgmTypeEffects"
+            ],
+            [
+                "invFlags",
+                "invFlags"
+            ],
+            [
+                "invGroups",
+                "invGroups"
+            ],
+            [
+                "invTypes",
+                "invTypes"
+            ],
+            [
+                "mapDenormalize",
+                "mapDenormalize"
+            ],
+            [
+                "mapRegions",
+                "mapRegions"
+            ],
+            [
+                "mapSolarSystems",
+                "mapSolarSystems"
+            ],
+            [
+                "alliances",
+                "alliances"
+            ],
+            [
+                "characters",
+                "characters"
+            ],
+            [
+                "corporations",
+                "corporations"
+            ],
+            [
+                "killmails",
+                "killmails"
+            ],
+            [
+                "EVEAPICallList",
+                "EVEAPICallList"
+            ],
+            [
+                "EVEAccountAPIKeyInfo",
+                "EVEAccountAPIKeyInfo"
+            ],
+            [
+                "EVEAccountAccountStatus",
+                "EVEAccountAccountStatus"
+            ],
+            [
+                "EVEAccountCharacters",
+                "EVEAccountCharacters"
+            ],
+            [
+                "EVECharacterAccountBalance",
+                "EVECharacterAccountBalance"
+            ],
+            [
+                "EVECharacterAssetList",
+                "EVECharacterAssetList"
+            ],
+            [
+                "EVECharacterBlueprints",
+                "EVECharacterBlueprints"
+            ],
+            [
+                "EVECharacterCalendarEventAttendees",
+                "EVECharacterCalendarEventAttendees"
+            ],
+            [
+                "EVECharacterCharacterSheet",
+                "EVECharacterCharacterSheet"
+            ],
+            [
+                "EVECharacterContactList",
+                "EVECharacterContactList"
+            ],
+            [
+                "EVECharacterContactNotifications",
+                "EVECharacterContactNotifications"
+            ],
+            [
+                "EVECharacterContractBids",
+                "EVECharacterContractBids"
+            ],
+            [
+                "EVECharacterContractItems",
+                "EVECharacterContractItems"
+            ],
+            [
+                "EVECharacterContracts",
+                "EVECharacterContracts"
+            ],
+            [
+                "EVECharacterFacWarStats",
+                "EVECharacterFacWarStats"
+            ],
+            [
+                "EVECharacterIndustryJobs",
+                "EVECharacterIndustryJobs"
+            ],
+            [
+                "EVECharacterIndustryJobsHistory",
+                "EVECharacterIndustryJobsHistory"
+            ],
+            [
+                "EVECharacterKillMails",
+                "EVECharacterKillMails"
+            ],
+            [
+                "EVECharacterLocations",
+                "EVECharacterLocations"
+            ],
+            [
+                "EVECharacterMailBodies",
+                "EVECharacterMailBodies"
+            ],
+            [
+                "EVECharacterMailMessages",
+                "EVECharacterMailMessages"
+            ],
+            [
+                "EVECharacterMailingLists",
+                "EVECharacterMailingLists"
+            ],
+            [
+                "EVECharacterMarketOrders",
+                "EVECharacterMarketOrders"
+            ],
+            [
+                "EVECharacterMedals",
+                "EVECharacterMedals"
+            ],
+            [
+                "EVECharacterNotificationTexts",
+                "EVECharacterNotificationTexts"
+            ],
+            [
+                "EVECharacterNotifications",
+                "EVECharacterNotifications"
+            ],
+            [
+                "EVECharacterPlanetaryColonies",
+                "EVECharacterPlanetaryColonies"
+            ],
+            [
+                "EVECharacterPlanetaryLinks",
+                "EVECharacterPlanetaryLinks"
+            ],
+            [
+                "EVECharacterPlanetaryPins",
+                "EVECharacterPlanetaryPins"
+            ],
+            [
+                "EVECharacterPlanetaryRoutes",
+                "EVECharacterPlanetaryRoutes"
+            ],
+            [
+                "EVECharacterResearch",
+                "EVECharacterResearch"
+            ],
+            [
+                "EVECharacterSkillInTraining",
+                "EVECharacterSkillInTraining"
+            ],
+            [
+                "EVECharacterSkillQueue",
+                "EVECharacterSkillQueue"
+            ],
+            [
+                "EVECharacterStandings",
+                "EVECharacterStandings"
+            ],
+            [
+                "EVECharacterUpcomingCalendarEvents",
+                "EVECharacterUpcomingCalendarEvents"
+            ],
+            [
+                "EVECharacterWalletJournal",
+                "EVECharacterWalletJournal"
+            ],
+            [
+                "EVECharacterWalletTransactions",
+                "EVECharacterWalletTransactions"
+            ],
+            [
+                "EVECorporationAccountBalance",
+                "EVECorporationAccountBalance"
+            ],
+            [
+                "EVECorporationAssetList",
+                "EVECorporationAssetList"
+            ],
+            [
+                "EVECorporationBlueprints",
+                "EVECorporationBlueprints"
+            ],
+            [
+                "EVECorporationContactList",
+                "EVECorporationContactList"
+            ],
+            [
+                "EVECorporationContainerLog",
+                "EVECorporationContainerLog"
+            ],
+            [
+                "EVECorporationContractBids",
+                "EVECorporationContractBids"
+            ],
+            [
+                "EVECorporationContractItems",
+                "EVECorporationContractItems"
+            ],
+            [
+                "EVECorporationContracts",
+                "EVECorporationContracts"
+            ],
+            [
+                "EVECorporationCorporationSheet",
+                "EVECorporationCorporationSheet"
+            ],
+            [
+                "EVECorporationCustomsOffices",
+                "EVECorporationCustomsOffices"
+            ],
+            [
+                "EVECorporationFacWarStats",
+                "EVECorporationFacWarStats"
+            ],
+            [
+                "EVECorporationFacilities",
+                "EVECorporationFacilities"
+            ],
+            [
+                "EVECorporationIndustryJobs",
+                "EVECorporationIndustryJobs"
+            ],
+            [
+                "EVECorporationIndustryJobsHistory",
+                "EVECorporationIndustryJobsHistory"
+            ],
+            [
+                "EVECorporationKillMails",
+                "EVECorporationKillMails"
+            ],
+            [
+                "EVECorporationLocations",
+                "EVECorporationLocations"
+            ],
+            [
+                "EVECorporationMarketOrders",
+                "EVECorporationMarketOrders"
+            ],
+            [
+                "EVECorporationMedals",
+                "EVECorporationMedals"
+            ],
+            [
+                "EVECorporationMemberMedals",
+                "EVECorporationMemberMedals"
+            ],
+            [
+                "EVECorporationMemberSecurity",
+                "EVECorporationMemberSecurity"
+            ],
+            [
+                "EVECorporationMemberSecurityLog",
+                "EVECorporationMemberSecurityLog"
+            ],
+            [
+                "EVECorporationMemberTracking",
+                "EVECorporationMemberTracking"
+            ],
+            [
+                "EVECorporationOutpostList",
+                "EVECorporationOutpostList"
+            ],
+            [
+                "EVECorporationOutpostServiceDetail",
+                "EVECorporationOutpostServiceDetail"
+            ],
+            [
+                "EVECorporationShareholders",
+                "EVECorporationShareholders"
+            ],
+            [
+                "EVECorporationStandings",
+                "EVECorporationStandings"
+            ],
+            [
+                "EVECorporationStarbaseDetail",
+                "EVECorporationStarbaseDetail"
+            ],
+            [
+                "EVECorporationStarbaseList",
+                "EVECorporationStarbaseList"
+            ],
+            [
+                "EVECorporationTitles",
+                "EVECorporationTitles"
+            ],
+            [
+                "EVECorporationWalletJournal",
+                "EVECorporationWalletJournal"
+            ],
+            [
+                "EVECorporationWalletTransactions",
+                "EVECorporationWalletTransactions"
+            ],
+            [
+                "EVEEVEAllianceList",
+                "EVEEVEAllianceList"
+            ],
+            [
+                "EVEEVECharacterAffiliation",
+                "EVEEVECharacterAffiliation"
+            ],
+            [
+                "EVEEVECharacterID",
+                "EVEEVECharacterID"
+            ],
+            [
+                "EVEEVECharacterInfo",
+                "EVEEVECharacterInfo"
+            ],
+            [
+                "EVEEVECharacterName",
+                "EVEEVECharacterName"
+            ],
+            [
+                "EVEEVEConquerableStationList",
+                "EVEEVEConquerableStationList"
+            ],
+            [
+                "EVEEVEErrorList",
+                "EVEEVEErrorList"
+            ],
+            [
+                "EVEEVEFacWarStats",
+                "EVEEVEFacWarStats"
+            ],
+            [
+                "EVEEVEFacWarTopStats",
+                "EVEEVEFacWarTopStats"
+            ],
+            [
+                "EVEEVERefTypes",
+                "EVEEVERefTypes"
+            ],
+            [
+                "EVEEVESkillTree",
+                "EVEEVESkillTree"
+            ],
+            [
+                "EVEEVETypeName",
+                "EVEEVETypeName"
+            ],
+            [
+                "EVEMapFacWarSystems",
+                "EVEMapFacWarSystems"
+            ],
+            [
+                "EVEMapJumps",
+                "EVEMapJumps"
+            ],
+            [
+                "EVEMapKills",
+                "EVEMapKills"
+            ],
+            [
+                "EVEMapSovereignty",
+                "EVEMapSovereignty"
+            ],
+            [
+                "EVEServerServerStatus",
+                "EVEServerServerStatus"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/RenaApp.php",
+    "hash": "b7081b62de5ad51843a85150e7c55e17f0e94fd0",
+    "parent": "Slim\\Slim",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Slim": "Slim\\Slim",
+        "Cache": "ProjectRena\\Lib\\Cache",
+        "Db": "ProjectRena\\Lib\\Db",
+        "Logging": "ProjectRena\\Lib\\Logging",
+        "Pheal": "ProjectRena\\Lib\\Pheal",
+        "PhealLogger": "ProjectRena\\Lib\\PhealLogger",
+        "SessionHandler": "ProjectRena\\Lib\\SessionHandler",
+        "StatsD": "ProjectRena\\Lib\\StatsD",
+        "Timer": "ProjectRena\\Lib\\Timer",
+        "baseConfig": "ProjectRena\\Lib\\baseConfig",
+        "cURL": "ProjectRena\\Lib\\cURL",
+        "EVEOAuth": "ProjectRena\\Lib\\OAuth\\EVEOAuth",
+        "ApiKeys": "ProjectRena\\Model\\ApiKeys",
+        "Config": "ProjectRena\\Model\\Config",
+        "Paste": "ProjectRena\\Model\\Paste",
+        "Storage": "ProjectRena\\Model\\Storage",
+        "Users": "ProjectRena\\Model\\Users",
+        "dgmAttributeCategories": "ProjectRena\\Model\\CCP\\dgmAttributeCategories",
+        "dgmAttributeTypes": "ProjectRena\\Model\\CCP\\dgmAttributeTypes",
+        "dgmEffects": "ProjectRena\\Model\\CCP\\dgmEffects",
+        "dgmTypeAttributes": "ProjectRena\\Model\\CCP\\dgmTypeAttributes",
+        "dgmTypeEffects": "ProjectRena\\Model\\CCP\\dgmTypeEffects",
+        "invFlags": "ProjectRena\\Model\\CCP\\invFlags",
+        "invGroups": "ProjectRena\\Model\\CCP\\invGroups",
+        "invTypes": "ProjectRena\\Model\\CCP\\invTypes",
+        "mapDenormalize": "ProjectRena\\Model\\CCP\\mapDenormalize",
+        "mapRegions": "ProjectRena\\Model\\CCP\\mapRegions",
+        "mapSolarSystems": "ProjectRena\\Model\\CCP\\mapSolarSystems",
+        "alliances": "ProjectRena\\Model\\EVE\\alliances",
+        "characters": "ProjectRena\\Model\\EVE\\characters",
+        "corporations": "ProjectRena\\Model\\EVE\\corporations",
+        "killmails": "ProjectRena\\Model\\EVE\\killmails",
+        "EVEAPICallList": "ProjectRena\\Model\\EVEApi\\API\\CallList",
+        "EVEAccountAPIKeyInfo": "ProjectRena\\Model\\EVEApi\\Account\\APIKeyInfo",
+        "EVEAccountAccountStatus": "ProjectRena\\Model\\EVEApi\\Account\\AccountStatus",
+        "EVEAccountCharacters": "ProjectRena\\Model\\EVEApi\\Account\\Characters",
+        "EVECharacterAccountBalance": "ProjectRena\\Model\\EVEApi\\Character\\AccountBalance",
+        "EVECharacterAssetList": "ProjectRena\\Model\\EVEApi\\Character\\AssetList",
+        "EVECharacterBlueprints": "ProjectRena\\Model\\EVEApi\\Character\\Blueprints",
+        "EVECharacterCalendarEventAttendees": "ProjectRena\\Model\\EVEApi\\Character\\CalendarEventAttendees",
+        "EVECharacterCharacterSheet": "ProjectRena\\Model\\EVEApi\\Character\\CharacterSheet",
+        "EVECharacterContactList": "ProjectRena\\Model\\EVEApi\\Character\\ContactList",
+        "EVECharacterContactNotifications": "ProjectRena\\Model\\EVEApi\\Character\\ContactNotifications",
+        "EVECharacterContractBids": "ProjectRena\\Model\\EVEApi\\Character\\ContractBids",
+        "EVECharacterContractItems": "ProjectRena\\Model\\EVEApi\\Character\\ContractItems",
+        "EVECharacterContracts": "ProjectRena\\Model\\EVEApi\\Character\\Contracts",
+        "EVECharacterFacWarStats": "ProjectRena\\Model\\EVEApi\\Character\\FacWarStats",
+        "EVECharacterIndustryJobs": "ProjectRena\\Model\\EVEApi\\Character\\IndustryJobs",
+        "EVECharacterIndustryJobsHistory": "ProjectRena\\Model\\EVEApi\\Character\\IndustryJobsHistory",
+        "EVECharacterKillMails": "ProjectRena\\Model\\EVEApi\\Character\\KillMails",
+        "EVECharacterLocations": "ProjectRena\\Model\\EVEApi\\Character\\Locations",
+        "EVECharacterMailBodies": "ProjectRena\\Model\\EVEApi\\Character\\MailBodies",
+        "EVECharacterMailMessages": "ProjectRena\\Model\\EVEApi\\Character\\MailMessages",
+        "EVECharacterMailingLists": "ProjectRena\\Model\\EVEApi\\Character\\MailingLists",
+        "EVECharacterMarketOrders": "ProjectRena\\Model\\EVEApi\\Character\\MarketOrders",
+        "EVECharacterMedals": "ProjectRena\\Model\\EVEApi\\Character\\Medals",
+        "EVECharacterNotificationTexts": "ProjectRena\\Model\\EVEApi\\Character\\NotificationTexts",
+        "EVECharacterNotifications": "ProjectRena\\Model\\EVEApi\\Character\\Notifications",
+        "EVECharacterPlanetaryColonies": "ProjectRena\\Model\\EVEApi\\Character\\PlanetaryColonies",
+        "EVECharacterPlanetaryLinks": "ProjectRena\\Model\\EVEApi\\Character\\PlanetaryLinks",
+        "EVECharacterPlanetaryPins": "ProjectRena\\Model\\EVEApi\\Character\\PlanetaryPins",
+        "EVECharacterPlanetaryRoutes": "ProjectRena\\Model\\EVEApi\\Character\\PlanetaryRoutes",
+        "EVECharacterResearch": "ProjectRena\\Model\\EVEApi\\Character\\Research",
+        "EVECharacterSkillInTraining": "ProjectRena\\Model\\EVEApi\\Character\\SkillInTraining",
+        "EVECharacterSkillQueue": "ProjectRena\\Model\\EVEApi\\Character\\SkillQueue",
+        "EVECharacterStandings": "ProjectRena\\Model\\EVEApi\\Character\\Standings",
+        "EVECharacterUpcomingCalendarEvents": "ProjectRena\\Model\\EVEApi\\Character\\UpcomingCalendarEvents",
+        "EVECharacterWalletJournal": "ProjectRena\\Model\\EVEApi\\Character\\WalletJournal",
+        "EVECharacterWalletTransactions": "ProjectRena\\Model\\EVEApi\\Character\\WalletTransactions",
+        "EVECorporationAccountBalance": "ProjectRena\\Model\\EVEApi\\Corporation\\AccountBalance",
+        "EVECorporationAssetList": "ProjectRena\\Model\\EVEApi\\Corporation\\AssetList",
+        "EVECorporationBlueprints": "ProjectRena\\Model\\EVEApi\\Corporation\\Blueprints",
+        "EVECorporationContactList": "ProjectRena\\Model\\EVEApi\\Corporation\\ContactList",
+        "EVECorporationContainerLog": "ProjectRena\\Model\\EVEApi\\Corporation\\ContainerLog",
+        "EVECorporationContractBids": "ProjectRena\\Model\\EVEApi\\Corporation\\ContractBids",
+        "EVECorporationContractItems": "ProjectRena\\Model\\EVEApi\\Corporation\\ContractItems",
+        "EVECorporationContracts": "ProjectRena\\Model\\EVEApi\\Corporation\\Contracts",
+        "EVECorporationCorporationSheet": "ProjectRena\\Model\\EVEApi\\Corporation\\CorporationSheet",
+        "EVECorporationCustomsOffices": "ProjectRena\\Model\\EVEApi\\Corporation\\CustomsOffices",
+        "EVECorporationFacWarStats": "ProjectRena\\Model\\EVEApi\\Corporation\\FacWarStats",
+        "EVECorporationFacilities": "ProjectRena\\Model\\EVEApi\\Corporation\\Facilities",
+        "EVECorporationIndustryJobs": "ProjectRena\\Model\\EVEApi\\Corporation\\IndustryJobs",
+        "EVECorporationIndustryJobsHistory": "ProjectRena\\Model\\EVEApi\\Corporation\\IndustryJobsHistory",
+        "EVECorporationKillMails": "ProjectRena\\Model\\EVEApi\\Corporation\\KillMails",
+        "EVECorporationLocations": "ProjectRena\\Model\\EVEApi\\Corporation\\Locations",
+        "EVECorporationMarketOrders": "ProjectRena\\Model\\EVEApi\\Corporation\\MarketOrders",
+        "EVECorporationMedals": "ProjectRena\\Model\\EVEApi\\Corporation\\Medals",
+        "EVECorporationMemberMedals": "ProjectRena\\Model\\EVEApi\\Corporation\\MemberMedals",
+        "EVECorporationMemberSecurity": "ProjectRena\\Model\\EVEApi\\Corporation\\MemberSecurity",
+        "EVECorporationMemberSecurityLog": "ProjectRena\\Model\\EVEApi\\Corporation\\MemberSecurityLog",
+        "EVECorporationMemberTracking": "ProjectRena\\Model\\EVEApi\\Corporation\\MemberTracking",
+        "EVECorporationOutpostList": "ProjectRena\\Model\\EVEApi\\Corporation\\OutpostList",
+        "EVECorporationOutpostServiceDetail": "ProjectRena\\Model\\EVEApi\\Corporation\\OutpostServiceDetail",
+        "EVECorporationShareholders": "ProjectRena\\Model\\EVEApi\\Corporation\\Shareholders",
+        "EVECorporationStandings": "ProjectRena\\Model\\EVEApi\\Corporation\\Standings",
+        "EVECorporationStarbaseDetail": "ProjectRena\\Model\\EVEApi\\Corporation\\StarbaseDetail",
+        "EVECorporationStarbaseList": "ProjectRena\\Model\\EVEApi\\Corporation\\StarbaseList",
+        "EVECorporationTitles": "ProjectRena\\Model\\EVEApi\\Corporation\\Titles",
+        "EVECorporationWalletJournal": "ProjectRena\\Model\\EVEApi\\Corporation\\WalletJournal",
+        "EVECorporationWalletTransactions": "ProjectRena\\Model\\EVEApi\\Corporation\\WalletTransactions",
+        "EVEEVEAllianceList": "ProjectRena\\Model\\EVEApi\\EVE\\AllianceList",
+        "EVEEVECharacterAffiliation": "ProjectRena\\Model\\EVEApi\\EVE\\CharacterAffiliation",
+        "EVEEVECharacterID": "ProjectRena\\Model\\EVEApi\\EVE\\CharacterID",
+        "EVEEVECharacterInfo": "ProjectRena\\Model\\EVEApi\\EVE\\CharacterInfo",
+        "EVEEVECharacterName": "ProjectRena\\Model\\EVEApi\\EVE\\CharacterName",
+        "EVEEVEConquerableStationList": "ProjectRena\\Model\\EVEApi\\EVE\\ConquerableStationList",
+        "EVEEVEErrorList": "ProjectRena\\Model\\EVEApi\\EVE\\ErrorList",
+        "EVEEVEFacWarStats": "ProjectRena\\Model\\EVEApi\\EVE\\FacWarStats",
+        "EVEEVEFacWarTopStats": "ProjectRena\\Model\\EVEApi\\EVE\\FacWarTopStats",
+        "EVEEVERefTypes": "ProjectRena\\Model\\EVEApi\\EVE\\RefTypes",
+        "EVEEVESkillTree": "ProjectRena\\Model\\EVEApi\\EVE\\SkillTree",
+        "EVEEVETypeName": "ProjectRena\\Model\\EVEApi\\EVE\\TypeName",
+        "EVEMapFacWarSystems": "ProjectRena\\Model\\EVEApi\\Map\\FacWarSystems",
+        "EVEMapJumps": "ProjectRena\\Model\\EVEApi\\Map\\Jumps",
+        "EVEMapKills": "ProjectRena\\Model\\EVEApi\\Map\\Kills",
+        "EVEMapSovereignty": "ProjectRena\\Model\\EVEApi\\Map\\Sovereignty",
+        "EVEServerServerStatus": "ProjectRena\\Model\\EVEApi\\Server\\ServerStatus"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "ache": {
+            "name": "ache",
+            "line": 242,
+            "short_desc": "CacheCache",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Cache",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "b": {
+            "name": "b",
+            "line": 242,
+            "short_desc": "DbDb",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Db",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "ogging": {
+            "name": "ogging",
+            "line": 242,
+            "short_desc": "LoggingLogging",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Logging",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "heal": {
+            "name": "heal",
+            "line": 242,
+            "short_desc": "PhealPheal",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Pheal",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "healLogger": {
+            "name": "healLogger",
+            "line": 242,
+            "short_desc": "PhealLoggerPhealLogger",
+            "long_desc": null,
+            "hint": [
+                [
+                    "PhealLogger",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "essionHandler": {
+            "name": "essionHandler",
+            "line": 242,
+            "short_desc": "SessionHandlerSessionHandler",
+            "long_desc": null,
+            "hint": [
+                [
+                    "SessionHandler",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "tatsD": {
+            "name": "tatsD",
+            "line": 242,
+            "short_desc": "StatsDStatsD",
+            "long_desc": null,
+            "hint": [
+                [
+                    "StatsD",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "imer": {
+            "name": "imer",
+            "line": 242,
+            "short_desc": "TimerTimer",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Timer",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "aseConfig": {
+            "name": "aseConfig",
+            "line": 242,
+            "short_desc": "baseConfigbaseConfig",
+            "long_desc": null,
+            "hint": [
+                [
+                    "baseConfig",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "URL": {
+            "name": "URL",
+            "line": 242,
+            "short_desc": "cURLcURL",
+            "long_desc": null,
+            "hint": [
+                [
+                    "cURL",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEOAuth": {
+            "name": "VEOAuth",
+            "line": 242,
+            "short_desc": "EVEOAuthEVEOAuth",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEOAuth",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "piKeys": {
+            "name": "piKeys",
+            "line": 242,
+            "short_desc": "ApiKeysApiKeys",
+            "long_desc": null,
+            "hint": [
+                [
+                    "ApiKeys",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "onfig": {
+            "name": "onfig",
+            "line": 242,
+            "short_desc": "ConfigConfig",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Config",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "aste": {
+            "name": "aste",
+            "line": 242,
+            "short_desc": "PastePaste",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Paste",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "torage": {
+            "name": "torage",
+            "line": 242,
+            "short_desc": "StorageStorage",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Storage",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "sers": {
+            "name": "sers",
+            "line": 242,
+            "short_desc": "UsersUsers",
+            "long_desc": null,
+            "hint": [
+                [
+                    "Users",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "gmAttributeCategories": {
+            "name": "gmAttributeCategories",
+            "line": 242,
+            "short_desc": "dgmAttributeCategoriesdgmAttributeCategories",
+            "long_desc": null,
+            "hint": [
+                [
+                    "dgmAttributeCategories",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "gmAttributeTypes": {
+            "name": "gmAttributeTypes",
+            "line": 242,
+            "short_desc": "dgmAttributeTypesdgmAttributeTypes",
+            "long_desc": null,
+            "hint": [
+                [
+                    "dgmAttributeTypes",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "gmEffects": {
+            "name": "gmEffects",
+            "line": 242,
+            "short_desc": "dgmEffectsdgmEffects",
+            "long_desc": null,
+            "hint": [
+                [
+                    "dgmEffects",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "gmTypeAttributes": {
+            "name": "gmTypeAttributes",
+            "line": 242,
+            "short_desc": "dgmTypeAttributesdgmTypeAttributes",
+            "long_desc": null,
+            "hint": [
+                [
+                    "dgmTypeAttributes",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "gmTypeEffects": {
+            "name": "gmTypeEffects",
+            "line": 242,
+            "short_desc": "dgmTypeEffectsdgmTypeEffects",
+            "long_desc": null,
+            "hint": [
+                [
+                    "dgmTypeEffects",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "nvFlags": {
+            "name": "nvFlags",
+            "line": 242,
+            "short_desc": "invFlagsinvFlags",
+            "long_desc": null,
+            "hint": [
+                [
+                    "invFlags",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "nvGroups": {
+            "name": "nvGroups",
+            "line": 242,
+            "short_desc": "invGroupsinvGroups",
+            "long_desc": null,
+            "hint": [
+                [
+                    "invGroups",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "nvTypes": {
+            "name": "nvTypes",
+            "line": 242,
+            "short_desc": "invTypesinvTypes",
+            "long_desc": null,
+            "hint": [
+                [
+                    "invTypes",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "apDenormalize": {
+            "name": "apDenormalize",
+            "line": 242,
+            "short_desc": "mapDenormalizemapDenormalize",
+            "long_desc": null,
+            "hint": [
+                [
+                    "mapDenormalize",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "apRegions": {
+            "name": "apRegions",
+            "line": 242,
+            "short_desc": "mapRegionsmapRegions",
+            "long_desc": null,
+            "hint": [
+                [
+                    "mapRegions",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "apSolarSystems": {
+            "name": "apSolarSystems",
+            "line": 242,
+            "short_desc": "mapSolarSystemsmapSolarSystems",
+            "long_desc": null,
+            "hint": [
+                [
+                    "mapSolarSystems",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "lliances": {
+            "name": "lliances",
+            "line": 242,
+            "short_desc": "alliancesalliances",
+            "long_desc": null,
+            "hint": [
+                [
+                    "alliances",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "haracters": {
+            "name": "haracters",
+            "line": 242,
+            "short_desc": "characterscharacters",
+            "long_desc": null,
+            "hint": [
+                [
+                    "characters",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "orporations": {
+            "name": "orporations",
+            "line": 242,
+            "short_desc": "corporationscorporations",
+            "long_desc": null,
+            "hint": [
+                [
+                    "corporations",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "illmails": {
+            "name": "illmails",
+            "line": 242,
+            "short_desc": "killmailskillmails",
+            "long_desc": null,
+            "hint": [
+                [
+                    "killmails",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEAPICallList": {
+            "name": "VEAPICallList",
+            "line": 242,
+            "short_desc": "EVEAPICallListEVEAPICallList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEAPICallList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEAccountAPIKeyInfo": {
+            "name": "VEAccountAPIKeyInfo",
+            "line": 242,
+            "short_desc": "EVEAccountAPIKeyInfoEVEAccountAPIKeyInfo",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEAccountAPIKeyInfo",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEAccountAccountStatus": {
+            "name": "VEAccountAccountStatus",
+            "line": 242,
+            "short_desc": "EVEAccountAccountStatusEVEAccountAccountStatus",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEAccountAccountStatus",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEAccountCharacters": {
+            "name": "VEAccountCharacters",
+            "line": 242,
+            "short_desc": "EVEAccountCharactersEVEAccountCharacters",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEAccountCharacters",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterAccountBalance": {
+            "name": "VECharacterAccountBalance",
+            "line": 242,
+            "short_desc": "EVECharacterAccountBalanceEVECharacterAccountBalance",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterAccountBalance",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterAssetList": {
+            "name": "VECharacterAssetList",
+            "line": 242,
+            "short_desc": "EVECharacterAssetListEVECharacterAssetList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterAssetList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterBlueprints": {
+            "name": "VECharacterBlueprints",
+            "line": 242,
+            "short_desc": "EVECharacterBlueprintsEVECharacterBlueprints",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterBlueprints",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterCalendarEventAttendees": {
+            "name": "VECharacterCalendarEventAttendees",
+            "line": 242,
+            "short_desc": "EVECharacterCalendarEventAttendeesEVECharacterCalendarEventAttendees",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterCalendarEventAttendees",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterCharacterSheet": {
+            "name": "VECharacterCharacterSheet",
+            "line": 242,
+            "short_desc": "EVECharacterCharacterSheetEVECharacterCharacterSheet",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterCharacterSheet",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterContactList": {
+            "name": "VECharacterContactList",
+            "line": 242,
+            "short_desc": "EVECharacterContactListEVECharacterContactList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterContactList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterContactNotifications": {
+            "name": "VECharacterContactNotifications",
+            "line": 242,
+            "short_desc": "EVECharacterContactNotificationsEVECharacterContactNotifications",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterContactNotifications",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterContractBids": {
+            "name": "VECharacterContractBids",
+            "line": 242,
+            "short_desc": "EVECharacterContractBidsEVECharacterContractBids",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterContractBids",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterContractItems": {
+            "name": "VECharacterContractItems",
+            "line": 242,
+            "short_desc": "EVECharacterContractItemsEVECharacterContractItems",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterContractItems",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterContracts": {
+            "name": "VECharacterContracts",
+            "line": 242,
+            "short_desc": "EVECharacterContractsEVECharacterContracts",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterContracts",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterFacWarStats": {
+            "name": "VECharacterFacWarStats",
+            "line": 242,
+            "short_desc": "EVECharacterFacWarStatsEVECharacterFacWarStats",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterFacWarStats",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterIndustryJobs": {
+            "name": "VECharacterIndustryJobs",
+            "line": 242,
+            "short_desc": "EVECharacterIndustryJobsEVECharacterIndustryJobs",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterIndustryJobs",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterIndustryJobsHistory": {
+            "name": "VECharacterIndustryJobsHistory",
+            "line": 242,
+            "short_desc": "EVECharacterIndustryJobsHistoryEVECharacterIndustryJobsHistory",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterIndustryJobsHistory",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterKillMails": {
+            "name": "VECharacterKillMails",
+            "line": 242,
+            "short_desc": "EVECharacterKillMailsEVECharacterKillMails",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterKillMails",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterLocations": {
+            "name": "VECharacterLocations",
+            "line": 242,
+            "short_desc": "EVECharacterLocationsEVECharacterLocations",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterLocations",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterMailBodies": {
+            "name": "VECharacterMailBodies",
+            "line": 242,
+            "short_desc": "EVECharacterMailBodiesEVECharacterMailBodies",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterMailBodies",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterMailMessages": {
+            "name": "VECharacterMailMessages",
+            "line": 242,
+            "short_desc": "EVECharacterMailMessagesEVECharacterMailMessages",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterMailMessages",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterMailingLists": {
+            "name": "VECharacterMailingLists",
+            "line": 242,
+            "short_desc": "EVECharacterMailingListsEVECharacterMailingLists",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterMailingLists",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterMarketOrders": {
+            "name": "VECharacterMarketOrders",
+            "line": 242,
+            "short_desc": "EVECharacterMarketOrdersEVECharacterMarketOrders",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterMarketOrders",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterMedals": {
+            "name": "VECharacterMedals",
+            "line": 242,
+            "short_desc": "EVECharacterMedalsEVECharacterMedals",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterMedals",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterNotificationTexts": {
+            "name": "VECharacterNotificationTexts",
+            "line": 242,
+            "short_desc": "EVECharacterNotificationTextsEVECharacterNotificationTexts",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterNotificationTexts",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterNotifications": {
+            "name": "VECharacterNotifications",
+            "line": 242,
+            "short_desc": "EVECharacterNotificationsEVECharacterNotifications",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterNotifications",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterPlanetaryColonies": {
+            "name": "VECharacterPlanetaryColonies",
+            "line": 242,
+            "short_desc": "EVECharacterPlanetaryColoniesEVECharacterPlanetaryColonies",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterPlanetaryColonies",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterPlanetaryLinks": {
+            "name": "VECharacterPlanetaryLinks",
+            "line": 242,
+            "short_desc": "EVECharacterPlanetaryLinksEVECharacterPlanetaryLinks",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterPlanetaryLinks",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterPlanetaryPins": {
+            "name": "VECharacterPlanetaryPins",
+            "line": 242,
+            "short_desc": "EVECharacterPlanetaryPinsEVECharacterPlanetaryPins",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterPlanetaryPins",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterPlanetaryRoutes": {
+            "name": "VECharacterPlanetaryRoutes",
+            "line": 242,
+            "short_desc": "EVECharacterPlanetaryRoutesEVECharacterPlanetaryRoutes",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterPlanetaryRoutes",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterResearch": {
+            "name": "VECharacterResearch",
+            "line": 242,
+            "short_desc": "EVECharacterResearchEVECharacterResearch",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterResearch",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterSkillInTraining": {
+            "name": "VECharacterSkillInTraining",
+            "line": 242,
+            "short_desc": "EVECharacterSkillInTrainingEVECharacterSkillInTraining",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterSkillInTraining",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterSkillQueue": {
+            "name": "VECharacterSkillQueue",
+            "line": 242,
+            "short_desc": "EVECharacterSkillQueueEVECharacterSkillQueue",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterSkillQueue",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterStandings": {
+            "name": "VECharacterStandings",
+            "line": 242,
+            "short_desc": "EVECharacterStandingsEVECharacterStandings",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterStandings",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterUpcomingCalendarEvents": {
+            "name": "VECharacterUpcomingCalendarEvents",
+            "line": 242,
+            "short_desc": "EVECharacterUpcomingCalendarEventsEVECharacterUpcomingCalendarEvents",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterUpcomingCalendarEvents",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterWalletJournal": {
+            "name": "VECharacterWalletJournal",
+            "line": 242,
+            "short_desc": "EVECharacterWalletJournalEVECharacterWalletJournal",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterWalletJournal",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECharacterWalletTransactions": {
+            "name": "VECharacterWalletTransactions",
+            "line": 242,
+            "short_desc": "EVECharacterWalletTransactionsEVECharacterWalletTransactions",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECharacterWalletTransactions",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationAccountBalance": {
+            "name": "VECorporationAccountBalance",
+            "line": 242,
+            "short_desc": "EVECorporationAccountBalanceEVECorporationAccountBalance",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationAccountBalance",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationAssetList": {
+            "name": "VECorporationAssetList",
+            "line": 242,
+            "short_desc": "EVECorporationAssetListEVECorporationAssetList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationAssetList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationBlueprints": {
+            "name": "VECorporationBlueprints",
+            "line": 242,
+            "short_desc": "EVECorporationBlueprintsEVECorporationBlueprints",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationBlueprints",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationContactList": {
+            "name": "VECorporationContactList",
+            "line": 242,
+            "short_desc": "EVECorporationContactListEVECorporationContactList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationContactList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationContainerLog": {
+            "name": "VECorporationContainerLog",
+            "line": 242,
+            "short_desc": "EVECorporationContainerLogEVECorporationContainerLog",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationContainerLog",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationContractBids": {
+            "name": "VECorporationContractBids",
+            "line": 242,
+            "short_desc": "EVECorporationContractBidsEVECorporationContractBids",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationContractBids",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationContractItems": {
+            "name": "VECorporationContractItems",
+            "line": 242,
+            "short_desc": "EVECorporationContractItemsEVECorporationContractItems",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationContractItems",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationContracts": {
+            "name": "VECorporationContracts",
+            "line": 242,
+            "short_desc": "EVECorporationContractsEVECorporationContracts",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationContracts",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationCorporationSheet": {
+            "name": "VECorporationCorporationSheet",
+            "line": 242,
+            "short_desc": "EVECorporationCorporationSheetEVECorporationCorporationSheet",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationCorporationSheet",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationCustomsOffices": {
+            "name": "VECorporationCustomsOffices",
+            "line": 242,
+            "short_desc": "EVECorporationCustomsOfficesEVECorporationCustomsOffices",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationCustomsOffices",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationFacWarStats": {
+            "name": "VECorporationFacWarStats",
+            "line": 242,
+            "short_desc": "EVECorporationFacWarStatsEVECorporationFacWarStats",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationFacWarStats",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationFacilities": {
+            "name": "VECorporationFacilities",
+            "line": 242,
+            "short_desc": "EVECorporationFacilitiesEVECorporationFacilities",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationFacilities",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationIndustryJobs": {
+            "name": "VECorporationIndustryJobs",
+            "line": 242,
+            "short_desc": "EVECorporationIndustryJobsEVECorporationIndustryJobs",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationIndustryJobs",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationIndustryJobsHistory": {
+            "name": "VECorporationIndustryJobsHistory",
+            "line": 242,
+            "short_desc": "EVECorporationIndustryJobsHistoryEVECorporationIndustryJobsHistory",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationIndustryJobsHistory",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationKillMails": {
+            "name": "VECorporationKillMails",
+            "line": 242,
+            "short_desc": "EVECorporationKillMailsEVECorporationKillMails",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationKillMails",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationLocations": {
+            "name": "VECorporationLocations",
+            "line": 242,
+            "short_desc": "EVECorporationLocationsEVECorporationLocations",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationLocations",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationMarketOrders": {
+            "name": "VECorporationMarketOrders",
+            "line": 242,
+            "short_desc": "EVECorporationMarketOrdersEVECorporationMarketOrders",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationMarketOrders",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationMedals": {
+            "name": "VECorporationMedals",
+            "line": 242,
+            "short_desc": "EVECorporationMedalsEVECorporationMedals",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationMedals",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationMemberMedals": {
+            "name": "VECorporationMemberMedals",
+            "line": 242,
+            "short_desc": "EVECorporationMemberMedalsEVECorporationMemberMedals",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationMemberMedals",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationMemberSecurity": {
+            "name": "VECorporationMemberSecurity",
+            "line": 242,
+            "short_desc": "EVECorporationMemberSecurityEVECorporationMemberSecurity",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationMemberSecurity",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationMemberSecurityLog": {
+            "name": "VECorporationMemberSecurityLog",
+            "line": 242,
+            "short_desc": "EVECorporationMemberSecurityLogEVECorporationMemberSecurityLog",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationMemberSecurityLog",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationMemberTracking": {
+            "name": "VECorporationMemberTracking",
+            "line": 242,
+            "short_desc": "EVECorporationMemberTrackingEVECorporationMemberTracking",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationMemberTracking",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationOutpostList": {
+            "name": "VECorporationOutpostList",
+            "line": 242,
+            "short_desc": "EVECorporationOutpostListEVECorporationOutpostList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationOutpostList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationOutpostServiceDetail": {
+            "name": "VECorporationOutpostServiceDetail",
+            "line": 242,
+            "short_desc": "EVECorporationOutpostServiceDetailEVECorporationOutpostServiceDetail",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationOutpostServiceDetail",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationShareholders": {
+            "name": "VECorporationShareholders",
+            "line": 242,
+            "short_desc": "EVECorporationShareholdersEVECorporationShareholders",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationShareholders",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationStandings": {
+            "name": "VECorporationStandings",
+            "line": 242,
+            "short_desc": "EVECorporationStandingsEVECorporationStandings",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationStandings",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationStarbaseDetail": {
+            "name": "VECorporationStarbaseDetail",
+            "line": 242,
+            "short_desc": "EVECorporationStarbaseDetailEVECorporationStarbaseDetail",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationStarbaseDetail",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationStarbaseList": {
+            "name": "VECorporationStarbaseList",
+            "line": 242,
+            "short_desc": "EVECorporationStarbaseListEVECorporationStarbaseList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationStarbaseList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationTitles": {
+            "name": "VECorporationTitles",
+            "line": 242,
+            "short_desc": "EVECorporationTitlesEVECorporationTitles",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationTitles",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationWalletJournal": {
+            "name": "VECorporationWalletJournal",
+            "line": 242,
+            "short_desc": "EVECorporationWalletJournalEVECorporationWalletJournal",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationWalletJournal",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VECorporationWalletTransactions": {
+            "name": "VECorporationWalletTransactions",
+            "line": 242,
+            "short_desc": "EVECorporationWalletTransactionsEVECorporationWalletTransactions",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVECorporationWalletTransactions",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVEAllianceList": {
+            "name": "VEEVEAllianceList",
+            "line": 242,
+            "short_desc": "EVEEVEAllianceListEVEEVEAllianceList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVEAllianceList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVECharacterAffiliation": {
+            "name": "VEEVECharacterAffiliation",
+            "line": 242,
+            "short_desc": "EVEEVECharacterAffiliationEVEEVECharacterAffiliation",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVECharacterAffiliation",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVECharacterID": {
+            "name": "VEEVECharacterID",
+            "line": 242,
+            "short_desc": "EVEEVECharacterIDEVEEVECharacterID",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVECharacterID",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVECharacterInfo": {
+            "name": "VEEVECharacterInfo",
+            "line": 242,
+            "short_desc": "EVEEVECharacterInfoEVEEVECharacterInfo",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVECharacterInfo",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVECharacterName": {
+            "name": "VEEVECharacterName",
+            "line": 242,
+            "short_desc": "EVEEVECharacterNameEVEEVECharacterName",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVECharacterName",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVEConquerableStationList": {
+            "name": "VEEVEConquerableStationList",
+            "line": 242,
+            "short_desc": "EVEEVEConquerableStationListEVEEVEConquerableStationList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVEConquerableStationList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVEErrorList": {
+            "name": "VEEVEErrorList",
+            "line": 242,
+            "short_desc": "EVEEVEErrorListEVEEVEErrorList",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVEErrorList",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVEFacWarStats": {
+            "name": "VEEVEFacWarStats",
+            "line": 242,
+            "short_desc": "EVEEVEFacWarStatsEVEEVEFacWarStats",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVEFacWarStats",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVEFacWarTopStats": {
+            "name": "VEEVEFacWarTopStats",
+            "line": 242,
+            "short_desc": "EVEEVEFacWarTopStatsEVEEVEFacWarTopStats",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVEFacWarTopStats",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVERefTypes": {
+            "name": "VEEVERefTypes",
+            "line": 242,
+            "short_desc": "EVEEVERefTypesEVEEVERefTypes",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVERefTypes",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVESkillTree": {
+            "name": "VEEVESkillTree",
+            "line": 242,
+            "short_desc": "EVEEVESkillTreeEVEEVESkillTree",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVESkillTree",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEEVETypeName": {
+            "name": "VEEVETypeName",
+            "line": 242,
+            "short_desc": "EVEEVETypeNameEVEEVETypeName",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEEVETypeName",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEMapFacWarSystems": {
+            "name": "VEMapFacWarSystems",
+            "line": 242,
+            "short_desc": "EVEMapFacWarSystemsEVEMapFacWarSystems",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEMapFacWarSystems",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEMapJumps": {
+            "name": "VEMapJumps",
+            "line": 242,
+            "short_desc": "EVEMapJumpsEVEMapJumps",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEMapJumps",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEMapKills": {
+            "name": "VEMapKills",
+            "line": 242,
+            "short_desc": "EVEMapKillsEVEMapKills",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEMapKills",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEMapSovereignty": {
+            "name": "VEMapSovereignty",
+            "line": 242,
+            "short_desc": "EVEMapSovereigntyEVEMapSovereignty",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEMapSovereignty",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        },
+        "VEServerServerStatus": {
+            "name": "VEServerServerStatus",
+            "line": 242,
+            "short_desc": "EVEServerServerStatusEVEServerServerStatus",
+            "long_desc": null,
+            "hint": [
+                [
+                    "EVEServerServerStatus",
+                    null
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": null,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": [],
+    "constants": []
+}

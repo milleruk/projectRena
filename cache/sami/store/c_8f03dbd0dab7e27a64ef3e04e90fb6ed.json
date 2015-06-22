@@ -1,0 +1,422 @@
+{
+    "name": "ProjectRena\\Lib\\Cache",
+    "line": 12,
+    "short_desc": "Class Cache.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Lib",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/Cache.php",
+    "hash": "003c8ceb79dbedce3f721282055d80dc36f5c739",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Closure": "Closure",
+        "RenaApp": "ProjectRena\\RenaApp",
+        "Redis": "Redis"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "persistence": {
+            "name": "persistence",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": {
+                "name": {
+                    "parts": [
+                        "true"
+                    ]
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "get": {
+            "name": "get",
+            "line": 57,
+            "short_desc": "Read value from the cache.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 57,
+                    "short_desc": "The key to uniquely identify the cached item",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "set": {
+            "name": "set",
+            "line": 71,
+            "short_desc": "Write value to the cache.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 71,
+                    "short_desc": "The key to uniquely identify the cached item",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 71,
+                    "short_desc": "The value to be cached",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "timeout": {
+                    "name": "timeout",
+                    "line": 71,
+                    "short_desc": "A strtotime() compatible cache time.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "integer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "0",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "replace": {
+            "name": "replace",
+            "line": 92,
+            "short_desc": "Override value in the cache.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 92,
+                    "short_desc": "The key to uniquely identify the cached item",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 92,
+                    "short_desc": "The value to be cached",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "timeout": {
+                    "name": "timeout",
+                    "line": 92,
+                    "short_desc": "A strtotime() compatible cache time.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ],
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "delete": {
+            "name": "delete",
+            "line": 104,
+            "short_desc": "Delete value from the cache.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 104,
+                    "short_desc": "The key to uniquely identify the cached item",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "increment": {
+            "name": "increment",
+            "line": 122,
+            "short_desc": "Performs an atomic increment operation on specified numeric cache item.",
+            "long_desc": "Note that if the value of the specified key is *not* an integer, the increment\noperation will have no effect whatsoever. Redis chooses to not typecast values\nto integers when performing an atomic increment operation.",
+            "hint": [
+                [
+                    "callable",
+                    false
+                ]
+            ],
+            "hint_desc": "Function returning item's new value on successful increment, else `false`",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 122,
+                    "short_desc": "Key of numeric cache item to increment",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "step": {
+                    "name": "step",
+                    "line": 122,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "1",
+                    "is_by_ref": false
+                },
+                "timeout": {
+                    "name": "timeout",
+                    "line": 122,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "0",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "decrement": {
+            "name": "decrement",
+            "line": 145,
+            "short_desc": "Performs an atomic decrement operation on specified numeric cache item.",
+            "long_desc": "Note that if the value of the specified key is *not* an integer, the decrement\noperation will have no effect whatsoever. Redis chooses to not typecast values\nto integers when performing an atomic decrement operation.",
+            "hint": [
+                [
+                    "\\Closure",
+                    false
+                ]
+            ],
+            "hint_desc": "Function returning item's new value on successful decrement, else `false`",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 145,
+                    "short_desc": "Key of numeric cache item to decrement",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "step": {
+                    "name": "step",
+                    "line": 145,
+                    "short_desc": "Offset to decrement - defaults to 1",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "1",
+                    "is_by_ref": false
+                },
+                "timeout": {
+                    "name": "timeout",
+                    "line": 145,
+                    "short_desc": "A strtotime() compatible cache time.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "0",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "flush": {
+            "name": "flush",
+            "line": 160,
+            "short_desc": "Clears user-space cache.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

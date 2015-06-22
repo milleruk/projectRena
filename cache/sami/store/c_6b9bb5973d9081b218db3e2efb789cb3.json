@@ -1,0 +1,87 @@
+{
+    "name": "ProjectRena\\Lib\\OAuth\\EVEOAuth",
+    "line": 11,
+    "short_desc": "Class EVEOAuth",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Model\\OAuth"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Lib\\OAuth",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/OAuth\/EVEOAuth.php",
+    "hash": "6300309e748c936ec2ef01acf6858e57af499fd7",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "LoginURL": {
+            "name": "LoginURL",
+            "line": 39,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "SSOLogin": {
+            "name": "SSOLogin",
+            "line": 50,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "code": {
+                    "name": "code",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "state": {
+                    "name": "state",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}
