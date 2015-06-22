@@ -71,15 +71,6 @@ class UpdateTask extends Command
 								$output->writeln("Generating RenaApp");
 								file_put_contents(__DIR__ . "/../RenaApp.php", $php);
 
-								// Check if Sami is in the dir
-								if(!file_exists(__DIR__ . "/../../sami.phar"))
-								{
-												$output->writeln("Sami doesn't exist, downloading it");
-												$sami = $app->cURL->getData("http://get.sensiolabs.org/sami.phar", 0);
-												file_put_contents(__DIR__ . "/../../sami.phar", $sami);
-								}
-								exec("php " . __DIR__ . "/../../sami.phar update samiConfig.php");
-								$output->writeln("Updating sami");
 								// Do more stuff (Clear cache?)
 				}
 
