@@ -64,7 +64,7 @@ class CronTask extends Command
                     $md5 = md5($name);
 
                     // If the script is currently running, skip to the next script
-                    if(isset($app->Cache->get($md5 . '_pid'))
+                    if($app->Cache->get($md5 . '_pid') !== false)
                     {
                         $pid = $app->Cache->get($md5 . '_pid');
                         $status = pcntl_waitpid($pid, $status, WNOHANG);
