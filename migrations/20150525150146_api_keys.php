@@ -22,7 +22,7 @@ class ApiKeys extends AbstractMigration
 								$apiKeys
 									->addColumn('keyID', 'string', array('limit' => 250))
 									->addColumn('vCode', 'string', array('limit' => 250))
-									->addColumn('userID', 'integer', array('limit' => 11))
+									->addColumn('userID', 'integer', array('null' => true, 'limit' => 11))
 									->addColumn('errorCode', 'integer', array('limit' => 4))
 									->addColumn('accessMask', 'integer', array('limit' => 11))
 									->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
