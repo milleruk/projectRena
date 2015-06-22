@@ -7,7 +7,7 @@
     "tags": [],
     "namespace": "ProjectRena\\Task",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/CronTask.php",
-    "hash": "a05ad109c6ef77d9a6544b07c1f21d84894c0ac4",
+    "hash": "f0c46dc157c5254e43948ed3aba40408ac365eff",
     "parent": "Cilex\\Command\\Command",
     "modifiers": "Stmt_Class",
     "is_trait": false,

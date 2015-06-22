@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVE",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVE\/characters.php",
-    "hash": "426378f3f52e1f1002f852eb2c544e43a8a84727",
+    "hash": "0d4bab3c9a0aa1e5c2e158641ac0310c8a661d7d",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -291,7 +291,7 @@
                     "long_desc": null,
                     "hint": [
                         [
-                            "null",
+                            "string",
                             false
                         ]
                     ],
@@ -304,7 +304,7 @@
         },
         "setLastUpdated": {
             "name": "setLastUpdated",
-            "line": 141,
+            "line": 144,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -313,11 +313,13 @@
             "modifiers": "1",
             "is_by_ref": "",
             "exceptions": [],
-            "errors": [],
+            "errors": [
+                "\"2\" @param tags are expected but only \"1\" found"
+            ],
             "parameters": {
                 "characterID": {
                     "name": "characterID",
-                    "line": 141,
+                    "line": 144,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": null,
@@ -328,7 +330,7 @@
                 },
                 "lastUpdated": {
                     "name": "lastUpdated",
-                    "line": 141,
+                    "line": 144,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": null,

@@ -12,6 +12,7 @@ $iterator = Finder::create()
     ->exclude('logs')
     ->exclude('migrations')
     ->exclude('cache')
+    ->exclude('tests')
     ->exclude('composer.phar')
 
     ->in($dir = __DIR__ . "/../projectRena/");

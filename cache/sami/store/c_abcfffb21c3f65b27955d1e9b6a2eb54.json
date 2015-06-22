@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVE",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVE\/killmails.php",
-    "hash": "ba771ef85c4486844579d784101ede34a63f9f26",
+    "hash": "cf9cc984fd0f50e1dce48bfcf500fa9af66a550f",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,

@@ -7,7 +7,7 @@
     "tags": [],
     "namespace": "ProjectRena\\Model",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/Config.php",
-    "hash": "b4ff21ee4576563d4129bf941f39ef3937fd8642",
+    "hash": "ede5c1ade66fc00cc0ad5cbc93d3c0f89c76f81f",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -51,28 +51,9 @@
                 }
             }
         },
-        "getAll": {
-            "name": "getAll",
-            "line": 36,
-            "short_desc": "",
-            "long_desc": "",
-            "hint": [
-                [
-                    "array",
-                    false
-                ]
-            ],
-            "hint_desc": "",
-            "tags": [],
-            "modifiers": "1",
-            "is_by_ref": "",
-            "exceptions": [],
-            "errors": [],
-            "parameters": []
-        },
         "set": {
             "name": "set",
-            "line": 52,
+            "line": 39,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -90,7 +71,7 @@
             "parameters": {
                 "key": {
                     "name": "key",
-                    "line": 52,
+                    "line": 39,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -101,7 +82,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 52,
+                    "line": 39,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],

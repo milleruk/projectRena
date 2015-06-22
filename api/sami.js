@@ -90,9 +90,8 @@
                     {"type": "Method", "fromName": "ProjectRena\\Lib\\cURL", "fromLink": "ProjectRena/Lib/cURL.html", "link": "ProjectRena/Lib/cURL.html#method_sendData", "name": "ProjectRena\\Lib\\cURL::sendData", "doc": "&quot;\n&quot;"},
             
             {"type": "Class", "fromName": "ProjectRena\\Model", "fromLink": "ProjectRena/Model.html", "link": "ProjectRena/Model/ApiKeys.html", "name": "ProjectRena\\Model\\ApiKeys", "doc": "&quot;Class ApiKeys.&quot;"},
-                                                        {"type": "Method", "fromName": "ProjectRena\\Model\\ApiKeys", "fromLink": "ProjectRena/Model/ApiKeys.html", "link": "ProjectRena/Model/ApiKeys.html#method_addAPIKey", "name": "ProjectRena\\Model\\ApiKeys::addAPIKey", "doc": "&quot;\n&quot;"},
+                                                        {"type": "Method", "fromName": "ProjectRena\\Model\\ApiKeys", "fromLink": "ProjectRena/Model/ApiKeys.html", "link": "ProjectRena/Model/ApiKeys.html#method_updateAPIKey", "name": "ProjectRena\\Model\\ApiKeys::updateAPIKey", "doc": "&quot;\n&quot;"},
                     {"type": "Method", "fromName": "ProjectRena\\Model\\ApiKeys", "fromLink": "ProjectRena/Model/ApiKeys.html", "link": "ProjectRena/Model/ApiKeys.html#method_getAPIKey", "name": "ProjectRena\\Model\\ApiKeys::getAPIKey", "doc": "&quot;\n&quot;"},
-                    {"type": "Method", "fromName": "ProjectRena\\Model\\ApiKeys", "fromLink": "ProjectRena/Model/ApiKeys.html", "link": "ProjectRena/Model/ApiKeys.html#method_updateAPIKey", "name": "ProjectRena\\Model\\ApiKeys::updateAPIKey", "doc": "&quot;\n&quot;"},
                     {"type": "Method", "fromName": "ProjectRena\\Model\\ApiKeys", "fromLink": "ProjectRena/Model/ApiKeys.html", "link": "ProjectRena/Model/ApiKeys.html#method_deleteAPIKey", "name": "ProjectRena\\Model\\ApiKeys::deleteAPIKey", "doc": "&quot;\n&quot;"},
             
             {"type": "Class", "fromName": "ProjectRena\\Model\\CCP", "fromLink": "ProjectRena/Model/CCP.html", "link": "ProjectRena/Model/CCP/dgmAttributeCategories.html", "name": "ProjectRena\\Model\\CCP\\dgmAttributeCategories", "doc": "&quot;Class invTypes&quot;"},
@@ -221,7 +220,6 @@
             
             {"type": "Class", "fromName": "ProjectRena\\Model", "fromLink": "ProjectRena/Model.html", "link": "ProjectRena/Model/Config.html", "name": "ProjectRena\\Model\\Config", "doc": "&quot;Class Config.&quot;"},
                                                         {"type": "Method", "fromName": "ProjectRena\\Model\\Config", "fromLink": "ProjectRena/Model/Config.html", "link": "ProjectRena/Model/Config.html#method_get", "name": "ProjectRena\\Model\\Config::get", "doc": "&quot;\n&quot;"},
-                    {"type": "Method", "fromName": "ProjectRena\\Model\\Config", "fromLink": "ProjectRena/Model/Config.html", "link": "ProjectRena/Model/Config.html#method_getAll", "name": "ProjectRena\\Model\\Config::getAll", "doc": "&quot;\n&quot;"},
                     {"type": "Method", "fromName": "ProjectRena\\Model\\Config", "fromLink": "ProjectRena/Model/Config.html", "link": "ProjectRena/Model/Config.html#method_set", "name": "ProjectRena\\Model\\Config::set", "doc": "&quot;\n&quot;"},
             
             {"type": "Class", "fromName": "ProjectRena\\Model\\EVEApi\\API", "fromLink": "ProjectRena/Model/EVEApi/API.html", "link": "ProjectRena/Model/EVEApi/API/CallList.html", "name": "ProjectRena\\Model\\EVEApi\\API\\CallList", "doc": "&quot;Class CallList.&quot;"},
