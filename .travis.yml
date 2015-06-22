@@ -10,7 +10,7 @@ services:
 before_script:
   - sudo service mysql stop
   - sudo mv /etc/mysql/my.cnf /etc/mysql/my.cnf.old
-  - sudo export DEBIAN_FRONTEND=noninteractive
+  - export DEBIAN_FRONTEND=noninteractive
   - sudo apt-get install python-software-properties
   - sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
   - sudo add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/10.0/ubuntu precise main'
