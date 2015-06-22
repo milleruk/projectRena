@@ -67,6 +67,16 @@ class UpdateTask extends Command
 								$php .= "\n";
 								$php .= "class RenaApp extends Slim\n";
 								$php .= "{\n";
+								$php .= '    /**
+     * Var_dumps and dies, quicker than var_dump($input); die();
+     *
+     * @param $input
+     */
+    public function dd($input)
+    {
+        var_dump($input); die();
+    }
+';
 								$php .= "}";
 								$output->writeln("Generating RenaApp");
 								file_put_contents(__DIR__ . "/../RenaApp.php", $php);

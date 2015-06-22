@@ -248,7 +248,7 @@ class RenaApp extends Slim
      *
      * @param $input
      */
-    function dd($input)
+    public function dd($input)
     {
         var_dump($input); die();
     }
