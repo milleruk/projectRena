@@ -4,10 +4,7 @@ namespace ProjectRena\Task;
 use Cilex\Command\Command;
 use ProjectRena\Lib;
 use ProjectRena\RenaApp;
-use Sami\Sami;
-use Symfony\Component\Finder\Finder;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**

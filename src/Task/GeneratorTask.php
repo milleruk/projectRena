@@ -2,16 +2,13 @@
 
 namespace ProjectRena\Task;
 
-use gossi\codegen\config\CodeFileGeneratorConfig;
 use gossi\codegen\generator\CodeFileGenerator;
 use gossi\codegen\model\PhpProperty;
 use ProjectRena\Lib;
 use Cilex\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use gossi\codegen\generator\CodeGenerator;
 use gossi\codegen\model\PhpClass;
 use gossi\codegen\model\PhpMethod;
 use gossi\codegen\model\PhpParameter;
