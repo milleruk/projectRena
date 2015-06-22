@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /storage/www/projectRena/src/Lib</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../js/html5shiv.min.js"></script>
+  <script src="../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../index.html">/storage/www/projectRena</a></li>
+        <li><a href="../index.html">src</a></li>
+        <li><a href="index.html">Lib</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="SessionHandler.php.html#10">SessionHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="baseConfig.php.html#4">baseConfig</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="cURL.php.html#10">cURL</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Pheal.php.html#12">Pheal</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PhealLogger.php.html#4">PhealLogger</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OAuth/EVEOAuth.php.html#11">EVEOAuth</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging.php.html#14">Logging</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="StatsD.php.html#13">StatsD</a></td><td class="text-right">18%</td></tr>
+       <tr><td><a href="Timer.php.html#13">Timer</a></td><td class="text-right">20%</td></tr>
+       <tr><td><a href="Cache.php.html#12">Cache</a></td><td class="text-right">25%</td></tr>
+       <tr><td><a href="Db.php.html#12">Db</a></td><td class="text-right">55%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="cURL.php.html#10">cURL</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Cache.php.html#12">Cache</a></td><td class="text-right">109</td></tr>
+       <tr><td><a href="Db.php.html#12">Db</a></td><td class="text-right">86</td></tr>
+       <tr><td><a href="SessionHandler.php.html#10">SessionHandler</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="OAuth/EVEOAuth.php.html#11">EVEOAuth</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="baseConfig.php.html#4">baseConfig</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="SessionHandler.php.html#36"><abbr title="SessionHandler::close">close</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SessionHandler.php.html#54"><abbr title="SessionHandler::destroy">destroy</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SessionHandler.php.html#75"><abbr title="SessionHandler::gc">gc</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SessionHandler.php.html#94"><abbr title="SessionHandler::open">open</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SessionHandler.php.html#19"><abbr title="SessionHandler::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PhealLogger.php.html#21"><abbr title="PhealLogger::errorLog">errorLog</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PhealLogger.php.html#8"><abbr title="PhealLogger::start">start</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PhealLogger.php.html#12"><abbr title="PhealLogger::stop">stop</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PhealLogger.php.html#16"><abbr title="PhealLogger::log">log</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SessionHandler.php.html#113"><abbr title="SessionHandler::read">read</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SessionHandler.php.html#144"><abbr title="SessionHandler::write">write</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="baseConfig.php.html#13"><abbr title="baseConfig::getConfig">getConfig</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="cURL.php.html#18"><abbr title="cURL::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="cURL.php.html#30"><abbr title="cURL::getData">getData</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="cURL.php.html#77"><abbr title="cURL::sendData">sendData</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Timer.php.html#31"><abbr title="Timer::start">start</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Timer.php.html#23"><abbr title="Timer::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="StatsD.php.html#27"><abbr title="StatsD::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="StatsD.php.html#59"><abbr title="StatsD::timing">timing</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="StatsD.php.html#72"><abbr title="StatsD::gauge">gauge</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Pheal.php.html#53"><abbr title="Pheal::Pheal">Pheal</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Pheal.php.html#46"><abbr title="Pheal::RunAsNew">RunAsNew</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache.php.html#160"><abbr title="Cache::flush">flush</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Db.php.html#54"><abbr title="Db::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Db.php.html#194"><abbr title="Db::queryField">queryField</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache.php.html#145"><abbr title="Cache::decrement">decrement</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache.php.html#122"><abbr title="Cache::increment">increment</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache.php.html#92"><abbr title="Cache::replace">replace</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache.php.html#104"><abbr title="Cache::delete">delete</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache.php.html#27"><abbr title="Cache::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Db.php.html#277"><abbr title="Db::getQueryCount">getQueryCount</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OAuth/EVEOAuth.php.html#39"><abbr title="EVEOAuth::LoginURL">LoginURL</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OAuth/EVEOAuth.php.html#50"><abbr title="EVEOAuth::SSOLogin">SSOLogin</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Pheal.php.html#24"><abbr title="Pheal::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OAuth/EVEOAuth.php.html#29"><abbr title="EVEOAuth::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging.php.html#65"><abbr title="Logging::flasher">flasher</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging.php.html#34"><abbr title="Logging::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging.php.html#52"><abbr title="Logging::log">log</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Db.php.html#287"><abbr title="Db::logQuery">logQuery</a></a></td><td class="text-right">36%</td></tr>
+       <tr><td><a href="Cache.php.html#71"><abbr title="Cache::set">set</a></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Db.php.html#92"><abbr title="Db::query">query</a></a></td><td class="text-right">82%</td></tr>
+       <tr><td><a href="Db.php.html#221"><abbr title="Db::execute">execute</a></a></td><td class="text-right">83%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="cURL.php.html#77"><abbr title="cURL::sendData">sendData</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="cURL.php.html#30"><abbr title="cURL::getData">getData</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Db.php.html#54"><abbr title="Db::__construct">__construct</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Db.php.html#287"><abbr title="Db::logQuery">logQuery</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="Db.php.html#92"><abbr title="Db::query">query</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="OAuth/EVEOAuth.php.html#39"><abbr title="EVEOAuth::LoginURL">LoginURL</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="baseConfig.php.html#13"><abbr title="baseConfig::getConfig">getConfig</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SessionHandler.php.html#113"><abbr title="SessionHandler::read">read</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Db.php.html#194"><abbr title="Db::queryField">queryField</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache.php.html#122"><abbr title="Cache::increment">increment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache.php.html#145"><abbr title="Cache::decrement">decrement</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache.php.html#27"><abbr title="Cache::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Db.php.html#221"><abbr title="Db::execute">execute</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Cache.php.html#71"><abbr title="Cache::set">set</abbr></a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.1.6</a> using <a href="http://php.net/" target="_top">PHP 5.6.9-0+deb8u1</a> and <a href="http://phpunit.de/">PHPUnit 4.7.5</a> at Mon Jun 22 19:07:56 UTC 2015.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([7,0,1,2,0,0,1,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([38,0,0,0,1,0,0,0,0,3,0,7], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[25,15,"<a href=\"Cache.php.html#12\">Cache<\/a>"],[55.31914893617,26,"<a href=\"Db.php.html#12\">Db<\/a>"],[0,3,"<a href=\"Logging.php.html#14\">Logging<\/a>"],[0,4,"<a href=\"OAuth\/EVEOAuth.php.html#11\">EVEOAuth<\/a>"],[0,3,"<a href=\"Pheal.php.html#12\">Pheal<\/a>"],[0,4,"<a href=\"PhealLogger.php.html#4\">PhealLogger<\/a>"],[0,8,"<a href=\"SessionHandler.php.html#10\">SessionHandler<\/a>"],[18.181818181818,4,"<a href=\"StatsD.php.html#13\">StatsD<\/a>"],[20,4,"<a href=\"Timer.php.html#13\">Timer<\/a>"],[0,2,"<a href=\"baseConfig.php.html#4\">baseConfig<\/a>"],[0,10,"<a href=\"cURL.php.html#10\">cURL<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"Cache.php.html#27\">Cache::__construct<\/a>"],[100,2,"<a href=\"Cache.php.html#45\">Cache::expireAt<\/a>"],[100,1,"<a href=\"Cache.php.html#57\">Cache::get<\/a>"],[80,3,"<a href=\"Cache.php.html#71\">Cache::set<\/a>"],[0,1,"<a href=\"Cache.php.html#92\">Cache::replace<\/a>"],[0,1,"<a href=\"Cache.php.html#104\">Cache::delete<\/a>"],[0,2,"<a href=\"Cache.php.html#122\">Cache::increment<\/a>"],[0,2,"<a href=\"Cache.php.html#145\">Cache::decrement<\/a>"],[0,1,"<a href=\"Cache.php.html#160\">Cache::flush<\/a>"],[0,3,"<a href=\"Db.php.html#54\">Db::__construct<\/a>"],[82.758620689655,7,"<a href=\"Db.php.html#92\">Db::query<\/a>"],[100,2,"<a href=\"Db.php.html#170\">Db::queryRow<\/a>"],[0,2,"<a href=\"Db.php.html#194\">Db::queryField<\/a>"],[83.333333333333,4,"<a href=\"Db.php.html#221\">Db::execute<\/a>"],[0,1,"<a href=\"Db.php.html#277\">Db::getQueryCount<\/a>"],[36.363636363636,5,"<a href=\"Db.php.html#287\">Db::logQuery<\/a>"],[100,2,"<a href=\"Db.php.html#312\">Db::getKey<\/a>"],[0,1,"<a href=\"Logging.php.html#34\">Logging::__construct<\/a>"],[0,1,"<a href=\"Logging.php.html#52\">Logging::log<\/a>"],[0,1,"<a href=\"Logging.php.html#65\">Logging::flasher<\/a>"],[0,1,"<a href=\"OAuth\/EVEOAuth.php.html#29\">EVEOAuth::__construct<\/a>"],[0,2,"<a href=\"OAuth\/EVEOAuth.php.html#39\">EVEOAuth::LoginURL<\/a>"],[0,1,"<a href=\"OAuth\/EVEOAuth.php.html#50\">EVEOAuth::SSOLogin<\/a>"],[0,1,"<a href=\"Pheal.php.html#24\">Pheal::__construct<\/a>"],[0,1,"<a href=\"Pheal.php.html#46\">Pheal::RunAsNew<\/a>"],[0,1,"<a href=\"Pheal.php.html#53\">Pheal::Pheal<\/a>"],[0,1,"<a href=\"PhealLogger.php.html#8\">PhealLogger::start<\/a>"],[0,1,"<a href=\"PhealLogger.php.html#12\">PhealLogger::stop<\/a>"],[0,1,"<a href=\"PhealLogger.php.html#16\">PhealLogger::log<\/a>"],[0,1,"<a href=\"PhealLogger.php.html#21\">PhealLogger::errorLog<\/a>"],[0,1,"<a href=\"SessionHandler.php.html#19\">SessionHandler::__construct<\/a>"],[0,1,"<a href=\"SessionHandler.php.html#36\">SessionHandler::close<\/a>"],[0,1,"<a href=\"SessionHandler.php.html#54\">SessionHandler::destroy<\/a>"],[0,1,"<a href=\"SessionHandler.php.html#75\">SessionHandler::gc<\/a>"],[0,1,"<a href=\"SessionHandler.php.html#94\">SessionHandler::open<\/a>"],[0,2,"<a href=\"SessionHandler.php.html#113\">SessionHandler::read<\/a>"],[0,1,"<a href=\"SessionHandler.php.html#144\">SessionHandler::write<\/a>"],[0,1,"<a href=\"StatsD.php.html#27\">StatsD::__construct<\/a>"],[100,1,"<a href=\"StatsD.php.html#46\">StatsD::increment<\/a>"],[0,1,"<a href=\"StatsD.php.html#59\">StatsD::timing<\/a>"],[0,1,"<a href=\"StatsD.php.html#72\">StatsD::gauge<\/a>"],[0,1,"<a href=\"Timer.php.html#23\">Timer::__construct<\/a>"],[0,1,"<a href=\"Timer.php.html#31\">Timer::start<\/a>"],[100,1,"<a href=\"Timer.php.html#41\">Timer::stop<\/a>"],[100,1,"<a href=\"Timer.php.html#49\">Timer::RunAsNew<\/a>"],[0,2,"<a href=\"baseConfig.php.html#13\">baseConfig::getConfig<\/a>"],[0,1,"<a href=\"cURL.php.html#18\">cURL::__construct<\/a>"],[0,4,"<a href=\"cURL.php.html#30\">cURL::getData<\/a>"],[0,5,"<a href=\"cURL.php.html#77\">cURL::sendData<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

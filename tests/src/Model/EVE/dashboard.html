@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /storage/www/projectRena/src/Model/EVE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../../js/html5shiv.min.js"></script>
+  <script src="../../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../../index.html">/storage/www/projectRena</a></li>
+        <li><a href="../../index.html">src</a></li>
+        <li><a href="../index.html">Model</a></li>
+        <li><a href="index.html">EVE</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="participants.php.html#9">participants</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="killmails.php.html#11">killmails</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#11">corporations</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#11">characters</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#11">alliances</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="corporations.php.html#11">corporations</a></td><td class="text-right">1190</td></tr>
+       <tr><td><a href="alliances.php.html#11">alliances</a></td><td class="text-right">1056</td></tr>
+       <tr><td><a href="characters.php.html#11">characters</a></td><td class="text-right">462</td></tr>
+       <tr><td><a href="participants.php.html#9">participants</a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="killmails.php.html#11">killmails</a></td><td class="text-right">156</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="killmails.php.html#25"><abbr title="killmails::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#229"><abbr title="corporations::setMemberCount">setMemberCount</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="killmails.php.html#36"><abbr title="killmails::getAllByID">getAllByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="killmails.php.html#46"><abbr title="killmails::getProcessedByID">getProcessedByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="killmails.php.html#66"><abbr title="killmails::getSourceByID">getSourceByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="killmails.php.html#56"><abbr title="killmails::getHashByID">getHashByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#219"><abbr title="corporations::setCEOID">setCEOID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#209"><abbr title="corporations::setLastUpdated">setLastUpdated</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#106"><abbr title="corporations::getCorpTickerByID">getCorpTickerByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#96"><abbr title="corporations::getCEOIDByName">getCEOIDByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#116"><abbr title="corporations::getCorpTickerByName">getCorpTickerByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#126"><abbr title="corporations::getMemberCountByID">getMemberCountByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#150"><abbr title="corporations::updateCorporationDetails">updateCorporationDetails</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#136"><abbr title="corporations::getMemberCountByName">getMemberCountByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="killmails.php.html#76"><abbr title="killmails::getJSONByID">getJSONByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="killmails.php.html#88"><abbr title="killmails::insertKillmail">insertKillmail</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#286"><abbr title="participants::getByFactionID">getByFactionID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#260"><abbr title="participants::getByAllianceID">getByAllianceID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#312"><abbr title="participants::getByShipTypeID">getByShipTypeID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#338"><abbr title="participants::getByGroupID">getByGroupID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#390"><abbr title="participants::getByWeaponTypeID">getByWeaponTypeID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#364"><abbr title="participants::getByVGroupID">getByVGroupID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#234"><abbr title="participants::getByCorporationID">getByCorporationID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#208"><abbr title="participants::getByCharacterID">getByCharacterID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#69"><abbr title="participants::verifyExtraArguments">verifyExtraArguments</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#50"><abbr title="participants::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#105"><abbr title="participants::getByKillID">getByKillID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#130"><abbr title="participants::getByKillTime">getByKillTime</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#182"><abbr title="participants::getByRegionID">getByRegionID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="participants.php.html#156"><abbr title="participants::getBySolarSystemID">getBySolarSystemID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#86"><abbr title="corporations::getCEOIDByID">getCEOIDByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#76"><abbr title="corporations::getInformationByName">getInformationByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#126"><abbr title="alliances::getMemberCountByID">getMemberCountByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#116"><abbr title="alliances::getAllianceTickerByName">getAllianceTickerByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#136"><abbr title="alliances::getMemberCountByName">getMemberCountByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#151"><abbr title="alliances::updateAllianceDetails">updateAllianceDetails</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#215"><abbr title="alliances::setExecutorCorporationID">setExecutorCorporationID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#204"><abbr title="alliances::setLastUpdated">setLastUpdated</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#106"><abbr title="alliances::getAllianceTickerByID">getAllianceTickerByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#96"><abbr title="alliances::getExecutorCorporationIDByName">getExecutorCorporationIDByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#46"><abbr title="alliances::getAllByName">getAllByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#36"><abbr title="alliances::getAllByID">getAllByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#56"><abbr title="alliances::getAllByAllianceID">getAllByAllianceID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#66"><abbr title="alliances::getInformationByID">getInformationByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#86"><abbr title="alliances::getExecutorCorporationIDByID">getExecutorCorporationIDByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#76"><abbr title="alliances::getInformationByName">getInformationByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#225"><abbr title="alliances::setMemberCount">setMemberCount</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#25"><abbr title="characters::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#25"><abbr title="corporations::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#144"><abbr title="characters::setLastUpdated">setLastUpdated</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#36"><abbr title="corporations::getAllByID">getAllByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#46"><abbr title="corporations::getAllByName">getAllByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#66"><abbr title="corporations::getInformationByID">getInformationByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="corporations.php.html#56"><abbr title="corporations::getAllByAllianceID">getAllByAllianceID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#98"><abbr title="characters::updateCharacterDetails">updateCharacterDetails</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#86"><abbr title="characters::getHistoryByName">getHistoryByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#46"><abbr title="characters::getAllByName">getAllByName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#36"><abbr title="characters::getAllByID">getAllByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#56"><abbr title="characters::getAllByCorporationID">getAllByCorporationID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#66"><abbr title="characters::getAllByAllianceID">getAllByAllianceID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="characters.php.html#76"><abbr title="characters::getHistoryByID">getHistoryByID</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="alliances.php.html#25"><abbr title="alliances::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="corporations.php.html#150"><abbr title="corporations::updateCorporationDetails">updateCorporationDetails</abbr></a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="alliances.php.html#151"><abbr title="alliances::updateAllianceDetails">updateAllianceDetails</abbr></a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="characters.php.html#98"><abbr title="characters::updateCharacterDetails">updateCharacterDetails</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="killmails.php.html#88"><abbr title="killmails::insertKillmail">insertKillmail</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="participants.php.html#69"><abbr title="participants::verifyExtraArguments">verifyExtraArguments</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="corporations.php.html#229"><abbr title="corporations::setMemberCount">setMemberCount</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="corporations.php.html#219"><abbr title="corporations::setCEOID">setCEOID</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="characters.php.html#144"><abbr title="characters::setLastUpdated">setLastUpdated</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="alliances.php.html#204"><abbr title="alliances::setLastUpdated">setLastUpdated</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="alliances.php.html#215"><abbr title="alliances::setExecutorCorporationID">setExecutorCorporationID</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="alliances.php.html#225"><abbr title="alliances::setMemberCount">setMemberCount</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="corporations.php.html#209"><abbr title="corporations::setLastUpdated">setLastUpdated</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.1.6</a> using <a href="http://php.net/" target="_top">PHP 5.6.9-0+deb8u1</a> and <a href="http://phpunit.de/">PHPUnit 4.7.5</a> at Mon Jun 22 19:07:56 UTC 2015.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([5,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([62,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,32,"<a href=\"alliances.php.html#11\">alliances<\/a>"],[0,21,"<a href=\"characters.php.html#11\">characters<\/a>"],[0,34,"<a href=\"corporations.php.html#11\">corporations<\/a>"],[0,12,"<a href=\"killmails.php.html#11\">killmails<\/a>"],[0,18,"<a href=\"participants.php.html#9\">participants<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"alliances.php.html#25\">alliances::__construct<\/a>"],[0,1,"<a href=\"alliances.php.html#36\">alliances::getAllByID<\/a>"],[0,1,"<a href=\"alliances.php.html#46\">alliances::getAllByName<\/a>"],[0,1,"<a href=\"alliances.php.html#56\">alliances::getAllByAllianceID<\/a>"],[0,1,"<a href=\"alliances.php.html#66\">alliances::getInformationByID<\/a>"],[0,1,"<a href=\"alliances.php.html#76\">alliances::getInformationByName<\/a>"],[0,1,"<a href=\"alliances.php.html#86\">alliances::getExecutorCorporationIDByID<\/a>"],[0,1,"<a href=\"alliances.php.html#96\">alliances::getExecutorCorporationIDByName<\/a>"],[0,1,"<a href=\"alliances.php.html#106\">alliances::getAllianceTickerByID<\/a>"],[0,1,"<a href=\"alliances.php.html#116\">alliances::getAllianceTickerByName<\/a>"],[0,1,"<a href=\"alliances.php.html#126\">alliances::getMemberCountByID<\/a>"],[0,1,"<a href=\"alliances.php.html#136\">alliances::getMemberCountByName<\/a>"],[0,14,"<a href=\"alliances.php.html#151\">alliances::updateAllianceDetails<\/a>"],[0,2,"<a href=\"alliances.php.html#204\">alliances::setLastUpdated<\/a>"],[0,2,"<a href=\"alliances.php.html#215\">alliances::setExecutorCorporationID<\/a>"],[0,2,"<a href=\"alliances.php.html#225\">alliances::setMemberCount<\/a>"],[0,1,"<a href=\"characters.php.html#25\">characters::__construct<\/a>"],[0,1,"<a href=\"characters.php.html#36\">characters::getAllByID<\/a>"],[0,1,"<a href=\"characters.php.html#46\">characters::getAllByName<\/a>"],[0,1,"<a href=\"characters.php.html#56\">characters::getAllByCorporationID<\/a>"],[0,1,"<a href=\"characters.php.html#66\">characters::getAllByAllianceID<\/a>"],[0,1,"<a href=\"characters.php.html#76\">characters::getHistoryByID<\/a>"],[0,1,"<a href=\"characters.php.html#86\">characters::getHistoryByName<\/a>"],[0,12,"<a href=\"characters.php.html#98\">characters::updateCharacterDetails<\/a>"],[0,2,"<a href=\"characters.php.html#144\">characters::setLastUpdated<\/a>"],[0,1,"<a href=\"corporations.php.html#25\">corporations::__construct<\/a>"],[0,1,"<a href=\"corporations.php.html#36\">corporations::getAllByID<\/a>"],[0,1,"<a href=\"corporations.php.html#46\">corporations::getAllByName<\/a>"],[0,1,"<a href=\"corporations.php.html#56\">corporations::getAllByAllianceID<\/a>"],[0,1,"<a href=\"corporations.php.html#66\">corporations::getInformationByID<\/a>"],[0,1,"<a href=\"corporations.php.html#76\">corporations::getInformationByName<\/a>"],[0,1,"<a href=\"corporations.php.html#86\">corporations::getCEOIDByID<\/a>"],[0,1,"<a href=\"corporations.php.html#96\">corporations::getCEOIDByName<\/a>"],[0,1,"<a href=\"corporations.php.html#106\">corporations::getCorpTickerByID<\/a>"],[0,1,"<a href=\"corporations.php.html#116\">corporations::getCorpTickerByName<\/a>"],[0,1,"<a href=\"corporations.php.html#126\">corporations::getMemberCountByID<\/a>"],[0,1,"<a href=\"corporations.php.html#136\">corporations::getMemberCountByName<\/a>"],[0,16,"<a href=\"corporations.php.html#150\">corporations::updateCorporationDetails<\/a>"],[0,2,"<a href=\"corporations.php.html#209\">corporations::setLastUpdated<\/a>"],[0,2,"<a href=\"corporations.php.html#219\">corporations::setCEOID<\/a>"],[0,2,"<a href=\"corporations.php.html#229\">corporations::setMemberCount<\/a>"],[0,1,"<a href=\"killmails.php.html#25\">killmails::__construct<\/a>"],[0,1,"<a href=\"killmails.php.html#36\">killmails::getAllByID<\/a>"],[0,1,"<a href=\"killmails.php.html#46\">killmails::getProcessedByID<\/a>"],[0,1,"<a href=\"killmails.php.html#56\">killmails::getHashByID<\/a>"],[0,1,"<a href=\"killmails.php.html#66\">killmails::getSourceByID<\/a>"],[0,1,"<a href=\"killmails.php.html#76\">killmails::getJSONByID<\/a>"],[0,6,"<a href=\"killmails.php.html#88\">killmails::insertKillmail<\/a>"],[0,1,"<a href=\"participants.php.html#50\">participants::__construct<\/a>"],[0,5,"<a href=\"participants.php.html#69\">participants::verifyExtraArguments<\/a>"],[0,1,"<a href=\"participants.php.html#105\">participants::getByKillID<\/a>"],[0,1,"<a href=\"participants.php.html#130\">participants::getByKillTime<\/a>"],[0,1,"<a href=\"participants.php.html#156\">participants::getBySolarSystemID<\/a>"],[0,1,"<a href=\"participants.php.html#182\">participants::getByRegionID<\/a>"],[0,1,"<a href=\"participants.php.html#208\">participants::getByCharacterID<\/a>"],[0,1,"<a href=\"participants.php.html#234\">participants::getByCorporationID<\/a>"],[0,1,"<a href=\"participants.php.html#260\">participants::getByAllianceID<\/a>"],[0,1,"<a href=\"participants.php.html#286\">participants::getByFactionID<\/a>"],[0,1,"<a href=\"participants.php.html#312\">participants::getByShipTypeID<\/a>"],[0,1,"<a href=\"participants.php.html#338\">participants::getByGroupID<\/a>"],[0,1,"<a href=\"participants.php.html#364\">participants::getByVGroupID<\/a>"],[0,1,"<a href=\"participants.php.html#390\">participants::getByWeaponTypeID<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

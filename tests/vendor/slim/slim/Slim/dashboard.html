@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /storage/www/projectRena/vendor/slim/slim/Slim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../../../js/html5shiv.min.js"></script>
+  <script src="../../../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../../../index.html">/storage/www/projectRena</a></li>
+        <li><a href="../../../index.html">vendor</a></li>
+        <li><a href="../../index.html">slim</a></li>
+        <li><a href="../index.html">slim</a></li>
+        <li><a href="index.html">Slim</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Middleware/MethodOverride.php.html#49">MethodOverride</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#41">Route</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#44">Router</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#48">Flash</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware.php.html#42">Middleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#51">Environment</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#45">Request</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#61">Log</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#52">Slim</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#35">Set</a></td><td class="text-right">23%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Slim.php.html#52">Slim</a></td><td class="text-right">22777</td></tr>
+       <tr><td><a href="Http/Request.php.html#45">Request</a></td><td class="text-right">5700</td></tr>
+       <tr><td><a href="Route.php.html#41">Route</a></td><td class="text-right">2862</td></tr>
+       <tr><td><a href="Log.php.html#61">Log</a></td><td class="text-right">1190</td></tr>
+       <tr><td><a href="Router.php.html#44">Router</a></td><td class="text-right">992</td></tr>
+       <tr><td><a href="Environment.php.html#51">Environment</a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="Helper/Set.php.html#35">Set</a></td><td class="text-right">382</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#48">Flash</a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="Middleware/MethodOverride.php.html#49">MethodOverride</a></td><td class="text-right">42</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Router.php.html#184"><abbr title="Router::urlFor">urlFor</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#172"><abbr title="Router::popGroup">popGroup</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#205"><abbr title="Router::addNamedRoute">addNamedRoute</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#218"><abbr title="Router::hasNamedRoute">hasNamedRoute</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#230"><abbr title="Router::getNamedRoute">getNamedRoute</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#163"><abbr title="Router::pushGroup">pushGroup</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#143"><abbr title="Router::processGroups">processGroups</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#74"><abbr title="Router::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#462"><abbr title="Route::dispatch">dispatch</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#84"><abbr title="Router::getCurrentRoute">getCurrentRoute</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#104"><abbr title="Router::getMatchedRoutes">getMatchedRoutes</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#126"><abbr title="Router::map">map</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#244"><abbr title="Router::getNamedRoutes">getNamedRoutes</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#110"><abbr title="Slim::autoload">autoload</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#276"><abbr title="Slim::getName">getName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#266"><abbr title="Slim::setName">setName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#285"><abbr title="Slim::getDefaultSettings">getDefaultSettings</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#336"><abbr title="Slim::config">config</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#368"><abbr title="Slim::getMode">getMode</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#257"><abbr title="Slim::getInstance">getInstance</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#247"><abbr title="Slim::__unset">__unset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#151"><abbr title="Slim::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#138"><abbr title="Slim::registerAutoloader">registerAutoloader</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#206"><abbr title="Slim::anonymous function">anonymous function</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#237"><abbr title="Slim::__set">__set</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#242"><abbr title="Slim::__isset">__isset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#446"><abbr title="Route::conditions">conditions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#434"><abbr title="Route::name">name</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#188"><abbr title="Route::getConditions">getConditions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#168"><abbr title="Route::anonymous function">anonymous function</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#197"><abbr title="Route::setConditions">setConditions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#206"><abbr title="Route::getName">getName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#215"><abbr title="Route::setName">setName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#162"><abbr title="Route::setCallable">setCallable</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#152"><abbr title="Route::getCallable">getCallable</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#116"><abbr title="Route::setDefaultConditions">setDefaultConditions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#104"><abbr title="Route::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#125"><abbr title="Route::getDefaultConditions">getDefaultConditions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#134"><abbr title="Route::getPattern">getPattern</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#143"><abbr title="Route::setPattern">setPattern</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#224"><abbr title="Route::getParams">getParams</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#233"><abbr title="Route::setParams">setParams</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#326"><abbr title="Route::getMiddleware">getMiddleware</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#317"><abbr title="Route::supportsHttpMethod">supportsHttpMethod</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#345"><abbr title="Route::setMiddleware">setMiddleware</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#374"><abbr title="Route::matches">matches</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#414"><abbr title="Route::matchesCallback">matchesCallback</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#301"><abbr title="Route::via">via</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#288"><abbr title="Route::appendHttpMethods">appendHttpMethods</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#244"><abbr title="Route::getParam">getParam</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#259"><abbr title="Route::setParam">setParam</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#270"><abbr title="Route::setHttpMethods">setHttpMethods</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#280"><abbr title="Route::getHttpMethods">getHttpMethods</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#385"><abbr title="Slim::configureMode">configureMode</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#400"><abbr title="Slim::getLog">getLog</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1102"><abbr title="Slim::redirect">redirect</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1085"><abbr title="Slim::urlFor">urlFor</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1116"><abbr title="Slim::redirectTo">redirectTo</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1129"><abbr title="Slim::flash">flash</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1141"><abbr title="Slim::flashNow">flashNow</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1073"><abbr title="Slim::status">status</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1064"><abbr title="Slim::contentType">contentType</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1005"><abbr title="Slim::cleanBuffer">cleanBuffer</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#997"><abbr title="Slim::root">root</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1020"><abbr title="Slim::stop">stop</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1037"><abbr title="Slim::halt">halt</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1054"><abbr title="Slim::pass">pass</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1151"><abbr title="Slim::flashKeep">flashKeep</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1161"><abbr title="Slim::flashData">flashData</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1405"><abbr title="Slim::handleErrors">handleErrors</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1343"><abbr title="Slim::call">call</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1423"><abbr title="Slim::generateTemplateMarkup">generateTemplateMarkup</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1431"><abbr title="Slim::defaultNotFound">defaultNotFound</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1439"><abbr title="Slim::defaultError">defaultError</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1291"><abbr title="Slim::run">run</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1269"><abbr title="Slim::add">add</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1178"><abbr title="Slim::hook">hook</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1193"><abbr title="Slim::applyHook">applyHook</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1228"><abbr title="Slim::getHooks">getHooks</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#1246"><abbr title="Slim::clearHooks">clearHooks</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#972"><abbr title="Slim::deleteCookie">deleteCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#951"><abbr title="Slim::getEncryptedCookie">getEncryptedCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#546"><abbr title="Slim::group">group</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#529"><abbr title="Slim::options">options</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#563"><abbr title="Slim::any">any</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#591"><abbr title="Slim::notFound">notFound</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#629"><abbr title="Slim::error">error</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#517"><abbr title="Slim::delete">delete</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#505"><abbr title="Slim::patch">patch</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#457"><abbr title="Slim::map">map</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#439"><abbr title="Slim::mapRoute">mapRoute</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#469"><abbr title="Slim::get">get</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#481"><abbr title="Slim::post">post</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#493"><abbr title="Slim::put">put</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#652"><abbr title="Slim::callErrorHandler">callErrorHandler</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#672"><abbr title="Slim::environment">environment</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#841"><abbr title="Slim::expires">expires</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#805"><abbr title="Slim::etag">etag</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#867"><abbr title="Slim::setCookie">setCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#891"><abbr title="Slim::getCookie">getCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#933"><abbr title="Slim::setEncryptedCookie">setEncryptedCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#777"><abbr title="Slim::lastModified">lastModified</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#751"><abbr title="Slim::render">render</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#681"><abbr title="Slim::request">request</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#690"><abbr title="Slim::response">response</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#699"><abbr title="Slim::router">router</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Slim.php.html#719"><abbr title="Slim::view">view</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MethodOverride.php.html#76"><abbr title="MethodOverride::call">call</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MethodOverride.php.html#60"><abbr title="MethodOverride::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#166"><abbr title="Request::isAjax">isAjax</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#157"><abbr title="Request::isOptions">isOptions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#181"><abbr title="Request::isXhr">isXhr</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#197"><abbr title="Request::params">params</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#217"><abbr title="Request::get">get</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#148"><abbr title="Request::isHead">isHead</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#139"><abbr title="Request::isDelete">isDelete</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#103"><abbr title="Request::isGet">isGet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#94"><abbr title="Request::getMethod">getMethod</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#112"><abbr title="Request::isPost">isPost</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#121"><abbr title="Request::isPut">isPut</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#130"><abbr title="Request::isPatch">isPatch</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#250"><abbr title="Request::post">post</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#286"><abbr title="Request::put">put</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#415"><abbr title="Request::getMediaType">getMediaType</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#406"><abbr title="Request::getContentType">getContentType</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#431"><abbr title="Request::getMediaTypeParams">getMediaTypeParams</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#451"><abbr title="Request::getContentCharset">getContentCharset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#465"><abbr title="Request::getContentLength">getContentLength</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#397"><abbr title="Request::getBody">getBody</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#365"><abbr title="Request::headers">headers</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#297"><abbr title="Request::patch">patch</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#308"><abbr title="Request::delete">delete</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#322"><abbr title="Request::cookies">cookies</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#348"><abbr title="Request::isFormData">isFormData</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#83"><abbr title="Request::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#242"><abbr title="Set::anonymous function">anonymous function</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#47"><abbr title="Set::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#224"><abbr title="Environment::getIterator">getIterator</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#72"><abbr title="Set::set">set</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#98"><abbr title="Set::replace">replace</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#109"><abbr title="Set::all">all</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#214"><abbr title="Environment::offsetUnset">offsetUnset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#206"><abbr title="Environment::offsetSet">offsetSet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#88"><abbr title="Environment::mock">mock</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#116"><abbr title="Environment::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#186"><abbr title="Environment::offsetExists">offsetExists</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#194"><abbr title="Environment::offsetGet">offsetGet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#118"><abbr title="Set::keys">keys</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#137"><abbr title="Set::remove">remove</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#188"><abbr title="Set::offsetSet">offsetSet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#183"><abbr title="Set::offsetGet">offsetGet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#193"><abbr title="Set::offsetUnset">offsetUnset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#202"><abbr title="Set::count">count</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#211"><abbr title="Set::getIterator">getIterator</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#178"><abbr title="Set::offsetExists">offsetExists</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#169"><abbr title="Set::clear">clear</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#146"><abbr title="Set::__get">__get</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#151"><abbr title="Set::__set">__set</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#156"><abbr title="Set::__isset">__isset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#161"><abbr title="Set::__unset">__unset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Environment.php.html#73"><abbr title="Environment::getInstance">getInstance</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#474"><abbr title="Request::getHost">getHost</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware.php.html#75"><abbr title="Middleware::getApplication">getApplication</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware.php.html#62"><abbr title="Middleware::setApplication">setApplication</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware.php.html#89"><abbr title="Middleware::setNextMiddleware">setNextMiddleware</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware.php.html#102"><abbr title="Middleware::getNextMiddleware">getNextMiddleware</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#64"><abbr title="Flash::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#346"><abbr title="Log::interpolate">interpolate</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#335"><abbr title="Log::write">write</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#269"><abbr title="Log::fatal">fatal</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#257"><abbr title="Log::critical">critical</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#280"><abbr title="Log::alert">alert</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#291"><abbr title="Log::emergency">emergency</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#304"><abbr title="Log::log">log</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#77"><abbr title="Flash::call">call</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#97"><abbr title="Flash::now">now</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#178"><abbr title="Flash::offsetSet">offsetSet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#168"><abbr title="Flash::offsetGet">offsetGet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#186"><abbr title="Flash::offsetUnset">offsetUnset</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#195"><abbr title="Flash::getIterator">getIterator</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#205"><abbr title="Flash::count">count</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#158"><abbr title="Flash::offsetExists">offsetExists</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#150"><abbr title="Flash::getMessages">getMessages</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#110"><abbr title="Flash::set">set</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#120"><abbr title="Flash::keep">keep</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#130"><abbr title="Flash::save">save</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#138"><abbr title="Flash::loadMessages">loadMessages</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#493"><abbr title="Request::getHostWithPort">getHostWithPort</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#246"><abbr title="Log::error">error</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#579"><abbr title="Request::getIp">getIp</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#565"><abbr title="Request::getUrl">getUrl</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#595"><abbr title="Request::getReferrer">getReferrer</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#604"><abbr title="Request::getReferer">getReferer</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#613"><abbr title="Request::getUserAgent">getUserAgent</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#556"><abbr title="Request::getResourceUri">getResourceUri</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#547"><abbr title="Request::getPathInfo">getPathInfo</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#511"><abbr title="Request::getScheme">getScheme</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#502"><abbr title="Request::getPort">getPort</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#520"><abbr title="Request::getScriptName">getScriptName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#529"><abbr title="Request::getRootUri">getRootUri</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#538"><abbr title="Request::getPath">getPath</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#235"><abbr title="Log::warn">warn</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#106"><abbr title="Log::__construct">__construct</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#190"><abbr title="Log::debug">debug</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#179"><abbr title="Log::isEnabled">isEnabled</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#201"><abbr title="Log::info">info</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#212"><abbr title="Log::notice">notice</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#223"><abbr title="Log::warning">warning</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#117"><abbr title="Log::getEnabled">getEnabled</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#170"><abbr title="Log::getWriter">getWriter</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#126"><abbr title="Log::setEnabled">setEnabled</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#140"><abbr title="Log::setLevel">setLevel</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#161"><abbr title="Log::setWriter">setWriter</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Log.php.html#152"><abbr title="Log::getLevel">getLevel</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#222"><abbr title="Set::singleton">singleton</a></a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="Helper/Set.php.html#83"><abbr title="Set::get">get</a></a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Log.php.html#304"><abbr title="Log::log">log</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Slim.php.html#1343"><abbr title="Slim::call">call</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Environment.php.html#116"><abbr title="Environment::__construct">__construct</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Http/Request.php.html#250"><abbr title="Request::post">post</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Route.php.html#374"><abbr title="Route::matches">matches</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Slim.php.html#1291"><abbr title="Slim::run">run</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Slim.php.html#1193"><abbr title="Slim::applyHook">applyHook</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Router.php.html#104"><abbr title="Router::getMatchedRoutes">getMatchedRoutes</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Slim.php.html#805"><abbr title="Slim::etag">etag</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Slim.php.html#151"><abbr title="Slim::__construct">__construct</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Http/Request.php.html#217"><abbr title="Request::get">get</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Slim.php.html#867"><abbr title="Slim::setCookie">setCookie</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Middleware/MethodOverride.php.html#76"><abbr title="MethodOverride::call">call</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Route.php.html#162"><abbr title="Route::setCallable">setCallable</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Request.php.html#565"><abbr title="Request::getUrl">getUrl</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Slim.php.html#336"><abbr title="Slim::config">config</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Slim.php.html#891"><abbr title="Slim::getCookie">getCookie</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Slim.php.html#972"><abbr title="Slim::deleteCookie">deleteCookie</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Route.php.html#345"><abbr title="Route::setMiddleware">setMiddleware</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Router.php.html#84"><abbr title="Router::getCurrentRoute">getCurrentRoute</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Router.php.html#244"><abbr title="Router::getNamedRoutes">getNamedRoutes</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Request.php.html#166"><abbr title="Request::isAjax">isAjax</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Request.php.html#348"><abbr title="Request::isFormData">isFormData</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Slim.php.html#719"><abbr title="Slim::view">view</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Slim.php.html#110"><abbr title="Slim::autoload">autoload</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Slim.php.html#1246"><abbr title="Slim::clearHooks">clearHooks</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Slim.php.html#591"><abbr title="Slim::notFound">notFound</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Slim.php.html#777"><abbr title="Slim::lastModified">lastModified</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Route.php.html#462"><abbr title="Route::dispatch">dispatch</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Slim.php.html#385"><abbr title="Slim::configureMode">configureMode</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Router.php.html#184"><abbr title="Router::urlFor">urlFor</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Router.php.html#143"><abbr title="Router::processGroups">processGroups</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Slim.php.html#206"><abbr title="Slim::anonymous function">anonymous function</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Route.php.html#414"><abbr title="Route::matchesCallback">matchesCallback</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Environment.php.html#73"><abbr title="Environment::getInstance">getInstance</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Route.php.html#288"><abbr title="Route::appendHttpMethods">appendHttpMethods</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Request.php.html#579"><abbr title="Request::getIp">getIp</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Request.php.html#431"><abbr title="Request::getMediaTypeParams">getMediaTypeParams</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Slim.php.html#1178"><abbr title="Slim::hook">hook</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Route.php.html#301"><abbr title="Route::via">via</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Request.php.html#197"><abbr title="Request::params">params</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Slim.php.html#1228"><abbr title="Slim::getHooks">getHooks</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Request.php.html#474"><abbr title="Request::getHost">getHost</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Slim.php.html#1269"><abbr title="Slim::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#1405"><abbr title="Slim::handleErrors">handleErrors</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#751"><abbr title="Slim::render">render</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Environment.php.html#194"><abbr title="Environment::offsetGet">offsetGet</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Helper/Set.php.html#98"><abbr title="Set::replace">replace</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#1005"><abbr title="Slim::cleanBuffer">cleanBuffer</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#652"><abbr title="Slim::callErrorHandler">callErrorHandler</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#1129"><abbr title="Slim::flash">flash</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#1141"><abbr title="Slim::flashNow">flashNow</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#1161"><abbr title="Slim::flashData">flashData</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#1151"><abbr title="Slim::flashKeep">flashKeep</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#841"><abbr title="Slim::expires">expires</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#205"><abbr title="Router::addNamedRoute">addNamedRoute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Log.php.html#140"><abbr title="Log::setLevel">setLevel</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Log.php.html#346"><abbr title="Log::interpolate">interpolate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#120"><abbr title="Flash::keep">keep</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#138"><abbr title="Flash::loadMessages">loadMessages</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Log.php.html#126"><abbr title="Log::setEnabled">setEnabled</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#451"><abbr title="Request::getContentCharset">getContentCharset</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#322"><abbr title="Request::cookies">cookies</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#365"><abbr title="Request::headers">headers</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#415"><abbr title="Request::getMediaType">getMediaType</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#629"><abbr title="Slim::error">error</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Middleware/Flash.php.html#168"><abbr title="Flash::offsetGet">offsetGet</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#257"><abbr title="Slim::getInstance">getInstance</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#439"><abbr title="Slim::mapRoute">mapRoute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Slim.php.html#546"><abbr title="Slim::group">group</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#230"><abbr title="Router::getNamedRoute">getNamedRoute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#126"><abbr title="Router::map">map</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Route.php.html#168"><abbr title="Route::anonymous function">anonymous function</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Route.php.html#244"><abbr title="Route::getParam">getParam</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Route.php.html#259"><abbr title="Route::setParam">setParam</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Helper/Set.php.html#83"><abbr title="Set::get">get</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Helper/Set.php.html#222"><abbr title="Set::singleton">singleton</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.1.6</a> using <a href="http://php.net/" target="_top">PHP 5.6.9-0+deb8u1</a> and <a href="http://phpunit.de/">PHPUnit 4.7.5</a> at Mon Jun 22 19:07:56 UTC 2015.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([8,1,0,1,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([214,0,0,0,0,0,0,0,2,0,0,5], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,20,"<a href=\"Environment.php.html#51\">Environment<\/a>"],[23.255813953488,28,"<a href=\"Helper\/Set.php.html#35\">Set<\/a>"],[0,75,"<a href=\"Http\/Request.php.html#45\">Request<\/a>"],[0,34,"<a href=\"Log.php.html#61\">Log<\/a>"],[0,5,"<a href=\"Middleware.php.html#42\">Middleware<\/a>"],[0,17,"<a href=\"Middleware\/Flash.php.html#48\">Flash<\/a>"],[0,6,"<a href=\"Middleware\/MethodOverride.php.html#49\">MethodOverride<\/a>"],[0,53,"<a href=\"Route.php.html#41\">Route<\/a>"],[0,31,"<a href=\"Router.php.html#44\">Router<\/a>"],[0.25641025641026,151,"<a href=\"Slim.php.html#52\">Slim<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,3,"<a href=\"Environment.php.html#73\">Environment::getInstance<\/a>"],[0,1,"<a href=\"Environment.php.html#88\">Environment::mock<\/a>"],[0,10,"<a href=\"Environment.php.html#116\">Environment::__construct<\/a>"],[0,1,"<a href=\"Environment.php.html#186\">Environment::offsetExists<\/a>"],[0,2,"<a href=\"Environment.php.html#194\">Environment::offsetGet<\/a>"],[0,1,"<a href=\"Environment.php.html#206\">Environment::offsetSet<\/a>"],[0,1,"<a href=\"Environment.php.html#214\">Environment::offsetUnset<\/a>"],[0,1,"<a href=\"Environment.php.html#224\">Environment::getIterator<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#47\">Set::__construct<\/a>"],[100,1,"<a href=\"Helper\/Set.php.html#62\">Set::normalizeKey<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#72\">Set::set<\/a>"],[75,4,"<a href=\"Helper\/Set.php.html#83\">Set::get<\/a>"],[0,2,"<a href=\"Helper\/Set.php.html#98\">Set::replace<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#109\">Set::all<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#118\">Set::keys<\/a>"],[100,1,"<a href=\"Helper\/Set.php.html#128\">Set::has<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#137\">Set::remove<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#146\">Set::__get<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#151\">Set::__set<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#156\">Set::__isset<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#161\">Set::__unset<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#169\">Set::clear<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#178\">Set::offsetExists<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#183\">Set::offsetGet<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#188\">Set::offsetSet<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#193\">Set::offsetUnset<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#202\">Set::count<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#211\">Set::getIterator<\/a>"],[71.428571428571,2,"<a href=\"Helper\/Set.php.html#222\">Set::singleton<\/a>"],[0,1,"<a href=\"Helper\/Set.php.html#242\">Set::anonymous function<\/a>"],[100,1,"<a href=\"Helper\/Set.php.html#240\">Set::protect<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#83\">Request::__construct<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#94\">Request::getMethod<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#103\">Request::isGet<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#112\">Request::isPost<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#121\">Request::isPut<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#130\">Request::isPatch<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#139\">Request::isDelete<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#148\">Request::isHead<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#157\">Request::isOptions<\/a>"],[0,4,"<a href=\"Http\/Request.php.html#166\">Request::isAjax<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#181\">Request::isXhr<\/a>"],[0,3,"<a href=\"Http\/Request.php.html#197\">Request::params<\/a>"],[0,6,"<a href=\"Http\/Request.php.html#217\">Request::get<\/a>"],[0,9,"<a href=\"Http\/Request.php.html#250\">Request::post<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#286\">Request::put<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#297\">Request::patch<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#308\">Request::delete<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#322\">Request::cookies<\/a>"],[0,4,"<a href=\"Http\/Request.php.html#348\">Request::isFormData<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#365\">Request::headers<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#397\">Request::getBody<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#406\">Request::getContentType<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#415\">Request::getMediaType<\/a>"],[0,3,"<a href=\"Http\/Request.php.html#431\">Request::getMediaTypeParams<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#451\">Request::getContentCharset<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#465\">Request::getContentLength<\/a>"],[0,3,"<a href=\"Http\/Request.php.html#474\">Request::getHost<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#493\">Request::getHostWithPort<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#502\">Request::getPort<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#511\">Request::getScheme<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#520\">Request::getScriptName<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#529\">Request::getRootUri<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#538\">Request::getPath<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#547\">Request::getPathInfo<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#556\">Request::getResourceUri<\/a>"],[0,5,"<a href=\"Http\/Request.php.html#565\">Request::getUrl<\/a>"],[0,3,"<a href=\"Http\/Request.php.html#579\">Request::getIp<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#595\">Request::getReferrer<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#604\">Request::getReferer<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#613\">Request::getUserAgent<\/a>"],[0,1,"<a href=\"Log.php.html#106\">Log::__construct<\/a>"],[0,1,"<a href=\"Log.php.html#117\">Log::getEnabled<\/a>"],[0,2,"<a href=\"Log.php.html#126\">Log::setEnabled<\/a>"],[0,2,"<a href=\"Log.php.html#140\">Log::setLevel<\/a>"],[0,1,"<a href=\"Log.php.html#152\">Log::getLevel<\/a>"],[0,1,"<a href=\"Log.php.html#161\">Log::setWriter<\/a>"],[0,1,"<a href=\"Log.php.html#170\">Log::getWriter<\/a>"],[0,1,"<a href=\"Log.php.html#179\">Log::isEnabled<\/a>"],[0,1,"<a href=\"Log.php.html#190\">Log::debug<\/a>"],[0,1,"<a href=\"Log.php.html#201\">Log::info<\/a>"],[0,1,"<a href=\"Log.php.html#212\">Log::notice<\/a>"],[0,1,"<a href=\"Log.php.html#223\">Log::warning<\/a>"],[0,1,"<a href=\"Log.php.html#235\">Log::warn<\/a>"],[0,1,"<a href=\"Log.php.html#246\">Log::error<\/a>"],[0,1,"<a href=\"Log.php.html#257\">Log::critical<\/a>"],[0,1,"<a href=\"Log.php.html#269\">Log::fatal<\/a>"],[0,1,"<a href=\"Log.php.html#280\">Log::alert<\/a>"],[0,1,"<a href=\"Log.php.html#291\">Log::emergency<\/a>"],[0,11,"<a href=\"Log.php.html#304\">Log::log<\/a>"],[0,1,"<a href=\"Log.php.html#335\">Log::write<\/a>"],[0,2,"<a href=\"Log.php.html#346\">Log::interpolate<\/a>"],[0,1,"<a href=\"Middleware.php.html#62\">Middleware::setApplication<\/a>"],[0,1,"<a href=\"Middleware.php.html#75\">Middleware::getApplication<\/a>"],[0,1,"<a href=\"Middleware.php.html#89\">Middleware::setNextMiddleware<\/a>"],[0,1,"<a href=\"Middleware.php.html#102\">Middleware::getNextMiddleware<\/a>"],[100,1,"<a href=\"Middleware.php.html#113\">Middleware::call<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#64\">Flash::__construct<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#77\">Flash::call<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#97\">Flash::now<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#110\">Flash::set<\/a>"],[0,2,"<a href=\"Middleware\/Flash.php.html#120\">Flash::keep<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#130\">Flash::save<\/a>"],[0,2,"<a href=\"Middleware\/Flash.php.html#138\">Flash::loadMessages<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#150\">Flash::getMessages<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#158\">Flash::offsetExists<\/a>"],[0,2,"<a href=\"Middleware\/Flash.php.html#168\">Flash::offsetGet<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#178\">Flash::offsetSet<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#186\">Flash::offsetUnset<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#195\">Flash::getIterator<\/a>"],[0,1,"<a href=\"Middleware\/Flash.php.html#205\">Flash::count<\/a>"],[0,1,"<a href=\"Middleware\/MethodOverride.php.html#60\">MethodOverride::__construct<\/a>"],[0,5,"<a href=\"Middleware\/MethodOverride.php.html#76\">MethodOverride::call<\/a>"],[0,1,"<a href=\"Route.php.html#104\">Route::__construct<\/a>"],[0,1,"<a href=\"Route.php.html#116\">Route::setDefaultConditions<\/a>"],[0,1,"<a href=\"Route.php.html#125\">Route::getDefaultConditions<\/a>"],[0,1,"<a href=\"Route.php.html#134\">Route::getPattern<\/a>"],[0,1,"<a href=\"Route.php.html#143\">Route::setPattern<\/a>"],[0,1,"<a href=\"Route.php.html#152\">Route::getCallable<\/a>"],[0,5,"<a href=\"Route.php.html#162\">Route::setCallable<\/a>"],[0,2,"<a href=\"Route.php.html#168\">Route::anonymous function<\/a>"],[0,1,"<a href=\"Route.php.html#188\">Route::getConditions<\/a>"],[0,1,"<a href=\"Route.php.html#197\">Route::setConditions<\/a>"],[0,1,"<a href=\"Route.php.html#206\">Route::getName<\/a>"],[0,1,"<a href=\"Route.php.html#215\">Route::setName<\/a>"],[0,1,"<a href=\"Route.php.html#224\">Route::getParams<\/a>"],[0,1,"<a href=\"Route.php.html#233\">Route::setParams<\/a>"],[0,2,"<a href=\"Route.php.html#244\">Route::getParam<\/a>"],[0,2,"<a href=\"Route.php.html#259\">Route::setParam<\/a>"],[0,1,"<a href=\"Route.php.html#270\">Route::setHttpMethods<\/a>"],[0,1,"<a href=\"Route.php.html#280\">Route::getHttpMethods<\/a>"],[0,3,"<a href=\"Route.php.html#288\">Route::appendHttpMethods<\/a>"],[0,3,"<a href=\"Route.php.html#301\">Route::via<\/a>"],[0,1,"<a href=\"Route.php.html#317\">Route::supportsHttpMethod<\/a>"],[0,1,"<a href=\"Route.php.html#326\">Route::getMiddleware<\/a>"],[0,5,"<a href=\"Route.php.html#345\">Route::setMiddleware<\/a>"],[0,7,"<a href=\"Route.php.html#374\">Route::matches<\/a>"],[0,3,"<a href=\"Route.php.html#414\">Route::matchesCallback<\/a>"],[0,1,"<a href=\"Route.php.html#434\">Route::name<\/a>"],[0,1,"<a href=\"Route.php.html#446\">Route::conditions<\/a>"],[0,3,"<a href=\"Route.php.html#462\">Route::dispatch<\/a>"],[0,1,"<a href=\"Router.php.html#74\">Router::__construct<\/a>"],[0,4,"<a href=\"Router.php.html#84\">Router::getCurrentRoute<\/a>"],[0,7,"<a href=\"Router.php.html#104\">Router::getMatchedRoutes<\/a>"],[0,2,"<a href=\"Router.php.html#126\">Router::map<\/a>"],[0,3,"<a href=\"Router.php.html#143\">Router::processGroups<\/a>"],[0,1,"<a href=\"Router.php.html#163\">Router::pushGroup<\/a>"],[0,1,"<a href=\"Router.php.html#172\">Router::popGroup<\/a>"],[0,3,"<a href=\"Router.php.html#184\">Router::urlFor<\/a>"],[0,2,"<a href=\"Router.php.html#205\">Router::addNamedRoute<\/a>"],[0,1,"<a href=\"Router.php.html#218\">Router::hasNamedRoute<\/a>"],[0,2,"<a href=\"Router.php.html#230\">Router::getNamedRoute<\/a>"],[0,4,"<a href=\"Router.php.html#244\">Router::getNamedRoutes<\/a>"],[0,4,"<a href=\"Slim.php.html#110\">Slim::autoload<\/a>"],[0,1,"<a href=\"Slim.php.html#138\">Slim::registerAutoloader<\/a>"],[0,6,"<a href=\"Slim.php.html#151\">Slim::__construct<\/a>"],[0,3,"<a href=\"Slim.php.html#206\">Slim::anonymous function<\/a>"],[100,1,"<a href=\"Slim.php.html#232\">Slim::__get<\/a>"],[0,1,"<a href=\"Slim.php.html#237\">Slim::__set<\/a>"],[0,1,"<a href=\"Slim.php.html#242\">Slim::__isset<\/a>"],[0,1,"<a href=\"Slim.php.html#247\">Slim::__unset<\/a>"],[0,2,"<a href=\"Slim.php.html#257\">Slim::getInstance<\/a>"],[0,1,"<a href=\"Slim.php.html#266\">Slim::setName<\/a>"],[0,1,"<a href=\"Slim.php.html#276\">Slim::getName<\/a>"],[0,1,"<a href=\"Slim.php.html#285\">Slim::getDefaultSettings<\/a>"],[0,5,"<a href=\"Slim.php.html#336\">Slim::config<\/a>"],[0,1,"<a href=\"Slim.php.html#368\">Slim::getMode<\/a>"],[0,3,"<a href=\"Slim.php.html#385\">Slim::configureMode<\/a>"],[0,1,"<a href=\"Slim.php.html#400\">Slim::getLog<\/a>"],[0,2,"<a href=\"Slim.php.html#439\">Slim::mapRoute<\/a>"],[0,1,"<a href=\"Slim.php.html#457\">Slim::map<\/a>"],[0,1,"<a href=\"Slim.php.html#469\">Slim::get<\/a>"],[0,1,"<a href=\"Slim.php.html#481\">Slim::post<\/a>"],[0,1,"<a href=\"Slim.php.html#493\">Slim::put<\/a>"],[0,1,"<a href=\"Slim.php.html#505\">Slim::patch<\/a>"],[0,1,"<a href=\"Slim.php.html#517\">Slim::delete<\/a>"],[0,1,"<a href=\"Slim.php.html#529\">Slim::options<\/a>"],[0,2,"<a href=\"Slim.php.html#546\">Slim::group<\/a>"],[0,1,"<a href=\"Slim.php.html#563\">Slim::any<\/a>"],[0,3,"<a href=\"Slim.php.html#591\">Slim::notFound<\/a>"],[0,2,"<a href=\"Slim.php.html#629\">Slim::error<\/a>"],[0,2,"<a href=\"Slim.php.html#652\">Slim::callErrorHandler<\/a>"],[0,1,"<a href=\"Slim.php.html#672\">Slim::environment<\/a>"],[0,1,"<a href=\"Slim.php.html#681\">Slim::request<\/a>"],[0,1,"<a href=\"Slim.php.html#690\">Slim::response<\/a>"],[0,1,"<a href=\"Slim.php.html#699\">Slim::router<\/a>"],[0,4,"<a href=\"Slim.php.html#719\">Slim::view<\/a>"],[0,2,"<a href=\"Slim.php.html#751\">Slim::render<\/a>"],[0,3,"<a href=\"Slim.php.html#777\">Slim::lastModified<\/a>"],[0,6,"<a href=\"Slim.php.html#805\">Slim::etag<\/a>"],[0,2,"<a href=\"Slim.php.html#841\">Slim::expires<\/a>"],[0,6,"<a href=\"Slim.php.html#867\">Slim::setCookie<\/a>"],[0,5,"<a href=\"Slim.php.html#891\">Slim::getCookie<\/a>"],[0,1,"<a href=\"Slim.php.html#933\">Slim::setEncryptedCookie<\/a>"],[0,1,"<a href=\"Slim.php.html#951\">Slim::getEncryptedCookie<\/a>"],[0,5,"<a href=\"Slim.php.html#972\">Slim::deleteCookie<\/a>"],[0,1,"<a href=\"Slim.php.html#997\">Slim::root<\/a>"],[0,2,"<a href=\"Slim.php.html#1005\">Slim::cleanBuffer<\/a>"],[0,1,"<a href=\"Slim.php.html#1020\">Slim::stop<\/a>"],[0,1,"<a href=\"Slim.php.html#1037\">Slim::halt<\/a>"],[0,1,"<a href=\"Slim.php.html#1054\">Slim::pass<\/a>"],[0,1,"<a href=\"Slim.php.html#1064\">Slim::contentType<\/a>"],[0,1,"<a href=\"Slim.php.html#1073\">Slim::status<\/a>"],[0,1,"<a href=\"Slim.php.html#1085\">Slim::urlFor<\/a>"],[0,1,"<a href=\"Slim.php.html#1102\">Slim::redirect<\/a>"],[0,1,"<a href=\"Slim.php.html#1116\">Slim::redirectTo<\/a>"],[0,2,"<a href=\"Slim.php.html#1129\">Slim::flash<\/a>"],[0,2,"<a href=\"Slim.php.html#1141\">Slim::flashNow<\/a>"],[0,2,"<a href=\"Slim.php.html#1151\">Slim::flashKeep<\/a>"],[0,2,"<a href=\"Slim.php.html#1161\">Slim::flashData<\/a>"],[0,3,"<a href=\"Slim.php.html#1178\">Slim::hook<\/a>"],[0,7,"<a href=\"Slim.php.html#1193\">Slim::applyHook<\/a>"],[0,3,"<a href=\"Slim.php.html#1228\">Slim::getHooks<\/a>"],[0,4,"<a href=\"Slim.php.html#1246\">Slim::clearHooks<\/a>"],[0,2,"<a href=\"Slim.php.html#1269\">Slim::add<\/a>"],[0,7,"<a href=\"Slim.php.html#1291\">Slim::run<\/a>"],[0,10,"<a href=\"Slim.php.html#1343\">Slim::call<\/a>"],[0,2,"<a href=\"Slim.php.html#1405\">Slim::handleErrors<\/a>"],[0,1,"<a href=\"Slim.php.html#1423\">Slim::generateTemplateMarkup<\/a>"],[0,1,"<a href=\"Slim.php.html#1431\">Slim::defaultNotFound<\/a>"],[0,1,"<a href=\"Slim.php.html#1439\">Slim::defaultError<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
