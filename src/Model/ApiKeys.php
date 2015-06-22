@@ -35,12 +35,12 @@ class ApiKeys
 				 *
 				 * @return bool|int|string
 				 */
-    public function addAPIKey($apiKey, $vCode, $userID = null)
+    public function updateAPIKey($apiKey, $vCode, $userID = null)
 				{
-								return $this->db->execute('INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID)', array(':keyID'  => $apiKey,
-								                                                                                                               ':vCode'  => $vCode,
-								                                                                                                               ':userID' => $userID,
-									));
+								return (bool) $this->db->execute('INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID) ON DUPLICATE KEY UPDATE keyID = :keyID, vCode = :vCode, userID = :userID', array(':keyID'  => $apiKey,
+																																																																																																																																																																																																':vCode'  => $vCode,
+																																																																																																																																																																																																':userID' => $userID,
+								));
 				}
 
 				/**
@@ -53,20 +53,6 @@ class ApiKeys
 								return $this->db->queryRow('SELECT * FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
 				}
 
-				/**
-				 * @param $apiKey
-				 * @param $vCode
-				 * @param $userID
-				 *
-				 * @return bool|int|string
-				 */
-				public function updateAPIKey($apiKey, $vCode, $userID)
-				{
-								return $this->db->execute('INSERT INTO apiKeys (keyID, vCode, userID) VALUES (:keyID, :vCode, :userID) ON DUPLICATE UPDATE keyID = :keyID, vCode = :vCode, userID = :userID', array(':keyID'  => $apiKey,
-								                                                                                                                                                                                    ':vCode'  => $vCode,
-								                                                                                                                                                                                    ':userID' => $userID,
-									));
-				}
 
 				/**
 				 * @param $apiKey
@@ -75,6 +61,6 @@ class ApiKeys
 				 */
 				public function deleteAPIKey($apiKey)
 				{
-								return $this->db->execute('DELETE FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
+								return (bool) $this->db->execute('DELETE FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
 				}
 }

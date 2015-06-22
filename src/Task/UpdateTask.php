@@ -39,8 +39,18 @@ class UpdateTask extends Command
 												$composer = $app->cURL->getData("https://getcomposer.org/composer.phar", 0);
 												file_put_contents(__DIR__ . "/../../composer.phar", $composer);
 								}
-								exec("php " . __DIR__ . "/../../composer.phar update -o");
 								$output->writeln("Updating composer");
+								exec("php " . __DIR__ . "/../../composer.phar update -o");
+
+								// Check if phpunit.phar is in the dir
+								if(!file_exists(__DIR__ . "/../../phpunit.phar"))
+								{
+												$output->writeln("PHPUnit doesn't exist, downloading it");
+												$composer = $app->cURL->getData("https://phar.phpunit.de/phpunit.phar", 0);
+												file_put_contents(__DIR__ . "/../../phpunit.phar", $composer);
+								}
+								$output->writeln("Running unit tests");
+								var_dump(exec("php " . __DIR__ . "/../../phpunit.phar --bootstrap=" . __DIR__ . "/../../tests/init.php " . __DIR__ . "/../../tests/*"));
 
 								// Update RenaApp
 								$load = array(

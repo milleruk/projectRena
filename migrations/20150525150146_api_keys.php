@@ -27,7 +27,7 @@ class ApiKeys extends AbstractMigration
 									->addColumn('accessMask', 'integer', array('limit' => 11))
 									->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
 									->addColumn('lastValidation', 'datetime', array('default' => '0000-00-00 00:00:00'))
-									->addIndex(array('keyID'))
+									->addIndex(array('keyID'), array("unique" => true))
 									->addIndex(array('keyID', 'vCode'))
 									->addIndex(array('keyID', 'dateAdded'))
 									->save();
