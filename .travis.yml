@@ -12,6 +12,7 @@ before_script:
   - ls -alh
   - cp tests/config.php config/config.php
   - cp tests/phinx.yml .
+  - phpenv config-add tests/phpsettings.ini
   - php Rena migrate
   - php Rena status
 
