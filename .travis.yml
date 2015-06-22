@@ -4,5 +4,9 @@ php:
   - 5.6
 
 script:
-  - php phpunit.phar --bootstrap tests/init.php tests/*
-  - php tests/coverage-checker.php clover.xml 75
+  - phpunit --coverage-clover=coverage.clover --bootstrap tests/init.php tests/*
+  - php tests/coverage-checker.php coverage.clover 75
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
