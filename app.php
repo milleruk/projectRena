@@ -29,7 +29,7 @@ if(file_exists(__DIR__ . "/config/config.php"))
 $app = new \ProjectRena\RenaApp($config["slim"]);
 
 // Session
-$session = new SessionHandler($app);
+$session = new SessionHandler();
 session_set_save_handler($session, true);
 session_cache_limiter(false);
 session_start();
