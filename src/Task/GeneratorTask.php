@@ -20,7 +20,7 @@ use gossi\codegen\model\PhpParameter;
  */
 class GeneratorTask extends Command
 {
-				private $description;
+				private $descr;
 				/**
 				 *
 				 */
@@ -45,7 +45,7 @@ class GeneratorTask extends Command
 				protected function execute(InputInterface $input, OutputInterface $output)
 				{
 								$name = prompt("Name");
-								$this->description["description"] = prompt("Description");
+								$this->descr["description"] = prompt("Description");
 
 								if(!$name)
 								{
@@ -91,7 +91,7 @@ class GeneratorTask extends Command
 								// Create controller
 								$class = new PhpClass();
 								$class->setQualifiedName("ProjectRena\\Controller\\{$name}Controller")
-												->setDescription($this->description)
+												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("__construct")
 																->addParameter(PhpParameter::create("app")
 																				->setType("RenaApp")
@@ -164,7 +164,7 @@ EOF;
 								// Create model
 								$class = new PhpClass();
 								$class->setQualifiedName("ProjectRena\\Model\\{$name}")
-												->setDescription($this->description)
+												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("__construct")
 																->addParameter(PhpParameter::create("app")
 																				->setType("RenaApp")
@@ -225,7 +225,7 @@ EOF;
 								// Create lib
 								$class = new PhpClass();
 								$class->setQualifiedName("ProjectRena\\Lib\\{$name}")
-												->setDescription($this->description)
+												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("__construct")
 																->addParameter(PhpParameter::create("app")
 																				->setType("RenaApp")
@@ -286,10 +286,10 @@ EOF;
 								$class = new PhpClass();
 								$class->setQualifiedName("ProjectRena\\Task\\{$name}Task")
 												->setParentClassName("Command")
-												->setDescription($this->description)
+												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("configure")
 																->setVisibility("protected")
-																->setBody("\$this->setName('$name')->setDescription('" . $this->description["description"] . "');")
+																->setBody("\$this->setName('$name')->setDescription('" . $this->descr["description"] . "');")
 												)
 												->setMethod(PhpMethod::create("execute")
 																->setVisibility("protected")
@@ -322,7 +322,7 @@ EOF;
 
 								$class = new PhpClass();
 								$class->setQualifiedName("ProjectRena\\Task\\Cronjobs\\{$name}Task")
-												->setDescription($this->description)
+												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("getRunTimes")
 																->setVisibility("public")
 																->setStatic(true)
@@ -364,7 +364,7 @@ EOF;
 
 								$class = new PhpClass();
 								$class->setQualifiedName("ProjectRena\\Task\\Resque\\{$name}Task")
-												->setDescription($this->description)
+												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("setUp")
 																->setVisibility("public")
 																->setDescription("Sets up the task (Setup \$this->crap and such here)")
