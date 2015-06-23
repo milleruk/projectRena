@@ -38,6 +38,3 @@ if(file_exists(__DIR__ . "/../src/Loader.php"))
 {
     throw new Exception("Loader.php could not be found");
 }
-
-require_once("../config/config.php");
-require_once("../config/routes.php");
