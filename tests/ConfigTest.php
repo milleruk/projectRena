@@ -13,4 +13,16 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
     {
         $this->app = \ProjectRena\RenaApp::getInstance();
     }
+
+    public function testSet()
+    {
+        $set = $this->app->Config->set("test", "test");
+        $this->assertEquals(1, $set);
+    }
+    public function testGet()
+    {
+        $get = $this->app->Config->get("test");
+        $this->assertEquals("test", $get);
+    }
+
 }
