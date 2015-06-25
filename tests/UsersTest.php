@@ -46,7 +46,7 @@ class UsersTest extends \PHPUnit_Framework_TestCase
 
     public function testGetUserByName()
     {
-        $data = $this->app->Users->getUserByID("test");
+        $data = $this->app->Users->getUserByName("test");
         unset($data["id"]);
         unset($data["created"]);
         unset($data["updated"]);

@@ -50,7 +50,8 @@ class UpdateTask extends Command
 												file_put_contents(__DIR__ . "/../../phpunit.phar", $composer);
 								}
 								$output->writeln("Running unit tests");
-								exec("php " . __DIR__ . "/../../phpunit.phar --coverage-html=/storage/www/projectRenaDocs/tests/ --bootstrap=" . __DIR__ . "/../../tests/init.php " . __DIR__ . "/../../tests/*");
+								chdir(__DIR__ . "/../../tests");
+								exec("php ../phpunit.phar --coverage-html=/storage/www/projectRenaDocs/tests/ --bootstrap=init.php .");
 								chdir("/storage/www/projectRenaDocs/");
 								exec("git add *");
 								exec("git commit -m 'Update tests'");
