@@ -59,7 +59,7 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;5</div></td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;4</div></td>
       <td class="danger small"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></td>
       <td class="danger big">       <div class="progress">
          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
@@ -68,7 +68,7 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;16</div></td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;15</div></td>
      </tr>
 
      <tr>
@@ -88,8 +88,8 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;5</div></td>
-      <td class="danger small">42</td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;4</div></td>
+      <td class="danger small">30</td>
       <td class="danger big">       <div class="progress">
          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
            <span class="sr-only">0.00% covered (danger)</span>
@@ -97,7 +97,7 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;16</div></td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;15</div></td>
      </tr>
 
      <tr>
@@ -164,28 +164,7 @@
      </tr>
 
      <tr>
-      <td class="danger" colspan="4">&nbsp;<a href="#95"><abbr title="updateGroup($userID, $oldGroupID, $newGroupID)">updateGroup</abbr></a></td>
-      <td class="danger big">       <div class="progress">
-         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
-           <span class="sr-only">0.00% covered (danger)</span>
-         </div>
-       </div>
-</td>
-      <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;1</div></td>
-      <td class="danger small">2</td>
-      <td class="danger big">       <div class="progress">
-         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
-           <span class="sr-only">0.00% covered (danger)</span>
-         </div>
-       </div>
-</td>
-      <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;1</div></td>
-     </tr>
-
-     <tr>
-      <td class="danger" colspan="4">&nbsp;<a href="#106"><abbr title="deleteGroup($userID, $groupID)">deleteGroup</abbr></a></td>
+      <td class="danger" colspan="4">&nbsp;<a href="#94"><abbr title="deleteGroup($userID, $groupID)">deleteGroup</abbr></a></td>
       <td class="danger big">       <div class="progress">
          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
            <span class="sr-only">0.00% covered (danger)</span>
@@ -294,32 +273,20 @@
      <tr><td><div align="right"><a name="82"></a><a href="#82">82</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
      <tr><td><div align="right"><a name="83"></a><a href="#83">83</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">setGroup</span><span class="keyword">(</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">$groupID</span><span class="keyword">)</span></td></tr>
      <tr><td><div align="right"><a name="84"></a><a href="#84">84</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="85"></a><a href="#85">85</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">db</span><span class="default">-&gt;</span><span class="default">execute</span><span class="keyword">(</span><span class="default">&quot;INSERT&nbsp;INTO&nbsp;usersGroups&nbsp;(userID,&nbsp;groupID)&nbsp;VALUES&nbsp;(:userID,&nbsp;:groupID)&quot;</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="keyword">array</span><span class="keyword">(</span><span class="default">&quot;:userID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">&quot;:groupID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$groupID</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="85"></a><a href="#85">85</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">db</span><span class="default">-&gt;</span><span class="default">execute</span><span class="keyword">(</span><span class="default">&quot;INSERT&nbsp;INTO&nbsp;usersGroups&nbsp;(userID,&nbsp;groupID)&nbsp;VALUES&nbsp;(:userID,&nbsp;:groupID)&nbsp;ON&nbsp;DUPLICATE&nbsp;KEY&nbsp;UPDATE&nbsp;groupID&nbsp;=&nbsp;:groupID&quot;</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="keyword">array</span><span class="keyword">(</span><span class="default">&quot;:userID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">&quot;:groupID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$groupID</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
      <tr class="warning"><td><div align="right"><a name="86"></a><a href="#86">86</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
      <tr><td><div align="right"><a name="87"></a><a href="#87">87</a></div></td><td class="codeLine"></td></tr>
      <tr><td><div align="right"><a name="88"></a><a href="#88">88</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/**</span></td></tr>
      <tr><td><div align="right"><a name="89"></a><a href="#89">89</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;$userID</span></td></tr>
-     <tr><td><div align="right"><a name="90"></a><a href="#90">90</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;$oldGroupID</span></td></tr>
-     <tr><td><div align="right"><a name="91"></a><a href="#91">91</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;$newGroupID</span></td></tr>
-     <tr><td><div align="right"><a name="92"></a><a href="#92">92</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></td></tr>
-     <tr><td><div align="right"><a name="93"></a><a href="#93">93</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;bool|int|string</span></td></tr>
-     <tr><td><div align="right"><a name="94"></a><a href="#94">94</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
-     <tr><td><div align="right"><a name="95"></a><a href="#95">95</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">updateGroup</span><span class="keyword">(</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">$oldGroupID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">$newGroupID</span><span class="keyword">)</span></td></tr>
-     <tr><td><div align="right"><a name="96"></a><a href="#96">96</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="97"></a><a href="#97">97</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">db</span><span class="default">-&gt;</span><span class="default">execute</span><span class="keyword">(</span><span class="default">&quot;UPDATE&nbsp;usersGroups&nbsp;SET&nbsp;groupID&nbsp;=&nbsp;:newGroupID&nbsp;WHERE&nbsp;userID&nbsp;=&nbsp;:userID&nbsp;AND&nbsp;groupID&nbsp;=&nbsp;:oldGroupID&quot;</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="keyword">array</span><span class="keyword">(</span><span class="default">&quot;:userID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">&quot;:oldGroupID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$oldGroupID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">&quot;:newGroupID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$newGroupID</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr class="warning"><td><div align="right"><a name="98"></a><a href="#98">98</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="99"></a><a href="#99">99</a></div></td><td class="codeLine"></td></tr>
-     <tr><td><div align="right"><a name="100"></a><a href="#100">100</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/**</span></td></tr>
-     <tr><td><div align="right"><a name="101"></a><a href="#101">101</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;$userID</span></td></tr>
-     <tr><td><div align="right"><a name="102"></a><a href="#102">102</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;$groupID</span></td></tr>
-     <tr><td><div align="right"><a name="103"></a><a href="#103">103</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></td></tr>
-     <tr><td><div align="right"><a name="104"></a><a href="#104">104</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;bool|int|string</span></td></tr>
-     <tr><td><div align="right"><a name="105"></a><a href="#105">105</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
-     <tr><td><div align="right"><a name="106"></a><a href="#106">106</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">deleteGroup</span><span class="keyword">(</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">$groupID</span><span class="keyword">)</span></td></tr>
-     <tr><td><div align="right"><a name="107"></a><a href="#107">107</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="108"></a><a href="#108">108</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">db</span><span class="default">-&gt;</span><span class="default">execute</span><span class="keyword">(</span><span class="default">&quot;DELETE&nbsp;FROM&nbsp;usersGroups&nbsp;WHERE&nbsp;userID&nbsp;=&nbsp;:userID&nbsp;AND&nbsp;groupID&nbsp;=&nbsp;:groupID&quot;</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="keyword">array</span><span class="keyword">(</span><span class="default">&quot;:userID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">&quot;:groupID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$groupID</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr class="warning"><td><div align="right"><a name="109"></a><a href="#109">109</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="110"></a><a href="#110">110</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
+     <tr><td><div align="right"><a name="90"></a><a href="#90">90</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;$groupID</span></td></tr>
+     <tr><td><div align="right"><a name="91"></a><a href="#91">91</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></td></tr>
+     <tr><td><div align="right"><a name="92"></a><a href="#92">92</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;bool|int|string</span></td></tr>
+     <tr><td><div align="right"><a name="93"></a><a href="#93">93</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
+     <tr><td><div align="right"><a name="94"></a><a href="#94">94</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">deleteGroup</span><span class="keyword">(</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">$groupID</span><span class="keyword">)</span></td></tr>
+     <tr><td><div align="right"><a name="95"></a><a href="#95">95</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="96"></a><a href="#96">96</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">db</span><span class="default">-&gt;</span><span class="default">execute</span><span class="keyword">(</span><span class="default">&quot;DELETE&nbsp;FROM&nbsp;usersGroups&nbsp;WHERE&nbsp;userID&nbsp;=&nbsp;:userID&nbsp;AND&nbsp;groupID&nbsp;=&nbsp;:groupID&quot;</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="keyword">array</span><span class="keyword">(</span><span class="default">&quot;:userID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$userID</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">&quot;:groupID&quot;</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$groupID</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
+     <tr class="warning"><td><div align="right"><a name="97"></a><a href="#97">97</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
+     <tr><td><div align="right"><a name="98"></a><a href="#98">98</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
 
     </tbody>
    </table>
@@ -332,7 +299,7 @@
      <span class="warning"><strong>Dead Code</strong></span>
     </p>
     <p>
-     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.1.6</a> using <a href="http://php.net/" target="_top">PHP 5.6.9-0+deb8u1</a> and <a href="http://phpunit.de/">PHPUnit 4.7.5</a> at Thu Jun 25 18:28:02 UTC 2015.</small>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.1.6</a> using <a href="http://php.net/" target="_top">PHP 5.6.9-0+deb8u1</a> and <a href="http://phpunit.de/">PHPUnit 4.7.5</a> at Thu Jun 25 19:09:03 UTC 2015.</small>
     </p>
     <a title="Back to the top" id="toplink" href="#"><span class="glyphicon glyphicon-arrow-up"></span></a>
    </footer>
