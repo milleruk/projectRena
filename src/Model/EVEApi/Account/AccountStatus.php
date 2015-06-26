@@ -37,7 +37,7 @@ class AccountStatus
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Account';
             $result = $pheal->accountStatus()->toArray();
             return $result;

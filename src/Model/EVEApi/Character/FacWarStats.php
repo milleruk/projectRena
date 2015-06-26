@@ -38,7 +38,7 @@ class FacWarStats
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->FacWarStats(array('characterID' => $characterID))->toArray();
 

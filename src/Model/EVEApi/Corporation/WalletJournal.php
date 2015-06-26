@@ -41,7 +41,7 @@ class WalletJournal
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $requestArray = array('characterID' => $characterID, 'accountKey' => $accountKey);
             if(isset($fromID))

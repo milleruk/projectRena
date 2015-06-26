@@ -38,7 +38,7 @@ class IndustryJobs
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->IndustryJobs(array('characterID' => $characterID))->toArray();
 

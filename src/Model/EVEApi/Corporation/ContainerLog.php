@@ -38,7 +38,7 @@ class ContainerLog
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->ContainerLog(array('characterID' => $characterID))->toArray();
             return $result;

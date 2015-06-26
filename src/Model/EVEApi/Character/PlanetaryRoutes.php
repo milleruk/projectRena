@@ -39,7 +39,7 @@ class PlanetaryRoutes
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->PlanetaryRoutes(array('characterID' => $characterID, 'planetID' => $planetID))->toArray();
 

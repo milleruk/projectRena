@@ -37,7 +37,7 @@ class APIKeyInfo
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Account';
             $result = $pheal->APIKeyInfo()->toArray();
             return $result;

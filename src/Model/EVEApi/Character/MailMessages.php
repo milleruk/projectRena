@@ -38,7 +38,7 @@ class MailMessages
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->MailMessages(array('characterID' => $characterID))->toArray();
 

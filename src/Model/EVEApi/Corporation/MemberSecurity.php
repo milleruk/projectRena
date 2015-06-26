@@ -38,7 +38,7 @@ class MemberSecurity
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->MemberSecurity(array('characterID' => $characterID))->toArray();
             return $result;

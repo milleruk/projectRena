@@ -38,7 +38,7 @@ class Blueprints
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->Blueprints(array('characterID' => $characterID))->toArray();
             return $result;

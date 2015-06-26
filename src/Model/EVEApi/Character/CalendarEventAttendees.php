@@ -39,7 +39,7 @@ class CalendarEventAttendees
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->CalendarEventAttendees(array(
                 'characterID' => $characterID,

@@ -38,7 +38,7 @@ class Titles
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->Titles(array('characterID' => $characterID))->toArray();
             return $result;

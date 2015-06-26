@@ -34,11 +34,11 @@ class CorporationSheet
      *
      * @return mixed
      */
-    public function getData($apiKey, $vCode, $corporationID = null)
+    public function getData($apiKey = null, $vCode = null, $corporationID = null)
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal();
             $pheal->scope = 'Corp';
             $requestArray = array();
             if(isset($corporationID))
@@ -49,7 +49,7 @@ class CorporationSheet
             return $result;
         } catch(\Exception $exception)
         {
-            $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
+            $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }
 }

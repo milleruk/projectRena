@@ -40,7 +40,7 @@ class KillMails
     {
         try
         {
-            $pheal = $this->app->Pheal($apiKey, $vCode);
+            $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
 
             $requestArray = array('characterID' => $characterID);
