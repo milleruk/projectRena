@@ -62,7 +62,7 @@ class Pheal
 								$exceptionCode = $exception->getCode();
 								$exceptionMessage = $exception->getMessage();
 
-								switch($code)
+								switch($exceptionCode)
 								{
 												case 28: // Timeouts
 												case 904: // temp ban from CCPs api server
@@ -132,7 +132,7 @@ class Pheal
 
 												case 0: // API Date could not be read / parsed, original exception (Something is wrong with the XML and it couldn't be parsed)
 												default: // try again in 5 minutes
-																$this->app->Logging->log("ERROR", "$keyID - Unhandled error - Code $code - $message");
+																$this->app->Logging->log("ERROR", "$keyID - Unhandled error - Code $exceptionCode - $exceptionMessage");
 												break;
 								}
 

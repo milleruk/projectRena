@@ -40,6 +40,8 @@ class updateCharacter
 								$this->app->characters->updateCharacterDetails($data["result"]["characterID"], $data["result"]["corporationID"], (isset($data["result"]["allianceID"]) ? $data["result"]["allianceID"] : 0), $data["result"]["characterName"], json_encode($data["result"]["employmentHistory"]));
 								// Update the last updated
 								$this->app->characters->setLastUpdated($characterID, date("Y-m-d H:i:s"));
+								// Insert the corporation to the corporationtable
+								$this->app->corporations->insertCorporationID($data["result"]["corporationID"]);
 				}
 
 				/**

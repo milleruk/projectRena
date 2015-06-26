@@ -5,7 +5,7 @@ namespace ProjectRena\Task\Cronjobs;
 use ProjectRena\Lib\Db;
 use ProjectRena\RenaApp;
 
-class updateCharactersCronjob
+class updateCorporationsCronjob
 {
     public static function getRunTimes()
     {
@@ -15,16 +15,16 @@ class updateCharactersCronjob
     public static function execute($pid, $md5, Db $db, RenaApp $app)
     {
         // Select 1000 characters which lastValidation was over 7 days ago, then update them
-        $characters = $db->query("SELECT * FROM characters WHERE lastUpdated < date_sub(now(), interval 7 day) AND characterID != 0 ORDER BY lastUpdated LIMIT 1000", array(), 0);
-        if($characters)
+        $corporations = $db->query("SELECT corporationID FROM corporations WHERE lastUpdated < date_sub(now(), interval 7 day) AND corporationID != 0 ORDER BY lastUpdated LIMIT 1000", array(), 0);
+        if($corporations)
         {
-            foreach($characters as $character)
+            foreach($corporations as $corporation)
             {
                 // Get the characterID to update
-                $characterID = $character["characterID"];
+                $corporationID = $corporation["corporationID"];
 
-                // Throw the ID after Resque which will update the characters information
-                \Resque::enqueue("default", "\\ProjectRena\\Task\\Resque\\updateCharacter", array("characterID" => $characterID));
+                // Throw the ID after Resque which will update the corporations information
+                \Resque::enqueue("default", "\\ProjectRena\\Task\\Resque\\updateCorporation", array("corporationID" => $corporationID));
             }
         }
         exit();
