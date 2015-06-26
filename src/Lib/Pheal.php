@@ -57,6 +57,9 @@ class Pheal
 												throw new \Exception("Error, CCP has 904ed us till " . $this->app->Storage->get("Api904"));
 				}
 
+				/**
+				 * @param \Exception $exception
+				 */
 				public function handleApiException($keyID, $characterID, $exception)
 				{
 								$exceptionCode = $exception->getCode();
