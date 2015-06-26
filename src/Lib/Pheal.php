@@ -29,7 +29,7 @@ class Pheal
 								Config::getInstance()->cache = new \Pheal\Cache\RedisStorage(array(
 									"host"       => $app->baseConfig->getConfig("host", "redis", "127.0.0.1"),
 									"port"       => $app->baseConfig->getConfig("port", "redis", 6379),
-									"persistent" => false,
+									"persistent" => true,
 									"auth"       => null,
 									"prefix"     => "Pheal",
 								));
@@ -41,9 +41,7 @@ class Pheal
 				/**
 				 *
 				 */
-				function RunAsNew()
-				{
-				}
+				function RunAsNew() {}
 
 				/**
 				 * @return \Pheal\Pheal
