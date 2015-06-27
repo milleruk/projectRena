@@ -321,7 +321,7 @@ EOF;
 								}
 
 								$class = new PhpClass();
-								$class->setQualifiedName("ProjectRena\\Task\\Cronjobs\\{$name}Task")
+								$class->setQualifiedName("ProjectRena\\Task\\Cronjobs\\{$name}Cronjob")
 												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("getRunTimes")
 																->setVisibility("public")
@@ -363,7 +363,7 @@ EOF;
 								}
 
 								$class = new PhpClass();
-								$class->setQualifiedName("ProjectRena\\Task\\Resque\\{$name}Task")
+								$class->setQualifiedName("ProjectRena\\Task\\Resque\\{$name}")
 												->setDescription($this->descr)
 												->setMethod(PhpMethod::create("setUp")
 																->setVisibility("public")
