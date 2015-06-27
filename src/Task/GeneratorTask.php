@@ -335,7 +335,6 @@ EOF;
 																->setDescription("Executes the cronjob task")
 																->addParameter(PhpParameter::create("pid"))
 																->addParameter(PhpParameter::create("md5"))
-																->addParameter(PhpParameter::create("db"))
 																->addParameter(PhpParameter::create("app")->setType("RenaApp"))
 																->setBody("exit(); // Keep this at the bottom, to make sure the fork exits")
 												)
