@@ -12,10 +12,10 @@ class updateCharactersCronjob
         return 60; // Runs every 60 seconds
     }
 
-    public static function execute($pid, $md5, Db $db, RenaApp $app)
+    public static function execute($pid, $md5, RenaApp $app)
     {
         // Select 1000 characters which lastValidation was over 7 days ago, then update them
-        $characters = $db->query("SELECT characterID FROM characters WHERE lastUpdated < date_sub(now(), interval 7 day) AND characterID != 0 ORDER BY lastUpdated LIMIT 1000", array(), 0);
+        $characters = $app->Db->query("SELECT characterID FROM characters WHERE lastUpdated < date_sub(now(), interval 7 day) AND characterID != 0 ORDER BY lastUpdated LIMIT 1000", array(), 0);
         if($characters)
         {
             foreach($characters as $character)
