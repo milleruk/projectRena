@@ -49,10 +49,10 @@ class Pheal
 					* @return \Pheal\Pheal
 					* @throws \Exception
 					*/
-				public function Pheal()
+				public function Pheal($apiKey = null, $vCode = null)
 				{
 								if($this->app->Storage->get("Api904") <= date("Y-m-d H:i:s"))
-												return new \Pheal\Pheal();
+												return new \Pheal\Pheal($apiKey, $vCode);
 								else
 												throw new \Exception("Error, CCP has 904ed us till " . $this->app->Storage->get("Api904"));
 				}
