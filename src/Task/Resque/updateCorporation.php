@@ -27,6 +27,7 @@ class updateCorporation
 				 */
 				public function perform()
 				{
+								$this->app->StatsD->increment("corporationsUpdated");
 								$corporationID = $this->args["corporationID"];
 
 								// Get the character affiliate data
