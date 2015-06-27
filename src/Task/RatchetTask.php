@@ -21,7 +21,7 @@ class RatchetTask extends Command
      */
     protected function configure()
     {
-        $this->setName('ratchet')->setDescription('Starts up a ratchet server');
+        $this->setName('ratchet:run')->setDescription('Starts up a ratchet server');
     }
 
     /**
