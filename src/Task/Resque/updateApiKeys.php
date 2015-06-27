@@ -32,7 +32,7 @@ class updateApiKeys
         // Insert the key data to the apiKeyCharacters table
         foreach($data["result"]["key"]["characters"] as $c)
         {
-            $this->app->Db->execute("INSERT INTO apiKeyCharacters (keyID, characterID, corporationID, isDirector) VALUES (:keyID, :characterID, :corporationID, :isDirector)", array(
+            $this->app->Db->execute("INSERT INTO apiKeyCharacters (keyID, characterID, corporationID, isDirector) VALUES (:keyID, :characterID, :corporationID, :isDirector) ON DUPLICATE KEY UPDATE keyID = :keyID, characterID = :characterID, corporationID = :corporationID, isDirector = :isDirector", array(
                     ":keyID" => $keyID,
                     ":characterID" => $c["characterID"],
                     ":corporationID" => $c["corporationID"],

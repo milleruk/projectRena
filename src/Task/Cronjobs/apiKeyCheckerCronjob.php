@@ -18,15 +18,14 @@ class apiKeyCheckerCronjob
      */
     public static function execute($pid, $md5, RenaApp $app)
     {
-        // Select 1000 characters which lastValidation was over 7 days ago, then update them
-        $apiKeys = $app->Db->query("SELECT keyID, vCode FROM apiKeys WHERE lastValidation < date_sub(now(), INTERVAL 1 HOUR) ORDER BY lastValidation DESC LIMIT 1000", array(), 0);
-
+        $apiKeys = $app->Db->query("SELECT keyID, vCode FROM apiKeys WHERE lastValidation < date_sub(now(), INTERVAL 1 HOUR) ORDER BY lastValidation DESC LIMIT 100", array(), 0);
         if($apiKeys)
         {
             foreach($apiKeys as $api)
             {
                 $keyID = $api["keyID"];
                 $vCode = $api["vCode"];
+                // Update the lastValidation to in ten minutes, just so we don't insert it again and again
                 \Resque::enqueue("default", "\\ProjectRena\\Task\\Resque\\updateApiKeys", array("keyID" => $keyID, "vCode" => $vCode));
             }
         }
