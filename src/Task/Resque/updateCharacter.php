@@ -24,6 +24,7 @@ class updateCharacter
 				 */
 				public function perform()
 				{
+								$this->app->StatsD->increment("ccpRequests");
 								$this->app->StatsD->increment("charactersUpdated");
 								$characterID = $this->args["characterID"];
 
