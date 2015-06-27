@@ -14,7 +14,7 @@ class updateCharactersCronjob
 
     public static function execute($pid, $md5, RenaApp $app)
     {
-        $characters = $app->Db->query("SELECT characterID FROM characters WHERE lastUpdated < date_sub(now(), interval 7 day) AND characterID != 0 ORDER BY lastUpdated LIMIT 100", array(), 0);
+        $characters = $app->Db->query("SELECT characterID FROM characters WHERE lastUpdated < date_sub(now(), interval 7 day) AND characterID != 0 ORDER BY lastUpdated LIMIT 500", array(), 0);
         if($characters)
         {
             foreach($characters as $character)

@@ -12,6 +12,8 @@ class updateApiKeys
      */
     public function perform()
     {
+        $this->app->StatsD->increment("ccpRequests");
+        $this->app->StatsD->increment("apiKeysUpdated");
         $keyID = $this->args["keyID"];
         $vCode = $this->args["vCode"];
         $data = $this->app->EVEAccountAPIKeyInfo->getData($keyID, $vCode);
