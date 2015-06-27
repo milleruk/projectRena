@@ -14,7 +14,7 @@ class updateAlliancesCronjob
      */
     public static function getRunTimes()
     {
-        return 60;
+        return 43200;
     }
 
     /**
