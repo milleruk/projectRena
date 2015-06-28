@@ -53,6 +53,15 @@ class ApiKeys
 								return $this->db->queryRow('SELECT * FROM apiKeys WHERE keyID = :keyID', array(':keyID' => $apiKey));
 				}
 
+				/**
+					* @param $keyID
+					*
+					* @return null
+					*/
+    public function getVCodeByKeyID($keyID)
+				{
+								return $this->db->queryField("SELECT vCode FROM apiKeys WHERE keyID = :keyID", "vCode", array(":keyID" => $keyID));
+				}
 
 				/**
 				 * @param $apiKey

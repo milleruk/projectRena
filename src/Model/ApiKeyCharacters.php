@@ -101,7 +101,7 @@ class ApiKeyCharacters
      */
     public function setErrorCode($keyID, $characterID, $errorCode)
     {
-        return $this->db->query("UPDATE apiKeyCharacters SET errorCode = :errorCode WHERE keyID = :keyID AND characterID = :characterID", array(":errorCode" => $errorCode, ":keyID" => $keyID, ":characterID" => $characterID));
+        return $this->db->execute("UPDATE apiKeyCharacters SET errorCode = :errorCode WHERE keyID = :keyID AND characterID = :characterID", array(":errorCode" => $errorCode, ":keyID" => $keyID, ":characterID" => $characterID));
     }
 
     /**
@@ -114,7 +114,7 @@ class ApiKeyCharacters
      */
     public function setLastChecked($keyID, $characterID, $lastChecked)
     {
-        return $this->db->query("UPDATE apiKeyCharacters SET lastChecked = :lastChecked WHERE keyID = :keyID AND characterID = :characterID", array(":lastChecked" => $lastChecked, ":keyID" => $keyID, ":characterID" => $characterID));
+        return $this->db->execute("UPDATE apiKeyCharacters SET lastChecked = :lastChecked WHERE keyID = :keyID AND characterID = :characterID", array(":lastChecked" => $lastChecked, ":keyID" => $keyID, ":characterID" => $characterID));
     }
 
     /**
@@ -127,20 +127,20 @@ class ApiKeyCharacters
      */
     public function setCachedUntil($keyID, $characterID, $cachedUntil)
     {
-        return $this->db->query("UPDATE apiKeyCharacters SET cachedUntil = :cachedUntil WHERE keyID = :keyID AND characterID = :characterID", array(":cachedUntil" => $cachedUntil, ":keyID" => $keyID, ":characterID" => $characterID));
+        return $this->db->execute("UPDATE apiKeyCharacters SET cachedUntil = :cachedUntil WHERE keyID = :keyID AND characterID = :characterID", array(":cachedUntil" => $cachedUntil, ":keyID" => $keyID, ":characterID" => $characterID));
     }
 
     /**
      * @param $keyID
      * @param $characterID
-     * @param $killID
+     * @param $maxKillID
      *
      * @return array|bool
      * @throws \Exception
      */
-    public function setMaxKillID($keyID, $characterID, $killID)
+    public function setMaxKillID($keyID, $characterID, $maxKillID)
     {
-        return $this->db->query("UPDATE apiKeyCharacters SET maxKillID = :maxKillID WHERE keyID = :keyID AND characterID = :characterID", array(":maxKillID" => $maxKillID, ":keyID" => $keyID, ":characterID" => $characterID));
+        return $this->db->execute("UPDATE apiKeyCharacters SET maxKillID = :maxKillID WHERE keyID = :keyID AND characterID = :characterID", array(":maxKillID" => $maxKillID, ":keyID" => $keyID, ":characterID" => $characterID));
     }
 
     /**
@@ -153,6 +153,6 @@ class ApiKeyCharacters
      */
     public function setIsDirector($keyID, $characterID, $isDirector)
     {
-        return $this->db->query("UPDATE apiKeyCharacters SET isDirector = :isDirector WHERE keyID = :keyID AND characterID = :characterID", array(":isDirector" => $isDirector, ":keyID" => $keyID, ":characterID" => $characterID));
+        return $this->db->execute("UPDATE apiKeyCharacters SET isDirector = :isDirector WHERE keyID = :keyID AND characterID = :characterID", array(":isDirector" => $isDirector, ":keyID" => $keyID, ":characterID" => $characterID));
     }
 }

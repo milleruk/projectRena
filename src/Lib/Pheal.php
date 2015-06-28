@@ -59,7 +59,7 @@ class Pheal
         if($this->app->Storage->get("Api904") <= date("Y-m-d H:i:s")) return new \Pheal\Pheal($apiKey, $vCode); else
             throw new \Exception("Error, CCP has 904ed us till " . $this->app->Storage->get("Api904"));
     }
-    
+
     /**
      * @param $keyID
      * @param $characterID
