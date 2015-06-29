@@ -105,12 +105,12 @@ class EVEOAuth
         }
 
         // Now add the user to the groups they're allowed to be in, this doesn't happen on anything but login so that we are a bit sql heavy there is fine!
-        $this->app->Groups->updateGroup($data["corporationID"], $this->app->corporations->getAllByID($data["corporationID"])["corporationName"], 0);
+        $this->app->Groups->updateGroup($data["corporationID"], $this->app->corporations->getAllByID($data["corporationID"])["corporationName"]);
         $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["corporationID"], "corporation");
         $this->app->Groups->setAdmins($data["corporationID"], array($this->app->corporations->getAllByID($data["corporationID"])["ceoID"]));
         if($data["allianceID"] > 0)
         {
-            $this->app->Groups->updateGroup($data["allianceID"], $this->app->alliances->getAllByID($data["allianceID"])["allianceName"], 0);
+            $this->app->Groups->updateGroup($data["allianceID"], $this->app->alliances->getAllByID($data["allianceID"])["allianceName"]);
             $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["allianceID"], "alliance");
             $this->app->Groups->setAdmins($data["allianceID"], array($this->app->corporations->getAllByID($this->app->alliances->getAllByID($data["allianceID"])["executorCorporationID"])["ceoID"]));
         }
