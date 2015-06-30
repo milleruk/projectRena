@@ -30,6 +30,10 @@ class updateAlliances
 								{
 												foreach($data["result"]["alliances"] as $alliance)
 												{
+																// Update all the corporations in the alliance.. maybe we missed one?
+																foreach($alliance["memberCorporations"] as $corporation)
+																				\Resque::enqueue("default", "\\ProjectRena\\Task\\Resque\\updateCorporation", array("corporationID" => $corporation["corporationID"]));
+
 																$allianceID = $alliance["allianceID"];
 																$allianceName = $alliance["name"];
 																$allianceTicker = $alliance["shortName"];
@@ -40,7 +44,6 @@ class updateAlliances
 																$this->app->alliances->setLastUpdated($allianceID, date("Y-m-d H:i:s"));
 												}
 								}
-
 				}
 
 				/**

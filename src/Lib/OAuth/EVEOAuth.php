@@ -93,6 +93,14 @@ class EVEOAuth
         // Setup the groups (corp and alli)
         $data = $this->app->characters->getAllByID($characterID);
 
+        // Tell resque to do stuff
+        if(!$data["characterID"])
+        {
+            \Resque::enqueue("now", "\\ProjectRena\\Task\\Resque\\updateCharacter", array("characterID" => $characterID));
+            sleep(6); // Sleep for 6 seconds, not ideal but whatever
+            $data = $this->app->characters->getAllByID($characterID, 0); // Refetch the data, just this time we skip the cache!
+        }
+
         // Only do all of the group stuff if the character exists in the database.. if said character doesn't exist, we'll push the character to resque and do it all there!
         if($data)
         {
