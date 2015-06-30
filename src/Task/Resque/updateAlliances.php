@@ -39,7 +39,7 @@ class updateAlliances
 																$allianceTicker = $alliance["shortName"];
 																$memberCount = $alliance["memberCount"];
 																$executorCorporationID = $alliance["executorCorpID"];
-																$information = json_decode($this->app->cURL->getData("http://public-crest.eveonline.com/alliances/{$allianceID}/"), true)["description"];
+																$information = json_decode($this->app->cURL->getData("https://public-crest.eveonline.com/alliances/{$allianceID}/"), true)["description"];
 																$this->app->alliances->updateAllianceDetails($allianceID, $allianceName, $allianceTicker, $memberCount, $executorCorporationID, $information);
 																$this->app->alliances->setLastUpdated($allianceID, date("Y-m-d H:i:s"));
 												}
