@@ -93,32 +93,34 @@ class EVEOAuth
         // Setup the groups (corp and alli)
         $data = $this->app->characters->getAllByID($characterID);
 
-        // Check if the user is in groups they're not allowed to be in.. this goes for corporation and alliance only!
-        $validGroups = array("corporation" => $data["corporationID"], "alliance" => $data["allianceID"]);
-        foreach($validGroups as $type => $id)
+        // Only do all of the group stuff if the character exists in the database.. if said character doesn't exist, we'll push the character to resque and do it all there!
+        if($data)
         {
-            $innerData = $this->db->query("SELECT groupID, groupType FROM usersGroups WHERE userID = :id", array(":id" => $this->app->Users->getUserByName($characterName)["id"]));
-            foreach($innerData as $check)
-                if($check["groupType"] == $type)
-                    if($check["groupID"] != $id)
-                        $this->db->execute("DELETE FROM usersGroups WHERE userID = :id AND groupID = :groupID", array(":id" => $this->app->Users->getUserByName($characterName)["id"], ":groupID" => $check["groupID"]));
-        }
+            // Check if the user is in groups they're not allowed to be in.. this goes for corporation and alliance only!
+            $validGroups = array("corporation" => $data["corporationID"], "alliance" => $data["allianceID"]);
+            foreach($validGroups as $type => $id)
+            {
+                $innerData = $this->db->query("SELECT groupID, groupType FROM usersGroups WHERE userID = :id", array(":id" => $this->app->Users->getUserByName($characterName)["id"]));
+                foreach($innerData as $check) if($check["groupType"] == $type) if($check["groupID"] != $id) $this->db->execute("DELETE FROM usersGroups WHERE userID = :id AND groupID = :groupID", array(":id"      => $this->app->Users->getUserByName($characterName)["id"],
+                                                                                                                                                                                                          ":groupID" => $check["groupID"]
+                ));
+            }
 
-        // Now add the user to the groups they're allowed to be in, this doesn't happen on anything but login so that we are a bit sql heavy there is fine!
-        $this->app->Groups->updateGroup($data["corporationID"], $this->app->corporations->getAllByID($data["corporationID"])["corporationName"]);
-        $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["corporationID"], "corporation");
-        $this->app->Groups->setAdmins($data["corporationID"], array($this->app->corporations->getAllByID($data["corporationID"])["ceoID"]));
-        if($data["allianceID"] > 0)
-        {
-            $this->app->Groups->updateGroup($data["allianceID"], $this->app->alliances->getAllByID($data["allianceID"])["allianceName"]);
-            $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["allianceID"], "alliance");
-            $this->app->Groups->setAdmins($data["allianceID"], array($this->app->corporations->getAllByID($this->app->alliances->getAllByID($data["allianceID"])["executorCorporationID"])["ceoID"]));
+            // Now add the user to the groups they're allowed to be in, this doesn't happen on anything but login so that we are a bit sql heavy there is fine!
+            $this->app->Groups->updateGroup($data["corporationID"], $this->app->corporations->getAllByID($data["corporationID"])["corporationName"]);
+            $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["corporationID"], "corporation");
+            $this->app->Groups->setAdmins($data["corporationID"], array($this->app->corporations->getAllByID($data["corporationID"])["ceoID"]));
+            if($data["allianceID"] > 0)
+            {
+                $this->app->Groups->updateGroup($data["allianceID"], $this->app->alliances->getAllByID($data["allianceID"])["allianceName"]);
+                $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["allianceID"], "alliance");
+                $this->app->Groups->setAdmins($data["allianceID"], array($this->app->corporations->getAllByID($this->app->alliances->getAllByID($data["allianceID"])["executorCorporationID"])["ceoID"]));
+            }
         }
-
         // Set the session
         $_SESSION["characterName"] = $characterName;
         $_SESSION["characterID"] = $characterID;
-        $_SESSION["loggedin"] = true;
+        $_SESSION["loggedIn"] = true;
 
         // Redirect back to where the person came from
         $this->app->redirect($state);

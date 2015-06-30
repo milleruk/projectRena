@@ -9,7 +9,7 @@ $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 $twig = $app->view()->getEnvironment();
 
 // Twig globals
-$twig->addGlobal("LoggedIN", isset($_SESSION["loggedIn"]) ? true : false);
+$twig->addGlobal("loggedIn", isset($_SESSION["loggedIn"]) ? true : false);
 
 // CCP Image server
 $twig->addGlobal("imageServer", $app->baseConfig->getConfig("imageServer", "ccp"));
