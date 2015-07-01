@@ -355,7 +355,7 @@ EOF;
 				 */
 				private function resque($name, $output)
 				{
-								$path = __DIR__ . "/../Task/Resque/{$name}Resque.php";
+								$path = __DIR__ . "/../Task/Resque/{$name}.php";
 								if(file_exists($path))
 								{
 												return $output->writeln("Error, file already exists");
