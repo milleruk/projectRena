@@ -130,6 +130,9 @@ class EVEOAuth
         $_SESSION["characterID"] = $characterID;
         $_SESSION["loggedIn"] = true;
 
+        // Insert the IP
+        $this->app->UsersLogins->updateIP($this->app->Users->getUserByName($characterName)["id"], $this->app->request->getIp());
+
         // Redirect back to where the person came from
         $this->app->redirect($state);
     }
