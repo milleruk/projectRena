@@ -6,7 +6,6 @@ namespace ProjectRena\Task\Resque;
  */
 class ipUpdater
 {
-
     /**
      * The Slim Application
      */
