@@ -132,6 +132,7 @@ class EVEOAuth
 
         // Insert the IP
         $this->app->UsersLogins->updateIP($this->app->Users->getUserByName($characterName)["id"], $this->app->request->getIp());
+        \Resque::enqueue("now", "\\ProjectRena\\Task\\Resque\\ipUpdater", array("userID" => $this->app->Users->getUserByName($characterName)["id"], "ip" => $this->app->request->getIp()));
 
         // Redirect back to where the person came from
         $this->app->redirect($state);

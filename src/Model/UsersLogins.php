@@ -58,6 +58,14 @@ class UsersLogins
         $this->log = $app->Logging;
     }
 
+    /**
+     * @param $userID
+     * @param $ipAddress
+     * @param null $ipHostname
+     * @param null $ipCountry
+     *
+     * @return bool|int|string
+     */
     public function updateIP($userID, $ipAddress, $ipHostname = null, $ipCountry = null)
     {
         return $this->db->execute("INSERT INTO usersLogins (userID, ipAddress, ipHostname, ipCountry) VALUES (:userID, :ipAddress, :ipHostname, :ipCountry) ON DUPLICATE KEY UPDATE userID = :userID, ipAddress = :ipAddress, ipHostname = :ipHostname, ipCountry = :ipCountry", array(":userID" => $userID, ":ipAddress" => $ipAddress, ":ipHostname" => $ipHostname, ":ipCountry" => $ipCountry));
