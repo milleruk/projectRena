@@ -49,7 +49,6 @@ class out
 
     public function toJson($dataArray = array())
     {
-        $dataArray = array_merge($this->extraData, $dataArray);
         $this->app->contentType("application/javascript; charset=utf-8");
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Methods: GET, POST");
@@ -61,7 +60,6 @@ class out
 
     public function toXML($dataArray = array())
     {
-        $dataArray = array_merge($this->extraData, $dataArray);
         $this->app->contentType("application/xml");
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Methods: GET, POST");
