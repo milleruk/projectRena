@@ -1,6 +1,7 @@
 <?php
 namespace ProjectRena\Task;
 
+use DateTime;
 use ProjectRena\RenaApp;
 use Cilex\Command\Command;
 use ProjectRena\Lib;
@@ -41,8 +42,9 @@ class zkillboardReceiveTask extends Command
             {
                 $k = array();
                 $k["killID"] = (int) $p["killID"];
+                $date = DateTime::createFromFormat("Y.m.d H:i:s", $p["killmail"]["killTime"]);
                 $k["solarSystemID"] = (int) $p["killmail"]["solarSystem"]["id"];
-                $k["killTime"] = (string) $p["killmail"]["killTime"];
+                $k["killTime"] = (string) $date->format("Y-m-d H:i:s");
                 $k["moonID"] = (int) @$p["killmail"]["moonID"] ? $p["killmail"]["moonID"] : 0;
 
                 $k["victim"] = self::getVictim($p["killmail"]["victim"]);
