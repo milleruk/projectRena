@@ -6,6 +6,8 @@ use Cilex\Command\Command;
 use ProjectRena\Lib;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use ZMQ;
+use ZMQContext;
 
 /**
  * Receives data from Squizz stupid queue implementation from hell
@@ -38,7 +40,7 @@ class zkillboardReceiveTask extends Command
             if($p["killID"] > $oldKillID)
             {
                 $k = array();
-                $k["killID"] = $p["killID"];
+                $k["killID"] = (int) $p["killID"];
                 $k["solarSystemID"] = (int) $p["killmail"]["solarSystem"]["id"];
                 $k["killTime"] = (string) $p["killmail"]["killTime"];
                 $k["moonID"] = (int) @$p["killmail"]["moonID"] ? $p["killmail"]["moonID"] : 0;
@@ -50,6 +52,12 @@ class zkillboardReceiveTask extends Command
 
                 $json = json_encode($k);
                 $hash = hash("sha256", ":" . $k["killTime"] . ":" . $k["solarSystemID"] . ":" . $k["moonID"] . "::" . $k["victim"]["characterID"] . ":" . $k["victim"]["shipTypeID"] . ":" . $k["victim"]["damageTaken"] . ":");
+
+                // Push it over zmq to the websocket
+                $context = new ZMQContext();
+                $socket = $context->getSocket(ZMQ::SOCKET_PUSH, "rena");
+                $socket->connect("tcp://localhost:5555");
+                $socket->send($json);
 
                 $app->Db->execute("INSERT IGNORE INTO killmails (killID, hash, source, kill_json) VALUES (:killID, :hash, :source, :kill_json)", array(":killID" => $p["killID"], ":hash" => $hash, ":source" => "zkillboardRedisQ", ":kill_json" => $json));
                 echo "Inserted: " . $p["killID"] . "\n";
