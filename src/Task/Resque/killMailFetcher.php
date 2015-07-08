@@ -61,7 +61,7 @@ class killMailFetcher
                 $json = json_encode($kill);
 
                 // insert the killData to the killmails table
-                $inserted = $this->app->Db->execute("INSERT IGNORE INTO killmails (killID, hash, source, kill_json) VALUES (:killID, :hash, :source, :json)", array(":killID" => $killID, ":hash" => $hash, ":source" => $source, ":json" => $json));
+                $inserted = $this->app->killmails->insertKillmail($killID, 0, $hash, $source, $json);
 
                 // Update the maxKillID
                 $maxKillID = max($maxKillID, $killID);
