@@ -70,7 +70,7 @@ class zkillboardReceiveTask extends Command
     private function getVictim($victim)
     {
         $victimData = array();
-        $victimData["shipTypeID"] = (int) $victim["shipType"];
+        $victimData["shipTypeID"] = (int) $victim["shipType"]["id"];
         $victimData["characterID"] = (int) @$victim["character"]["id"];
         $victimData["characterName"] = (string) @$victim["character"]["name"];
         $victimData["corporationID"] = (int) $victim["corporation"]["id"];
