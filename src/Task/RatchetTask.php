@@ -66,7 +66,7 @@ class stompSend
 
     public function onMessage($message)
     {
-        $this->app->StatsD->increment("stompReceived");
+        $this->app->StatsD->increment("stompSent");
         $this->stomp->send("/topic/kills", $message);
     }
 }
