@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8d4d2aa3ffa96e869ae6053ad31fe194",
+    "hash": "4d40b74aea4921b65ee5b44433014a6a",
     "packages": [
         {
             "name": "3rdpartyeve/perry",
@@ -2204,13 +2204,44 @@
                 "whoops"
             ],
             "time": "2014-04-02 04:57:23"
+        },
+        {
+            "name": "zkillboard/redisq",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zKillboard/RedisQ.git",
+                "reference": "10e78799633694c9b37d481791b21e38c913dfa8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zKillboard/RedisQ/zipball/10e78799633694c9b37d481791b21e38c913dfa8",
+                "reference": "10e78799633694c9b37d481791b21e38c913dfa8",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RedisQ\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Clinton Weiss",
+                    "email": "cvweiss@gmail.com"
+                }
+            ],
+            "description": "A simple queue based on Redis",
+            "time": "2015-07-07 22:47:14"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "gossi/php-code-generator": 20
+        "gossi/php-code-generator": 20,
+        "zkillboard/redisq": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
