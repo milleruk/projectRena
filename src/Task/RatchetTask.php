@@ -2,7 +2,6 @@
 namespace ProjectRena\Task;
 
 use Cilex\Command\Command;
-use Predis\Async\Connection\ConnectionInterface;
 use ProjectRena\Lib;
 use ProjectRena\RenaApp;
 use Ratchet\Wamp\Topic;
@@ -21,7 +20,7 @@ class RatchetTask extends Command
      */
     protected function configure()
     {
-        $this->setName('ratchet:run')->setDescription('Starts up a ratchet server');
+        $this->setName('ratchet:run')->setDescription('Starts up a zmq listener, with a websocket server that also passes data to stomp..');
     }
 
     /**
@@ -38,18 +37,35 @@ class RatchetTask extends Command
         // Setup the react event loop and call up the pusher class
         $loop = \React\EventLoop\Factory::create();
         $pusher = new Pusher();
+        $stomper = new stompSend();
 
         // ZeroMQ server
         $context = new \React\ZMQ\Context($loop);
         $pull = $context->getSocket(ZMQ::SOCKET_PULL);
         $pull->bind("tcp://127.0.0.1:5555");
         $pull->on("message", array($pusher, "onMessage"));
+        $pull->on("message", array($stomper, "onMessage"));
 
         // Websocket server
         $webSock = new \React\Socket\Server($loop);
         $webSock->listen(8800, "0.0.0.0");
         $webServer = new \Ratchet\Server\IoServer(new \Ratchet\Http\HttpServer(new \Ratchet\WebSocket\WsServer(new \Ratchet\Wamp\WampServer($pusher))), $webSock);
         $loop->run();
+    }
+}
+
+class stompSend
+{
+    protected $stomp;
+    public function __construct()
+    {
+        $app = RenaApp::getInstance();
+        $this->stomp = new \Stomp($app->baseConfig->getConfig("server", "stomp"), $app->baseConfig->getConfig("username", "stomp"), $app->baseConfig->getConfig("password", "stomp"));
+    }
+
+    public function onMessage($message)
+    {
+        $this->stomp->send("/topic/kills", $message);
     }
 }
 

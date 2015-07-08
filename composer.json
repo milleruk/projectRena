@@ -33,7 +33,8 @@
     "gossi/php-code-generator": "dev-master",
     "cboden/ratchet": "~0.3.3",
     "react/zmq": "~0.3.0",
-    "zkillboard/redisq": "dev-master"
+    "zkillboard/redisq": "dev-master",
+    "ratchet/pawl": "~0.1.2"
   },
   "autoload": {
     "psr-4": {
