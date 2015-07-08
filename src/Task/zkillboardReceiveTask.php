@@ -49,6 +49,7 @@ class zkillboardReceiveTask extends Command
                 $k["attackers"] = self::getAttackers($p["killmail"]["attackers"]);
                 $k["items"] = self::getItems($p["killmail"]["victim"]["items"]);
 
+                $app->StatsD->increment("zKillboardReceived");
 
                 $json = json_encode($k);
                 $hash = hash("sha256", ":" . $k["killTime"] . ":" . $k["solarSystemID"] . ":" . $k["moonID"] . "::" . $k["victim"]["characterID"] . ":" . $k["victim"]["shipTypeID"] . ":" . $k["victim"]["damageTaken"] . ":");

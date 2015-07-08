@@ -57,14 +57,16 @@ class RatchetTask extends Command
 class stompSend
 {
     protected $stomp;
+    protected $app;
     public function __construct()
     {
-        $app = RenaApp::getInstance();
-        $this->stomp = new \Stomp($app->baseConfig->getConfig("server", "stomp"), $app->baseConfig->getConfig("username", "stomp"), $app->baseConfig->getConfig("password", "stomp"));
+        $this->app = RenaApp::getInstance();
+        $this->stomp = new \Stomp($this->app->baseConfig->getConfig("server", "stomp"), $this->app->baseConfig->getConfig("username", "stomp"), $this->app->baseConfig->getConfig("password", "stomp"));
     }
 
     public function onMessage($message)
     {
+        $this->app->StatsD->increment("stompReceived");
         $this->stomp->send("/topic/kills", $message);
     }
 }
