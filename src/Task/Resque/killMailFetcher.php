@@ -45,7 +45,8 @@ class killMailFetcher
                 unset($kill["_stringValue"]);
 
                 // Set the killID
-                $killID = $kill["killID"];
+                $killID = (int) $kill["killID"];
+                $kill["killID"] = (int) $kill["killID"];
 
                 // Generate the hash
                 $hash = hash("sha256", ":" . $kill["killTime"] . ":" . $kill["solarSystemID"] . ":" . $kill["moonID"] . "::" . $kill["victim"]["characterID"] . ":" . $kill["victim"]["shipTypeID"] . ":" . $kill["victim"]["damageTaken"] . ":");
