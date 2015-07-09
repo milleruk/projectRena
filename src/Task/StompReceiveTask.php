@@ -46,6 +46,8 @@ class StompReceiveTask extends Command
                 $killdata = json_decode($frame->body, true);
                 if(!empty($killdata))
                 {
+                    $app->StatsD->increment("stompReceived");
+
                     if(isset($killdata["_stringValue"]))
                         unset($killdata["_stringValue"]);
 
@@ -63,8 +65,6 @@ class StompReceiveTask extends Command
                         $socket = $context->getSocket(ZMQ::SOCKET_PUSH, "rena");
                         $socket->connect("tcp://localhost:5555");
                         $socket->send($json);
-
-                        $app->StatsD->increment("stompReceived");
                     }
                 }
                 $stomp->ack($frame->headers["message-id"]);
