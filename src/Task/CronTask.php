@@ -20,7 +20,7 @@ class CronTask extends Command
      */
     protected function configure()
     {
-        $this->setName('cron:run')->setDescription('Runs cronjobs');
+        $this->setName('run:cron')->setDescription('Runs cronjobs');
     }
 
     /**
