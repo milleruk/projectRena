@@ -38,6 +38,7 @@ class zkillboardReceiveTask extends Command
         do
         {
             $p = \RedisQ\Action::listen("redisq.zkillboard.com");
+var_dump($p);
             if($p["killID"] > $oldKillID)
             {
                 // Get the killmail data.
