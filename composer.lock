@@ -2416,12 +2416,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zKillboard/RedisQ.git",
-                "reference": "c04a4b42c5851c505c84280ac1792ad19819f2f9"
+                "reference": "710157e58b9e8a5c48747afc746d91a69f043780"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zKillboard/RedisQ/zipball/c04a4b42c5851c505c84280ac1792ad19819f2f9",
-                "reference": "c04a4b42c5851c505c84280ac1792ad19819f2f9",
+                "url": "https://api.github.com/repos/zKillboard/RedisQ/zipball/710157e58b9e8a5c48747afc746d91a69f043780",
+                "reference": "710157e58b9e8a5c48747afc746d91a69f043780",
                 "shasum": ""
             },
             "type": "library",
@@ -2438,7 +2438,7 @@
                 }
             ],
             "description": "A simple queue based on Redis",
-            "time": "2015-07-10 13:32:36"
+            "time": "2015-07-20 03:41:35"
         }
     ],
     "packages-dev": [],
