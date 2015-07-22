@@ -80,9 +80,10 @@ function dd($input)
 	* @param $templateFile
 	* @param array $dataArray
 	* @param null $status
+	* @param null $contentType
 	*/
-function render($templateFile, $dataArray = array(), $status = null)
+function render($templateFile, $dataArray = array(), $status = null, $contentType = null)
 {
 				$app = \ProjectRena\RenaApp::getInstance();
-				$app->out->render($templateFile, $dataArray, $status);
+				$app->out->render($templateFile, $dataArray, $status, $contentType);
 }

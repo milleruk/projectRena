@@ -33,9 +33,13 @@ class out
      * @param $templateFile
      * @param array $dataArray
      * @param null $status
+     * @param null $contentType
      */
-    public function render($templateFile, $dataArray = array(), $status = null)
+    public function render($templateFile, $dataArray = array(), $status = null, $contentType = null)
     {
+        if($contentType)
+            $this->contentType = $contentType;
+
         if($this->contentType == "application/json")
             return $this->toJson($dataArray);
         if($this->contentType == "application/xml")
