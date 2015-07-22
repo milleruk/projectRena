@@ -60,6 +60,6 @@ class ControlPanelController
 
     public function index()
     {
-        $this->app->out->toTwig("controlpanel/index.twig");
+        render("controlpanel/index.twig");
     }
 }
