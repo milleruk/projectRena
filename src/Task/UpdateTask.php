@@ -23,7 +23,6 @@ class UpdateTask extends Command
 								$this->setName("update")
 												->addOption("composer", "c", InputOption::VALUE_NONE, "Run Composer Update")
 												->addOption("unittest", "u", InputOption::VALUE_NONE, "Run Unit Test")
-												->addOption("optimizedLoader", "l", InputOption::VALUE_NONE, "Generate an optimized Loader")
 												->setDescription("Updates the project (Composer and RenaApp)");
 				}
 
@@ -55,12 +54,9 @@ class UpdateTask extends Command
 												$this->runUnitTest($output);
 
 								// Generate an optimized loader
-								if($input->getOption("optimizedLoader"))
-								{
-												$output->writeln("Generating Optimized Loader");
-												$loaderCode = $this->generateOptimizedLoader($app);
-												file_put_contents(__DIR__ . "/../OptimizedLoader.php", $loaderCode);
-								}
+								$output->writeln("Generating Optimized Loader");
+								$loaderCode = $this->generateOptimizedLoader($app);
+								file_put_contents(__DIR__ . "/../OptimizedLoader.php", $loaderCode);
 
 								// Update RenaApp
 								$renaAppCode = $this->generateRenaApp();
