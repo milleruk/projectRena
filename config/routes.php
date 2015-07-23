@@ -42,10 +42,10 @@ $app->get('/logout/', function () use ($app)
 });
 
 // Admin
-$app->get("/controlpanel/(/:subPage)/", function($subPage = null) use ($app)
+$app->map("/controlpanel(/:subPage)/", function($subPage = null) use ($app)
 {
-				(new \ProjectRena\Controller\ControlPanelController($app))->index();
-});
+				(new \ProjectRena\Controller\ControlPanelController($app))->index($subPage);
+})->via("POST", "GET");
 
 // Search
 $app->map("/search(/:term).json", function($searchTerm = null) use ($app){
