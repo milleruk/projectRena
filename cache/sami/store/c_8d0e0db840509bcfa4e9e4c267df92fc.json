@@ -1,6 +1,6 @@
 {
     "name": "ProjectRena\\Task\\UpdateTask",
-    "line": 15,
+    "line": 16,
     "short_desc": "Class UpdateTask",
     "long_desc": "",
     "hint": null,
@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Task",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/UpdateTask.php",
-    "hash": "6d3d7287594c8d4de9094d9dc9a97237e4669c48",
+    "hash": "af0e24f4093e95106be034fc76e2845a8fe441c6",
     "parent": "Cilex\\Command\\Command",
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -23,6 +23,7 @@
         "Lib": "ProjectRena\\Lib",
         "RenaApp": "ProjectRena\\RenaApp",
         "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "InputOption": "Symfony\\Component\\Console\\Input\\InputOption",
         "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface"
     },
     "errors": [],

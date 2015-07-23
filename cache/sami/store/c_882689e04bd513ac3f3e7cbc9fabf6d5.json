@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVEApi\\Account",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVEApi\/Account\/Characters.php",
-    "hash": "e130ea08db0f8f6a845a24b78d91b8cee8c7115e",
+    "hash": "dee85f700a475f7f22beebda770275749b68121b",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,

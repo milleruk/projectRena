@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVEApi\\Corporation",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVEApi\/Corporation\/StarbaseDetail.php",
-    "hash": "6551d2f748bc54ed368dc221dba53c3f6a73ef4b",
+    "hash": "d36ca6b0f92ed6c9622f1dc1214b2cc5c152061b",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,

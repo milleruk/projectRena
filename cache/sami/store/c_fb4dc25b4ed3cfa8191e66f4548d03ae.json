@@ -1,0 +1,31 @@
+{
+    "name": "ProjectRena\\Task\\RatchetTask",
+    "line": 16,
+    "short_desc": "Starts up a ratchet server that sends killmails to the user",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/RatchetTask.php",
+    "hash": "5413acb34f33e6cc71af1eb6032a239f2c8e3c2a",
+    "parent": "Cilex\\Command\\Command",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Command": "Cilex\\Command\\Command",
+        "Lib": "ProjectRena\\Lib",
+        "RenaApp": "ProjectRena\\RenaApp",
+        "Topic": "Ratchet\\Wamp\\Topic",
+        "WampServerInterface": "Ratchet\\Wamp\\WampServerInterface",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface",
+        "ZMQ": "ZMQ"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

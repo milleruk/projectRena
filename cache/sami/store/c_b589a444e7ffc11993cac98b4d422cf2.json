@@ -7,7 +7,7 @@
     "tags": [],
     "namespace": "ProjectRena\\Model",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/ApiKeys.php",
-    "hash": "b73f4ee85ec25d5fc67d5d38cf4c191e538a12be",
+    "hash": "4361a9ea74d235eebc4eb0c25c22d1b5bc62430b",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -27,15 +27,7 @@
             "long_desc": "",
             "hint": [
                 [
-                    "bool",
-                    false
-                ],
-                [
-                    "int",
-                    false
-                ],
-                [
-                    "string",
+                    "boolean",
                     false
                 ]
             ],
@@ -117,9 +109,126 @@
                 }
             }
         },
+        "getVCodeByKeyID": {
+            "name": "getVCodeByKeyID",
+            "line": 61,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "keyID": {
+                    "name": "keyID",
+                    "line": 61,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
         "deleteAPIKey": {
             "name": "deleteAPIKey",
-            "line": 62,
+            "line": 71,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "boolean",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "apiKey": {
+                    "name": "apiKey",
+                    "line": 71,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "updateLastValidated": {
+            "name": "updateLastValidated",
+            "line": 84,
+            "short_desc": "Sets last validation to 5 minutes into the future pr. default",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ],
+                [
+                    "int",
+                    false
+                ],
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "keyID": {
+                    "name": "keyID",
+                    "line": 84,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "lastValidated": {
+                    "name": "lastValidated",
+                    "line": 84,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "0",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setErrorCode": {
+            "name": "setErrorCode",
+            "line": 100,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -143,9 +252,20 @@
             "exceptions": [],
             "errors": [],
             "parameters": {
-                "apiKey": {
-                    "name": "apiKey",
-                    "line": 62,
+                "keyID": {
+                    "name": "keyID",
+                    "line": 100,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "errorCode": {
+                    "name": "errorCode",
+                    "line": 100,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],

@@ -7,7 +7,7 @@
     "tags": [],
     "namespace": "ProjectRena\\Lib",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/SessionHandler.php",
-    "hash": "a8d3d2275f606e91a615aade967741b93bbed7c4",
+    "hash": "3cd534580bf2be0dae0fec6b64e8ad0acfc18150",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -293,6 +293,20 @@
                     "is_by_ref": false
                 }
             }
+        },
+        "RunAsNew": {
+            "name": "RunAsNew",
+            "line": 151,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
         }
     },
     "constants": []

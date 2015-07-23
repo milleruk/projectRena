@@ -1,0 +1,82 @@
+{
+    "name": "ProjectRena\\Controller\\ControlPanelController",
+    "line": 9,
+    "short_desc": "AdminController for \/admin\/ pages",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Controller",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Controller\/ControlPanelController.php",
+    "hash": "04fddad23224fd182c289951fec1e3676b47288e",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 50,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "app": {
+                    "name": "app",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "ProjectRena\\Controller\\ProjectRena\\RenaApp",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "ProjectRena\\RenaApp",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "index": {
+            "name": "index",
+            "line": 61,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "subPage": {
+                    "name": "subPage",
+                    "line": 61,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

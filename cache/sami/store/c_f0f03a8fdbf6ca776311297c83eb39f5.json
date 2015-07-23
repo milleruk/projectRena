@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Task",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/GeneratorTask.php",
-    "hash": "a43ba67daacd66de64af334332f6650e29ab41ab",
+    "hash": "e232010d57453f0fbb86b7aa8d5704370acd7c20",
     "parent": "Cilex\\Command\\Command",
     "modifiers": "Stmt_Class",
     "is_trait": false,

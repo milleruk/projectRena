@@ -1,0 +1,71 @@
+{
+    "name": "ProjectRena\\Task\\Resque\\updateCorporation",
+    "line": 10,
+    "short_desc": "Class updateCharacter",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Task\\Resque"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Task\\Resque",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/Resque\/updateCorporation.php",
+    "hash": "4520adaa6a79ff96964c02a72be57ec8b4168b76",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "setUp": {
+            "name": "setUp",
+            "line": 20,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "perform": {
+            "name": "perform",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDown": {
+            "name": "tearDown",
+            "line": 53,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

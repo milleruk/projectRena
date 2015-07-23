@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVEApi\\Corporation",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVEApi\/Corporation\/MemberTracking.php",
-    "hash": "8c1ea8af9dbc13b509acee676e33687273dcfce5",
+    "hash": "ae1fbdb4561844b62a8580fee2585f4ad97fc307",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,

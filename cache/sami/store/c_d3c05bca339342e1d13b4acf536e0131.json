@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Lib",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/StatsD.php",
-    "hash": "32b5c37b38a85166c4584daaa52ef11e375d8f08",
+    "hash": "91bd31e80fc374398c9460663c6d4bed3b6c923e",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,

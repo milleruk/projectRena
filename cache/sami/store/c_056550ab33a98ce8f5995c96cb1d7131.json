@@ -1,0 +1,87 @@
+{
+    "name": "ProjectRena\\Task\\Cronjobs\\updateCorporationsCronjob",
+    "line": 12,
+    "short_desc": "Class updateCorporationsCronjob",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Task\\Cronjobs"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Task\\Cronjobs",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/Cronjobs\/updateCorporationsCronjob.php",
+    "hash": "ea235a7359f04a4b13bad7fbeeb477a5c3f77254",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getRunTimes": {
+            "name": "getRunTimes",
+            "line": 17,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "execute": {
+            "name": "execute",
+            "line": 26,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "pid": {
+                    "name": "pid",
+                    "line": 26,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "md5": {
+                    "name": "md5",
+                    "line": 26,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

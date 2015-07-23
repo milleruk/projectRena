@@ -1,6 +1,6 @@
 {
     "name": "ProjectRena\\Model\\EVE\\killmails",
-    "line": 11,
+    "line": 12,
     "short_desc": "Class invTypes",
     "long_desc": "",
     "hint": null,
@@ -13,12 +13,13 @@
     },
     "namespace": "ProjectRena\\Model\\EVE",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVE\/killmails.php",
-    "hash": "cf9cc984fd0f50e1dce48bfcf500fa9af66a550f",
+    "hash": "26c2bff086d32e507b1cde7996d6a5719b0cf3fc",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
     "is_interface": false,
     "aliases": {
+        "DateTime": "DateTime",
         "RenaApp": "ProjectRena\\RenaApp"
     },
     "errors": [],
@@ -28,7 +29,7 @@
     "methods": {
         "getAllByID": {
             "name": "getAllByID",
-            "line": 36,
+            "line": 37,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -46,7 +47,7 @@
             "parameters": {
                 "killID": {
                     "name": "killID",
-                    "line": 36,
+                    "line": 37,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -59,7 +60,7 @@
         },
         "getProcessedByID": {
             "name": "getProcessedByID",
-            "line": 46,
+            "line": 47,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -77,7 +78,7 @@
             "parameters": {
                 "killID": {
                     "name": "killID",
-                    "line": 46,
+                    "line": 47,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -90,7 +91,7 @@
         },
         "getHashByID": {
             "name": "getHashByID",
-            "line": 56,
+            "line": 57,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -108,7 +109,7 @@
             "parameters": {
                 "killID": {
                     "name": "killID",
-                    "line": 56,
+                    "line": 57,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -121,7 +122,7 @@
         },
         "getSourceByID": {
             "name": "getSourceByID",
-            "line": 66,
+            "line": 67,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -139,7 +140,7 @@
             "parameters": {
                 "killID": {
                     "name": "killID",
-                    "line": 66,
+                    "line": 67,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -152,7 +153,7 @@
         },
         "getJSONByID": {
             "name": "getJSONByID",
-            "line": 76,
+            "line": 77,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -170,7 +171,7 @@
             "parameters": {
                 "killID": {
                     "name": "killID",
-                    "line": 76,
+                    "line": 77,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -183,11 +184,24 @@
         },
         "insertKillmail": {
             "name": "insertKillmail",
-            "line": 88,
+            "line": 91,
             "short_desc": "",
             "long_desc": "",
-            "hint": null,
-            "hint_desc": null,
+            "hint": [
+                [
+                    "bool",
+                    false
+                ],
+                [
+                    "int",
+                    false
+                ],
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
             "tags": [],
             "modifiers": "1",
             "is_by_ref": "",
@@ -196,7 +210,7 @@
             "parameters": {
                 "killID": {
                     "name": "killID",
-                    "line": 88,
+                    "line": 91,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -207,18 +221,18 @@
                 },
                 "processed": {
                     "name": "processed",
-                    "line": 88,
+                    "line": 91,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
                     "tags": [],
                     "modifiers": "",
-                    "default": null,
+                    "default": "0",
                     "is_by_ref": false
                 },
                 "hash": {
                     "name": "hash",
-                    "line": 88,
+                    "line": 91,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -229,7 +243,7 @@
                 },
                 "source": {
                     "name": "source",
-                    "line": 88,
+                    "line": 91,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -240,10 +254,36 @@
                 },
                 "kill_json": {
                     "name": "kill_json",
-                    "line": 88,
+                    "line": 91,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "generateFromCREST": {
+            "name": "generateFromCREST",
+            "line": 103,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "crestData": {
+                    "name": "crestData",
+                    "line": 103,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
                     "tags": [],
                     "modifiers": "",
                     "default": null,

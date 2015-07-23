@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVEApi\\Corporation",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVEApi\/Corporation\/KillMails.php",
-    "hash": "bb7cc4706f5374dce8a4caeafad2402af23836e4",
+    "hash": "4ed8a0a05e03d48535ac922e07458c1c67231dac",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,

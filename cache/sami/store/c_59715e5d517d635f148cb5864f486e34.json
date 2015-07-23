@@ -1,0 +1,80 @@
+{
+    "name": "ProjectRena\\Task\\Pusher",
+    "line": 79,
+    "short_desc": "Class Pusher",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Task"
+            ]
+        ]
+    },
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/RatchetTask.php",
+    "hash": "5413acb34f33e6cc71af1eb6032a239f2c8e3c2a",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Command": "Cilex\\Command\\Command",
+        "Lib": "ProjectRena\\Lib",
+        "RenaApp": "ProjectRena\\RenaApp",
+        "Topic": "Ratchet\\Wamp\\Topic",
+        "WampServerInterface": "Ratchet\\Wamp\\WampServerInterface",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface",
+        "ZMQ": "ZMQ"
+    },
+    "errors": [],
+    "interfaces": {
+        "Ratchet\\Wamp\\WampServerInterface": "Ratchet\\Wamp\\WampServerInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 89,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "onMessage": {
+            "name": "onMessage",
+            "line": 124,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "entry": {
+                    "name": "entry",
+                    "line": 124,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

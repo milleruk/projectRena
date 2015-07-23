@@ -7,7 +7,7 @@
     "tags": [],
     "namespace": "ProjectRena\\Model\\EVEApi\\Corporation",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVEApi\/Corporation\/CorporationSheet.php",
-    "hash": "e53e8838e9c5251943229605ed417f4c7313562d",
+    "hash": "75a8f8a74d573ed60cc83c78d2c281a6becbfcec",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -66,7 +66,7 @@
                     "hint": [],
                     "tags": [],
                     "modifiers": "",
-                    "default": null,
+                    "default": "null",
                     "is_by_ref": false
                 },
                 "vCode": {
@@ -77,7 +77,7 @@
                     "hint": [],
                     "tags": [],
                     "modifiers": "",
-                    "default": null,
+                    "default": "null",
                     "is_by_ref": false
                 },
                 "corporationID": {

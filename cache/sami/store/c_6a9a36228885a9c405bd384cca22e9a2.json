@@ -1,0 +1,203 @@
+{
+    "name": "ProjectRena\\Model\\UsersGroups",
+    "line": 9,
+    "short_desc": "User group management CRUD",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Model",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/UsersGroups.php",
+    "hash": "ff53fe70d1235ad331fa117143dc6b9b545a9e69",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 50,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "app": {
+                    "name": "app",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "ProjectRena\\Model\\ProjectRena\\RenaApp",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "ProjectRena\\RenaApp",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getGroup": {
+            "name": "getGroup",
+            "line": 67,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Exception",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "userID": {
+                    "name": "userID",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setGroup": {
+            "name": "setGroup",
+            "line": 79,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ],
+                [
+                    "int",
+                    false
+                ],
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "userID": {
+                    "name": "userID",
+                    "line": 79,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "groupID": {
+                    "name": "groupID",
+                    "line": 79,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "groupType": {
+                    "name": "groupType",
+                    "line": 79,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "deleteGroup": {
+            "name": "deleteGroup",
+            "line": 90,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ],
+                [
+                    "int",
+                    false
+                ],
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "userID": {
+                    "name": "userID",
+                    "line": 90,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "groupID": {
+                    "name": "groupID",
+                    "line": 90,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVE",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVE\/characters.php",
-    "hash": "0d4bab3c9a0aa1e5c2e158641ac0310c8a661d7d",
+    "hash": "b48651a871057289d772d17c1f6de8816c8e6313",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -28,7 +28,7 @@
     "methods": {
         "getAllByID": {
             "name": "getAllByID",
-            "line": 36,
+            "line": 38,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -46,7 +46,7 @@
             "parameters": {
                 "characterID": {
                     "name": "characterID",
-                    "line": 36,
+                    "line": 38,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -54,12 +54,28 @@
                     "modifiers": "",
                     "default": null,
                     "is_by_ref": false
+                },
+                "cacheTime": {
+                    "name": "cacheTime",
+                    "line": 38,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "3600",
+                    "is_by_ref": false
                 }
             }
         },
         "getAllByName": {
             "name": "getAllByName",
-            "line": 46,
+            "line": 48,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -77,7 +93,7 @@
             "parameters": {
                 "characterName": {
                     "name": "characterName",
-                    "line": 46,
+                    "line": 48,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -90,7 +106,7 @@
         },
         "getAllByCorporationID": {
             "name": "getAllByCorporationID",
-            "line": 56,
+            "line": 58,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -108,7 +124,7 @@
             "parameters": {
                 "corporationID": {
                     "name": "corporationID",
-                    "line": 56,
+                    "line": 58,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -121,7 +137,7 @@
         },
         "getAllByAllianceID": {
             "name": "getAllByAllianceID",
-            "line": 66,
+            "line": 68,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -139,7 +155,7 @@
             "parameters": {
                 "allianceID": {
                     "name": "allianceID",
-                    "line": 66,
+                    "line": 68,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -152,7 +168,7 @@
         },
         "getHistoryByID": {
             "name": "getHistoryByID",
-            "line": 76,
+            "line": 78,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -170,7 +186,7 @@
             "parameters": {
                 "characterID": {
                     "name": "characterID",
-                    "line": 76,
+                    "line": 78,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -183,7 +199,7 @@
         },
         "getHistoryByName": {
             "name": "getHistoryByName",
-            "line": 86,
+            "line": 88,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -201,7 +217,7 @@
             "parameters": {
                 "characterName": {
                     "name": "characterName",
-                    "line": 86,
+                    "line": 88,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -214,7 +230,7 @@
         },
         "updateCharacterDetails": {
             "name": "updateCharacterDetails",
-            "line": 98,
+            "line": 100,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -227,7 +243,7 @@
             "parameters": {
                 "characterID": {
                     "name": "characterID",
-                    "line": 99,
+                    "line": 101,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -238,7 +254,7 @@
                 },
                 "corporationID": {
                     "name": "corporationID",
-                    "line": 100,
+                    "line": 102,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -254,7 +270,7 @@
                 },
                 "allianceID": {
                     "name": "allianceID",
-                    "line": 101,
+                    "line": 103,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -270,7 +286,7 @@
                 },
                 "characterName": {
                     "name": "characterName",
-                    "line": 102,
+                    "line": 104,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -286,7 +302,7 @@
                 },
                 "history": {
                     "name": "history",
-                    "line": 103,
+                    "line": 105,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -304,7 +320,7 @@
         },
         "setLastUpdated": {
             "name": "setLastUpdated",
-            "line": 144,
+            "line": 146,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -319,7 +335,7 @@
             "parameters": {
                 "characterID": {
                     "name": "characterID",
-                    "line": 144,
+                    "line": 146,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": null,
@@ -330,7 +346,7 @@
                 },
                 "lastUpdated": {
                     "name": "lastUpdated",
-                    "line": 144,
+                    "line": 146,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": null,

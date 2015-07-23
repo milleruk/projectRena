@@ -1,0 +1,28 @@
+{
+    "name": "ProjectRena\\Task\\UpdateAllianceListTask",
+    "line": 13,
+    "short_desc": "Updates the alliance list on demand instead of automatically",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/UpdateAllianceListTask.php",
+    "hash": "8bc1cd28d7a333b6de49ce65bcf262162f2a443b",
+    "parent": "Cilex\\Command\\Command",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Command": "Cilex\\Command\\Command",
+        "Lib": "ProjectRena\\Lib",
+        "RenaApp": "ProjectRena\\RenaApp",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

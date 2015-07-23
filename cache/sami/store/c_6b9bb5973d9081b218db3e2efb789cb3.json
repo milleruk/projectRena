@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Lib\\OAuth",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/OAuth\/EVEOAuth.php",
-    "hash": "6300309e748c936ec2ef01acf6858e57af499fd7",
+    "hash": "d50a75ec85b7376edf5342fabd9fd7da790156bb",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,

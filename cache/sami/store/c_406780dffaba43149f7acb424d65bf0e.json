@@ -1,19 +1,24 @@
 {
     "name": "ProjectRena\\Task\\Cronjobs\\updateCharactersCronjob",
-    "line": 8,
-    "short_desc": "",
+    "line": 12,
+    "short_desc": "Class updateCharactersCronjob",
     "long_desc": "",
     "hint": null,
-    "tags": [],
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Task\\Cronjobs"
+            ]
+        ]
+    },
     "namespace": "ProjectRena\\Task\\Cronjobs",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/Cronjobs\/updateCharactersCronjob.php",
-    "hash": "5013cb0dff609c3184dbecce3b216f65bbc5e34b",
+    "hash": "e452fc432757cdd30ef84acdc26d0cd22bd58012",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
     "is_interface": false,
     "aliases": {
-        "Db": "ProjectRena\\Lib\\Db",
         "RenaApp": "ProjectRena\\RenaApp"
     },
     "errors": [],
@@ -23,11 +28,16 @@
     "methods": {
         "getRunTimes": {
             "name": "getRunTimes",
-            "line": 10,
+            "line": 17,
             "short_desc": "",
             "long_desc": "",
-            "hint": null,
-            "hint_desc": null,
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
             "tags": [],
             "modifiers": "9",
             "is_by_ref": "",
@@ -37,7 +47,7 @@
         },
         "execute": {
             "name": "execute",
-            "line": 15,
+            "line": 26,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -50,10 +60,10 @@
             "parameters": {
                 "pid": {
                     "name": "pid",
-                    "line": 15,
-                    "short_desc": null,
+                    "line": 26,
+                    "short_desc": "",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [],
                     "tags": [],
                     "modifiers": "",
                     "default": null,
@@ -61,44 +71,12 @@
                 },
                 "md5": {
                     "name": "md5",
-                    "line": 15,
-                    "short_desc": null,
+                    "line": 26,
+                    "short_desc": "",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [],
                     "tags": [],
                     "modifiers": "",
-                    "default": null,
-                    "is_by_ref": false
-                },
-                "db": {
-                    "name": "db",
-                    "line": 15,
-                    "short_desc": null,
-                    "long_desc": null,
-                    "hint": [
-                        [
-                            "ProjectRena\\Task\\Cronjobs\\ProjectRena\\Lib\\Db",
-                            false
-                        ]
-                    ],
-                    "tags": [],
-                    "modifiers": "ProjectRena\\Lib\\Db",
-                    "default": null,
-                    "is_by_ref": false
-                },
-                "app": {
-                    "name": "app",
-                    "line": 15,
-                    "short_desc": null,
-                    "long_desc": null,
-                    "hint": [
-                        [
-                            "ProjectRena\\Task\\Cronjobs\\ProjectRena\\RenaApp",
-                            false
-                        ]
-                    ],
-                    "tags": [],
-                    "modifiers": "ProjectRena\\RenaApp",
                     "default": null,
                     "is_by_ref": false
                 }

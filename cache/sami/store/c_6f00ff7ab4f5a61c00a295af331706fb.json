@@ -1,0 +1,76 @@
+{
+    "name": "ProjectRena\\Task\\Cronjobs\\updateAlliancesCronjob",
+    "line": 9,
+    "short_desc": "Updates and populates the alliance list, including corporations",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Task\\Cronjobs",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/Cronjobs\/updateAlliancesCronjob.php",
+    "hash": "ba85a8d99b2f87c67cb34c1286bdcb2b311f6649",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getRunTimes": {
+            "name": "getRunTimes",
+            "line": 14,
+            "short_desc": "Defines how often the cronjob runs, every 1 second, every 60 seconds, every 86400 seconds, etc.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "execute": {
+            "name": "execute",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "pid": {
+                    "name": "pid",
+                    "line": 23,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "md5": {
+                    "name": "md5",
+                    "line": 23,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

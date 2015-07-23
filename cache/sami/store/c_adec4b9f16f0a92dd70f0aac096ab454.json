@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Task",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/CCPDataTask.php",
-    "hash": "19d0759d51d2468ac14ffaa6b3b1fe4469c161f6",
+    "hash": "01ecf6df5ec1686bd4c05dc0896151b2d8ba5263",
     "parent": "Cilex\\Command\\Command",
     "modifiers": "Stmt_Class",
     "is_trait": false,

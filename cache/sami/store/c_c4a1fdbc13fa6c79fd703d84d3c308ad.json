@@ -7,7 +7,7 @@
     "tags": [],
     "namespace": "ProjectRena\\Task",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/ResqueTask.php",
-    "hash": "140a6136c32584f8af1cc49105e35e7ce4f214db",
+    "hash": "de2693b6f6435463ec8834b46fd9c3112b170960",
     "parent": "Cilex\\Command\\Command",
     "modifiers": "Stmt_Class",
     "is_trait": false,

@@ -1,0 +1,69 @@
+{
+    "name": "ProjectRena\\Task\\Resque\\killMailFetcher",
+    "line": 11,
+    "short_desc": "Fetches killmails and puts them into the killmails table",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Task\\Resque",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/Resque\/killMailFetcher.php",
+    "hash": "33f640d412254e017d25ccbb4421917fb6be21f8",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp",
+        "ZMQ": "ZMQ",
+        "ZMQContext": "ZMQContext"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "perform": {
+            "name": "perform",
+            "line": 21,
+            "short_desc": "Performs the task, can access all $this->crap setup in setUp)",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "setUp": {
+            "name": "setUp",
+            "line": 91,
+            "short_desc": "Sets up the task (Setup $this->crap and such here)",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDown": {
+            "name": "tearDown",
+            "line": 99,
+            "short_desc": "Tears the task down, unset $this->crap and such",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

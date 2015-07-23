@@ -1,0 +1,30 @@
+{
+    "name": "ProjectRena\\Task\\StompReceiveTask",
+    "line": 15,
+    "short_desc": "Receives killmail data from stomp",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/StompReceiveTask.php",
+    "hash": "42b11c3f5516a3245527f452b83c392ad6fe71b6",
+    "parent": "Cilex\\Command\\Command",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "RenaApp": "ProjectRena\\RenaApp",
+        "Command": "Cilex\\Command\\Command",
+        "Lib": "ProjectRena\\Lib",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface",
+        "ZMQ": "ZMQ",
+        "ZMQContext": "ZMQContext"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

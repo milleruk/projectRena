@@ -1,0 +1,31 @@
+{
+    "name": "ProjectRena\\Task\\zkillboardReceiveTask",
+    "line": 16,
+    "short_desc": "Receives data from Squizz stupid queue implementation from hell",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "ProjectRena\\Task",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/zkillboardReceiveTask.php",
+    "hash": "0726d5abc8897eb5a10c8165a2a52df07c71dd23",
+    "parent": "Cilex\\Command\\Command",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "DateTime": "DateTime",
+        "RenaApp": "ProjectRena\\RenaApp",
+        "Command": "Cilex\\Command\\Command",
+        "Lib": "ProjectRena\\Lib",
+        "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",
+        "OutputInterface": "Symfony\\Component\\Console\\Output\\OutputInterface",
+        "ZMQ": "ZMQ",
+        "ZMQContext": "ZMQContext"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

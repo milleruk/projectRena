@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/Users.php",
-    "hash": "583464363f2c806a198589d91aaf378629e5ce8e",
+    "hash": "f22c8a9f007c9cf062c81b4ef3f193b412d70013",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -207,7 +207,7 @@
         },
         "getUserDataByLoginHash": {
             "name": "getUserDataByLoginHash",
-            "line": 119,
+            "line": 120,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -225,7 +225,7 @@
             "parameters": {
                 "hash": {
                     "name": "hash",
-                    "line": 119,
+                    "line": 120,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],

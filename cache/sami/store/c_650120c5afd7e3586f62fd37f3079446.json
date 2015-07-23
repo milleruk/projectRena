@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Lib",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Lib\/Pheal.php",
-    "hash": "1b2f50673f768ab3854c65c1a38f1830cb3a5275",
+    "hash": "4d322f76e7d7fd16419626593b19413420bc632f",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -29,7 +29,7 @@
     "methods": {
         "Pheal": {
             "name": "Pheal",
-            "line": 53,
+            "line": 51,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -42,9 +42,95 @@
             "tags": [],
             "modifiers": "1",
             "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Exception",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "apiKey": {
+                    "name": "apiKey",
+                    "line": 51,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "null",
+                    "is_by_ref": false
+                },
+                "vCode": {
+                    "name": "vCode",
+                    "line": 51,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "handleApiException": {
+            "name": "handleApiException",
+            "line": 67,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
             "exceptions": [],
             "errors": [],
-            "parameters": []
+            "parameters": {
+                "keyID": {
+                    "name": "keyID",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "characterID": {
+                    "name": "characterID",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "exception": {
+                    "name": "exception",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
         }
     },
     "constants": []

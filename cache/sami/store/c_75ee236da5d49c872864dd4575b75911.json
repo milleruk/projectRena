@@ -1,13 +1,19 @@
 {
     "name": "ProjectRena\\Controller\\PasteController",
-    "line": 6,
-    "short_desc": "",
+    "line": 11,
+    "short_desc": "Class PasteController",
     "long_desc": "",
     "hint": null,
-    "tags": [],
+    "tags": {
+        "package": [
+            [
+                "ProjectRena\\Controller"
+            ]
+        ]
+    },
     "namespace": "ProjectRena\\Controller",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Controller\/PasteController.php",
-    "hash": "6ea753d4278f6fb3246d455d483de17434ad1ea6",
+    "hash": "fe547fd3a86754f4ecd000e79e74cfea6b59c4e4",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -22,7 +28,7 @@
     "methods": {
         "pastePage": {
             "name": "pastePage",
-            "line": 15,
+            "line": 29,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -36,7 +42,7 @@
         },
         "postPaste": {
             "name": "postPaste",
-            "line": 20,
+            "line": 37,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -50,7 +56,7 @@
         },
         "showPaste": {
             "name": "showPaste",
-            "line": 37,
+            "line": 57,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -63,10 +69,10 @@
             "parameters": {
                 "hash": {
                     "name": "hash",
-                    "line": 37,
-                    "short_desc": null,
+                    "line": 57,
+                    "short_desc": "",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [],
                     "tags": [],
                     "modifiers": "",
                     "default": null,

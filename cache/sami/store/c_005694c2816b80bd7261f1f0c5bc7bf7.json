@@ -1,6 +1,6 @@
 {
     "name": "ProjectRena\\Task\\BorisTask",
-    "line": 16,
+    "line": 17,
     "short_desc": "Class BorisTask",
     "long_desc": "",
     "hint": null,
@@ -13,13 +13,14 @@
     },
     "namespace": "ProjectRena\\Task",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/BorisTask.php",
-    "hash": "d20675ae4b7dd8a653b12d8378c2252d4899743a",
+    "hash": "9c8d84680f0f05f1f69ff50ef240420feab89a5d",
     "parent": "Cilex\\Command\\Command",
     "modifiers": "Stmt_Class",
     "is_trait": false,
     "is_interface": false,
     "aliases": {
         "Command": "Cilex\\Command\\Command",
+        "DateTime": "DateTime",
         "Lib": "ProjectRena\\Lib",
         "RenaApp": "ProjectRena\\RenaApp",
         "InputInterface": "Symfony\\Component\\Console\\Input\\InputInterface",

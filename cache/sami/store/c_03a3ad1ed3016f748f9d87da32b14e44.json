@@ -13,7 +13,7 @@
     },
     "namespace": "ProjectRena\\Model\\EVE",
     "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Model\/EVE\/alliances.php",
-    "hash": "5a4fe66cc6016962d4f6460f48951034a08bc46a",
+    "hash": "2c28174d7da6e4f336496aaeb6722d0a6d5d232e",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -390,7 +390,7 @@
             "parameters": {
                 "allianceID": {
                     "name": "allianceID",
-                    "line": 152,
+                    "line": 151,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -406,7 +406,7 @@
                 },
                 "allianceName": {
                     "name": "allianceName",
-                    "line": 153,
+                    "line": 151,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -422,7 +422,7 @@
                 },
                 "allianceTicker": {
                     "name": "allianceTicker",
-                    "line": 154,
+                    "line": 151,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -438,7 +438,7 @@
                 },
                 "memberCount": {
                     "name": "memberCount",
-                    "line": 155,
+                    "line": 151,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -454,7 +454,7 @@
                 },
                 "executorCorporationID": {
                     "name": "executorCorporationID",
-                    "line": 156,
+                    "line": 151,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -470,7 +470,7 @@
                 },
                 "information": {
                     "name": "information",
-                    "line": 157,
+                    "line": 151,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -488,7 +488,7 @@
         },
         "setLastUpdated": {
             "name": "setLastUpdated",
-            "line": 204,
+            "line": 167,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -501,7 +501,7 @@
             "parameters": {
                 "allianceID": {
                     "name": "allianceID",
-                    "line": 204,
+                    "line": 167,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -512,7 +512,7 @@
                 },
                 "lastUpdated": {
                     "name": "lastUpdated",
-                    "line": 204,
+                    "line": 167,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -525,7 +525,7 @@
         },
         "setExecutorCorporationID": {
             "name": "setExecutorCorporationID",
-            "line": 215,
+            "line": 178,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -538,7 +538,7 @@
             "parameters": {
                 "allianceID": {
                     "name": "allianceID",
-                    "line": 215,
+                    "line": 178,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -549,7 +549,7 @@
                 },
                 "executorCorporationID": {
                     "name": "executorCorporationID",
-                    "line": 215,
+                    "line": 178,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -562,7 +562,7 @@
         },
         "setMemberCount": {
             "name": "setMemberCount",
-            "line": 225,
+            "line": 188,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -575,7 +575,7 @@
             "parameters": {
                 "allianceID": {
                     "name": "allianceID",
-                    "line": 225,
+                    "line": 188,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -586,7 +586,7 @@
                 },
                 "memberCount": {
                     "name": "memberCount",
-                    "line": 225,
+                    "line": 188,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],

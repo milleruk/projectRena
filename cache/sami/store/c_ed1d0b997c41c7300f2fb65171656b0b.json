@@ -1,13 +1,13 @@
 {
-    "name": "ProjectRena\\Task\\Resque\\testResque",
-    "line": 8,
-    "short_desc": "Class testResque.",
+    "name": "ProjectRena\\Task\\Resque\\updateApiKeys",
+    "line": 7,
+    "short_desc": "Updates the APIKeys and populates the apiKeyCharacters table",
     "long_desc": "",
     "hint": null,
     "tags": [],
     "namespace": "ProjectRena\\Task\\Resque",
-    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/Resque\/testResque.php",
-    "hash": "7e844dcde7449d181c6e9286255a89ce559df6e7",
+    "file": "\/storage\/www\/projectRenaDocs\/..\/projectRena\/src\/Task\/Resque\/updateApiKeys.php",
+    "hash": "8ab928aaf4ccd813c39f13388d5a91cc490d3f9c",
     "parent": null,
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -18,10 +18,10 @@
     "traits": [],
     "properties": [],
     "methods": {
-        "setUp": {
-            "name": "setUp",
+        "perform": {
+            "name": "perform",
             "line": 13,
-            "short_desc": "",
+            "short_desc": "Performs the task, can access all $this->crap setup in setUp)",
             "long_desc": "",
             "hint": null,
             "hint_desc": null,
@@ -32,10 +32,10 @@
             "errors": [],
             "parameters": []
         },
-        "perform": {
-            "name": "perform",
-            "line": 20,
-            "short_desc": "",
+        "setUp": {
+            "name": "setUp",
+            "line": 54,
+            "short_desc": "Sets up the task (Setup $this->crap and such here)",
             "long_desc": "",
             "hint": null,
             "hint_desc": null,
@@ -48,8 +48,8 @@
         },
         "tearDown": {
             "name": "tearDown",
-            "line": 28,
-            "short_desc": "",
+            "line": 62,
+            "short_desc": "Tears the task down, unset $this->crap and such",
             "long_desc": "",
             "hint": null,
             "hint_desc": null,
