@@ -71,7 +71,28 @@ class participants
         $queryString = "";
         $argumentArray = array();
         // Valid extra arguments
-        $validArguments = array("killID", "killTime", "solarSystemID", "regionID", "characterID", "corporationID", "allianceID", "factionID", "shipTypeID", "groupID", "vGroupID", "weaponTypeID", "shipValue", "damageDone", "totalValue", "pointValue", "numberInvolved", "isVictim", "finalBlow", "isNPC");
+        $validArguments = array(
+            "killID",
+            "killTime",
+            "solarSystemID",
+            "regionID",
+            "characterID",
+            "corporationID",
+            "allianceID",
+            "factionID",
+            "shipTypeID",
+            "groupID",
+            "vGroupID",
+            "weaponTypeID",
+            "shipValue",
+            "damageDone",
+            "totalValue",
+            "pointValue",
+            "numberInvolved",
+            "isVictim",
+            "finalBlow",
+            "isNPC",
+        );
         if(!empty($extraArguments))
         {
             foreach($validArguments as $argument)
@@ -84,8 +105,7 @@ class participants
             }
         }
 
-        if($offset > 0)
-            $limit = "$offset, $limit ";
+        if($offset > 0) $limit = "$offset, $limit ";
 
         $queryString .= " ORDER BY killTime $order LIMIT $limit";
 
@@ -127,7 +147,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByKillTime($killTime, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByKillTime(
+        $killTime,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -153,7 +180,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getBySolarSystemID($solarSystemID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getBySolarSystemID(
+        $solarSystemID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -179,7 +213,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByRegionID($regionID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByRegionID(
+        $regionID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -205,7 +246,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByCharacterID($characterID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByCharacterID(
+        $characterID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -231,7 +279,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByCorporationID($corporationID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByCorporationID(
+        $corporationID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -257,7 +312,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByAllianceID($allianceID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByAllianceID(
+        $allianceID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -283,7 +345,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByFactionID($factionID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByFactionID(
+        $factionID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -309,7 +378,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByShipTypeID($shipTypeID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByShipTypeID(
+        $shipTypeID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -335,7 +411,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByGroupID($groupID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByGroupID(
+        $groupID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -361,7 +444,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByVGroupID($vGroupID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByVGroupID(
+        $vGroupID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
@@ -387,7 +477,14 @@ class participants
      * @return array|bool
      * @throws \Exception
      */
-    public function getByWeaponTypeID($weaponTypeID, $extraArguments = array(), $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    public function getByWeaponTypeID(
+        $weaponTypeID,
+        $extraArguments = array(),
+        $limit = 100,
+        $cacheTime = 3600,
+        $order = "DESC",
+        $offset = null
+    )
     {
         // Validate extraArguments
         $validated = $this->verifyExtraArguments($extraArguments, $offset, $limit, $order);
