@@ -22,7 +22,7 @@ class Alliances extends AbstractMigration
          ->addColumn("allianceTicker", "string", array("limit" => 8))
          ->addColumn("memberCount", "integer", array("limit" => 10))
          ->addColumn("executorCorporationID", "integer", array("limit" => 16))
-         ->addColumn('information', 'text', array("limit" => MysqlAdapter::TEXT_MEDIUM))
+         ->addColumn('information', 'text', array("limit" => MysqlAdapter::TEXT_MEDIUM, "null" => true))
          ->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
          ->addColumn('lastUpdated', 'datetime', array('default' => '0000-00-00 00:00:00'))
          ->addIndex(array("allianceID", "allianceName"), array("unique" => true))
