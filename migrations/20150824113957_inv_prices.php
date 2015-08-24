@@ -17,7 +17,12 @@ class InvPrices extends AbstractMigration
         $invPrices = $this->table("invPrices", array("engine" => "TokuDB"));
         $invPrices
             ->addColumn("typeID", "integer", array("limit" => 11))
-            ->addColumn("price", "float", array("limit" => 255))
+            ->addColumn("avgSell", "float", array("limit" => 255))
+            ->addColumn("avgBuy", "float", array("limit" => 255))
+            ->addColumn("lowSell", "float", array("limit" => 255))
+            ->addColumn("lowBuy", "float", array("limit" => 255))
+            ->addColumn("highSell", "float", array("limit" => 255))
+            ->addColumn("highBuy", "float", array("limit" => 255))
             ->addColumn("created", "datetime", array("default" => "CURRENT_TIMESTAMP"))
             ->addIndex(array("typeID"), array())
             ->save();
