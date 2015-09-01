@@ -231,8 +231,19 @@ class Db
         // Prepare the query
         $stmt = $this->pdo->prepare($query);
 
-        // Execute the query
-        $stmt->execute($parameters);
+        // Multilevel array handling.. not pretty but does speedup shit!
+        if(isset($parameters[0]) && is_array($parameters[0]) === true)
+        {
+            foreach($parameters as $array)
+            {
+                foreach($array as $key => &$value)
+                    $stmt->bindParam($key, $value);
+
+                $stmt->execute();
+            }
+        }
+        else
+            $stmt->execute($parameters);
 
         // If an error happened, rollback and return false
         if($stmt->errorCode() != 0)

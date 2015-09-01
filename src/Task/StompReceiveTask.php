@@ -55,7 +55,7 @@ class StompReceiveTask extends Command
                     // Fix the killID
                     $killdata["killID"] = (int) $killdata["killID"];
 
-                    $json = json_encode($killdata);
+                    $json = json_encode($killdata, JSON_NUMERIC_CHECK);
                     $hash = hash("sha256", ":" . $killdata["killTime"] . ":" . $killdata["solarSystemID"] . ":" . $killdata["moonID"] . "::" . $killdata["victim"]["characterID"] . ":" . $killdata["victim"]["shipTypeID"] . ":" . $killdata["victim"]["damageTaken"] . ":");
 
                     $inserted = $app->Db->execute("INSERT IGNORE INTO killmails (killID, hash, source, kill_json) VALUES (:killID, :hash, :source, :kill_json)", array(":killID" => $killdata["killID"], ":hash" => $hash, ":source" => "stomp", ":kill_json" => $json));

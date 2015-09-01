@@ -44,6 +44,9 @@ class Prices
      */
     private $statsd;
 
+    /**
+     * @param RenaApp $app
+     */
     public function __construct(RenaApp $app)
     {
         $this->app = $app;
@@ -55,6 +58,12 @@ class Prices
         $this->log = $app->Logging;
     }
 
+    /**
+     * @param $typeID
+     * @param null $date
+     *
+     * @return array
+     */
     public function getPricesForTypeID($typeID, $date = null)
     {
         if($date == null)
@@ -66,15 +75,33 @@ class Prices
         return $data;
     }
 
+    /**
+     * @param $typeID
+     * @param string $type
+     * @param null $date
+     *
+     * @return int|null
+     * @throws \Exception
+     */
     public function getPriceForTypeID($typeID, $type = "avgSell", $date = null)
     {
         $validTypes = array("avgSell", "avgBuy", "lowSell", "lowBuy", "highSell", "highBuy");
         if(!in_array($type, $validTypes))
             throw new \Exception("Type not valid, please select a valid type: " . implode(", ", $validTypes));
 
-        return $this->db->queryField("SELECT {$type} FROM invPrices WHERE typeID = :typeID ORDER BY created DESC LIMIT 1", $type, array(":typeID" => $typeID));
+        $data = $this->db->queryField("SELECT {$type} FROM invPrices WHERE typeID = :typeID ORDER BY created DESC LIMIT 1", $type, array(":typeID" => $typeID));
+
+        if(!$data)
+            return 0;
+        return $data;
     }
 
+    /**
+     * @param $killData
+     *
+     * @return array
+     * @throws \Exception
+     */
     public function calculateKillValue($killData)
     {
         $items = $killData["items"];
@@ -95,6 +122,14 @@ class Prices
         return array("itemValue" => $killValue, "shipValue" => $victimShipValue, "totalValue" => $killValue + $victimShipValue);
     }
 
+    /**
+     * @param $itemData
+     * @param $killTime
+     * @param bool|false $isCargo
+     *
+     * @return float|int|null
+     * @throws \Exception
+     */
     private function processItem($itemData, $killTime, $isCargo = false)
     {
         $typeID = $itemData["typeID"];

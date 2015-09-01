@@ -58,7 +58,7 @@ class killMailFetcher
                 $source = "apiKey:" . $keyID;
 
                 // json encode the killData
-                $json = json_encode($kill);
+                $json = json_encode($kill, JSON_NUMERIC_CHECK);
 
                 // insert the killData to the killmails table
                 $inserted = $this->app->killmails->insertKillmail($killID, 0, $hash, $source, $json);
