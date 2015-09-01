@@ -171,12 +171,45 @@ class Points
     }
 
     /**
+     * @param $killData
+     *
+     * @return int|mixed
+     * @throws \Exception
+     */
+    public function calculatePoints($killData)
+    {
+        $victimPoints = $this->getPoints($this->app->invTypes->getAllByID($killData["victim"]["shipTypeID"])["groupID"]);
+        $victimPoints += $this->app->Prices->calculateKillValue($killData)["totalValue"] / 10000000;
+
+        $maxPoints = round($victimPoints * 1.2);
+
+        $involvedPoints = 0;
+
+        foreach($killData["attackers"] as $attacker)
+            $involvedPoints += $this->getPoints($this->app->invTypes->getAllByID($attacker["shipTypeID"])["groupID"]);
+
+        if(($victimPoints + $involvedPoints) == 0)
+            return 0;
+
+        $gankFactor = $victimPoints / ($victimPoints + $involvedPoints);
+        $points = ceil($victimPoints * ($gankFactor / 0.75));
+
+        if($points > $maxPoints)
+            $points = $maxPoints;
+
+        $points = round($points, 0);
+
+        // A kill is always worth at least one point
+        return max(1, $points);
+    }
+
+    /**
      * @param $killID
      *
      * @return int|mixed
      * @throws \Exception
      */
-    private function calculatePoints($killID)
+    public function calculatePointsForKillID($killID)
     {
         $victim = $this->db->queryRow("SELECT * FROM participants WHERE killID = :killID AND isVictim = 1", array(":killID" => $killID));
         $involved = $this->db->query("SELECT * FROM partisipants WHERE killID = :killID AND isVictim = 0", array(":killID" => $killID));
