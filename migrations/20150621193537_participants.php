@@ -53,9 +53,9 @@ class Participants extends AbstractMigration
          ->addColumn("vGroupID", "integer", array("limit" => 8))
          ->addColumn("weaponTypeID", "integer", array("limit" => 8))
             // Extra values
-         ->addColumn("shipValue", "decimal", array("limit" => 17))
+         ->addColumn("shipValue", "float", array("limit" => 17))
          ->addColumn("damageDone", "integer", array("limit" => 8))
-         ->addColumn("totalValue", "decimal", array("limit" => 17))
+         ->addColumn("totalValue", "float", array("limit" => 17))
          ->addColumn("pointValue", "integer", array("limit" => 4))
          ->addColumn("numberInvolved", "integer", array("limit" => 4))
          ->addColumn("isVictim", "integer", array("limit" => 1))

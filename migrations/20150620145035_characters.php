@@ -21,6 +21,7 @@ class Characters extends AbstractMigration
          ->addColumn("corporationID", "integer", array("limit" => 16))
          ->addColumn("allianceID", "integer", array("limit" => 16))
          ->addColumn("characterName", "string", array("limit" => 128))
+         ->addColumn("securityStatus", "float", array("limit" => 6))
          ->addColumn('history', 'text', array("limit" => MysqlAdapter::TEXT_MEDIUM))
          ->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
          ->addColumn('lastUpdated', 'datetime', array('default' => '0000-00-00 00:00:00'))
