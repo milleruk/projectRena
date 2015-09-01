@@ -30,6 +30,10 @@ class updateCharacter
         $this->app->StatsD->increment("charactersUpdated");
         $characterID = $this->args["characterID"];
 
+        // Just exit if the char id is 0
+        if($characterID == 0)
+            exit;
+
         // Skip NPC and DUST characters
         if($characterID >= 2100000000 && $characterID <= 2200000000) return;
         if($characterID >= 30000000 && $characterID <= 31004590) return;

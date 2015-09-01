@@ -42,7 +42,7 @@ class Pheal
         Config::getInstance()->log = new \Pheal\Log\PsrLogger($psrLogger);
         Config::getInstance()->api_customkeys = true;
         Config::getInstance()->api_base = $app->baseConfig->getConfig("apiServer", "ccp", "https://api.eveonline.com/");
-        Config::getInstance()->rateLimiter = new \Pheal\RateLimiter\FileLockRateLimiter(__DIR__ . "/../../cache/", 30, 20, 10);
+        Config::getInstance()->rateLimiter = new \Pheal\RateLimiter\FileLockRateLimiter(__DIR__ . "/../../cache/", 60, 40, 20);
     }
 
     /**
