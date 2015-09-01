@@ -90,7 +90,7 @@ class killmails
      */
     public function insertKillmail($killID, $processed = 0, $hash, $source, $kill_json)
     {
-        return $this->db->execute("INSERT IGNORE INTO killmails (killID, processed, hash, source, kill_json) VALUES (:killID, :processed, :hash, :source, :kill_json)", array(
+        $insert = $this->db->execute("INSERT IGNORE INTO killmails (killID, processed, hash, source, kill_json) VALUES (:killID, :processed, :hash, :source, :kill_json)", array(
                 ":killID"    => $killID,
                 ":processed" => $processed,
                 ":hash"      => $hash,
@@ -98,6 +98,11 @@ class killmails
                 ":kill_json" => $kill_json,
             )
         );
+
+        if($insert)
+            \Resque::enqueue("important", "\\ProjectRena\\Task\\Resque\\killmailParser", array("killID" => $killID));
+
+        return $insert;
     }
 
     public function generateFromCREST($crestData)

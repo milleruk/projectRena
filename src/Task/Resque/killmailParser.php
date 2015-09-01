@@ -67,7 +67,7 @@ class killmailParser
             ));
 
             // Lets encode/decode the json again, but with numeric checks turned on.. ints are ints..
-            $killData = json_decode(json_encode($killData, JSON_NUMERIC_CHECK));
+            $killData = json_decode(json_encode($killData, JSON_NUMERIC_CHECK), true);
         }
 
         // Add the victim/attacker character and corporation to the database
@@ -145,6 +145,9 @@ class killmailParser
 
         // Update the killmails table
         $this->app->Db->execute("UPDATE killmails SET processed = 1 WHERE killID = :killID", array(":killID" => $killID));
+
+        // Update statsd
+        $this->app->StatsD->increment("killmailsProcessed");
     }
 
     /**
