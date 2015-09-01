@@ -24,11 +24,6 @@ $app->container->singleton("Pheal", function($container) use ($app)
 		return new \ProjectRena\Lib\Pheal($app);
 });
 
-$app->container->singleton("PhealLogger", function($container) use ($app)
-{
-		return new \ProjectRena\Lib\PhealLogger($app);
-});
-
 $app->container->set("SessionHandler", function($container) use ($app)
 {
 		return new \ProjectRena\Lib\SessionHandler($app);
@@ -79,6 +74,11 @@ $app->container->singleton("Config", function($container) use ($app)
 		return new \ProjectRena\Model\Config($app);
 });
 
+$app->container->singleton("EveCentral", function($container) use ($app)
+{
+		return new \ProjectRena\Model\EveCentral($app);
+});
+
 $app->container->singleton("Groups", function($container) use ($app)
 {
 		return new \ProjectRena\Model\Groups($app);
@@ -87,6 +87,11 @@ $app->container->singleton("Groups", function($container) use ($app)
 $app->container->singleton("Paste", function($container) use ($app)
 {
 		return new \ProjectRena\Model\Paste($app);
+});
+
+$app->container->singleton("Points", function($container) use ($app)
+{
+		return new \ProjectRena\Model\Points($app);
 });
 
 $app->container->singleton("Search", function($container) use ($app)

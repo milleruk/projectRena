@@ -7,7 +7,6 @@ use ProjectRena\Lib\Cache;
 use ProjectRena\Lib\Db;
 use ProjectRena\Lib\Logging;
 use ProjectRena\Lib\Pheal;
-use ProjectRena\Lib\PhealLogger;
 use ProjectRena\Lib\SessionHandler;
 use ProjectRena\Lib\StatsD;
 use ProjectRena\Lib\Timer;
@@ -18,8 +17,10 @@ use ProjectRena\Lib\OAuth\EVEOAuth;
 use ProjectRena\Model\ApiKeyCharacters;
 use ProjectRena\Model\ApiKeys;
 use ProjectRena\Model\Config;
+use ProjectRena\Model\EveCentral;
 use ProjectRena\Model\Groups;
 use ProjectRena\Model\Paste;
+use ProjectRena\Model\Points;
 use ProjectRena\Model\Search;
 use ProjectRena\Model\Storage;
 use ProjectRena\Model\Users;
@@ -132,7 +133,6 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property Db Db
  * @property Logging Logging
  * @property Pheal Pheal
- * @property PhealLogger PhealLogger
  * @property SessionHandler SessionHandler
  * @property StatsD StatsD
  * @property Timer Timer
@@ -143,8 +143,10 @@ use ProjectRena\Model\EVEApi\Server\ServerStatus as EVEServerServerStatus;
  * @property ApiKeyCharacters ApiKeyCharacters
  * @property ApiKeys ApiKeys
  * @property Config Config
+ * @property EveCentral EveCentral
  * @property Groups Groups
  * @property Paste Paste
+ * @property Points Points
  * @property Search Search
  * @property Storage Storage
  * @property Users Users
