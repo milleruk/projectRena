@@ -94,6 +94,11 @@ $app->container->singleton("Points", function($container) use ($app)
 		return new \ProjectRena\Model\Points($app);
 });
 
+$app->container->singleton("Prices", function($container) use ($app)
+{
+		return new \ProjectRena\Model\Prices($app);
+});
+
 $app->container->singleton("Search", function($container) use ($app)
 {
 		return new \ProjectRena\Model\Search($app);
