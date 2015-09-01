@@ -103,7 +103,7 @@ class Db
         if($cacheTime > 0)
         {
             // Try the cache system
-            $result = unserialize($this->cache->get($key));
+            $result = !empty($this->cache->get($key)) ? unserialize($this->cache->get($key)) : null;
             if(!empty($result))
             {
                 return $result;
