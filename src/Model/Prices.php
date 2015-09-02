@@ -80,7 +80,7 @@ class Prices
      * @param string $type
      * @param null $date
      *
-     * @return int|null
+     * @return integer
      * @throws \Exception
      */
     public function getPriceForTypeID($typeID, $type = "avgSell", $date = null)
