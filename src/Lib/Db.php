@@ -187,7 +187,7 @@ class Db
      * @param array $parameters
      * @param int $cacheTime
      *
-     * @return null
+     * @return string
      * @throws Exception
      */
     public function queryField($query, $field, $parameters = array(), $cacheTime = 30)

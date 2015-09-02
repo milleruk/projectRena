@@ -31,7 +31,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getNameByID($typeID)
     {

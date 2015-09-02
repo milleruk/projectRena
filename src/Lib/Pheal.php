@@ -66,7 +66,7 @@ class Pheal
     /**
      * @param $keyID
      * @param $characterID
-     * @param $exception
+     * @param \Exception $exception
      */
     public function handleApiException($keyID, $characterID, $exception)
     {
