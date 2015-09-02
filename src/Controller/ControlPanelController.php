@@ -62,7 +62,7 @@ class ControlPanelController
     {
         $validPages = array("accountservices", "groups");
 
-        if(in_array($subPage, $validPages))
+        if (in_array($subPage, $validPages))
             $this->{$subPage}();
         else
             $this->mainPage();

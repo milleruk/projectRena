@@ -38,15 +38,13 @@ class PasteController
     {
         $postData = $this->app->request->post("paste");
         $timeout = $this->app->request->post("timeout");
-        if(isset($_SESSION["characterName"]))
-        {
+        if (isset($_SESSION["characterName"])) {
             $user = $this->app->Users->getUserByName($_SESSION["characterName"]);
             $userID = $user["id"];
             $hash = md5(time() . $_SESSION["characterName"] . $_SESSION["characterID"]);
             $this->app->paste->createPaste($hash, $userID, $postData, $timeout);
             $this->app->redirect("/paste/{$hash}/");
-        } else
-        {
+        } else {
             render("/paste/paste.twig", array("error" => "Error, you need to be logged in to post data"));
         }
     }

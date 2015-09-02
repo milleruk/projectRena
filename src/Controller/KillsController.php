@@ -4,9 +4,9 @@ namespace ProjectRena\Controller;
 use ProjectRena\RenaApp;
 
 /**
- * Functions for the API
+ * Shows the /kill/ page
  */
-class APIController
+class KillsController
 {
 
     /**
@@ -45,11 +45,6 @@ class APIController
     private $statsd;
 
     /**
-     * @var string
-     */
-    private $contentType;
-
-    /**
      * @param RenaApp $app
      */
     public function __construct(RenaApp $app)
@@ -61,19 +56,5 @@ class APIController
         $this->curl = $app->cURL;
         $this->statsd = $app->StatsD;
         $this->log = $app->Logging;
-
-        // Only accept json and xml as valid outputs otherwise default to json
-        if (in_array($app->request->getContentType(), array("application/json", "application/xml")))
-            $this->contentType = $app->request->getContentType();
-        else
-            $this->contentType = "application/json";
-    }
-
-    /**
-     * @param $page
-     */
-    public function main($page)
-    {
-        render("", array($page), null, $this->contentType);
     }
 }

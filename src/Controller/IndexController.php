@@ -12,24 +12,24 @@ use ProjectRena\RenaApp;
 class IndexController
 {
 
-				/**
-				 * @var RenaApp
-				 */
-				protected $app;
+    /**
+     * @var RenaApp
+     */
+    protected $app;
 
-				/**
-				 * @param RenaApp $app
-				 */
-				function __construct(RenaApp $app)
-				{
-								$this->app = $app;
-				}
+    /**
+     * @param RenaApp $app
+     */
+    function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+    }
 
-				/**
-				 *
-				 */
-				public function index()
-				{
-								render("index.twig");
-				}
+    /**
+     *
+     */
+    public function index()
+    {
+        render("index.twig");
+    }
 }

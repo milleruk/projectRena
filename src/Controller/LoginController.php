@@ -11,18 +11,18 @@ use ProjectRena\RenaApp;
  */
 class LoginController
 {
-				protected $app;
+    protected $app;
 
-				function __construct(RenaApp $app)
-				{
-								$this->app = $app;
-				}
+    function __construct(RenaApp $app)
+    {
+        $this->app = $app;
+    }
 
-				public function loginEVE()
-				{
-								$code = $this->app->request->get("code");
-								$state = $this->app->request->get("state");
+    public function loginEVE()
+    {
+        $code = $this->app->request->get("code");
+        $state = $this->app->request->get("state");
 
-								$this->app->EVEOAuth->SSOLogin($code, $state);
-				}
+        $this->app->EVEOAuth->SSOLogin($code, $state);
+    }
 }
