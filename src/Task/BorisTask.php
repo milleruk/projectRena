@@ -37,6 +37,7 @@ class BorisTask extends Command
         $boris->onStart('$db = $app->Db;');
         $boris->onStart('$db->persistence = false;');
         $boris->onStart('$cache = $app->Cache;');
+        $boris->onStart('echo "Welcome to Boris.\n Quick usage functions: \$app, \$db, \$cache \n more to come \n";');
         $boris->start();
     }
 }
