@@ -77,10 +77,10 @@ function dd($input)
 /**
 	* Quick access to rendering templates, json, xml and probably more down the line.
 	*
-	* @param $templateFile
+	* @param string $templateFile
 	* @param array $dataArray
 	* @param null $status
-	* @param null $contentType
+	* @param string $contentType
 	*/
 function render($templateFile, $dataArray = array(), $status = null, $contentType = null)
 {

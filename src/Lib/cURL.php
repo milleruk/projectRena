@@ -25,7 +25,7 @@ class cURL
 				 * @param $url
 				 * @param int $cacheTime
 				 *
-				 * @return mixed|null
+				 * @return string
 				 */
 				public function getData($url, $cacheTime = 3600)
 				{

@@ -3,7 +3,6 @@ namespace ProjectRena\Task;
 
 use ProjectRena\RenaApp;
 use Cilex\Command\Command;
-use ProjectRena\Lib;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ZMQ;

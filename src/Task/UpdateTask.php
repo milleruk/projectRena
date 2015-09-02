@@ -158,6 +158,9 @@ class UpdateTask extends Command
 								return $php;
 				}
 
+				/**
+				 * @param OutputInterface $output
+				 */
 				private function runUnitTest($output)
 				{
 								// Check if phpunit.phar is in the dir
