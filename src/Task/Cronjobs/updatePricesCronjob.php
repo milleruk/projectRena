@@ -30,7 +30,7 @@ class updatePricesCronjob
 
             if($cnt == 20)
             {
-                \Resque::enqueue("important", "\\ProjectRena\\Task\\Resque\\updatePrices", array("typeIDs" => $fetchIDs));
+                \Resque::enqueue("now", "\\ProjectRena\\Task\\Resque\\updatePrices", array("typeIDs" => $fetchIDs));
                 $fetchIDs = array();
                 $cnt = 0;
             }
