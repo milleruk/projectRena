@@ -27,7 +27,7 @@ class apiKeyCheckerCronjob
                 $keyID = $api["keyID"];
                 $vCode = $api["vCode"];
                 // Update the lastValidation to in ten minutes, just so we don't insert it again and again
-                \Resque::enqueue("default", "\\ProjectRena\\Task\\Resque\\updateApiKeys", array("keyID" => $keyID, "vCode" => $vCode));
+                \Resque::enqueue("now", "\\ProjectRena\\Task\\Resque\\updateApiKeys", array("keyID" => $keyID, "vCode" => $vCode));
             }
         }
         exit();
