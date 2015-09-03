@@ -4,14 +4,15 @@ namespace ProjectRena\Controller;
 use ProjectRena\RenaApp;
 
 /**
- * Shows the /kills/ pages
+ * Shows the kill details under /kill/<id>
  */
-class KillsController
+class KillDetailViewController
 {
 
     /**
      * The Slim Application
      */
+
     private $app;
 
     /**
@@ -22,6 +23,7 @@ class KillsController
     /**
      * The baseConfig (config/config.php)
      */
+
     private $config;
 
     /**
@@ -32,6 +34,7 @@ class KillsController
     /**
      * The Database
      */
+
     private $db;
 
     /**
@@ -42,11 +45,13 @@ class KillsController
     /**
      * StatsD for tracking stats
      */
+
     private $statsd;
 
     /**
      * @param RenaApp $app
      */
+
     public function __construct(RenaApp $app)
     {
         $this->app = $app;
