@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4a725f6f96602985627b29b75e64c03",
+    "hash": "4b2a761c34cb92f4c142676c6b469c65",
     "packages": [
         {
             "name": "3rdpartyeve/perry",
@@ -492,6 +492,82 @@
             "time": "2015-06-29 05:42:04"
         },
         {
+            "name": "gossi/collection",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gossi/collection.git",
+                "reference": "339bda4e443645d0cd9165302ee23f44d4bdfa90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gossi/collection/zipball/339bda4e443645d0cd9165302ee23f44d4bdfa90",
+                "reference": "339bda4e443645d0cd9165302ee23f44d4bdfa90",
+                "shasum": ""
+            },
+            "require": {
+                "gossi/common": "~0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gossi\\collection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP Collections library",
+            "keywords": [
+                "collection",
+                "collections",
+                "list",
+                "map",
+                "queue",
+                "set",
+                "stack"
+            ],
+            "abandoned": "phootwork/collection",
+            "time": "2014-11-09 19:10:34"
+        },
+        {
+            "name": "gossi/common",
+            "version": "v0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gossi/common.git",
+                "reference": "88362cd8c06d0f5f7d02870f64105d3912d95044"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gossi/common/zipball/88362cd8c06d0f5f7d02870f64105d3912d95044",
+                "reference": "88362cd8c06d0f5f7d02870f64105d3912d95044",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gossi\\common\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Common php interfaces and classes",
+            "keywords": [
+                "commons",
+                "php"
+            ],
+            "abandoned": "phootwork/lang",
+            "time": "2014-11-06 01:24:21"
+        },
+        {
             "name": "gossi/docblock",
             "version": "v1.4",
             "source": {
@@ -530,6 +606,48 @@
                 "parser"
             ],
             "time": "2015-05-15 11:39:06"
+        },
+        {
+            "name": "gossi/php-code-formatter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gossi/php-code-formatter.git",
+                "reference": "318c01ef82fe471bca62e636dbee86bb38a6e00e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gossi/php-code-formatter/zipball/318c01ef82fe471bca62e636dbee86bb38a6e00e",
+                "reference": "318c01ef82fe471bca62e636dbee86bb38a6e00e",
+                "shasum": ""
+            },
+            "require": {
+                "gossi/collection": "~1",
+                "php": ">=5.4",
+                "symfony/config": "~2",
+                "symfony/event-dispatcher": "~2",
+                "symfony/yaml": "~2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gossi\\formatter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "a code formatter for php code",
+            "keywords": [
+                "beautifier",
+                "formatter",
+                "php"
+            ],
+            "time": "2014-10-18 23:05:55"
         },
         {
             "name": "gossi/php-code-generator",
@@ -2412,6 +2530,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "gossi/php-code-generator": 20,
+        "gossi/php-code-formatter": 20,
         "zkillboard/redisq": 20
     },
     "prefer-stable": false,
