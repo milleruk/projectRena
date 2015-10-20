@@ -100,7 +100,10 @@ class killmails
         );
 
         if($insert)
-            \Resque::enqueue("important", "\\ProjectRena\\Task\\Resque\\killmailParser", array("killID" => $killID));
+        {
+            \Resque::enqueue("now", "\\ProjectRena\\Task\\Resque\\killmailParser", array("killID" => $killID));
+            $this->app->StatsD->increment("killmailsAdded");
+        }
 
         return $insert;
     }

@@ -8,21 +8,17 @@ ini_set("display_errors", 1);
 error_reporting(E_WARNING);
 
 // Load the autoloader
-if(file_exists(__DIR__ . "/vendor/autoload.php"))
-{
-				require_once __DIR__ . "/vendor/autoload.php";
-} else
-{
-				throw new Exception("vendor/autoload.php not found, make sure you run composer install");
+if (file_exists(__DIR__ . "/vendor/autoload.php")) {
+    require_once __DIR__ . "/vendor/autoload.php";
+} else {
+    throw new Exception("vendor/autoload.php not found, make sure you run composer install");
 }
 
 // Require the config
-if(file_exists(__DIR__ . "/config/config.php"))
-{
-				require_once __DIR__ . "/config/config.php";
-} else
-{
-				throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
+if (file_exists(__DIR__ . "/config/config.php")) {
+    require_once __DIR__ . "/config/config.php";
+} else {
+    throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
 }
 
 // Init Slim
@@ -43,19 +39,16 @@ $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 $app->view->parserOptions = $config['twig'];
 
 // Load the lib/Model loader
-if(file_exists(__DIR__ . "/src/Loader.php"))
-{
-				require_once __DIR__ . "/src/Loader.php";
-} else
-{
-				throw new Exception("Loader.php could not be found");
+if (file_exists(__DIR__ . "/src/Loader.php")) {
+    require_once __DIR__ . "/src/Loader.php";
+} else {
+    throw new Exception("Loader.php could not be found");
 }
 
 // load the additional configs
 $configFiles = glob(__DIR__ . "/config/*.php");
-foreach($configFiles as $configFile)
-{
-				require_once $configFile;
+foreach ($configFiles as $configFile) {
+    require_once $configFile;
 }
 
 // Try and auto login the person
@@ -65,25 +58,26 @@ $app->Users->tryAutologin();
 $app->run();
 
 /**
-	* Var_dumps and dies, quicker than var_dump($input); die();
-	*
-	* @param $input
-	*/
+ * Var_dumps and dies, quicker than var_dump($input); die();
+ *
+ * @param $input
+ */
 function dd($input)
 {
-				var_dump($input); die();
+    var_dump($input);
+    die();
 }
 
 /**
-	* Quick access to rendering templates, json, xml and probably more down the line.
-	*
-	* @param string $templateFile
-	* @param array $dataArray
-	* @param null $status
-	* @param string $contentType
-	*/
+ * Quick access to rendering templates, json, xml and probably more down the line.
+ *
+ * @param string $templateFile
+ * @param array $dataArray
+ * @param null $status
+ * @param string $contentType
+ */
 function render($templateFile, $dataArray = array(), $status = null, $contentType = null)
 {
-				$app = \ProjectRena\RenaApp::getInstance();
-				$app->out->render($templateFile, $dataArray, $status, $contentType);
+    $app = \ProjectRena\RenaApp::getInstance();
+    $app->out->render($templateFile, $dataArray, $status, $contentType);
 }

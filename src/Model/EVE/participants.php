@@ -131,7 +131,7 @@ class participants
         // Merge the arrays
         $array = array(":killID" => $killID);
         $query = "SELECT * FROM participants WHERE killID = :killID" . $vQuery;
-
+        
         // Execute the query
         return $this->db->query($query, $array, $cacheTime);
     }

@@ -61,19 +61,39 @@ class APIController
         $this->curl = $app->cURL;
         $this->statsd = $app->StatsD;
         $this->log = $app->Logging;
-
-        // Only accept json and xml as valid outputs otherwise default to json
-        if (in_array($app->request->getContentType(), array("application/json", "application/xml")))
-            $this->contentType = $app->request->getContentType();
-        else
-            $this->contentType = "application/json";
+        $this->contentType = "application/json";
     }
 
-    /**
-     * @param $page
-     */
-    public function main($page)
+    public function characterInformation($characterID)
     {
-        render("", array($page), null, $this->contentType);
+        $data = $this->app->characters->getAllByID($characterID);
+        $data["history"] = json_decode($data["history"], true);
+        render("", $data, null, $this->contentType);
+    }
+
+    public function corporationInformation($corporationID)
+    {
+        $data = $this->app->corporations->getAllByID($corporationID);
+        $data["information"] = json_decode($data["information"], true);
+        render("", $data, null, $this->contentType);
+    }
+
+    public function corporationMembers($corporationID)
+    {
+        $data = $this->app->corporations->getMembersByID($corporationID);
+        render("", $data, null, $this->contentType);
+    }
+
+    public function allianceInformation($allianceID)
+    {
+        $data = $this->app->alliances->getAllByID($allianceID);
+        $data["information"] = json_decode($data["information"], true);
+        render("", $data, null, $this->contentType);
+    }
+
+    public function allianceMembers($allianceID)
+    {
+        $data = $this->app->alliances->getMembersByID($allianceID);
+        render("", $data, null, $this->contentType);
     }
 }

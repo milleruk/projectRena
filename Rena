@@ -9,21 +9,17 @@ ini_set("display_errors", 0);
 error_reporting(E_ALL);
 
 // Load the autoloader
-if(file_exists(__DIR__ . "/vendor/autoload.php"))
-{
-				require_once __DIR__ . "/vendor/autoload.php";
-} else
-{
-				throw new Exception("vendor/autoload.php not found, make sure you run composer install");
+if (file_exists(__DIR__ . "/vendor/autoload.php")) {
+    require_once __DIR__ . "/vendor/autoload.php";
+} else {
+    throw new Exception("vendor/autoload.php not found, make sure you run composer install");
 }
 
 // Require the config
-if(file_exists(__DIR__ . "/config/config.php"))
-{
-				require_once __DIR__ . "/config/config.php";
-} else
-{
-				throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
+if (file_exists(__DIR__ . "/config/config.php")) {
+    require_once __DIR__ . "/config/config.php";
+} else {
+    throw new Exception("config.php not found (you might wanna start by copying config_new.php)");
 }
 
 // Init Slim
@@ -33,12 +29,10 @@ $app = new \ProjectRena\RenaApp($config["slim"]);
 $app->environment = Slim\Environment::mock();
 
 // Load the lib/Model loader
-if(file_exists(__DIR__ . "/src/Loader.php"))
-{
-				require_once __DIR__ . "/src/Loader.php";
-} else
-{
-				throw new Exception("Loader.php could not be found");
+if (file_exists(__DIR__ . "/src/Loader.php")) {
+    require_once __DIR__ . "/src/Loader.php";
+} else {
+    throw new Exception("Loader.php could not be found");
 }
 
 // Launch the CLI
@@ -46,16 +40,14 @@ $cli = new \Cilex\Application('projectRena');
 
 // Find tasks to run
 $tasks = scandir(__DIR__ . "/src/Task/");
-foreach($tasks as $task)
-{
-				if(!preg_match("/^(.+)\\.php$/", $task, $match)) continue;
+foreach ($tasks as $task) {
+    if (!preg_match("/^(.+)\\.php$/", $task, $match)) continue;
 
-				if(isset($match[1]))
-				{
-								$taskName = $match[1];
-								$import = "\\ProjectRena\\Task\\" . $taskName;
-								$cli->command(new $import());
-				}
+    if (isset($match[1])) {
+        $taskName = $match[1];
+        $import = "\\ProjectRena\\Task\\" . $taskName;
+        $cli->command(new $import());
+    }
 }
 
 // Phinx Commands (Sadly they're not marked properly)
@@ -69,18 +61,18 @@ $cli->command(new \Phinx\Console\Command\Test());
 $cli->run();
 
 /**
-	* CLI Prompter that gets an input and returns it
-	*
-	* @param $prompt
-	* @param string $default
-	*
-	* @return bool|string
-	*/
+ * CLI Prompter that gets an input and returns it
+ *
+ * @param $prompt
+ * @param string $default
+ *
+ * @return bool|string
+ */
 function prompt($prompt, $default = "")
 {
-				echo "$prompt [$default] ";
-				$answer = trim(fgets(STDIN));
-				if(strlen($answer) == 0)
-								return $default == "yes" ? true : $default;
-				return $answer;
+    echo "$prompt [$default] ";
+    $answer = trim(fgets(STDIN));
+    if (strlen($answer) == 0)
+        return $default == "yes" ? true : $default;
+    return $answer;
 }

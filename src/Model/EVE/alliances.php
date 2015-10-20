@@ -138,6 +138,16 @@ class alliances
         return $this->db->queryField("SELECT memberCount FROM alliances WHERE allianceName = :name", "memberCount", array(":name" => $allianceName), 3600);
     }
 
+    public function getMembersByID($allianceID)
+    {
+        return $this->db->query("SELECT characterID, characterName FROM characters WHERE allianceID = :allianceID", array(":allianceID" => $allianceID), 3600);
+    }
+
+    public function getMembersByName($allianceName)
+    {
+        return $this->db->query("SELECT characterID, characterName FROM characters WHERE allianceID = (SELECT allianceID FROM alliances WHERE allianceName = :allianceName)", array(":allianceName" => $allianceName), 3600);
+    }
+
     /**
      * @param null $allianceID
      * @param null $allianceName

@@ -140,6 +140,26 @@ class corporations
 
     /**
      * @param $corporationID
+     * @return array|bool
+     * @throws \Exception
+     */
+    public function getMembersByID($corporationID)
+    {
+        return $this->db->query("SELECT characterID, characterName FROM characters WHERE corporationID = :corporationID", array(":corporationID" => $corporationID), 3600);
+    }
+
+    /**
+     * @param $corporationName
+     * @return array|bool
+     * @throws \Exception
+     */
+    public function getMembersByName($corporationName)
+    {
+        return $this->db->query("SELECT characterID, characterName FROM characters WHERE corporationID = (SELECT corporationID FROM corporations WHERE corporationName = :corporationName)", array(":corporationName" => $corporationName), 3600);
+    }
+
+    /**
+     * @param $corporationID
      * @param null $allianceID
      * @param null $corporationName
      * @param null $ceoID
