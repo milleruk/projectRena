@@ -41,7 +41,7 @@ class dgmTypeAttributes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getAttributeIDByID($typeID)
     {
@@ -51,7 +51,7 @@ class dgmTypeAttributes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getValueIntByID($typeID)
     {
@@ -61,7 +61,7 @@ class dgmTypeAttributes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getValueFloatByID($typeID)
     {

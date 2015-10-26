@@ -41,7 +41,7 @@ class dgmTypeEffects
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     function getEffectIDByID($typeID)
     {
@@ -51,7 +51,7 @@ class dgmTypeEffects
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     function getIsDefaultByID($typeID)
     {

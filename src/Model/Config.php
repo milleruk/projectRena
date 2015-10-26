@@ -21,7 +21,7 @@ class Config
     /**
      * @param $key
      *
-     * @return mixed
+     * @return string
      */
     public function get($key)
     {
