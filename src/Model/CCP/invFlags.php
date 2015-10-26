@@ -51,7 +51,7 @@ class invFlags
     /**
      * @param $flagID
      *
-     * @return null
+     * @return string
      */
     public function getFlagNameByID($flagID)
     {
@@ -61,7 +61,7 @@ class invFlags
     /**
      * @param $flagName
      *
-     * @return null
+     * @return string
      */
     public function getFlagIDByName($flagName)
     {
@@ -71,7 +71,7 @@ class invFlags
     /**
      * @param $flagID
      *
-     * @return null
+     * @return string
      */
     public function getFlagTextByID($flagID)
     {
@@ -81,7 +81,7 @@ class invFlags
     /**
      * @param $flagName
      *
-     * @return null
+     * @return string
      */
     public function getFlagTextByName($flagName)
     {
@@ -91,7 +91,7 @@ class invFlags
     /**
      * @param $flagID
      *
-     * @return null
+     * @return string
      */
     public function getOrderIDByID($flagID)
     {
@@ -101,7 +101,7 @@ class invFlags
     /**
      * @param $flagName
      *
-     * @return null
+     * @return string
      */
     public function getOrderIDByName($flagName)
     {

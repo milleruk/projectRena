@@ -51,7 +51,7 @@ class dgmAttributeCategories
     /**
      * @param $categoryID
      *
-     * @return null
+     * @return string
      */
     public function getCategoryDescriptionByID($categoryID)
     {
@@ -61,7 +61,7 @@ class dgmAttributeCategories
     /**
      * @param $categoryName
      *
-     * @return null
+     * @return string
      */
     public function getCategoryDescriptionByName($categoryName)
     {

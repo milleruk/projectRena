@@ -51,7 +51,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemID
      *
-     * @return null
+     * @return string
      */
     public function getNameByID($solarSystemID)
     {
@@ -61,7 +61,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemName
      *
-     * @return null
+     * @return string
      */
     public function getIDByName($solarSystemName)
     {
@@ -71,7 +71,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemID
      *
-     * @return null
+     * @return string
      */
     public function getRegionIDByID($solarSystemID)
     {
@@ -81,7 +81,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemName
      *
-     * @return null
+     * @return string
      */
     public function getRegionIDByName($solarSystemName)
     {
@@ -91,7 +91,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemID
      *
-     * @return null
+     * @return string
      */
     public function getConstellationIDByID($solarSystemID)
     {
@@ -101,7 +101,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemName
      *
-     * @return null
+     * @return string
      */
     public function getConstellationIDByName($solarSystemName)
     {
@@ -131,7 +131,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemID
      *
-     * @return null
+     * @return string
      */
     public function getSecurityByID($solarSystemID)
     {
@@ -141,7 +141,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemName
      *
-     * @return null
+     * @return string
      */
     public function getSecurityByName($solarSystemName)
     {
@@ -151,7 +151,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemID
      *
-     * @return null
+     * @return string
      */
     public function getSecurityClassByID($solarSystemID)
     {
@@ -161,7 +161,7 @@ class mapSolarSystems
     /**
      * @param $solarSystemName
      *
-     * @return null
+     * @return string
      */
     public function getSecurityClassByName($solarSystemName)
     {
