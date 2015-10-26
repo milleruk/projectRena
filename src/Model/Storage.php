@@ -37,7 +37,7 @@ class Storage
      * @param string $key
      * @param null $default
      *
-     * @return null
+     * @return null|string
      */
     function get($key, $default = null)
     {

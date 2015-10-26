@@ -51,7 +51,7 @@ class mapRegions
     /**
      * @param $regionID
      *
-     * @return null
+     * @return string
      */
     public function getRegionNameByID($regionID)
     {
@@ -61,7 +61,7 @@ class mapRegions
     /**
      * @param $regionName
      *
-     * @return null
+     * @return string
      */
     public function getRegionIDByName($regionName)
     {
@@ -91,7 +91,7 @@ class mapRegions
     /**
      * @param $regionID
      *
-     * @return null
+     * @return string
      */
     public function getFactionIDByID($regionID)
     {
@@ -101,7 +101,7 @@ class mapRegions
     /**
      * @param $regionName
      *
-     * @return null
+     * @return string
      */
     public function getFactionIDByName($regionName)
     {

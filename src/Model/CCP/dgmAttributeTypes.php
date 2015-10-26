@@ -51,7 +51,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getNameByID($attributeID)
     {
@@ -61,7 +61,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getIDByName($attributeName)
     {
@@ -71,7 +71,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getDescriptionByID($attributeID)
     {
@@ -81,7 +81,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getDescriptionByName($attributeName)
     {
@@ -91,7 +91,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getIconIDByID($attributeID)
     {
@@ -101,7 +101,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getIconIDByName($attributeName)
     {
@@ -111,7 +111,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getDefaultValueByID($attributeID)
     {
@@ -121,7 +121,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getDefaultValueByName($attributeName)
     {
@@ -131,7 +131,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getPublishedByID($attributeID)
     {
@@ -141,7 +141,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getPublishedByName($attributeName)
     {
@@ -151,7 +151,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getDisplayNameByID($attributeID)
     {
@@ -161,7 +161,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getDisplayNameByName($attributeName)
     {
@@ -171,7 +171,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getUnitIDByID($attributeID)
     {
@@ -181,7 +181,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getUnitIDByName($attributeName)
     {
@@ -191,7 +191,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getStackableByID($attributeID)
     {
@@ -201,7 +201,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getStackableByName($attributeName)
     {
@@ -211,7 +211,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getHighIsGoodByID($attributeID)
     {
@@ -221,7 +221,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getHighIsGoodByName($attributeName)
     {
@@ -231,7 +231,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeID
      *
-     * @return null
+     * @return string
      */
     public function getCategoryIDByID($attributeID)
     {
@@ -241,7 +241,7 @@ class dgmAttributeTypes
     /**
      * @param $attributeName
      *
-     * @return null
+     * @return string
      */
     public function getCategoryIDByName($attributeName)
     {
