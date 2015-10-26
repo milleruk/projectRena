@@ -61,7 +61,7 @@ class alliances
     /**
      * @param $allianceID
      *
-     * @return null
+     * @return string
      */
     public function getInformationByID($allianceID)
     {
@@ -71,7 +71,7 @@ class alliances
     /**
      * @param $allianceName
      *
-     * @return null
+     * @return string
      */
     public function getInformationByName($allianceName)
     {
@@ -81,7 +81,7 @@ class alliances
     /**
      * @param $allianceID
      *
-     * @return null
+     * @return string
      */
     public function getExecutorCorporationIDByID($allianceID)
     {
@@ -91,7 +91,7 @@ class alliances
     /**
      * @param $allianceName
      *
-     * @return null
+     * @return string
      */
     public function getExecutorCorporationIDByName($allianceName)
     {
@@ -101,7 +101,7 @@ class alliances
     /**
      * @param $allianceID
      *
-     * @return null
+     * @return string
      */
     public function getAllianceTickerByID($allianceID)
     {
@@ -111,7 +111,7 @@ class alliances
     /**
      * @param $allianceName
      *
-     * @return null
+     * @return string
      */
     public function getAllianceTickerByName($allianceName)
     {
@@ -121,7 +121,7 @@ class alliances
     /**
      * @param $allianceID
      *
-     * @return null
+     * @return string
      */
     public function getMemberCountByID($allianceID)
     {
@@ -131,7 +131,7 @@ class alliances
     /**
      * @param $allianceName
      *
-     * @return null
+     * @return string
      */
     public function getMemberCountByName($allianceName)
     {

@@ -61,7 +61,7 @@ class characters
     /**
      * @param $characterID
      *
-     * @return null
+     * @return string
      */
     public function getHistoryByID($characterID)
     {
@@ -71,7 +71,7 @@ class characters
     /**
      * @param $characterName
      *
-     * @return null
+     * @return string
      */
     public function getHistoryByName($characterName)
     {
