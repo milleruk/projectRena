@@ -79,7 +79,48 @@ class GeneratorTask extends Command
 
         // Create controller
         $class = new PhpClass();
-        $class->setQualifiedName("ProjectRena\\Controller\\{$name}Controller")->setDescription($this->descr)->setMethod(PhpMethod::create("__construct")->addParameter(PhpParameter::create("app")->setType("RenaApp"))->setBody("\$this->app = \$app;\n\$this->db = \$app->Db;\n\$this->config = \$app->baseConfig;\n\$this->cache = \$app->Cache;\n\$this->curl = \$app->cURL;\n\$this->statsd = \$app->StatsD;\n\$this->log = \$app->Logging;"))->setProperty(PhpProperty::create("app")->setVisibility("private")->setDescription("The Slim Application"))->setProperty(PhpProperty::create("db")->setVisibility("private")->setDescription("The Database"))->setProperty(PhpProperty::create("config")->setVisibility("private")->setDescription("The baseConfig (config/config.php)"))->setProperty(PhpProperty::create("cache")->setVisibility("private")->setDescription("The Cache"))->setProperty(PhpProperty::create("curl")->setVisibility("private")->setDescription("cURL interface (getData / setData)"))->setProperty(PhpProperty::create("statsd")->setVisibility("private")->setDescription("StatsD for tracking stats"))->setProperty(PhpProperty::create("log")->setVisibility("private")->setDescription("The logger, outputs to logs/app.log"))->declareUse('ProjectRena\RenaApp');
+        $class->setQualifiedName("ProjectRena\\Controller\\{$name}Controller")
+            ->setDescription($this
+                ->descr)
+            ->setMethod(PhpMethod::create("__construct")
+                ->addParameter(PhpParameter::create("app")
+                    ->setType("RenaApp"))
+                ->setBody("\$this
+                ->app = \$app;\n\$this
+                ->db = \$app
+                ->Db;\n\$this
+                ->config = \$app
+                ->baseConfig;\n\$this
+                ->cache = \$app
+                ->Cache;\n\$this
+                ->curl = \$app
+                ->cURL;\n\$this
+                ->statsd = \$app
+                ->StatsD;\n\$this
+                ->log = \$app
+                ->Logging;"))
+            ->setProperty(PhpProperty::create("app")
+                ->setVisibility("private")
+                ->setDescription("The Slim Application"))
+            ->setProperty(PhpProperty::create("db")
+                ->setVisibility("private")
+                ->setDescription("The Database"))
+            ->setProperty(PhpProperty::create("config")
+                ->setVisibility("private")
+                ->setDescription("The baseConfig (config/config.php)"))
+            ->setProperty(PhpProperty::create("cache")
+                ->setVisibility("private")
+                ->setDescription("The Cache"))
+            ->setProperty(PhpProperty::create("curl")
+                ->setVisibility("private")
+                ->setDescription("cURL interface (getData / setData)"))
+            ->setProperty(PhpProperty::create("statsd")
+                ->setVisibility("private")
+                ->setDescription("StatsD for tracking stats"))
+            ->setProperty(PhpProperty::create("log")
+                ->setVisibility("private")
+                ->setDescription("The logger, outputs to logs/app.log"))
+            ->declareUse('ProjectRena\RenaApp');
 
         $generator = new CodeFileGenerator();
         $code = $generator->generate($class);
