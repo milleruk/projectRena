@@ -1,9 +1,6 @@
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EVE-KILL/projectRena/)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/75374b67-bb51-4b3f-b00a-b14ea811058f/big.png)](https://insight.sensiolabs.com/projects/75374b67-bb51-4b3f-b00a-b14ea811058f)
 
-# Test coverage
-_http://eve-kill.github.io/projectRena/tests/_
-
 # Documentation
 _http://eve-kill.github.io/projectRena/api/_
 

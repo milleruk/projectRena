@@ -20,10 +20,7 @@ class UpdateTask extends Command
      */
     protected function configure()
     {
-        $this->setName("update")
-            ->addOption("composer", "c", InputOption::VALUE_NONE, "Run Composer Update")
-            ->addOption("unittest", "u", InputOption::VALUE_NONE, "Run Unit Test")
-            ->setDescription("Updates the project (Composer and RenaApp)");
+        $this->setName("update");
     }
 
     /**
@@ -36,7 +33,6 @@ class UpdateTask extends Command
     {
         $app = RenaApp::getInstance();
 
-        if ($input->getOption("composer")) {
             // Check if composer is in the dir
             if (!file_exists(__DIR__ . "/../../composer.phar")) {
                 $output->writeln("Composer doesn't exist, downloading it");
@@ -45,11 +41,6 @@ class UpdateTask extends Command
             }
             $output->writeln("Updating composer");
             exec("php " . __DIR__ . "/../../composer.phar update -o");
-        }
-
-        // Run unit tests and update the documentation
-        if ($input->getOption("unittest"))
-            $this->runUnitTest($output);
 
         // Generate an optimized loader
         $output->writeln("Generating Optimized Loader");
@@ -148,27 +139,7 @@ class UpdateTask extends Command
 
         return $php;
     }
-
-    /**
-     * @param OutputInterface $output
-     */
-    private function runUnitTest($output)
-    {
-        // Check if phpunit.phar is in the dir
-        if (!file_exists(__DIR__ . "/../../phpunit.phar")) {
-            $output->writeln("PHPUnit doesn't exist, downloading it");
-            $composer = $app->cURL->getData("https://phar.phpunit.de/phpunit.phar", 0);
-            file_put_contents(__DIR__ . "/../../phpunit.phar", $composer);
-        }
-        $output->writeln("Running unit tests");
-        chdir(__DIR__ . "/../../tests");
-        exec("php ../phpunit.phar --coverage-html=/storage/www/projectRenaDocs/tests/ --bootstrap=init.php .");
-        chdir("/storage/www/projectRenaDocs/");
-        exec("git add *");
-        exec("git commit -m 'Update tests'");
-        exec("git push");
-    }
-
+    
     private function generateOptimizedLoader($app)
     {
         $php = "<?php\n";
