@@ -29,16 +29,6 @@ class corporations
     }
 
     /**
-     * @param $corporationID
-     *
-     * @return array
-     */
-    public function getAllByID($corporationID)
-    {
-        return $this->db->queryRow("SELECT * FROM corporations WHERE corporationID = :id", array(":id" => $corporationID), 3600);
-    }
-
-    /**
      * @param $corporationName
      *
      * @return array
@@ -168,58 +158,65 @@ class corporations
      * @param null $information
      */
     public function updateCorporationDetails(
-     $corporationID,
-     $allianceID = null,
-     $corporationName = null,
-     $ceoID = null,
-     $corpTicker = null,
-     $memberCount = null,
-     $information = null
+        $corporationID,
+        $allianceID = null,
+        $corporationName = null,
+        $ceoID = null,
+        $corpTicker = null,
+        $memberCount = null,
+        $information = null
     )
     {
-        if(!empty($corporationID))
-        {
+        if (!empty($corporationID)) {
             $exists = $this->getAllByID($corporationID);
-            if($exists)
-            {
-                if($allianceID) $this->db->execute("UPDATE corporations SET allianceID = :allianceID WHERE corporationID = :corporationID", array(
-                 "allianceID"   => $allianceID,
-                 ":corporationID" => $corporationID,
+            if ($exists) {
+                if ($allianceID) $this->db->execute("UPDATE corporations SET allianceID = :allianceID WHERE corporationID = :corporationID", array(
+                    "allianceID" => $allianceID,
+                    ":corporationID" => $corporationID,
                 ));
-                if($corporationName) $this->db->execute("UPDATE corporations SET corporationName = :corporationName WHERE corporationID = :corporationID", array(
-                 "corporationName" => $corporationName,
-                 ":corporationID"  => $corporationID,
+                if ($corporationName) $this->db->execute("UPDATE corporations SET corporationName = :corporationName WHERE corporationID = :corporationID", array(
+                    "corporationName" => $corporationName,
+                    ":corporationID" => $corporationID,
                 ));
-                if($ceoID) $this->db->execute("UPDATE corporations SET ceoID = :ceoID WHERE corporationID = :corporationID", array(
-                 ":ceoID" => $ceoID,
-                 ":corporationID"  => $corporationID,
+                if ($ceoID) $this->db->execute("UPDATE corporations SET ceoID = :ceoID WHERE corporationID = :corporationID", array(
+                    ":ceoID" => $ceoID,
+                    ":corporationID" => $corporationID,
                 ));
-                if($corpTicker) $this->db->execute("UPDATE corporations SET corpTicker = :corpTicker WHERE corporationID = :corporationID", array(
-                 ":corpTicker" => $corpTicker,
-                 ":corporationID"  => $corporationID,
+                if ($corpTicker) $this->db->execute("UPDATE corporations SET corpTicker = :corpTicker WHERE corporationID = :corporationID", array(
+                    ":corpTicker" => $corpTicker,
+                    ":corporationID" => $corporationID,
                 ));
-                if($memberCount) $this->db->execute("UPDATE corporations SET memberCount = :memberCount WHERE corporationID = :corporationID", array(
-                 ":memberCount" => $memberCount,
-                 ":corporationID"  => $corporationID,
+                if ($memberCount) $this->db->execute("UPDATE corporations SET memberCount = :memberCount WHERE corporationID = :corporationID", array(
+                    ":memberCount" => $memberCount,
+                    ":corporationID" => $corporationID,
                 ));
-                if($information) $this->db->execute("UPDATE corporations SET information = :information WHERE corporationID = :corporationID", array(
-                 ":information"      => $information,
-                 ":corporationID" => $corporationID,
+                if ($information) $this->db->execute("UPDATE corporations SET information = :information WHERE corporationID = :corporationID", array(
+                    ":information" => $information,
+                    ":corporationID" => $corporationID,
                 ));
 
-            } elseif(!empty($corporationID) && !empty($allianceID) && !empty($corporationName) && !empty($ceoID) && !empty($corpTicker) && !empty($memberCount) && !empty($information))
-            {
+            } elseif (!empty($corporationID) && !empty($allianceID) && !empty($corporationName) && !empty($ceoID) && !empty($corpTicker) && !empty($memberCount) && !empty($information)) {
                 $this->db->execute("INSERT INTO corporations (corporationID, allianceID, corporationName, ceoID, corpTicker, memberCount, information) VALUES (:corporationID, :allianceID, :corporationName, :ceoID, :corpTicker, :memberCount, :information) ON DUPLICATE KEY UPDATE corporationID = :corporationID, allianceID = :allianceID, corporationName = :corporationName, ceoID = :ceoID, corpTicker = :corpTicker, memberCount = :memberCount, information = :information", array(
-                 ":corporationID" => $corporationID,
-                 ":allianceID"    => $allianceID,
-                 ":corporationName" => $corporationName,
-                 ":ceoID" => $ceoID,
-                 ":corpTicker" => $corpTicker,
-                 ":memberCount" => $memberCount,
-                 ":information" => $information,
+                    ":corporationID" => $corporationID,
+                    ":allianceID" => $allianceID,
+                    ":corporationName" => $corporationName,
+                    ":ceoID" => $ceoID,
+                    ":corpTicker" => $corpTicker,
+                    ":memberCount" => $memberCount,
+                    ":information" => $information,
                 ));
             }
         }
+    }
+
+    /**
+     * @param $corporationID
+     *
+     * @return array
+     */
+    public function getAllByID($corporationID)
+    {
+        return $this->db->queryRow("SELECT * FROM corporations WHERE corporationID = :id", array(":id" => $corporationID), 3600);
     }
 
     /**
@@ -236,7 +233,7 @@ class corporations
      */
     public function setLastUpdated($corporationID, $lastUpdated)
     {
-        if($lastUpdated)
+        if ($lastUpdated)
             $this->db->execute("UPDATE corporations SET lastUpdated = :lastUpdated WHERE corporationID = :corporationID", array(":lastUpdated" => $lastUpdated, ":corporationID" => $corporationID));
     }
 
@@ -246,7 +243,7 @@ class corporations
      */
     public function setCEOID($corporationID, $ceoID)
     {
-        if($ceoID)
+        if ($ceoID)
             $this->db->execute("UPDATE corporations SET ceoID = :ceoID WHERE corporationID = :corporationID", array(":ceoID" => $ceoID, ":corporationID" => $corporationID));
     }
 
@@ -256,7 +253,7 @@ class corporations
      */
     public function setMemberCount($corporationID, $memberCount)
     {
-        if($memberCount)
+        if ($memberCount)
             $this->db->execute("UPDATE corporations SET memberCount = :memberCount WHERE corporationID = :corporationID", array(":memberCount" => $memberCount, ":corporationID" => $corporationID));
     }
 }

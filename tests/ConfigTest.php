@@ -19,6 +19,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         $set = $this->app->Config->set("test", "test");
         $this->assertEquals(1, $set);
     }
+
     public function testGet()
     {
         $get = $this->app->Config->get("test");

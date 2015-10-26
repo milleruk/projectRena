@@ -23,8 +23,7 @@ class updatePrices
         $pricingData = $this->app->EveCentral->getPrices($typeIDs);
 
         // Loop through all the typeID
-        foreach($pricingData as $typeID => $data)
-        {
+        foreach ($pricingData as $typeID => $data) {
             $avgSell = 0;
             $lowSell = 0;
             $highSell = 0;
@@ -32,8 +31,7 @@ class updatePrices
             $lowBuy = 0;
             $highBuy = 0;
 
-            switch($typeID)
-            {
+            switch ($typeID) {
                 // Customs Office
                 case 2233:
                     // Fetch the price for gantry, nodes, modules, mainframes, cores and sum it up, that's the price for a customs office
@@ -157,14 +155,11 @@ class updatePrices
                     $highBuy = $data["buy"]["max"];
 
                     // If the selling price is under 0.05% different from the buying price then we swap them..
-                    if($highBuy > 0 && $lowSell > 0)
-                    {
-                        if((($highBuy / $lowSell) * 100) < 0.05)
-                        {
+                    if ($highBuy > 0 && $lowSell > 0) {
+                        if ((($highBuy / $lowSell) * 100) < 0.05) {
                             // Make sure it has no chance of being duplicated
                             $duplicationChance = $this->app->Db->queryField("SELECT chanceOfDuplicating FROM invTypes WHERE typeID = :typeID", "chanceOfDuplicating", array(":typeID" => $typeID));
-                            if($duplicationChance == 0)
-                            {
+                            if ($duplicationChance == 0) {
                                 $avgSell = $data["buy"]["avg"];
                                 $lowSell = $data["buy"]["min"];
                                 $highSell = $data["buy"]["max"];
@@ -180,20 +175,20 @@ class updatePrices
             $date = $data["date"];
 
             // a fallthrough for pre-defined prices
-            if($lowSell == 0) $lowSell = $avgSell;
+            if ($lowSell == 0) $lowSell = $avgSell;
 
-            if($highSell == 0) $highSell = $avgSell;
+            if ($highSell == 0) $highSell = $avgSell;
 
             // Now we just insert it all and call it a day
             $this->app->Db->execute("INSERT INTO invPrices (typeID, avgSell, lowSell, highSell, avgBuy, lowBuy, highBuy) VALUES (:typeID, :avgSell, :lowSell, :highSell, :avgBuy, :lowBuy, :highBuy) ON DUPLICATE KEY UPDATE avgSell = :avgSell, lowSell = :lowSell, highSell = :highSell, avgBuy = :avgBuy, lowBuy = :lowBuy, highBuy = :highBuy", array(
-                    ":typeID"    => $typeID,
-                    ":avgSell"  => $avgSell,
-                    ":lowSell"  => $lowSell,
-                    ":highSell" => $highSell,
-                    ":avgBuy"    => $avgBuy,
-                    ":lowBuy"    => $lowBuy,
-                    ":highBuy"   => $highBuy,
-                ));
+                ":typeID" => $typeID,
+                ":avgSell" => $avgSell,
+                ":lowSell" => $lowSell,
+                ":highSell" => $highSell,
+                ":avgBuy" => $avgBuy,
+                ":lowBuy" => $lowBuy,
+                ":highBuy" => $highBuy,
+            ));
 
             $this->app->StatsD->increment("ecPriceUpdates");
         }

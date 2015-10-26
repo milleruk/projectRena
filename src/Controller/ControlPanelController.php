@@ -68,6 +68,11 @@ class ControlPanelController
             $this->mainPage();
     }
 
+    private function mainPage()
+    {
+        render("controlpanel/index.twig");
+    }
+
     private function groups()
     {
         render("controlpanel/account/groups.twig");
@@ -76,10 +81,5 @@ class ControlPanelController
     private function accountservices()
     {
         render("controlpanel/account/servicesaccess.twig");
-    }
-
-    private function mainPage()
-    {
-        render("controlpanel/index.twig");
     }
 }

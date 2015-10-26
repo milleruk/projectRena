@@ -20,7 +20,7 @@ class killMailFetcher
      */
     public function perform()
     {
-        if($this->app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
+        if ($this->app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
             return;
 
         $this->app->StatsD->increment("ccpRequests");
@@ -31,7 +31,7 @@ class killMailFetcher
         $maxKillID = $fetchData["maxKillID"];
         $isDirector = $fetchData["isDirector"];
 
-        if($isDirector)
+        if ($isDirector)
             $data = $this->getData($keyID, $vCode);
         else
             $data = $this->getData($keyID, $vCode, $characterID);
@@ -40,16 +40,14 @@ class killMailFetcher
         $maxKillID = 0;
         $kills = $data["result"]["kills"];
 
-        if(!empty($kills))
-        {
-            foreach($kills as $kill)
-            {
+        if (!empty($kills)) {
+            foreach ($kills as $kill) {
                 // Remove that bloody string value thing
                 unset($kill["_stringValue"]);
 
                 // Set the killID
-                $killID = (int) $kill["killID"];
-                $kill["killID"] = (int) $kill["killID"];
+                $killID = (int)$kill["killID"];
+                $kill["killID"] = (int)$kill["killID"];
 
                 // Generate the hash
                 $hash = hash("sha256", ":" . $kill["killTime"] . ":" . $kill["solarSystemID"] . ":" . $kill["moonID"] . "::" . $kill["victim"]["characterID"] . ":" . $kill["victim"]["shipTypeID"] . ":" . $kill["victim"]["damageTaken"] . ":");
@@ -67,8 +65,7 @@ class killMailFetcher
                 $maxKillID = max($maxKillID, $killID);
 
                 // Push it to the queue if it inserted, also poke statsd to increment the tracker for it
-                if($inserted > 0)
-                {
+                if ($inserted > 0) {
                     $this->app->StatsD->increment("killmailsAdded");
 
                     // Push it over zmq to the websocket
@@ -112,7 +109,7 @@ class killMailFetcher
      */
     private function getData($apiKey, $vCode, $characterID = null, $fromID = null, $rowCount = null)
     {
-        if(!$characterID)
+        if (!$characterID)
             $data = $this->app->EVECorporationKillMails->getData($apiKey, $vCode, $fromID, $rowCount);
         else
             $data = $this->app->EVECharacterKillMails->getData($apiKey, $vCode, $characterID, $fromID, $rowCount);

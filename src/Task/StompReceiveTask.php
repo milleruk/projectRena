@@ -1,8 +1,8 @@
 <?php
 namespace ProjectRena\Task;
 
-use ProjectRena\RenaApp;
 use Cilex\Command\Command;
+use ProjectRena\RenaApp;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ZMQ;
@@ -37,29 +37,25 @@ class StompReceiveTask extends Command
         $stomp = new \Stomp($app->baseConfig->getConfig("server", "stomp"), $app->baseConfig->getConfig("username", "stomp"), $app->baseConfig->getConfig("password", "stomp"));
         $stomp->subscribe("/topic/kills", array("id" => "projectRena", "persistent" => "true", "ack" => "client", "prefetch-count" => 1));
 
-        do
-        {
+        do {
             $frame = $stomp->readFrame();
 
-            if(!empty($frame))
-            {
+            if (!empty($frame)) {
                 $killdata = json_decode($frame->body, true);
-                if(!empty($killdata))
-                {
+                if (!empty($killdata)) {
                     $app->StatsD->increment("stompReceived");
 
-                    if(isset($killdata["_stringValue"]))
+                    if (isset($killdata["_stringValue"]))
                         unset($killdata["_stringValue"]);
 
                     // Fix the killID
-                    $killdata["killID"] = (int) $killdata["killID"];
+                    $killdata["killID"] = (int)$killdata["killID"];
 
                     $json = json_encode($killdata, JSON_NUMERIC_CHECK);
                     $hash = hash("sha256", ":" . $killdata["killTime"] . ":" . $killdata["solarSystemID"] . ":" . $killdata["moonID"] . "::" . $killdata["victim"]["characterID"] . ":" . $killdata["victim"]["shipTypeID"] . ":" . $killdata["victim"]["damageTaken"] . ":");
 
                     $inserted = $app->Db->execute("INSERT IGNORE INTO killmails (killID, hash, source, kill_json) VALUES (:killID, :hash, :source, :kill_json)", array(":killID" => $killdata["killID"], ":hash" => $hash, ":source" => "stomp", ":kill_json" => $json));
-                    if($inserted > 0)
-                    {
+                    if ($inserted > 0) {
                         // Push it over zmq to the websocket
                         $context = new ZMQContext();
                         $socket = $context->getSocket(ZMQ::SOCKET_PUSH, "rena");
@@ -71,9 +67,9 @@ class StompReceiveTask extends Command
             }
 
             // Kill it after an hour
-            if($startTime <= time())
+            if ($startTime <= time())
                 $run = false;
 
-        } while($run == true);
+        } while ($run == true);
     }
 }

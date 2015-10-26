@@ -37,18 +37,16 @@ class ContractItems
      */
     public function getData($apiKey, $vCode, $characterID, $contractID)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->ContractItems(array(
                 'characterID' => $characterID,
-                'contractID'  => $contractID,
+                'contractID' => $contractID,
             ))->toArray();
 
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

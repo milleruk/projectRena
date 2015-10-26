@@ -30,11 +30,11 @@ class Pheal
         Config::getInstance()->http_keepalive = 10; // 10 seconds keep alive
         Config::getInstance()->http_timeout = 30;
         Config::getInstance()->cache = new \Pheal\Cache\RedisStorage(array(
-            "host"       => $app->baseConfig->getConfig("host", "redis", "127.0.0.1"),
-            "port"       => $app->baseConfig->getConfig("port", "redis", 6379),
+            "host" => $app->baseConfig->getConfig("host", "redis", "127.0.0.1"),
+            "port" => $app->baseConfig->getConfig("port", "redis", 6379),
             "persistent" => true,
-            "auth"       => null,
-            "prefix"     => "Pheal",
+            "auth" => null,
+            "prefix" => "Pheal",
         ));
 
         $psrLogger = new \Monolog\Logger("PhealLogger");
@@ -54,8 +54,7 @@ class Pheal
      */
     public function Pheal($apiKey = null, $vCode = null)
     {
-        if($this->app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
-        {
+        if ($this->app->Storage->get("Api904") >= date("Y-m-d H:i:s")) {
             $this->app->Logging->log("ERROR", "904ed till: " . $this->app->Storage->get("Api904"));
             throw new \Exception("Error, CCP has 904ed us till " . $this->app->Storage->get("Api904"));
         }
@@ -73,8 +72,7 @@ class Pheal
         $exceptionCode = $exception->getCode();
         $exceptionMessage = $exception->getMessage();
 
-        switch($exceptionCode)
-        {
+        switch ($exceptionCode) {
             case 28: // Timeouts
             case 904: // temp ban from CCPs api server
                 $this->app->Storage->set("Api904", date("Y-m-d H:i:s", time() + 300));
@@ -115,8 +113,8 @@ class Pheal
             case 207: // Not available for NPC corporations.
             case 209:
                 $this->app->ApiKeyCharacters->setIsDirector($keyID, $characterID, 0);
-                $this->app->Db->execute("DELETE FROM apiKeyCharacters WHERE keyID = :keyID AND characterID = :characterID", array(":keyID"       => $keyID,
-                                                                                                                                  ":characterID" => $characterID,
+                $this->app->Db->execute("DELETE FROM apiKeyCharacters WHERE keyID = :keyID AND characterID = :characterID", array(":keyID" => $keyID,
+                    ":characterID" => $characterID,
                 ));
                 break;
 

@@ -35,15 +35,13 @@ class AccountStatus
      */
     public function getData($apiKey, $vCode)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Account';
             $result = $pheal->accountStatus()->toArray();
             return $result;
 
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }

@@ -36,14 +36,12 @@ class CustomsOffices
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->CustomsOffices(array('characterID' => $characterID))->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

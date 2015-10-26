@@ -35,14 +35,12 @@ class StarbaseList
      */
     public function getData($apiKey, $vCode)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->StarbaseList()->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }

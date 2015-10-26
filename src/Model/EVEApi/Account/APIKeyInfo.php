@@ -35,14 +35,12 @@ class APIKeyInfo
      */
     public function getData($apiKey, $vCode)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Account';
             $result = $pheal->APIKeyInfo()->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
             return array("errorCode" => $exception->getCode(), "errorMessage" => $exception->getMessage());
         }

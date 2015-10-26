@@ -36,24 +36,20 @@ class CharacterInfo
      */
     public function getData($characterID, $apiKey = null, $vCode = null)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'EVE';
             $requestArray = array('characterID' => $characterID);
 
-            if(isset($apiKey))
-            {
+            if (isset($apiKey)) {
                 $requestArray['apiKey'] = $apiKey;
             }
-            if(isset($vCode))
-            {
+            if (isset($vCode)) {
                 $requestArray['vCode'] = $vCode;
             }
             $result = $pheal->CharacterInfo($requestArray)->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

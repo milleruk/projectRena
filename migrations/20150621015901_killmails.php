@@ -17,16 +17,16 @@ class Killmails extends AbstractMigration
     {
         $killmails = $this->table('killmails', array("engine" => "TokuDB"));
         $killmails
-         ->addColumn("killID", "integer", array("limit" => 32))
-         ->addColumn("processed", "integer", array("limit" => 6))
-         ->addColumn("hash", "string", array("limit" => 64))
-         ->addColumn("source", "string", array("limit" => 64))
-         ->addColumn("kill_json", "text", array("limit" => MysqlAdapter::TEXT_LONG))
-         ->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
-         ->addIndex(array("killID"), array("unique" => true))
-         ->addIndex(array("processed", "killID"))
-         ->addIndex(array("hash", "killID"))
-         ->addIndex(array("dateAdded", "killID"))
-         ->save();
+            ->addColumn("killID", "integer", array("limit" => 32))
+            ->addColumn("processed", "integer", array("limit" => 6))
+            ->addColumn("hash", "string", array("limit" => 64))
+            ->addColumn("source", "string", array("limit" => 64))
+            ->addColumn("kill_json", "text", array("limit" => MysqlAdapter::TEXT_LONG))
+            ->addColumn('dateAdded', 'datetime', array('default' => 'CURRENT_TIMESTAMP'))
+            ->addIndex(array("killID"), array("unique" => true))
+            ->addIndex(array("processed", "killID"))
+            ->addIndex(array("hash", "killID"))
+            ->addIndex(array("dateAdded", "killID"))
+            ->save();
     }
 }

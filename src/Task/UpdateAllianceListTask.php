@@ -33,14 +33,12 @@ class UpdateAllianceListTask extends Command
 
         $app->StatsD->increment("ccpRequests");
         $data = $app->EVEEVEAllianceList->getData();
-        if(isset($data["result"]["alliances"]))
-        {
-            foreach($data["result"]["alliances"] as $alliance)
-            {
+        if (isset($data["result"]["alliances"])) {
+            foreach ($data["result"]["alliances"] as $alliance) {
                 $output->writeln("Updating/Adding: " . $alliance["name"]);
 
                 // Update all the corporations in the alliance.. maybe we missed one?
-                foreach($alliance["memberCorporations"] as $corporation)
+                foreach ($alliance["memberCorporations"] as $corporation)
                     \Resque::enqueue("default", "\\ProjectRena\\Task\\Resque\\updateCorporation", array("corporationID" => $corporation["corporationID"]));
 
                 $allianceID = $alliance["allianceID"];

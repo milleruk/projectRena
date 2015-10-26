@@ -5,28 +5,28 @@ date_default_timezone_set('UTC');
 $config = array();
 // Site
 $config["site"] = array(
-    "debug"     => true,
+    "debug" => true,
     "userAgent" => null, // Use pre-defined user agents
 );
 // CCP
 $config["ccp"] = array(
-    "apiServer"   => "https://api.eveonline.com/",
+    "apiServer" => "https://api.eveonline.com/",
     "imageServer" => "https://image.eveonline.com/",
 );
 // Database
 $config["database"] = array(
-    "host"             => "localhost",
-    "username"         => "root",
-    "password"         => "",
-    "name"             => "rena",
-    "emulatePrepares"  => true,
+    "host" => "localhost",
+    "username" => "root",
+    "password" => "",
+    "name" => "rena",
+    "emulatePrepares" => true,
     "useBufferedQuery" => true,
 );
 // CREST SSO
 $config["crestsso"] = array(
-    "clientID"  => "",
+    "clientID" => "",
     "secretKey" => "",
-    "callBack"  => "/login/eve/",
+    "callBack" => "/login/eve/",
 );
 // Cache
 $config["redis"] = array(
@@ -35,30 +35,30 @@ $config["redis"] = array(
 );
 // Logging
 $config["logging"] = array(
-    "logFile"  => __DIR__ . "/../logs/app.log",
+    "logFile" => __DIR__ . "/../logs/app.log",
     "logLevel" => 100
     // debug is 100, 200 is info, 250 is notice, 300 is warning, 400 is error, 500 is critical, 550 is alert, 600 is emergency
 );
 // Cookies
 $config["cookies"] = array(
-    "name"   => "rena",
-    "ssl"    => true,
-    "time"   => (3600 * 24 * 30),
+    "name" => "rena",
+    "ssl" => true,
+    "time" => (3600 * 24 * 30),
     "secret" => "SOMETHINGsuperSECRET",
 );
 // Slim
 $config["slim"] = array(
-    "mode"               => $config["site"]["debug"] ? "development" : "production",
-    "debug"              => $config["site"]["debug"],
+    "mode" => $config["site"]["debug"] ? "development" : "production",
+    "debug" => $config["site"]["debug"],
     "cookies.secret_key" => $config["cookies"]["secret"],
-    "templates.path"     => __DIR__ . "/../view/",
+    "templates.path" => __DIR__ . "/../view/",
 );
 // Twig
 $config["twig"] = array(
-    "charset"          => "utf-8",
-    "debug"            => $config["site"]["debug"],
-    "cache"            => __DIR__ . "/../cache/templates/",
-    "auto_reload"      => true,
+    "charset" => "utf-8",
+    "debug" => $config["site"]["debug"],
+    "cache" => __DIR__ . "/../cache/templates/",
+    "auto_reload" => true,
     "strict_variables" => false,
-    "autoescape"       => true,
+    "autoescape" => true,
 );

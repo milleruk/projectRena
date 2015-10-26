@@ -1,8 +1,8 @@
 <?php
 namespace ProjectRena\Task;
 
-use ProjectRena\RenaApp;
 use Cilex\Command\Command;
+use ProjectRena\RenaApp;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ZMQ;
@@ -33,11 +33,9 @@ class zkillboardReceiveTask extends Command
         $app = RenaApp::getInstance();
         $run = true;
         $oldKillID = 0;
-        do
-        {
+        do {
             $p = \RedisQ\Action::listen("redisq.zkillboard.com");
-            if($p["killID"] > $oldKillID)
-            {
+            if ($p["killID"] > $oldKillID) {
                 // Get the killmail data.
                 $k = $app->killmails->generateFromCREST($p);
 
@@ -58,7 +56,6 @@ class zkillboardReceiveTask extends Command
                 $app->killmails->insertKillmail($p["killID"], 0, $hash, "zkillboardRedisQ", $json);
             }
             $oldKillID = $p["killID"];
-        }
-        while($run == true);
+        } while ($run == true);
     }
 }

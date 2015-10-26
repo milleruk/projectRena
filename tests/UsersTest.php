@@ -20,7 +20,7 @@ class UsersTest extends \PHPUnit_Framework_TestCase
     public function testCreateUser()
     {
         $return = $this->app->Users->createUserWithCrest("test", 1, "asdf1234");
-        if($return > 0) $return = true;
+        if ($return > 0) $return = true;
 
         $this->assertEquals(true, $return);
     }
@@ -34,13 +34,13 @@ class UsersTest extends \PHPUnit_Framework_TestCase
         unset($data["updated"]);
         unset($data["loginHash"]);
 
-        $this->assertArraySubset($data, array("characterName"      => "test",
-                                              "characterID"        => "1",
-                                              "characterOwnerHash" => "asdf1234",
-                                              "accessToken"        => "",
-                                              "refreshToken"       => "",
-                                              "scopes"             => "",
-                                              "tokenType"          => "",
+        $this->assertArraySubset($data, array("characterName" => "test",
+            "characterID" => "1",
+            "characterOwnerHash" => "asdf1234",
+            "accessToken" => "",
+            "refreshToken" => "",
+            "scopes" => "",
+            "tokenType" => "",
         ));
     }
 
@@ -51,13 +51,13 @@ class UsersTest extends \PHPUnit_Framework_TestCase
         unset($data["created"]);
         unset($data["updated"]);
         unset($data["loginHash"]);
-        $this->assertArraySubset($data, array("characterName"      => "test",
-                                              "characterID"        => "1",
-                                              "characterOwnerHash" => "asdf1234",
-                                              "accessToken"        => "",
-                                              "refreshToken"       => "",
-                                              "scopes"              => "",
-                                              "tokenType"          => "",
+        $this->assertArraySubset($data, array("characterName" => "test",
+            "characterID" => "1",
+            "characterOwnerHash" => "asdf1234",
+            "accessToken" => "",
+            "refreshToken" => "",
+            "scopes" => "",
+            "tokenType" => "",
         ));
     }
 
@@ -75,14 +75,14 @@ class UsersTest extends \PHPUnit_Framework_TestCase
         unset($data["created"]);
         unset($data["updated"]);
 
-        $this->assertArraySubset($data, array("characterName"      => "test",
-                                              "characterID"        => "1",
-                                              "characterOwnerHash" => "asdf1234",
-                                              "loginHash"          => "fdsa",
-                                              "accessToken"        => "",
-                                              "refreshToken"       => "",
-                                              "scopes"              => "",
-                                              "tokenType"          => "",
+        $this->assertArraySubset($data, array("characterName" => "test",
+            "characterID" => "1",
+            "characterOwnerHash" => "asdf1234",
+            "loginHash" => "fdsa",
+            "accessToken" => "",
+            "refreshToken" => "",
+            "scopes" => "",
+            "tokenType" => "",
         ));
     }
 }

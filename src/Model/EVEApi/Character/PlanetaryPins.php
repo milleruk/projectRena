@@ -37,15 +37,13 @@ class PlanetaryPins
      */
     public function getData($apiKey, $vCode, $characterID, $planetID)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->PlanetaryPins(array('characterID' => $characterID, 'planetID' => $planetID))->toArray();
 
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }

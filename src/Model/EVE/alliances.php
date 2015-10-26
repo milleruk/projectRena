@@ -161,13 +161,13 @@ class alliances
     public function updateAllianceDetails($allianceID, $allianceName = null, $allianceTicker = null, $memberCount = null, $executorCorporationID = null, $information = null)
     {
         $this->db->execute("INSERT INTO alliances (allianceID, allianceName, allianceTicker, memberCount, executorCorporationID, information) VALUES (:allianceID, :allianceName, :allianceTicker, :memberCount, :executorCorporationID, :information) ON DUPLICATE KEY UPDATE allianceID = :allianceID, allianceName = :allianceName, allianceTicker = :allianceTicker, memberCount = :memberCount, executorCorporationID = :executorCorporationID, information = :information", array(
-            ":allianceID"    => $allianceID,
+            ":allianceID" => $allianceID,
             ":allianceName" => $allianceName,
             ":allianceTicker" => $allianceTicker,
             ":memberCount" => $memberCount,
             ":executorCorporationID" => $executorCorporationID,
             ":information" => $information,
-            ));
+        ));
     }
 
     /**
@@ -176,7 +176,7 @@ class alliances
      */
     public function setLastUpdated($allianceID, $lastUpdated)
     {
-        if($lastUpdated)
+        if ($lastUpdated)
             $this->db->execute("UPDATE alliances SET lastUpdated = :lastUpdated WHERE allianceID = :allianceID", array(":lastUpdated" => $lastUpdated, ":allianceID" => $allianceID));
     }
 
@@ -187,7 +187,7 @@ class alliances
      */
     public function setExecutorCorporationID($allianceID, $executorCorporationID)
     {
-        if($executorCorporationID)
+        if ($executorCorporationID)
             $this->db->execute("UPDATE alliances SET executorCorporationID = :executorCorporationID WHERE allianceID = :allianceID", array(":executorCorporationID" => $executorCorporationID, ":allianceID" => $allianceID));
     }
 
@@ -197,7 +197,7 @@ class alliances
      */
     public function setMemberCount($allianceID, $memberCount)
     {
-        if($memberCount)
+        if ($memberCount)
             $this->db->execute("UPDATE alliances SET memberCount = :memberCount WHERE allianceID = :allianceID", array(":memberCount" => $memberCount, ":allianceID" => $allianceID));
     }
 }

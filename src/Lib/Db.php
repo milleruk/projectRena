@@ -59,20 +59,18 @@ class Db
         $this->timer = $app->Timer;
         $this->statsd = $app->StatsD;
 
-        if(!$this->persistence) $this->cache->persistence = false;
+        if (!$this->persistence) $this->cache->persistence = false;
 
         $dsn = 'mysql:dbname=' . $app->baseConfig->getConfig('name', 'database') . ';unix_socket=/var/run/mysqld/mysqld.sock;charset=utf8';
-        try
-        {
+        try {
             $this->pdo = new PDO($dsn, $app->baseConfig->getConfig('username', 'database'), $app->baseConfig->getConfig('password', 'database'), array(
-                PDO::ATTR_PERSISTENT               => $this->persistence,
-                PDO::ATTR_EMULATE_PREPARES         => $app->baseConfig->getConfig('emulatePrepares', 'database'),
-                PDO::ATTR_ERRMODE                  => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_PERSISTENT => $this->persistence,
+                PDO::ATTR_EMULATE_PREPARES => $app->baseConfig->getConfig('emulatePrepares', 'database'),
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => $app->baseConfig->getConfig('useBufferedQuery', 'database', true),
-                PDO::MYSQL_ATTR_INIT_COMMAND       => "SET time_zone = '+00:00',NAMES utf8;",
+                PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_zone = '+00:00',NAMES utf8;",
             ));
-        } catch(Exception $e)
-        {
+        } catch (Exception $e) {
             $logMessage = 'Unable to connect to the database: ' . $e->getMessage();
             $this->app->Logging->log("DEBUG", $logMessage);
             throw new Exception($logMessage);
@@ -91,8 +89,7 @@ class Db
     public function query($query, $parameters = array(), $cacheTime = 30)
     {
         // Sanity check
-        if(strpos($query, ';') !== false)
-        {
+        if (strpos($query, ';') !== false) {
             throw new Exception('Semicolons are not allowed in queries. Use parameters instead.');
         }
 
@@ -100,18 +97,15 @@ class Db
         $key = $this->getKey($query, $parameters);
 
         // If cache time is above 0 seconds, lets try and get it from that.
-        if($cacheTime > 0)
-        {
+        if ($cacheTime > 0) {
             // Try the cache system
             $result = !empty($this->cache->get($key)) ? unserialize($this->cache->get($key)) : null;
-            if(!empty($result))
-            {
+            if (!empty($result)) {
                 return $result;
             }
         }
 
-        try
-        {
+        try {
             // Start the timer
             $timer = $this->timer;
 
@@ -125,8 +119,7 @@ class Db
             $stmt->execute($parameters);
 
             // Check for errors
-            if($stmt->errorCode() != 0)
-            {
+            if ($stmt->errorCode() != 0) {
                 return false;
             }
 
@@ -140,8 +133,7 @@ class Db
             $duration = $timer->stop();
 
             // If cache time is above 0 seconds, lets store it in the cache.
-            if($cacheTime > 0)
-            {
+            if ($cacheTime > 0) {
                 $this->cache->set($key, serialize($result), min(3600, $cacheTime));
             } // Store it in the cache system
 
@@ -150,8 +142,7 @@ class Db
 
             // now to return the result
             return $result;
-        } catch(Exception $e)
-        {
+        } catch (Exception $e) {
             // There was some sort of nasty nasty nasty error..
             throw $e;
         }
@@ -172,8 +163,7 @@ class Db
         $result = $this->query($query, $parameters, $cacheTime);
 
         // Figure out if it has more than one result and return it
-        if(sizeof($result) >= 1)
-        {
+        if (sizeof($result) >= 1) {
             return $result[0];
         }
 
@@ -196,8 +186,7 @@ class Db
         $result = $this->query($query, $parameters, $cacheTime);
 
         // Figure out if it has no results
-        if(sizeof($result) == 0)
-        {
+        if (sizeof($result) == 0) {
             return null;
         }
 
@@ -232,22 +221,18 @@ class Db
         $stmt = $this->pdo->prepare($query);
 
         // Multilevel array handling.. not pretty but does speedup shit!
-        if(isset($parameters[0]) && is_array($parameters[0]) === true)
-        {
-            foreach($parameters as $array)
-            {
-                foreach($array as $key => &$value)
+        if (isset($parameters[0]) && is_array($parameters[0]) === true) {
+            foreach ($parameters as $array) {
+                foreach ($array as $key => &$value)
                     $stmt->bindParam($key, $value);
 
                 $stmt->execute();
             }
-        }
-        else
+        } else
             $stmt->execute($parameters);
 
         // If an error happened, rollback and return false
-        if($stmt->errorCode() != 0)
-        {
+        if ($stmt->errorCode() != 0) {
             $this->pdo->rollBack();
 
             return false;
@@ -272,8 +257,7 @@ class Db
         $stmt->closeCursor();
 
         // If return ID is needed, return that
-        if($returnID)
-        {
+        if ($returnID) {
             return $returnID;
         }
 
@@ -306,18 +290,18 @@ class Db
         $queryValues = array();
 
         foreach ($parameters as $rowID => $valueRow) {
-            if(!is_array($valueRow)) continue;
+            if (!is_array($valueRow)) continue;
 
             $tmpQuery = array();
             foreach ($valueRow as $fieldID => $fieldValue) {
-                $queryValues[$fieldID.$rowID] = $fieldValue;
-                $tmpQuery[] = $fieldID.$rowID;
+                $queryValues[$fieldID . $rowID] = $fieldValue;
+                $tmpQuery[] = $fieldID . $rowID;
             }
-            $queryIndexes[] = '('.implode(",", $tmpQuery).')';
+            $queryIndexes[] = '(' . implode(",", $tmpQuery) . ')';
         }
 
-        if(count($queryValues) > 0) {
-            return $this->execute($query.' VALUES '.implode(",", $queryIndexes)." ".$suffix, $queryValues, $returnID);
+        if (count($queryValues) > 0) {
+            return $this->execute($query . ' VALUES ' . implode(",", $queryIndexes) . " " . $suffix, $queryValues, $returnID);
         } else {
             return false;
         }
@@ -341,14 +325,12 @@ class Db
         $this->statsd->increment('website_queryCount');
 
         // Don't log queries taking less than 10 seconds.
-        if($duration < 10000)
-        {
+        if ($duration < 10000) {
             return;
         }
 
         $baseAddr = '';
-        foreach($parameters as $k => $v)
-        {
+        foreach ($parameters as $k => $v) {
             $query = str_replace($k, "'" . $v . "'", $query);
         }
         $uri = isset($_SERVER['REQUEST_URI']) ? "Query page: https://$baseAddr" . $_SERVER['REQUEST_URI'] . "\n" : '';
@@ -363,8 +345,7 @@ class Db
      */
     public function getKey($query, $parameters = array())
     {
-        foreach($parameters as $key => $value)
-        {
+        foreach ($parameters as $key => $value) {
             $query .= "|$key|$value";
         }
 

@@ -36,14 +36,12 @@ class AccountBalance
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->AccountBalance(array('characterID' => $characterID))->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

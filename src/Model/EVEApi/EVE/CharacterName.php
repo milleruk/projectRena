@@ -34,14 +34,12 @@ class CharacterName
      */
     public function getData($characterIDs = array())
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal();
             $pheal->scope = 'EVE';
             $result = $pheal->CharacterName(array('ids' => implode(',', $characterIDs)))->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException(null, null, $exception);
         }
     }

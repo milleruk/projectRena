@@ -36,15 +36,13 @@ class Standings
      */
     public function getData($apiKey, $vCode, $characterID)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->Standings(array('characterID' => $characterID))->toArray();
 
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }

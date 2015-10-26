@@ -28,18 +28,6 @@ class characters
         $this->db = $this->app->Db;
     }
 
-
-    /**
-     * @param $characterID
-     * @param int $cacheTime
-     *
-     * @return array
-     */
-    public function getAllByID($characterID, $cacheTime = 3600)
-    {
-        return $this->db->queryRow("SELECT * FROM characters WHERE characterID = :id", array(":id" => $characterID), $cacheTime);
-    }
-
     /**
      * @param $characterName
      *
@@ -98,46 +86,54 @@ class characters
      * @param string $history
      */
     public function updateCharacterDetails(
-     $characterID,
-     $corporationID = null,
-     $allianceID = null,
-     $characterName = null,
-     $history = null
+        $characterID,
+        $corporationID = null,
+        $allianceID = null,
+        $characterName = null,
+        $history = null
     )
     {
-        if(!empty($characterID))
-        {
+        if (!empty($characterID)) {
             $exists = $this->getAllByID($characterID);
-            if($exists)
-            {
-                if($corporationID) $this->db->execute("UPDATE characters SET corporationID = :corporationID WHERE characterID = :characterID", array(
-                 "corporationID" => $corporationID,
-                 ":characterID"  => $characterID,
+            if ($exists) {
+                if ($corporationID) $this->db->execute("UPDATE characters SET corporationID = :corporationID WHERE characterID = :characterID", array(
+                    "corporationID" => $corporationID,
+                    ":characterID" => $characterID,
                 ));
-                if($allianceID) $this->db->execute("UPDATE characters SET allianceID = :allianceID WHERE characterID = :characterID", array(
-                 "allianceID"   => $allianceID,
-                 ":characterID" => $characterID,
+                if ($allianceID) $this->db->execute("UPDATE characters SET allianceID = :allianceID WHERE characterID = :characterID", array(
+                    "allianceID" => $allianceID,
+                    ":characterID" => $characterID,
                 ));
-                if($characterName) $this->db->execute("UPDATE characters SET characterName = :characterName WHERE characterID = :characterID", array(
-                 "characterName" => $characterName,
-                 ":characterID"  => $characterID,
+                if ($characterName) $this->db->execute("UPDATE characters SET characterName = :characterName WHERE characterID = :characterID", array(
+                    "characterName" => $characterName,
+                    ":characterID" => $characterID,
                 ));
-                if($history) $this->db->execute("UPDATE characters SET history = :history WHERE characterID = :characterID", array(
-                 "history"      => $history,
-                 ":characterID" => $characterID,
+                if ($history) $this->db->execute("UPDATE characters SET history = :history WHERE characterID = :characterID", array(
+                    "history" => $history,
+                    ":characterID" => $characterID,
                 ));
 
-            } elseif(!empty($characterID) && !empty($corporationID) && !empty($allianceID) && !empty($characterName) && !empty($history))
-            {
+            } elseif (!empty($characterID) && !empty($corporationID) && !empty($allianceID) && !empty($characterName) && !empty($history)) {
                 $this->db->execute("INSERT INTO characters (characterID, corporationID, allianceID, characterName, history) VALUES (:characterID, :corporationID, :allianceID, :characterName, :history)", array(
-                  ":characterID"   => $characterID,
-                  ":corporationID" => $corporationID,
-                  ":allianceID"    => $allianceID,
-                  ":characterName" => $characterName,
-                  ":history"       => $history,
-                 ));
+                    ":characterID" => $characterID,
+                    ":corporationID" => $corporationID,
+                    ":allianceID" => $allianceID,
+                    ":characterName" => $characterName,
+                    ":history" => $history,
+                ));
             }
         }
+    }
+
+    /**
+     * @param $characterID
+     * @param int $cacheTime
+     *
+     * @return array
+     */
+    public function getAllByID($characterID, $cacheTime = 3600)
+    {
+        return $this->db->queryRow("SELECT * FROM characters WHERE characterID = :id", array(":id" => $characterID), $cacheTime);
     }
 
     /**
@@ -145,7 +141,7 @@ class characters
      */
     public function setLastUpdated($characterID, $lastUpdated)
     {
-        if($lastUpdated)
+        if ($lastUpdated)
             $this->db->execute("UPDATE characters SET lastUpdated = :lastUpdated WHERE characterID = :characterID", array(":lastUpdated" => $lastUpdated, ":characterID" => $characterID));
     }
 }

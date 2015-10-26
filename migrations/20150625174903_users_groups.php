@@ -1,6 +1,5 @@
 <?php
 
-use Phinx\Db\Adapter\MysqlAdapter;
 use Phinx\Migration\AbstractMigration;
 
 class UsersGroups extends AbstractMigration

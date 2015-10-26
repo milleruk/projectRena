@@ -9,14 +9,13 @@ use ProjectRena\RenaApp;
 class out
 {
     /**
-     * The Slim Application
-     */
-    private $app;
-
-    /**
      * @var null|string
      */
     protected $contentType;
+    /**
+     * The Slim Application
+     */
+    private $app;
 
     /**
      * @param RenaApp $app
@@ -37,47 +36,15 @@ class out
      */
     public function render($templateFile, $dataArray = array(), $status = null, $contentType = null)
     {
-        if($contentType)
+        if ($contentType)
             $this->contentType = $contentType;
 
-        if($this->contentType == "application/json")
+        if ($this->contentType == "application/json")
             return $this->toJson($dataArray);
-        if($this->contentType == "application/xml")
+        if ($this->contentType == "application/xml")
             return $this->toXML($dataArray);
 
         return $this->toTwig($templateFile, $dataArray, $status);
-    }
-
-    /**
-     * Outputs the template file together with the default twig data
-     *
-     * @param $templateFile
-     * @param array $dataArray
-     * @param null $status
-     */
-    public function toTwig($templateFile, $dataArray = array(), $status = null)
-    {
-        // Generate character Information array data
-        $characterInformation = array();
-        if(isset($_SESSION["characterID"]))
-        {
-            $characterInformation = $this->app->characters->getAllByID($_SESSION["characterID"]);
-            $characterInformation["corporation"] = $this->app->corporations->getAllByID($this->app->characters->getAllByID($_SESSION["characterID"])["corporationID"]);
-            $characterInformation["alliance"] = $this->app->alliances->getAllByID($this->app->characters->getAllByID($_SESSION["characterID"])["allianceID"]);
-            $characterInformation["groups"] = $this->app->UsersGroups->getGroup($this->app->Users->getUserByName($characterInformation["characterName"])["id"]);
-        }
-
-        $extraData = array(
-            "loggedIn" => isset($_SESSION["loggedIn"]) ? true : false,
-            "imageServer" => $this->app->baseConfig->getConfig("imageServer", "ccp"),
-            "characterName" => isset($_SESSION["characterName"]) ? $_SESSION["characterName"] : null,
-            "characterID" => isset($_SESSION["characterID"]) ? $_SESSION["characterID"] : null,
-            "charInfo" => $characterInformation,
-            "EVESSOURL" => $this->app->EVEOAuth->LoginURL()
-        );
-
-        $dataArray = array_merge($extraData, $dataArray);
-        $this->app->render($templateFile, $dataArray, $status);
     }
 
     /**
@@ -115,7 +82,40 @@ class out
     }
 
     /**
+     * Outputs the template file together with the default twig data
+     *
+     * @param $templateFile
+     * @param array $dataArray
+     * @param null $status
+     */
+    public function toTwig($templateFile, $dataArray = array(), $status = null)
+    {
+        // Generate character Information array data
+        $characterInformation = array();
+        if (isset($_SESSION["characterID"])) {
+            $characterInformation = $this->app->characters->getAllByID($_SESSION["characterID"]);
+            $characterInformation["corporation"] = $this->app->corporations->getAllByID($this->app->characters->getAllByID($_SESSION["characterID"])["corporationID"]);
+            $characterInformation["alliance"] = $this->app->alliances->getAllByID($this->app->characters->getAllByID($_SESSION["characterID"])["allianceID"]);
+            $characterInformation["groups"] = $this->app->UsersGroups->getGroup($this->app->Users->getUserByName($characterInformation["characterName"])["id"]);
+        }
+
+        $extraData = array(
+            "loggedIn" => isset($_SESSION["loggedIn"]) ? true : false,
+            "imageServer" => $this->app->baseConfig->getConfig("imageServer", "ccp"),
+            "characterName" => isset($_SESSION["characterName"]) ? $_SESSION["characterName"] : null,
+            "characterID" => isset($_SESSION["characterID"]) ? $_SESSION["characterID"] : null,
+            "charInfo" => $characterInformation,
+            "EVESSOURL" => $this->app->EVEOAuth->LoginURL()
+        );
+
+        $dataArray = array_merge($extraData, $dataArray);
+        $this->app->render($templateFile, $dataArray, $status);
+    }
+
+    /**
      *
      */
-    public function RunAsNew(){}
+    public function RunAsNew()
+    {
+    }
 }

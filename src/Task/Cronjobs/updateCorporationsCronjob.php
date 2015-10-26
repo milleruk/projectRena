@@ -26,14 +26,12 @@ class updateCorporationsCronjob
     public static function execute($pid, $md5)
     {
         $app = RenaApp::getInstance();
-        if($app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
+        if ($app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
             return;
 
-        $corporations = $app->Db->query("SELECT corporationID FROM corporations WHERE lastUpdated < date_sub(now(), interval 7 day) AND corporationID != 0 ORDER BY lastUpdated LIMIT 500", array(), 0);
-        if($corporations)
-        {
-            foreach($corporations as $corporation)
-            {
+        $corporations = $app->Db->query("SELECT corporationID FROM corporations WHERE lastUpdated < date_sub(now(), INTERVAL 7 DAY) AND corporationID != 0 ORDER BY lastUpdated LIMIT 500", array(), 0);
+        if ($corporations) {
+            foreach ($corporations as $corporation) {
                 // Get the characterID to update
                 $corporationID = $corporation["corporationID"];
 

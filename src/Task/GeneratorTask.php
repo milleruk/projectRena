@@ -2,17 +2,17 @@
 
 namespace ProjectRena\Task;
 
-use gossi\codegen\generator\CodeFileGenerator;
-use gossi\codegen\model\PhpProperty;
-use gossi\formatter\Formatter;
-use ProjectRena\Lib;
 use Cilex\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
+use gossi\codegen\generator\CodeFileGenerator;
 use gossi\codegen\model\PhpClass;
 use gossi\codegen\model\PhpMethod;
 use gossi\codegen\model\PhpParameter;
+use gossi\codegen\model\PhpProperty;
+use gossi\formatter\Formatter;
+use ProjectRena\Lib;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class GeneratorTask
@@ -42,23 +42,22 @@ class GeneratorTask extends Command
         $name = prompt("Name");
         $this->descr["description"] = prompt("Description");
 
-        if(!$name)
-        {
+        if (!$name) {
             $output->writeln("Error, name is not supplied.");
             exit();
         }
 
-        if($input->getOption("controller")) $this->controller($name, $output);
+        if ($input->getOption("controller")) $this->controller($name, $output);
 
-        if($input->getOption("model")) $this->model($name, $output);
+        if ($input->getOption("model")) $this->model($name, $output);
 
-        if($input->getOption("libs")) $this->libs($name, $output);
+        if ($input->getOption("libs")) $this->libs($name, $output);
 
-        if($input->getOption("task")) $this->task($name, $output);
+        if ($input->getOption("task")) $this->task($name, $output);
 
-        if($input->getOption("cronjob")) $this->cronjob($name, $output);
+        if ($input->getOption("cronjob")) $this->cronjob($name, $output);
 
-        if($input->getOption("resque")) $this->resque($name, $output);
+        if ($input->getOption("resque")) $this->resque($name, $output);
 
         $output->writeln("Please run update to update RenaApp and Composer");
     }
@@ -72,8 +71,7 @@ class GeneratorTask extends Command
     private function controller($name, $output)
     {
         $path = __DIR__ . "/../Controller/{$name}Controller.php";
-        if(file_exists($path))
-        {
+        if (file_exists($path)) {
             return $output->writeln("Error, file already exists");
         }
 
@@ -152,8 +150,7 @@ EOF;
     private function model($name, $output)
     {
         $path = __DIR__ . "/../Model/{$name}.php";
-        if(file_exists($path))
-        {
+        if (file_exists($path)) {
             return $output->writeln("Error, file already exists");
         }
 
@@ -180,8 +177,7 @@ EOF;
     private function libs($name, $output)
     {
         $path = __DIR__ . "/../Lib/{$name}.php";
-        if(file_exists($path))
-        {
+        if (file_exists($path)) {
             return $output->writeln("Error, file already exists");
         }
 
@@ -208,8 +204,7 @@ EOF;
     private function task($name, $output)
     {
         $path = __DIR__ . "/../Task/{$name}Task.php";
-        if(file_exists($path))
-        {
+        if (file_exists($path)) {
             return $output->writeln("Error, file already exists");
         }
 
@@ -235,8 +230,7 @@ EOF;
     private function cronjob($name, $output)
     {
         $path = __DIR__ . "/../Task/Cronjobs/{$name}Cronjob.php";
-        if(file_exists($path))
-        {
+        if (file_exists($path)) {
             return $output->writeln("Error, file already exists");
         }
 
@@ -262,8 +256,7 @@ EOF;
     private function resque($name, $output)
     {
         $path = __DIR__ . "/../Task/Resque/{$name}.php";
-        if(file_exists($path))
-        {
+        if (file_exists($path)) {
             return $output->writeln("Error, file already exists");
         }
 

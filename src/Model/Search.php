@@ -68,9 +68,9 @@ class Search
     {
         $valid = array("faction", "alliance", "corporation", "character", "item", "system", "region");
         $searchArray = array();
-        foreach($searchIn as $lookIn)
-            if(in_array($lookIn, $valid))
-                if(count($this->$lookIn($searchTerm)) > 0)
+        foreach ($searchIn as $lookIn)
+            if (in_array($lookIn, $valid))
+                if (count($this->$lookIn($searchTerm)) > 0)
                     $searchArray[$lookIn] = $this->$lookIn("%" . $searchTerm . "%");
 
         return $searchArray;

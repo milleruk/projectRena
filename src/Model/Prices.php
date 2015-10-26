@@ -66,33 +66,12 @@ class Prices
      */
     public function getPricesForTypeID($typeID, $date = null)
     {
-        if($date == null)
+        if ($date == null)
             $date = date("Y-m-d");
 
         $data = $this->db->queryRow("SELECT * FROM invPrices WHERE typeID = :typeID AND created >= :date ORDER BY created DESC LIMIT 1", array(":typeID" => $typeID, ":date" => $date));
-        if(!$data)
+        if (!$data)
             return $this->db->queryRow("SELECT * FROM invPrices WHERE typeID = :typeID ORDER BY created DESC LIMIT 1", array(":typeID" => $typeID));
-        return $data;
-    }
-
-    /**
-     * @param $typeID
-     * @param string $type
-     * @param null $date
-     *
-     * @return integer
-     * @throws \Exception
-     */
-    public function getPriceForTypeID($typeID, $type = "avgSell", $date = null)
-    {
-        $validTypes = array("avgSell", "avgBuy", "lowSell", "lowBuy", "highSell", "highBuy");
-        if(!in_array($type, $validTypes))
-            throw new \Exception("Type not valid, please select a valid type: " . implode(", ", $validTypes));
-
-        $data = $this->db->queryField("SELECT {$type} FROM invPrices WHERE typeID = :typeID ORDER BY created DESC LIMIT 1", $type, array(":typeID" => $typeID));
-
-        if(!$data)
-            return 0;
         return $data;
     }
 
@@ -108,11 +87,10 @@ class Prices
         $victimShipValue = $this->getPriceForTypeID($killData["victim"]["shipTypeID"], "avgSell", $killData["killTime"]);
         $killValue = 0;
 
-        foreach($items as $item)
-        {
+        foreach ($items as $item) {
             $isCargo = isset($item["items"]) ? is_array($item["items"]) ? true : false : false;
-            if($isCargo)
-                foreach($item["items"] as $innerItem)
+            if ($isCargo)
+                foreach ($item["items"] as $innerItem)
                     $killValue += $this->processItem($innerItem, $killData["killTime"], $isCargo);
 
             $killValue += $this->processItem($item, $killData["killTime"], $isCargo);
@@ -120,6 +98,27 @@ class Prices
         }
 
         return array("itemValue" => $killValue, "shipValue" => $victimShipValue, "totalValue" => $killValue + $victimShipValue);
+    }
+
+    /**
+     * @param $typeID
+     * @param string $type
+     * @param null $date
+     *
+     * @return integer
+     * @throws \Exception
+     */
+    public function getPriceForTypeID($typeID, $type = "avgSell", $date = null)
+    {
+        $validTypes = array("avgSell", "avgBuy", "lowSell", "lowBuy", "highSell", "highBuy");
+        if (!in_array($type, $validTypes))
+            throw new \Exception("Type not valid, please select a valid type: " . implode(", ", $validTypes));
+
+        $data = $this->db->queryField("SELECT {$type} FROM invPrices WHERE typeID = :typeID ORDER BY created DESC LIMIT 1", $type, array(":typeID" => $typeID));
+
+        if (!$data)
+            return 0;
+        return $data;
     }
 
     /**
@@ -135,18 +134,18 @@ class Prices
         $typeID = $itemData["typeID"];
         $flag = $itemData["flag"];
         $itemName = $this->app->invTypes->getNameByID($typeID);
-        if(!$itemName)
+        if (!$itemName)
             $itemName = "TypeID {$typeID}";
 
-        if($typeID == 33329 && $flag == 89)
+        if ($typeID == 33329 && $flag == 89)
             $price = 0.01; // Golden pod
         else
             $price = $this->getPriceForTypeID($typeID, "avgSell", $killTime);
 
-        if($isCargo && strpos($itemName, "Blueprint") !== false)
+        if ($isCargo && strpos($itemName, "Blueprint") !== false)
             $itemData["singleton"] = 2;
 
-        if($itemData["singleton"] == 2)
+        if ($itemData["singleton"] == 2)
             $price = $price / 100;
 
         return ($price * ($itemData["qtyDropped"] + $itemData["qtyDestroyed"]));

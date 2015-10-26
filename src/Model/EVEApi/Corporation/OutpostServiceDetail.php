@@ -37,17 +37,15 @@ class OutpostServiceDetail
      */
     public function getData($apiKey, $vCode, $characterID, $itemID)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $result = $pheal->OutpostServiceDetail(array(
                 'characterID' => $characterID,
-                'itemID'      => $itemID,
+                'itemID' => $itemID,
             ))->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

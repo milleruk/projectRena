@@ -32,14 +32,12 @@ class Kills
      */
     public function getData()
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal();
             $pheal->scope = 'Map';
             $result = $pheal->Kills()->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException(null, null, $exception);
         }
     }

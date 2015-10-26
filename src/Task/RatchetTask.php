@@ -57,6 +57,7 @@ class stompSend
 {
     protected $stomp;
     protected $app;
+
     public function __construct()
     {
         $this->app = RenaApp::getInstance();
@@ -123,7 +124,7 @@ class Pusher implements WampServerInterface
     public function onMessage($entry)
     {
         //$entryData = json_decode($entry, true);
-        foreach($this->clients as $client)
+        foreach ($this->clients as $client)
             $client->send($entry);
     }
 

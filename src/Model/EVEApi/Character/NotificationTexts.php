@@ -37,18 +37,16 @@ class NotificationTexts
      */
     public function getData($apiKey, $vCode, $characterID, $ids = array())
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->NotificationTexts(array(
                 'characterID' => $characterID,
-                'IDs'         => implode(',', $ids),
+                'IDs' => implode(',', $ids),
             ))->toArray();
 
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }

@@ -54,7 +54,7 @@ class EVEOAuth
         $base64 = base64_encode($this->config->getConfig("clientID", "crestsso") . ":" . $this->config->getConfig("secretKey", "crestsso"));
         $data = json_decode($this->app->cURL->sendData($tokenURL, array(
             "grant_type" => "authorization_code",
-            "code"       => $code,
+            "code" => $code,
         ), array("Authorization: Basic {$base64}")));
 
         $accessToken = $data->access_token;
@@ -94,24 +94,21 @@ class EVEOAuth
         $data = $this->app->characters->getAllByID($characterID);
 
         // Tell resque to do stuff
-        if(!$data["characterID"])
-        {
+        if (!$data["characterID"]) {
             \Resque::enqueue("now", "\\ProjectRena\\Task\\Resque\\updateCharacter", array("characterID" => $characterID));
             sleep(6); // Sleep for 6 seconds, not ideal but whatever
             $data = $this->app->characters->getAllByID($characterID, 0); // Refetch the data, just this time we skip the cache!
         }
 
         // Only do all of the group stuff if the character exists in the database.. if said character doesn't exist, we'll push the character to resque and do it all there!
-        if($data)
-        {
+        if ($data) {
             // Check if the user is in groups they're not allowed to be in.. this goes for corporation and alliance only!
             $validGroups = array("corporation" => $data["corporationID"], "alliance" => $data["allianceID"]);
-            foreach($validGroups as $type => $id)
-            {
+            foreach ($validGroups as $type => $id) {
                 $innerData = $this->db->query("SELECT groupID, groupType FROM usersGroups WHERE userID = :id", array(":id" => $this->app->Users->getUserByName($characterName)["id"]));
-                foreach($innerData as $check)
-                    if($check["groupType"] == $type)
-                        if($check["groupID"] != $id)
+                foreach ($innerData as $check)
+                    if ($check["groupType"] == $type)
+                        if ($check["groupID"] != $id)
                             $this->db->execute("DELETE FROM usersGroups WHERE userID = :id AND groupID = :groupID", array(":id" => $this->app->Users->getUserByName($characterName)["id"], ":groupID" => $check["groupID"]));
             }
 
@@ -119,8 +116,7 @@ class EVEOAuth
             $this->app->Groups->updateGroup($data["corporationID"], $this->app->corporations->getAllByID($data["corporationID"])["corporationName"]);
             $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["corporationID"], "corporation");
             $this->app->Groups->setAdmins($data["corporationID"], array($this->app->corporations->getAllByID($data["corporationID"])["ceoID"]));
-            if($data["allianceID"] > 0)
-            {
+            if ($data["allianceID"] > 0) {
                 $this->app->Groups->updateGroup($data["allianceID"], $this->app->alliances->getAllByID($data["allianceID"])["allianceName"]);
                 $this->app->UsersGroups->setGroup($this->app->Users->getUserByName($characterName)["id"], $data["allianceID"], "alliance");
                 $this->app->Groups->setAdmins($data["allianceID"], array($this->app->corporations->getAllByID($this->app->alliances->getAllByID($data["allianceID"])["executorCorporationID"])["ceoID"]));

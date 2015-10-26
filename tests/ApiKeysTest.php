@@ -26,11 +26,11 @@ class ApiKeysTest extends \PHPUnit_Framework_TestCase
         unset($get["id"]);
         unset($get["dateAdded"]);
         unset($get["lastValidation"]);
-        $this->assertArraySubset($get, array("keyID"      => 1,
-                                             "vCode"      => 1,
-                                             "userID"     => null,
-                                             "errorCode"  => 0,
-                                             "accessMask" => 0
+        $this->assertArraySubset($get, array("keyID" => 1,
+            "vCode" => 1,
+            "userID" => null,
+            "errorCode" => 0,
+            "accessMask" => 0
         ));
     }
 
@@ -46,11 +46,11 @@ class ApiKeysTest extends \PHPUnit_Framework_TestCase
         unset($get2["id"]);
         unset($get2["dateAdded"]);
         unset($get2["lastValidation"]);
-        $this->assertArraySubset($get2, array("keyID"      => 1,
-                                              "vCode"      => 2,
-                                              "userID"     => 3,
-                                              "errorCode"  => 0,
-                                              "accessMask" => 0
+        $this->assertArraySubset($get2, array("keyID" => 1,
+            "vCode" => 2,
+            "userID" => 3,
+            "errorCode" => 0,
+            "accessMask" => 0
         ));
     }
 

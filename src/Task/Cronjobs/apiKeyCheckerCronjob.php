@@ -16,14 +16,12 @@ class apiKeyCheckerCronjob
     public static function execute($pid, $md5)
     {
         $app = RenaApp::getInstance();
-        if($app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
+        if ($app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
             return;
 
         $apiKeys = $app->Db->query("SELECT keyID, vCode FROM apiKeys WHERE lastValidation < date_sub(now(), INTERVAL 6 HOUR) ORDER BY lastValidation DESC LIMIT 500", array(), 0);
-        if($apiKeys)
-        {
-            foreach($apiKeys as $api)
-            {
+        if ($apiKeys) {
+            foreach ($apiKeys as $api) {
                 $keyID = $api["keyID"];
                 $vCode = $api["vCode"];
                 // Update the lastValidation to in ten minutes, just so we don't insert it again and again

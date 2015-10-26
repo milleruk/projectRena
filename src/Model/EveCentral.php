@@ -87,7 +87,7 @@ class EveCentral
     {
         $address = "http://api.eve-central.com/api/marketstat?regionlimit={$regionID}";
 
-        foreach($typeID as $id)
+        foreach ($typeID as $id)
             $address .= "&typeid={$id}";
 
         $data = $this->app->cURL->getData($address);
@@ -96,7 +96,7 @@ class EveCentral
         $items = $data["marketstat"]["type"];
         $prices = array();
 
-        foreach($items as $item)
+        foreach ($items as $item)
             $prices[$item["@attributes"]["id"]] = array("date" => date("Y-m-d"), "buy" => array("min" => $item["buy"]["min"], "avg" => $item["buy"]["avg"], "max" => $item["buy"]["max"]), "sell" => array("min" => $item["sell"]["min"], "avg" => $item["sell"]["avg"], "max" => $item["sell"]["max"]));
 
         return $prices;

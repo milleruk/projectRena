@@ -16,13 +16,13 @@ class killMailFetcherCronjob
     public static function execute($pid, $md5)
     {
         $app = RenaApp::getInstance();
-        if($app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
+        if ($app->Storage->get("Api904") >= date("Y-m-d H:i:s"))
             return;
 
         $toFetch = $app->Db->query("SELECT * FROM apiKeyCharacters WHERE cachedUntil < now() OR lastChecked < date_sub(now(), INTERVAL 24 HOUR) ORDER BY lastChecked LIMIT 500", array(), 1);
 
-        if($toFetch)
-            foreach($toFetch as $apiFetches)
+        if ($toFetch)
+            foreach ($toFetch as $apiFetches)
                 \Resque::enqueue("important", "\\ProjectRena\\Task\\Resque\\killMailFetcher", array("fetchData" => serialize($apiFetches)));
 
         exit(); // Keep this at the bottom, to make sure the fork exits

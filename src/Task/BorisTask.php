@@ -3,9 +3,7 @@
 namespace ProjectRena\Task;
 
 use Cilex\Command\Command;
-use DateTime;
 use ProjectRena\Lib;
-use ProjectRena\RenaApp;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

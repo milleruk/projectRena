@@ -40,35 +40,29 @@ class CronTask extends Command
         $run = true;
         $cnt = 0;
         $cronjobs = scandir(__DIR__ . '/Cronjobs/');
-        do
-        {
+        do {
             $cnt++;
-            if($cnt > 50)
-            {
+            if ($cnt > 50) {
                 //gc_collect_cycles();
                 $cnt = 0;
             }
 
-            foreach($cronjobs as $key => $cron)
-            {
+            foreach ($cronjobs as $key => $cron) {
                 // Unset anything that isn't .php!
-                if(!preg_match('/^(.+)\\.php$/', $cron, $match))
-                {
+                if (!preg_match('/^(.+)\\.php$/', $cron, $match)) {
                     unset($cronjobs[$key]);
                     continue;
                 }
 
-                if(isset($match[1]))
-                {
+                if (isset($match[1])) {
                     $name = $match[1];
                     $md5 = md5($name);
 
                     // If the script is currently running, skip to the next script
-                    if($app->Cache->get($md5 . '_pid') !== false)
-                    {
+                    if ($app->Cache->get($md5 . '_pid') !== false) {
                         $pid = $app->Cache->get($md5 . '_pid');
                         $status = pcntl_waitpid($pid, $status, WNOHANG);
-                        if($status == -1) $app->Cache->delete($md5 . '_pid');
+                        if ($status == -1) $app->Cache->delete($md5 . '_pid');
 
                         usleep(500000);
                         //continue;
@@ -86,17 +80,14 @@ class CronTask extends Command
                     $interval = $class->getRunTimes();
 
                     // If the current time is larger than the lastRunTime and Interval, then we run it again!
-                    if($currentTime > ($lastRan + $interval))
-                    {
+                    if ($currentTime > ($lastRan + $interval)) {
                         $time = time();
                         $output->writeln("Time: {$time}: Running {$name} (Interval: {$interval})");
 
-                        try
-                        {
+                        try {
                             // Time to fork it all!
                             $pid = pcntl_fork();
-                            if($pid === 0)
-                            {
+                            if ($pid === 0) {
                                 // Get the PID
                                 $pid = getmypid();
 
@@ -110,8 +101,7 @@ class CronTask extends Command
 
                             // Tell the cache when we ran last!
                             $app->Cache->set($md5, time());
-                        } catch(\Exception $e)
-                        {
+                        } catch (\Exception $e) {
                             $output->writeln("ERROR!! (pid: " . getmypid() . ") " . $e->getMessage());
                             $run = false;
                             posix_kill(getmygid(), 9);
@@ -123,6 +113,6 @@ class CronTask extends Command
                 // Sleep for 500 milliseconds, so we don't go nuts with CPU
                 usleep(500000);
             }
-        } while($run === true);
+        } while ($run === true);
     }
 }

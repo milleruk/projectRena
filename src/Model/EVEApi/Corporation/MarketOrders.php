@@ -37,19 +37,16 @@ class MarketOrders
      */
     public function getData($apiKey, $vCode, $characterID, $orderID = null)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $requestArray = array('characterID' => $characterID);
-            if(isset($orderID))
-            {
+            if (isset($orderID)) {
                 $requestArray['orderID'] = $orderID;
             }
             $result = $pheal->MarketOrders($requestArray)->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

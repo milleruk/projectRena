@@ -39,25 +39,21 @@ class WalletJournal
      */
     public function getData($apiKey, $vCode, $characterID, $accountKey = 1000, $fromID = null, $rowCount = null)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $requestArray = array('characterID' => $characterID, 'accountKey' => $accountKey);
-            if(isset($fromID))
-            {
+            if (isset($fromID)) {
                 $requestArray['fromID'] = $fromID;
             }
-            if(isset($rowCount))
-            {
+            if (isset($rowCount)) {
                 $requestArray['rowCount'] = $rowCount;
             }
 
             $result = $pheal->WalletJournal($requestArray)->toArray();
 
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }

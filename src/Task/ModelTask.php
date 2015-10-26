@@ -48,7 +48,7 @@ class ModelTask extends Command
 
         // Setup the path and make sure it doesn't already exist
         $path = __DIR__ . "/../Model/Database/{$table}.php";
-        if(file_exists($path))
+        if (file_exists($path))
             return $output->writeln("Error, file already exists");
 
         // Load app
@@ -87,8 +87,7 @@ class ModelTask extends Command
         }
 
         // Get generator
-        foreach($nameFields as $name)
-        {
+        foreach ($nameFields as $name) {
             // get * by Name
             $class->setMethod(PhpMethod::create("getAllBy" . ucfirst($name))
                 ->addParameter(PhpParameter::create($name))
@@ -97,8 +96,7 @@ class ModelTask extends Command
             );
         }
 
-        foreach($idFields as $id)
-        {
+        foreach ($idFields as $id) {
             // get * by ID,
             $class->setMethod(PhpMethod::create("getAllBy" . ucfirst($id))
                 ->addParameter(PhpParameter::create($id)
@@ -111,11 +109,11 @@ class ModelTask extends Command
         foreach ($nameFields as $name) {
             foreach ($tableColums as $get) {
                 // If the fields match, skip it.. no reason to get/set allianceID where allianceID = allianceID
-                if($get["Field"] == $name)
+                if ($get["Field"] == $name)
                     continue;
 
                 // Skip the id field
-                if($get["Field"] == "id")
+                if ($get["Field"] == "id")
                     continue;
 
                 $class->setMethod(PhpMethod::create("get" . ucfirst($get["Field"]) . "By" . ucfirst($name))
@@ -129,11 +127,11 @@ class ModelTask extends Command
         foreach ($idFields as $id) {
             foreach ($tableColums as $get) {
                 // If the fields match, skip it.. no reason to get/set allianceID where allianceID = allianceID
-                if($get["Field"] == $id)
+                if ($get["Field"] == $id)
                     continue;
 
                 // Skip the id field
-                if($get["Field"] == "id")
+                if ($get["Field"] == "id")
                     continue;
 
                 $class->setMethod(PhpMethod::create("get" . ucfirst($get["Field"]) . "By" . ucfirst($id))
@@ -148,11 +146,11 @@ class ModelTask extends Command
         foreach ($nameFields as $name) {
             foreach ($tableColums as $get) {
                 // If the fields match, skip it.. no reason to get/set allianceID where allianceID = allianceID
-                if($get["Field"] == $name)
+                if ($get["Field"] == $name)
                     continue;
 
                 // Skip the id field
-                if($get["Field"] == "id")
+                if ($get["Field"] == "id")
                     continue;
 
                 $class->setMethod(PhpMethod::create("update" . ucfirst($get["Field"]) . "By" . ucfirst($name))
@@ -170,11 +168,11 @@ class ModelTask extends Command
         foreach ($idFields as $id) {
             foreach ($tableColums as $get) {
                 // If the fields match, skip it.. no reason to get/set allianceID where allianceID = allianceID
-                if($get["Field"] == $id)
+                if ($get["Field"] == $id)
                     continue;
 
                 // Skip the id field
-                if($get["Field"] == "id")
+                if ($get["Field"] == "id")
                     continue;
 
                 $class->setMethod(PhpMethod::create("update" . ucfirst($get["Field"]) . "By" . ucfirst($id))
@@ -192,10 +190,9 @@ class ModelTask extends Command
 
         // Global insert generator (Yes it's ugly as shit..)
         $inserter = "public function insertInto" . ucfirst($table) . "(";
-        foreach($tableColums as $field)
-        {
+        foreach ($tableColums as $field) {
             // Skip the ID field
-            if($field["Field"] == "id")
+            if ($field["Field"] == "id")
                 continue;
 
             $inserter .= "\${$field["Field"]}, ";
@@ -203,9 +200,8 @@ class ModelTask extends Command
         $inserter = rtrim(trim($inserter), ",") . ")";
         $inserter .= "{";
         $inserter .= "\$this->db->execute(\"INSERT INTO {$table} (";
-        foreach($tableColums as $field)
-        {
-            if($field["Field"] == "id")
+        foreach ($tableColums as $field) {
+            if ($field["Field"] == "id")
                 continue;
 
             $inserter .= $field["Field"] . ", ";
@@ -213,9 +209,8 @@ class ModelTask extends Command
 
         $inserter = rtrim(trim($inserter), ",") . ") ";
         $inserter .= "VALUES (";
-        foreach($tableColums as $field)
-        {
-            if($field["Field"] == "id")
+        foreach ($tableColums as $field) {
+            if ($field["Field"] == "id")
                 continue;
 
             $inserter .= ":" . $field["Field"] . ", ";
@@ -224,9 +219,8 @@ class ModelTask extends Command
         $inserter = rtrim(trim($inserter), ",") . ")\", ";
 
         $inserter .= "array(";
-        foreach($tableColums as $field)
-        {
-            if($field["Field"] == "id")
+        foreach ($tableColums as $field) {
+            if ($field["Field"] == "id")
                 continue;
 
             $inserter .= "\":" . $field["Field"] . "\" => \${$field["Field"]}, ";

@@ -38,27 +38,23 @@ class KillMails
      */
     public function getData($apiKey, $vCode, $characterID, $fromID = null, $rowCount = null)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
 
             $requestArray = array('characterID' => $characterID);
-            if(isset($fromID))
-            {
+            if (isset($fromID)) {
                 $requestArray['fromID'] = $fromID;
             }
 
-            if(isset($rowCount))
-            {
+            if (isset($rowCount)) {
                 $requestArray['rowCount'] = $rowCount;
             }
             $result = $pheal->KillMails($requestArray)->toArray();
 
             return $result;
 
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

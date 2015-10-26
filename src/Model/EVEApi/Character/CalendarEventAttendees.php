@@ -37,18 +37,16 @@ class CalendarEventAttendees
      */
     public function getData($apiKey, $vCode, $characterID, $eventIDs = array())
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Char';
             $result = $pheal->CalendarEventAttendees(array(
                 'characterID' => $characterID,
-                'eventIDs'    => implode(',', $eventIDs),
+                'eventIDs' => implode(',', $eventIDs),
             ))->toArray();
 
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, $characterID, $exception);
         }
     }

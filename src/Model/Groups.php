@@ -69,9 +69,9 @@ class Groups
      */
     public function updateGroup($groupID, $groupName, $ownerID = 0, $open = 0, $closed = 0)
     {
-        $execute =  $this->db->execute("INSERT INTO groups (groupID, groupName, ownerID, open, closed) VALUES (:groupID, :groupName, :ownerID, :open, :closed) ON DUPLICATE KEY UPDATE groupID = :groupID, groupName = :groupName, ownerID = :ownerID, open = :open, closed = :closed", array(":groupID" => $groupID, ":groupName" => $groupName, ":ownerID" => $ownerID, ":hash" => $hash, ":open" => $open, ":closed" => $closed));
+        $execute = $this->db->execute("INSERT INTO groups (groupID, groupName, ownerID, open, closed) VALUES (:groupID, :groupName, :ownerID, :open, :closed) ON DUPLICATE KEY UPDATE groupID = :groupID, groupName = :groupName, ownerID = :ownerID, open = :open, closed = :closed", array(":groupID" => $groupID, ":groupName" => $groupName, ":ownerID" => $ownerID, ":hash" => $hash, ":open" => $open, ":closed" => $closed));
         $hash = sha1(time());
-        if(!$this->db->queryField("SELECT hash FROM groups WHERE groupID = :groupID", "hash", array(":groupID" => $groupID)))
+        if (!$this->db->queryField("SELECT hash FROM groups WHERE groupID = :groupID", "hash", array(":groupID" => $groupID)))
             $this->db->execute("UPDATE groups SET hash = :hash WHERE groupID = :groupID", array(":hash" => $hash, ":groupID" => $groupID));
 
         return $execute;

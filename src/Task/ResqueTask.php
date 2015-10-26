@@ -11,23 +11,23 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class ResqueTask extends Command
 {
-				/**
-				 *
-				 */
-				protected function configure()
-				{
-								$this->setName('run:resque')->setDescription('Fires up resque');
-				}
+    /**
+     *
+     */
+    protected function configure()
+    {
+        $this->setName('run:resque')->setDescription('Fires up resque');
+    }
 
-				/**
-				 * @param InputInterface $input
-				 * @param OutputInterface $output
-				 *
-				 * @return int|null|void
-				 */
-				protected function execute(InputInterface $input, OutputInterface $output)
-				{
-								putenv("VERBOSE=1");
-								include __DIR__ . "/../../vendor/chrisboulton/php-resque/resque.php";
-				}
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     *
+     * @return int|null|void
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        putenv("VERBOSE=1");
+        include __DIR__ . "/../../vendor/chrisboulton/php-resque/resque.php";
+    }
 }

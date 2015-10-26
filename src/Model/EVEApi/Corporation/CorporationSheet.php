@@ -36,19 +36,16 @@ class CorporationSheet
      */
     public function getData($apiKey = null, $vCode = null, $corporationID = null)
     {
-        try
-        {
+        try {
             $pheal = $this->app->Pheal->Pheal($apiKey, $vCode);
             $pheal->scope = 'Corp';
             $requestArray = array();
-            if(isset($corporationID))
-            {
+            if (isset($corporationID)) {
                 $requestArray['corporationID'] = $corporationID;
             }
             $result = $pheal->CorporationSheet($requestArray)->toArray();
             return $result;
-        } catch(\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             $this->app->Pheal->handleApiException($apiKey, null, $exception);
         }
     }

@@ -59,6 +59,30 @@ class participants
     }
 
     /**
+     * @param $killID
+     * @param int $limit
+     * @param int $cacheTime
+     * @param string $order
+     * @param null $offset
+     *
+     * @return array|bool
+     * @throws \Exception
+     */
+    public function getByKillID($killID, $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
+    {
+        // Validate extraArguments
+        $validated = $this->verifyExtraArguments(array(), $offset, $limit, $order);
+        $vQuery = $validated["queryString"];
+
+        // Merge the arrays
+        $array = array(":killID" => $killID);
+        $query = "SELECT * FROM participants WHERE killID = :killID" . $vQuery;
+
+        // Execute the query
+        return $this->db->query($query, $array, $cacheTime);
+    }
+
+    /**
      * @param array $extraArguments
      * @param null $offset
      * @param int $limit
@@ -93,47 +117,20 @@ class participants
             "finalBlow",
             "isNPC",
         );
-        if(!empty($extraArguments))
-        {
-            foreach($validArguments as $argument)
-            {
-                if(isset($extraArguments[$argument]))
-                {
+        if (!empty($extraArguments)) {
+            foreach ($validArguments as $argument) {
+                if (isset($extraArguments[$argument])) {
                     $queryString .= " AND $argument = :$argument";
                     $argumentArray[":" . $argument] = $extraArguments[$argument];
                 }
             }
         }
 
-        if($offset > 0) $limit = "$offset, $limit ";
+        if ($offset > 0) $limit = "$offset, $limit ";
 
         $queryString .= " ORDER BY killTime $order LIMIT $limit";
 
         return array("queryString" => $queryString, "argumentArray" => $argumentArray);
-    }
-
-    /**
-     * @param $killID
-     * @param int $limit
-     * @param int $cacheTime
-     * @param string $order
-     * @param null $offset
-     *
-     * @return array|bool
-     * @throws \Exception
-     */
-    public function getByKillID($killID, $limit = 100, $cacheTime = 3600, $order = "DESC", $offset = null)
-    {
-        // Validate extraArguments
-        $validated = $this->verifyExtraArguments(array(), $offset, $limit, $order);
-        $vQuery = $validated["queryString"];
-
-        // Merge the arrays
-        $array = array(":killID" => $killID);
-        $query = "SELECT * FROM participants WHERE killID = :killID" . $vQuery;
-        
-        // Execute the query
-        return $this->db->query($query, $array, $cacheTime);
     }
 
     /**

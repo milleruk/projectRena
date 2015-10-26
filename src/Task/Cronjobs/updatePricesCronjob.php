@@ -22,14 +22,12 @@ class updatePricesCronjob
         $cnt = 0;
         $fetchIDs = array();
 
-        foreach($typeIDs as $row)
-        {
+        foreach ($typeIDs as $row) {
             $typeID = $row["typeID"];
             $fetchIDs[] = $typeID;
             $cnt++;
 
-            if($cnt == 20)
-            {
+            if ($cnt == 20) {
                 \Resque::enqueue("now", "\\ProjectRena\\Task\\Resque\\updatePrices", array("typeIDs" => $fetchIDs));
                 $fetchIDs = array();
                 $cnt = 0;
