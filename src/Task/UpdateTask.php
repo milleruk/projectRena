@@ -139,7 +139,7 @@ class UpdateTask extends Command
 
         return $php;
     }
-    
+
     private function generateOptimizedLoader($app)
     {
         $php = "<?php\n";

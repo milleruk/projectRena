@@ -33,9 +33,20 @@ session_start();
 // Launch Whoops
 $app->add(new WhoopsMiddleware());
 
+// Load the translator
+$translator = new \Symfony\Component\Translation\Translator("en_US", new \Symfony\Component\Translation\MessageSelector());
+$translator->setFallbackLocales(array("en_US"));
+$translator->addLoader("php", new \Symfony\Component\Translation\Loader\PhpFileLoader());
+$languageFiles = glob(__DIR__ . "/lang/*.php");
+foreach($languageFiles as $langFile)
+    $translator->addResource("php", $langFile, str_replace(".php", "", basename($langFile)));
+
 // Prepare view
 $app->view(new Twig());
-$app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
+$app->view->parserExtensions = array(
+    new \Slim\Views\TwigExtension(),
+    new \Symfony\Bridge\Twig\Extension\TranslationExtension($translator)
+);
 $app->view->parserOptions = $config['twig'];
 
 // Load the lib/Model loader
