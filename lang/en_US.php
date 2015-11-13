@@ -1,5 +1,6 @@
 <?php
 return array(
-    "welcome" => "Welcome to projectRena",
-    "logout" => "Logout"
+    "welcome" => "Welcome to projectRena %name%",
+    "logout" => "Logout",
+    "name" => "horse"
 );

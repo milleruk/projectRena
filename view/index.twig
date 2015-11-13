@@ -3,15 +3,10 @@
 
 
 {% block content %}
-    {{ "welcome"|trans }}
+    {% set name = "fdsa" %}
 
-    <div class="container">
-        Hello {% if name %}{{ name|capitalize }}{% endif %}<br>
-        <img src="https://graphite.karbowiak.dk/render?target=hitcount(stats.rena.ccpRequests,%20%221seconds%22)&height=250&width=500&from=-15minutes"><br>
-        <img src="https://graphite.karbowiak.dk/render?target=hitcount(stats.rena.CCPApiErrors,%20%221minutes%22)&height=250&width=500&from=-15minutes"><br>
-        <img src="https://graphite.karbowiak.dk/render?target=hitcount(stats.rena.apiKeysUpdated,%20%221minutes%22)&height=250&width=500&from=-15minutes"><br>
-        <img src="https://graphite.karbowiak.dk/render?target=hitcount(stats.rena.killmailsAdded,%20%221minutes%22)&height=250&width=500&from=-15minutes"><br>
-        <img src="https://graphite.karbowiak.dk/render?target=hitcount(stats.rena.website_queryCount,%20%221seconds%22)&height=250&width=500&from=-15minutes"><br>
-    </div>
+    {%  trans with {"%name%": name} %}
+        welcome
+    {% endtrans %}
 {% endblock %}
 
