@@ -146,7 +146,7 @@ class ApiKeyCharacters
     /**
      * @param $keyID
      * @param $characterID
-     * @param $isDirector
+     * @param integer $isDirector
      *
      * @return array|bool
      * @throws \Exception

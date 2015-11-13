@@ -42,7 +42,7 @@ class killmails
     /**
      * @param $killID
      *
-     * @return null
+     * @return string
      */
     public function getProcessedByID($killID)
     {
@@ -52,7 +52,7 @@ class killmails
     /**
      * @param $killID
      *
-     * @return null
+     * @return string
      */
     public function getHashByID($killID)
     {
@@ -62,7 +62,7 @@ class killmails
     /**
      * @param $killID
      *
-     * @return null
+     * @return string
      */
     public function getSourceByID($killID)
     {
@@ -72,7 +72,7 @@ class killmails
     /**
      * @param $killID
      *
-     * @return null
+     * @return string
      */
     public function getJSONByID($killID)
     {

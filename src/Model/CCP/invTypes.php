@@ -41,7 +41,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getIDByName($typeName)
     {
@@ -71,7 +71,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getTypeIDByID($typeID)
     {
@@ -81,7 +81,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getTypeIDByName($typeName)
     {
@@ -91,7 +91,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getGroupIDByID($typeID)
     {
@@ -101,7 +101,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getGroupIDByName($typeName)
     {
@@ -111,7 +111,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getTypeNameByID($typeID)
     {
@@ -121,7 +121,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getTypeNameByName($typeName)
     {
@@ -131,7 +131,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getDescriptionByID($typeID)
     {
@@ -141,7 +141,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getDescriptionByName($typeName)
     {
@@ -151,7 +151,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getMassByID($typeID)
     {
@@ -161,7 +161,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getMassByName($typeName)
     {
@@ -171,7 +171,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getVolumeByID($typeID)
     {
@@ -181,7 +181,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getVolumeByName($typeName)
     {
@@ -191,7 +191,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getCapacityByID($typeID)
     {
@@ -201,7 +201,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getCapacityByName($typeName)
     {
@@ -211,7 +211,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getPortionSizeByID($typeID)
     {
@@ -221,7 +221,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getPortionSizeByName($typeName)
     {
@@ -231,7 +231,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getRaceIDByID($typeID)
     {
@@ -241,7 +241,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getRaceIDByName($typeName)
     {
@@ -251,7 +251,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getBasePriceByID($typeID)
     {
@@ -261,7 +261,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getBasePriceByName($typeName)
     {
@@ -271,7 +271,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getPublishedByID($typeID)
     {
@@ -281,7 +281,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getPublishedByName($typeName)
     {
@@ -291,7 +291,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getMarketGroupIDByID($typeID)
     {
@@ -301,7 +301,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getMarketGroupIDByName($typeName)
     {
@@ -311,7 +311,7 @@ class invTypes
     /**
      * @param $typeID
      *
-     * @return null
+     * @return string
      */
     public function getChanceOfDuplicatingByID($typeID)
     {
@@ -321,7 +321,7 @@ class invTypes
     /**
      * @param $typeName
      *
-     * @return null
+     * @return string
      */
     public function getChanceOfDuplicatingByName($typeName)
     {

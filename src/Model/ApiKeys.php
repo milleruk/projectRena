@@ -56,7 +56,7 @@ class ApiKeys
     /**
      * @param $keyID
      *
-     * @return null
+     * @return string
      */
     public function getVCodeByKeyID($keyID)
     {

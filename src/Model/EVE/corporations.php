@@ -51,7 +51,7 @@ class corporations
     /**
      * @param $corporationID
      *
-     * @return null
+     * @return string
      */
     public function getInformationByID($corporationID)
     {
@@ -61,7 +61,7 @@ class corporations
     /**
      * @param $corporationName
      *
-     * @return null
+     * @return string
      */
     public function getInformationByName($corporationName)
     {
@@ -71,7 +71,7 @@ class corporations
     /**
      * @param $corporationID
      *
-     * @return null
+     * @return string
      */
     public function getCEOIDByID($corporationID)
     {
@@ -81,7 +81,7 @@ class corporations
     /**
      * @param $corporationName
      *
-     * @return null
+     * @return string
      */
     public function getCEOIDByName($corporationName)
     {
@@ -91,7 +91,7 @@ class corporations
     /**
      * @param $corporationID
      *
-     * @return null
+     * @return string
      */
     public function getCorpTickerByID($corporationID)
     {
@@ -101,7 +101,7 @@ class corporations
     /**
      * @param $corporationName
      *
-     * @return null
+     * @return string
      */
     public function getCorpTickerByName($corporationName)
     {
@@ -111,7 +111,7 @@ class corporations
     /**
      * @param $corporationID
      *
-     * @return null
+     * @return string
      */
     public function getMemberCountByID($corporationID)
     {
@@ -121,7 +121,7 @@ class corporations
     /**
      * @param $corporationName
      *
-     * @return null
+     * @return string
      */
     public function getMemberCountByName($corporationName)
     {

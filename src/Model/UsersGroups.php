@@ -72,7 +72,7 @@ class UsersGroups
     /**
      * @param $userID
      * @param $groupID
-     * @param $groupType
+     * @param string $groupType
      *
      * @return bool|int|string
      */
